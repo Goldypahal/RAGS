@@ -1,0 +1,100 @@
+[
+  {
+    "id": "citation_001",
+    "citing_paper": "paper_002",
+    "cited_paper": "paper_001",
+    "context": "BERT builds on the Transformer architecture introduced by Vaswani et al.",
+    "impact": "foundational"
+  },
+  {
+    "id": "citation_002",
+    "citing_paper": "paper_003",
+    "cited_paper": "paper_001",
+    "context": "GPT-2 uses the transformer architecture for language modeling",
+    "impact": "foundational"
+  },
+  {
+    "id": "citation_003",
+    "citing_paper": "paper_004",
+    "cited_paper": "paper_001",
+    "context": "GPT-3 scales the transformer architecture to 175B parameters",
+    "impact": "foundational"
+  },
+  {
+    "id": "citation_004",
+    "citing_paper": "paper_004",
+    "cited_paper": "paper_003",
+    "context": "GPT-3 builds on GPT-2's zero-shot and few-shot learning capabilities",
+    "impact": "direct"
+  },
+  {
+    "id": "citation_005",
+    "citing_paper": "paper_005",
+    "cited_paper": "paper_001",
+    "context": "Vision Transformer applies the transformer architecture to images",
+    "impact": "foundational"
+  },
+  {
+    "id": "citation_006",
+    "citing_paper": "paper_006",
+    "cited_paper": "paper_002",
+    "context": "DistilBERT distills BERT using knowledge distillation",
+    "impact": "direct"
+  },
+  {
+    "id": "citation_007",
+    "citing_paper": "paper_007",
+    "cited_paper": "paper_001",
+    "context": "Survey covers efficient variants of the Transformer architecture",
+    "impact": "survey"
+  },
+  {
+    "id": "citation_008",
+    "citing_paper": "paper_007",
+    "cited_paper": "paper_006",
+    "context": "DistilBERT is covered as an example of efficient transformers",
+    "impact": "survey"
+  },
+  {
+    "id": "citation_009",
+    "citing_paper": "paper_009",
+    "cited_paper": "paper_001",
+    "context": "Transformer-XL extends the Transformer to handle longer sequences",
+    "impact": "foundational"
+  },
+  {
+    "id": "citation_010",
+    "citing_paper": "paper_010",
+    "cited_paper": "paper_002",
+    "context": "RAG uses BERT-style models as the retriever",
+    "impact": "technical"
+  },
+  {
+    "id": "citation_011",
+    "citing_paper": "paper_010",
+    "cited_paper": "paper_004",
+    "context": "RAG demonstrates benefits for knowledge-intensive tasks like QA",
+    "impact": "technical"
+  },
+  {
+    "id": "citation_012",
+    "citing_paper": "paper_007",
+    "cited_paper": "paper_009",
+    "context": "Transformer-XL is a key efficient transformer variant",
+    "impact": "survey"
+  },
+  {
+    "id": "citation_013",
+    "citing_paper": "paper_004",
+    "cited_paper": "paper_008",
+    "context": "Sequence-to-sequence learning foundation for modern transformers",
+    "impact": "foundational"
+  },
+  {
+    "id": "citation_014",
+    "citing_paper": "paper_006",
+    "cited_paper": "paper_007",
+    "context": "Knowledge distillation is an efficiency technique covered in the survey",
+    "impact": "survey"
+  }
+]

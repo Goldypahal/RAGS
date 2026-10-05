@@ -1,0 +1,82 @@
+[
+  {
+    "id": "topic_001",
+    "name": "Transformers",
+    "papers": ["paper_001", "paper_002", "paper_004", "paper_005", "paper_009"],
+    "description": "Transformer architecture and related models",
+    "related_topics": ["attention", "sequence models", "neural networks"],
+    "popularity_score": 1.0
+  },
+  {
+    "id": "topic_002",
+    "name": "Attention Mechanisms",
+    "papers": ["paper_001", "paper_002", "paper_005"],
+    "description": "Self-attention and multi-head attention mechanisms",
+    "related_topics": ["transformers", "neural networks"],
+    "popularity_score": 0.95
+  },
+  {
+    "id": "topic_003",
+    "name": "Language Models",
+    "papers": ["paper_002", "paper_003", "paper_004", "paper_009", "paper_010"],
+    "description": "Pre-trained and large language models",
+    "related_topics": ["transformers", "NLP", "pre-training"],
+    "popularity_score": 0.98
+  },
+  {
+    "id": "topic_004",
+    "name": "Pre-training",
+    "papers": ["paper_002", "paper_003", "paper_004"],
+    "description": "Self-supervised pre-training methods",
+    "related_topics": ["language models", "fine-tuning"],
+    "popularity_score": 0.85
+  },
+  {
+    "id": "topic_005",
+    "name": "Vision Transformers",
+    "papers": ["paper_005"],
+    "description": "Application of transformers to computer vision",
+    "related_topics": ["transformers", "image recognition"],
+    "popularity_score": 0.80
+  },
+  {
+    "id": "topic_006",
+    "name": "Model Efficiency",
+    "papers": ["paper_006", "paper_007"],
+    "description": "Techniques for reducing model size and computational cost",
+    "related_topics": ["transformers", "compression", "optimization"],
+    "popularity_score": 0.75
+  },
+  {
+    "id": "topic_007",
+    "name": "Retrieval-Augmented Generation",
+    "papers": ["paper_010"],
+    "description": "Combining retrieval with generation for knowledge-intensive tasks",
+    "related_topics": ["RAG", "information retrieval", "generation"],
+    "popularity_score": 0.70
+  },
+  {
+    "id": "topic_008",
+    "name": "Few-Shot Learning",
+    "papers": ["paper_003", "paper_004"],
+    "description": "Learning from very few examples",
+    "related_topics": ["language models", "in-context learning"],
+    "popularity_score": 0.80
+  },
+  {
+    "id": "topic_009",
+    "name": "Sequence-to-Sequence Models",
+    "papers": ["paper_008", "paper_001"],
+    "description": "Encoder-decoder models for sequence transduction",
+    "related_topics": ["transformers", "machine translation"],
+    "popularity_score": 0.75
+  },
+  {
+    "id": "topic_010",
+    "name": "Natural Language Processing",
+    "papers": ["paper_001", "paper_002", "paper_003", "paper_004", "paper_008", "paper_009", "paper_010"],
+    "description": "Broad NLP field",
+    "related_topics": ["language models", "transformers"],
+    "popularity_score": 0.99
+  }
+]

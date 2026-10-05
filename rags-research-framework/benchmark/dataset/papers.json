@@ -1,0 +1,122 @@
+[
+  {
+    "id": "paper_001",
+    "title": "Attention Is All You Need",
+    "authors": ["Vaswani, A.", "Shazeer, N.", "Parmar, N.", "Uszkoreit, J.", "Jones, L.", "Gomez, A. N.", "Kaiser, L.", "Polosukhin, I."],
+    "year": 2017,
+    "venue": "NeurIPS",
+    "keywords": ["transformer", "attention mechanism", "sequence modeling", "neural networks"],
+    "abstract": "The dominant sequence transduction models are based on complex recurrent or convolutional neural networks in an encoder-decoder configuration. The best performing models also connect the encoder and decoder through an attention mechanism. We propose a new simple network architecture, the Transformer, based solely on attention mechanisms, dispensing with recurrence and convolutions entirely.",
+    "content": "We introduce the Transformer architecture which uses self-attention mechanisms to process sequences in parallel. The key innovation is the multi-head attention mechanism that allows the model to attend to different representation subspaces. This architecture forms the basis for modern LLMs.",
+    "citations_count": 87000,
+    "topics": ["attention", "transformers", "sequence models", "NLP"]
+  },
+  {
+    "id": "paper_002",
+    "title": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "authors": ["Devlin, J.", "Chang, M. W.", "Lee, K.", "Toutanova, K."],
+    "year": 2018,
+    "venue": "ACL",
+    "keywords": ["BERT", "pre-training", "language model", "transformer", "bidirectional"],
+    "abstract": "We introduce BERT, a new method for pre-training language representations. Unlike recent language representation models, BERT is designed to pre-train deep bidirectional representations by jointly conditioning on both left and right context in all layers.",
+    "content": "BERT introduces bidirectional pre-training using masked language modeling. The model achieves state-of-the-art results on various NLP tasks by fine-tuning on task-specific data. Key innovation: bidirectional context from both directions.",
+    "citations_count": 35000,
+    "topics": ["BERT", "language models", "pre-training", "NLP"]
+  },
+  {
+    "id": "paper_003",
+    "title": "Language Models are Unsupervised Multitask Learners",
+    "authors": ["Radford, A.", "Wu, J.", "Child, R.", "Luan, D.", "Amodei, D.", "Sutskever, I."],
+    "year": 2019,
+    "venue": "OpenAI Blog",
+    "keywords": ["GPT-2", "language model", "few-shot learning", "zero-shot"],
+    "abstract": "We demonstrate that language models begin learning these tasks without explicit supervision when trained on a large corpus of text from the internet. GPT-2 is a large unsupervised language model.",
+    "content": "GPT-2 demonstrates that a large language model trained on diverse internet text can perform various tasks in zero-shot and few-shot settings without task-specific training data.",
+    "citations_count": 15000,
+    "topics": ["GPT-2", "language models", "zero-shot learning"]
+  },
+  {
+    "id": "paper_004",
+    "title": "Language Models are Few-Shot Learners",
+    "authors": ["Brown, T. B.", "Mann, B.", "Ryder, N.", "Subbiah, M.", "Kaplan, J.", "Dhariwal, P.", "Neelakantan, A.", "Shyam, P."],
+    "year": 2020,
+    "venue": "NeurIPS",
+    "keywords": ["GPT-3", "few-shot", "in-context learning", "large language model"],
+    "abstract": "We find that scaling up language models greatly improves task-agnostic, few-shot performance, sometimes even reaching competitiveness with prior state-of-the-art fine-tuned models.",
+    "content": "GPT-3 scales up transformers to 175 billion parameters and demonstrates remarkable few-shot learning capabilities. The model can perform various tasks through in-context learning without explicit fine-tuning.",
+    "citations_count": 30000,
+    "topics": ["GPT-3", "few-shot learning", "in-context learning", "LLMs"]
+  },
+  {
+    "id": "paper_005",
+    "title": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "authors": ["Dosovitskiy, A.", "Beyer, L.", "Kolesnikov, A.", "Weissenborn, D.", "Zhai, X.", "Unterthiner, T.", "Desai, M.", "Minderer, M."],
+    "year": 2020,
+    "venue": "ICLR",
+    "keywords": ["Vision Transformer", "ViT", "image classification", "computer vision"],
+    "abstract": "While the Transformer architecture has become the de-facto standard for natural language processing tasks, its applications to computer vision remain limited. We show that a pure transformer applied directly to sequences of image patches can perform very well on image classification tasks.",
+    "content": "Vision Transformer (ViT) applies transformer architecture to computer vision by treating images as sequences of patches. This demonstrates that transformers are universally applicable beyond NLP.",
+    "citations_count": 20000,
+    "topics": ["Vision Transformer", "image recognition", "computer vision"]
+  },
+  {
+    "id": "paper_006",
+    "title": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "authors": ["Sanh, V.", "Debut, L.", "Dernoncourt, F.", "Wolf, T."],
+    "year": 2019,
+    "venue": "NeurIPS",
+    "keywords": ["DistilBERT", "knowledge distillation", "model compression", "efficiency"],
+    "abstract": "As Transfer Learning from large-scale pre-trained models becomes more prevalent in Natural Language Processing (NLP), operating these large models in on-the-edge and/or under constrained computational training or inference budgets remains challenging.",
+    "content": "DistilBERT uses knowledge distillation to create a smaller, faster version of BERT that retains 97% of its language understanding capabilities while being 40% smaller and 60% faster.",
+    "citations_count": 8000,
+    "topics": ["model compression", "knowledge distillation", "efficiency"]
+  },
+  {
+    "id": "paper_007",
+    "title": "Efficient Transformers: A Survey",
+    "authors": ["Tay, Y.", "Dehghani, M.", "Abnar, S.", "Shen, Y.", "Bahri, D.", "Pham, P.", "Rao, J.", "Yang, L.", "Ruder, S."],
+    "year": 2022,
+    "venue": "ACM Computing Surveys",
+    "keywords": ["efficient transformers", "survey", "complexity reduction", "attention mechanisms"],
+    "abstract": "Transformers have become ubiquitous in machine learning, but they suffer from quadratic computational complexity. This survey comprehensively reviews efficient transformer variants that reduce computational requirements.",
+    "content": "Comprehensive review of techniques to make transformers more efficient including sparse attention, approximations, and other optimizations. Covers linear transformers, local attention, and more.",
+    "citations_count": 3000,
+    "topics": ["efficiency", "transformers", "survey"]
+  },
+  {
+    "id": "paper_008",
+    "title": "Sequence to Sequence Learning with Neural Networks",
+    "authors": ["Sutskever, I.", "Vinyals, O.", "Le, Q. V."],
+    "year": 2014,
+    "venue": "NeurIPS",
+    "keywords": ["sequence-to-sequence", "neural machine translation", "LSTM", "encoder-decoder"],
+    "abstract": "Deep Neural Networks (DNNs) are powerful models that have achieved excellent performance on difficult learning tasks. Although DNNs work well, they have a limitation: they can only process fixed-sized vectors as inputs and outputs.",
+    "content": "Introduces the seq2seq model using LSTMs for machine translation. The encoder-decoder architecture became a foundation for many modern NLP systems including transformers.",
+    "citations_count": 25000,
+    "topics": ["sequence-to-sequence", "neural translation"]
+  },
+  {
+    "id": "paper_009",
+    "title": "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "authors": ["Dai, Z.", "Yang, Z.", "Yang, Y.", "Carbonell, J.", "Le, Q. V.", "Salakhutdinov, R."],
+    "year": 2019,
+    "venue": "ACL",
+    "keywords": ["Transformer-XL", "relative positional encoding", "segment-level recurrence", "long sequences"],
+    "abstract": "Transformers have achieved impressive results in the domain of language modeling. However, a critical shortcoming is the limited context length due to the quadratic memory requirements of self-attention.",
+    "content": "Transformer-XL extends transformers to handle longer sequences through segment-level recurrence and relative positional encoding. Enables processing of documents with thousands of tokens.",
+    "citations_count": 5000,
+    "topics": ["long sequences", "relative attention", "transformers"]
+  },
+  {
+    "id": "paper_010",
+    "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "authors": ["Lewis, P.", "Perez, E.", "Piktus, A.", "Schwenk, H.", "Schwab, D.", "Kiela, D.", "Poliak, A.", "Ouz, B."],
+    "year": 2020,
+    "venue": "NeurIPS",
+    "keywords": ["RAG", "retrieval-augmented generation", "knowledge-intensive tasks"],
+    "abstract": "Large pre-trained language models have been shown to store factual knowledge in their parameters, but accessing this information only through a forward pass limits generalization to new or rare entities.",
+    "content": "Introduces Retrieval-Augmented Generation (RAG) that combines a retrieval module with a generation module. Enables better performance on knowledge-intensive tasks like open-domain QA.",
+    "citations_count": 5000,
+    "topics": ["RAG", "retrieval", "generation"]
+  }
+]

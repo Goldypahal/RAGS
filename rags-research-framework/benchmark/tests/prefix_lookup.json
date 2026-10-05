@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "query": "Trans",
+    "expected_matches": ["Transformer", "Transformers", "Transformer-XL", "Transfer Learning"],
+    "type": "prefix",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "query": "BERT",
+    "expected_matches": ["BERT", "DistilBERT"],
+    "type": "prefix",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "query": "GPT",
+    "expected_matches": ["GPT-2", "GPT-3"],
+    "type": "prefix",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "query": "Att",
+    "expected_matches": ["Attention", "Attention Is All You Need"],
+    "type": "prefix",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "query": "Vision",
+    "expected_matches": ["Vision Transformer"],
+    "type": "prefix",
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "query": "Eff",
+    "expected_matches": ["Efficient", "Efficient Transformers"],
+    "type": "prefix",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "query": "Seq",
+    "expected_matches": ["Sequence", "Sequence to Sequence"],
+    "type": "prefix",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "query": "Ret",
+    "expected_matches": ["Retrieval", "Retrieval-Augmented", "Retrieval-Augmented Generation"],
+    "type": "prefix",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "query": "Pre",
+    "expected_matches": ["Pre-training", "Pre-trained"],
+    "type": "prefix",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "query": "Lang",
+    "expected_matches": ["Language", "Language Models"],
+    "type": "prefix",
+    "difficulty": "hard"
+  }
+]

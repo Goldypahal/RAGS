@@ -1,0 +1,114 @@
+[
+  {
+    "id": "author_001",
+    "name": "Ashish Vaswani",
+    "affiliation": "Google Research",
+    "papers": ["paper_001"],
+    "specialization": "transformer architecture, attention mechanisms",
+    "citations_count": 150000
+  },
+  {
+    "id": "author_002",
+    "name": "Noam Shazeer",
+    "affiliation": "Google Research",
+    "papers": ["paper_001"],
+    "specialization": "transformers, efficient attention",
+    "citations_count": 80000
+  },
+  {
+    "id": "author_003",
+    "name": "Jacob Devlin",
+    "affiliation": "Google Research",
+    "papers": ["paper_002"],
+    "specialization": "BERT, language understanding, pre-training",
+    "citations_count": 60000
+  },
+  {
+    "id": "author_004",
+    "name": "Ming-Wei Chang",
+    "affiliation": "Google Research",
+    "papers": ["paper_002"],
+    "specialization": "NLP, language understanding",
+    "citations_count": 45000
+  },
+  {
+    "id": "author_005",
+    "name": "Alec Radford",
+    "affiliation": "OpenAI",
+    "papers": ["paper_003"],
+    "specialization": "GPT models, language models, few-shot learning",
+    "citations_count": 80000
+  },
+  {
+    "id": "author_006",
+    "name": "Tom B. Brown",
+    "affiliation": "OpenAI",
+    "papers": ["paper_004"],
+    "specialization": "GPT-3, large language models, few-shot learning",
+    "citations_count": 95000
+  },
+  {
+    "id": "author_007",
+    "name": "Alexei Dosovitskiy",
+    "affiliation": "Google Research",
+    "papers": ["paper_005"],
+    "specialization": "Vision Transformer, computer vision, transformers",
+    "citations_count": 50000
+  },
+  {
+    "id": "author_008",
+    "name": "Victor Sanh",
+    "affiliation": "Hugging Face",
+    "papers": ["paper_006"],
+    "specialization": "model distillation, efficiency, BERT",
+    "citations_count": 25000
+  },
+  {
+    "id": "author_009",
+    "name": "Yi Tay",
+    "affiliation": "Google Research",
+    "papers": ["paper_007"],
+    "specialization": "efficient transformers, survey, optimization",
+    "citations_count": 35000
+  },
+  {
+    "id": "author_010",
+    "name": "Ilya Sutskever",
+    "affiliation": "OpenAI",
+    "papers": ["paper_008"],
+    "specialization": "neural networks, sequence models, deep learning",
+    "citations_count": 100000
+  },
+  {
+    "id": "author_011",
+    "name": "Zhilin Yang",
+    "affiliation": "Carnegie Mellon University",
+    "papers": ["paper_009"],
+    "specialization": "Transformer-XL, long sequences, language modeling",
+    "citations_count": 30000
+  },
+  {
+    "id": "author_012",
+    "name": "Patrick Lewis",
+    "affiliation": "Facebook AI Research",
+    "papers": ["paper_010"],
+    "specialization": "RAG, retrieval, knowledge-intensive NLP",
+    "citations_count": 20000
+  },
+  {
+    "id": "author_013",
+    "name": "Yoshua Bengio",
+    "affiliation": "University of Montreal",
+    "papers": [],
+    "specialization": "deep learning, neural networks",
+    "citations_count": 250000
+  },
+  {
+    "id": "author_014",
+    "name": "Geoffrey Hinton",
+    "affiliation": "Google Brain",
+    "papers": [],
+    "specialization": "deep learning, neural networks, optimization",
+    "citations_count": 300000
+  }
+]

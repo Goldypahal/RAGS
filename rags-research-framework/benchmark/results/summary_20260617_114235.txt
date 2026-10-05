@@ -1,0 +1,15 @@
+BENCHMARK RESULTS SUMMARY
+================================================================================
+Timestamp: 2026-06-17T11:42:35.653424
+
+SYSTEM RANKINGS
+--------------------------------------------------------------------------------
+1. VectorRAG: 0.5757
+2. AdaptiveRetrievalRAG: 0.4489
+3. TrieRAG: 0.3971
+4. TrieGraphRAG: 0.3970
+5. HashMapRAG: 0.3917
+6. HashMapTrieRAG: 0.3896
+7. InvertedIndexGraphRAG: 0.3855
+8. HashMapGraphRAG: 0.0715
+9. GraphRAG: 0.0679

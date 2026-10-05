@@ -1,0 +1,685 @@
+[
+  {
+    "id": "topic_cs_RO",
+    "name": "cs.RO",
+    "papers": [
+      "arxiv_2606.18247v1",
+      "arxiv_2606.18144v1",
+      "arxiv_2606.18092v1",
+      "arxiv_2606.17924v1",
+      "arxiv_2606.17897v1",
+      "arxiv_2606.17739v1",
+      "arxiv_2606.17511v1",
+      "arxiv_2606.17386v1",
+      "arxiv_2606.17362v1",
+      "arxiv_2606.17317v1"
+    ]
+  },
+  {
+    "id": "topic_cs_AI",
+    "name": "cs.AI",
+    "papers": [
+      "arxiv_2606.18247v1",
+      "arxiv_2606.18237v1",
+      "arxiv_2606.18235v1",
+      "arxiv_2606.18223v1",
+      "arxiv_2606.18208v1",
+      "arxiv_2606.18206v1",
+      "arxiv_2606.18203v1",
+      "arxiv_2606.18193v1",
+      "arxiv_2606.18192v1",
+      "arxiv_2606.18191v1",
+      "arxiv_2606.18186v1",
+      "arxiv_2606.18181v1",
+      "arxiv_2606.18168v1",
+      "arxiv_2606.18158v1",
+      "arxiv_2606.18156v1",
+      "arxiv_2606.18154v1",
+      "arxiv_2606.18147v1",
+      "arxiv_2606.18144v1",
+      "arxiv_2606.18142v1",
+      "arxiv_2606.18135v1",
+      "arxiv_2606.18132v1",
+      "arxiv_2606.18129v1",
+      "arxiv_2606.18122v1",
+      "arxiv_2606.18120v1",
+      "arxiv_2606.18119v1",
+      "arxiv_2606.18114v1",
+      "arxiv_2606.18111v1",
+      "arxiv_2606.18108v1",
+      "arxiv_2606.18101v1",
+      "arxiv_2606.18098v1",
+      "arxiv_2606.18096v1",
+      "arxiv_2606.18092v1",
+      "arxiv_2606.18075v1",
+      "arxiv_2606.18071v1",
+      "arxiv_2606.18068v1",
+      "arxiv_2606.18063v1",
+      "arxiv_2606.18062v1",
+      "arxiv_2606.18060v1",
+      "arxiv_2606.18057v1",
+      "arxiv_2606.18037v1",
+      "arxiv_2606.18033v1",
+      "arxiv_2606.18024v1",
+      "arxiv_2606.18023v1",
+      "arxiv_2606.18021v1",
+      "arxiv_2606.18005v1",
+      "arxiv_2606.18003v1",
+      "arxiv_2606.18000v1",
+      "arxiv_2606.17996v1",
+      "arxiv_2606.17989v1",
+      "arxiv_2606.17979v1",
+      "arxiv_2606.17978v1",
+      "arxiv_2606.17972v1",
+      "arxiv_2606.17962v1",
+      "arxiv_2606.17961v1",
+      "arxiv_2606.17952v1",
+      "arxiv_2606.17950v1",
+      "arxiv_2606.17945v1",
+      "arxiv_2606.17930v1",
+      "arxiv_2606.17929v1",
+      "arxiv_2606.17927v1",
+      "arxiv_2606.17924v1",
+      "arxiv_2606.17915v1",
+      "arxiv_2606.17910v1",
+      "arxiv_2606.17904v1",
+      "arxiv_2606.17897v1",
+      "arxiv_2606.17889v1",
+      "arxiv_2606.17888v1",
+      "arxiv_2606.17887v1",
+      "arxiv_2606.17882v1",
+      "arxiv_2606.17872v1",
+      "arxiv_2606.17871v1",
+      "arxiv_2606.17867v1",
+      "arxiv_2606.17856v1",
+      "arxiv_2606.17851v1",
+      "arxiv_2606.17847v1",
+      "arxiv_2606.17836v1",
+      "arxiv_2606.17835v1",
+      "arxiv_2606.17830v1",
+      "arxiv_2606.17826v1",
+      "arxiv_2606.17824v1",
+      "arxiv_2606.17821v1",
+      "arxiv_2606.17819v1",
+      "arxiv_2606.17816v1",
+      "arxiv_2606.17810v1",
+      "arxiv_2606.17799v1",
+      "arxiv_2606.17798v1",
+      "arxiv_2606.17781v1",
+      "arxiv_2606.17775v1",
+      "arxiv_2606.17767v1",
+      "arxiv_2606.17762v1",
+      "arxiv_2606.17739v1",
+      "arxiv_2606.17735v1",
+      "arxiv_2606.17727v1",
+      "arxiv_2606.17711v1",
+      "arxiv_2606.17710v1",
+      "arxiv_2606.17706v1",
+      "arxiv_2606.17702v1",
+      "arxiv_2606.17698v1",
+      "arxiv_2606.17696v1",
+      "arxiv_2606.17687v1",
+      "arxiv_2606.17678v1",
+      "arxiv_2606.17668v1",
+      "arxiv_2606.17667v1",
+      "arxiv_2606.17666v1",
+      "arxiv_2606.17664v1",
+      "arxiv_2606.17660v1",
+      "arxiv_2606.17657v1",
+      "arxiv_2606.17649v1",
+      "arxiv_2606.17648v1",
+      "arxiv_2606.17646v1",
+      "arxiv_2606.17645v1",
+      "arxiv_2606.17644v1",
+      "arxiv_2606.17642v1",
+      "arxiv_2606.17637v1",
+      "arxiv_2606.17627v1",
+      "arxiv_2606.17615v1",
+      "arxiv_2606.17591v1",
+      "arxiv_2606.17588v1",
+      "arxiv_2606.17581v1",
+      "arxiv_2606.17579v1",
+      "arxiv_2606.17577v1",
+      "arxiv_2606.17574v1",
+      "arxiv_2606.17564v1",
+      "arxiv_2606.17555v1",
+      "arxiv_2606.17551v1",
+      "arxiv_2606.17546v1",
+      "arxiv_2606.17541v1",
+      "arxiv_2606.17539v1",
+      "arxiv_2606.17536v1",
+      "arxiv_2606.17519v1",
+      "arxiv_2606.17516v1",
+      "arxiv_2606.17514v1",
+      "arxiv_2606.17513v1",
+      "arxiv_2606.17511v1",
+      "arxiv_2606.17507v1",
+      "arxiv_2606.17489v1",
+      "arxiv_2606.17478v1",
+      "arxiv_2606.17474v1",
+      "arxiv_2606.17461v1",
+      "arxiv_2606.17459v1",
+      "arxiv_2606.17454v1",
+      "arxiv_2606.17453v1",
+      "arxiv_2606.17450v1",
+      "arxiv_2606.17449v1",
+      "arxiv_2606.17443v1",
+      "arxiv_2606.17437v1",
+      "arxiv_2606.17420v1",
+      "arxiv_2606.17416v1",
+      "arxiv_2606.17412v1",
+      "arxiv_2606.17409v1",
+      "arxiv_2606.17406v1",
+      "arxiv_2606.17405v1",
+      "arxiv_2606.17403v1",
+      "arxiv_2606.17399v1",
+      "arxiv_2606.17398v1",
+      "arxiv_2606.17391v1",
+      "arxiv_2606.17389v1",
+      "arxiv_2606.17386v1",
+      "arxiv_2606.17383v1",
+      "arxiv_2606.17379v1",
+      "arxiv_2606.17372v1",
+      "arxiv_2606.17368v1",
+      "arxiv_2606.17362v1",
+      "arxiv_2606.17354v1",
+      "arxiv_2606.17350v1",
+      "arxiv_2606.17345v1",
+      "arxiv_2606.17340v1",
+      "arxiv_2606.17339v1",
+      "arxiv_2606.17328v1",
+      "arxiv_2606.17317v1",
+      "arxiv_2606.17312v1",
+      "arxiv_2606.17289v1",
+      "arxiv_2606.17286v1",
+      "arxiv_2606.17283v1",
+      "arxiv_2606.17269v1",
+      "arxiv_2606.17266v1",
+      "arxiv_2606.17257v1",
+      "arxiv_2606.17255v1",
+      "arxiv_2606.17235v1",
+      "arxiv_2606.17229v1",
+      "arxiv_2606.17220v1",
+      "arxiv_2606.17209v1",
+      "arxiv_2606.17203v1",
+      "arxiv_2606.17199v1",
+      "arxiv_2606.17197v1",
+      "arxiv_2606.17165v1",
+      "arxiv_2606.17164v1",
+      "arxiv_2606.17037v1",
+      "arxiv_2606.17028v1",
+      "arxiv_2606.17020v1",
+      "arxiv_2606.17016v1",
+      "arxiv_2606.17006v1",
+      "arxiv_2606.17005v1",
+      "arxiv_2606.16996v1",
+      "arxiv_2606.16995v1",
+      "arxiv_2606.16989v1",
+      "arxiv_2606.16987v1",
+      "arxiv_2606.16974v1",
+      "arxiv_2606.16973v1",
+      "arxiv_2606.16969v1"
+    ]
+  },
+  {
+    "id": "topic_cs_CL",
+    "name": "cs.CL",
+    "papers": [
+      "arxiv_2606.18237v1",
+      "arxiv_2606.18208v1",
+      "arxiv_2606.18203v1",
+      "arxiv_2606.18193v1",
+      "arxiv_2606.18158v1",
+      "arxiv_2606.18142v1",
+      "arxiv_2606.18120v1",
+      "arxiv_2606.18062v1",
+      "arxiv_2606.18060v1",
+      "arxiv_2606.18057v1",
+      "arxiv_2606.18037v1",
+      "arxiv_2606.18033v1",
+      "arxiv_2606.18021v1",
+      "arxiv_2606.17910v1",
+      "arxiv_2606.17835v1",
+      "arxiv_2606.17826v1",
+      "arxiv_2606.17819v1",
+      "arxiv_2606.17799v1",
+      "arxiv_2606.17710v1",
+      "arxiv_2606.17698v1",
+      "arxiv_2606.17687v1",
+      "arxiv_2606.17645v1",
+      "arxiv_2606.17579v1",
+      "arxiv_2606.17519v1",
+      "arxiv_2606.17478v1",
+      "arxiv_2606.17474v1",
+      "arxiv_2606.17449v1",
+      "arxiv_2606.17443v1",
+      "arxiv_2606.17391v1",
+      "arxiv_2606.17389v1",
+      "arxiv_2606.17372v1",
+      "arxiv_2606.17354v1",
+      "arxiv_2606.17350v1",
+      "arxiv_2606.17339v1",
+      "arxiv_2606.17289v1",
+      "arxiv_2606.17255v1",
+      "arxiv_2606.17229v1",
+      "arxiv_2606.17164v1",
+      "arxiv_2606.17016v1"
+    ]
+  },
+  {
+    "id": "topic_cs_LG",
+    "name": "cs.LG",
+    "papers": [
+      "arxiv_2606.18237v1",
+      "arxiv_2606.18223v1",
+      "arxiv_2606.18208v1",
+      "arxiv_2606.18186v1",
+      "arxiv_2606.18144v1",
+      "arxiv_2606.18122v1",
+      "arxiv_2606.18120v1",
+      "arxiv_2606.18114v1",
+      "arxiv_2606.18111v1",
+      "arxiv_2606.18096v1",
+      "arxiv_2606.18071v1",
+      "arxiv_2606.18063v1",
+      "arxiv_2606.18024v1",
+      "arxiv_2606.18023v1",
+      "arxiv_2606.18021v1",
+      "arxiv_2606.18003v1",
+      "arxiv_2606.17996v1",
+      "arxiv_2606.17952v1",
+      "arxiv_2606.17927v1",
+      "arxiv_2606.17889v1",
+      "arxiv_2606.17872v1",
+      "arxiv_2606.17847v1",
+      "arxiv_2606.17830v1",
+      "arxiv_2606.17816v1",
+      "arxiv_2606.17810v1",
+      "arxiv_2606.17710v1",
+      "arxiv_2606.17706v1",
+      "arxiv_2606.17668v1",
+      "arxiv_2606.17667v1",
+      "arxiv_2606.17660v1",
+      "arxiv_2606.17649v1",
+      "arxiv_2606.17645v1",
+      "arxiv_2606.17579v1",
+      "arxiv_2606.17551v1",
+      "arxiv_2606.17541v1",
+      "arxiv_2606.17516v1",
+      "arxiv_2606.17513v1",
+      "arxiv_2606.17489v1",
+      "arxiv_2606.17461v1",
+      "arxiv_2606.17454v1",
+      "arxiv_2606.17449v1",
+      "arxiv_2606.17409v1",
+      "arxiv_2606.17399v1",
+      "arxiv_2606.17391v1",
+      "arxiv_2606.17389v1",
+      "arxiv_2606.17383v1",
+      "arxiv_2606.17362v1",
+      "arxiv_2606.17345v1",
+      "arxiv_2606.17283v1",
+      "arxiv_2606.17229v1",
+      "arxiv_2606.17199v1",
+      "arxiv_2606.17037v1",
+      "arxiv_2606.17028v1",
+      "arxiv_2606.17016v1",
+      "arxiv_2606.17006v1",
+      "arxiv_2606.16996v1",
+      "arxiv_2606.16995v1"
+    ]
+  },
+  {
+    "id": "topic_cs_CR",
+    "name": "cs.CR",
+    "papers": [
+      "arxiv_2606.18223v1",
+      "arxiv_2606.18193v1",
+      "arxiv_2606.18120v1",
+      "arxiv_2606.18062v1",
+      "arxiv_2606.17555v1",
+      "arxiv_2606.17398v1",
+      "arxiv_2606.17283v1"
+    ]
+  },
+  {
+    "id": "topic_eess_SY",
+    "name": "eess.SY",
+    "papers": [
+      "arxiv_2606.18223v1",
+      "arxiv_2606.17269v1",
+      "arxiv_2606.17266v1"
+    ]
+  },
+  {
+    "id": "topic_cs_CV",
+    "name": "cs.CV",
+    "papers": [
+      "arxiv_2606.18208v1",
+      "arxiv_2606.18156v1",
+      "arxiv_2606.18063v1",
+      "arxiv_2606.17989v1",
+      "arxiv_2606.17972v1",
+      "arxiv_2606.17961v1",
+      "arxiv_2606.17950v1",
+      "arxiv_2606.17867v1",
+      "arxiv_2606.17836v1",
+      "arxiv_2606.17824v1",
+      "arxiv_2606.17798v1",
+      "arxiv_2606.17739v1",
+      "arxiv_2606.17711v1",
+      "arxiv_2606.17710v1",
+      "arxiv_2606.17702v1",
+      "arxiv_2606.17678v1",
+      "arxiv_2606.17644v1",
+      "arxiv_2606.17627v1",
+      "arxiv_2606.17615v1",
+      "arxiv_2606.17564v1",
+      "arxiv_2606.17539v1",
+      "arxiv_2606.17536v1",
+      "arxiv_2606.17511v1",
+      "arxiv_2606.17449v1",
+      "arxiv_2606.17437v1",
+      "arxiv_2606.17412v1",
+      "arxiv_2606.17406v1",
+      "arxiv_2606.17403v1",
+      "arxiv_2606.17389v1",
+      "arxiv_2606.17386v1",
+      "arxiv_2606.17379v1",
+      "arxiv_2606.17362v1",
+      "arxiv_2606.17340v1",
+      "arxiv_2606.17257v1",
+      "arxiv_2606.17037v1",
+      "arxiv_2606.17020v1",
+      "arxiv_2606.16996v1"
+    ]
+  },
+  {
+    "id": "topic_cs_MA",
+    "name": "cs.MA",
+    "papers": [
+      "arxiv_2606.18191v1",
+      "arxiv_2606.18037v1",
+      "arxiv_2606.18021v1",
+      "arxiv_2606.17962v1",
+      "arxiv_2606.17915v1",
+      "arxiv_2606.17739v1",
+      "arxiv_2606.17016v1"
+    ]
+  },
+  {
+    "id": "topic_cs_IR",
+    "name": "cs.IR",
+    "papers": [
+      "arxiv_2606.18181v1",
+      "arxiv_2606.17910v1",
+      "arxiv_2606.17664v1",
+      "arxiv_2606.17209v1",
+      "arxiv_2606.16973v1"
+    ]
+  },
+  {
+    "id": "topic_cs_CY",
+    "name": "cs.CY",
+    "papers": [
+      "arxiv_2606.18181v1",
+      "arxiv_2606.18158v1",
+      "arxiv_2606.18144v1",
+      "arxiv_2606.18142v1",
+      "arxiv_2606.18057v1",
+      "arxiv_2606.17443v1",
+      "arxiv_2606.17286v1",
+      "arxiv_2606.16989v1"
+    ]
+  },
+  {
+    "id": "topic_cs_SE",
+    "name": "cs.SE",
+    "papers": [
+      "arxiv_2606.18168v1",
+      "arxiv_2606.17915v1",
+      "arxiv_2606.17819v1",
+      "arxiv_2606.17799v1",
+      "arxiv_2606.17666v1",
+      "arxiv_2606.17588v1",
+      "arxiv_2606.17514v1",
+      "arxiv_2606.17507v1",
+      "arxiv_2606.17398v1",
+      "arxiv_2606.17203v1",
+      "arxiv_2606.17197v1",
+      "arxiv_2606.17164v1"
+    ]
+  },
+  {
+    "id": "topic_cs_SD",
+    "name": "cs.SD",
+    "papers": [
+      "arxiv_2606.18135v1",
+      "arxiv_2606.17775v1",
+      "arxiv_2606.17416v1",
+      "arxiv_2606.17339v1",
+      "arxiv_2606.17006v1",
+      "arxiv_2606.16969v1"
+    ]
+  },
+  {
+    "id": "topic_cs_HC",
+    "name": "cs.HC",
+    "papers": [
+      "arxiv_2606.18129v1",
+      "arxiv_2606.18062v1",
+      "arxiv_2606.18057v1",
+      "arxiv_2606.17887v1",
+      "arxiv_2606.17767v1",
+      "arxiv_2606.17646v1",
+      "arxiv_2606.17164v1"
+    ]
+  },
+  {
+    "id": "topic_cs_AR",
+    "name": "cs.AR",
+    "papers": [
+      "arxiv_2606.18122v1",
+      "arxiv_2606.17781v1",
+      "arxiv_2606.17461v1",
+      "arxiv_2606.17028v1"
+    ]
+  },
+  {
+    "id": "topic_eess_AS",
+    "name": "eess.AS",
+    "papers": [
+      "arxiv_2606.18122v1",
+      "arxiv_2606.17835v1",
+      "arxiv_2606.17006v1",
+      "arxiv_2606.16969v1"
+    ]
+  },
+  {
+    "id": "topic_eess_SP",
+    "name": "eess.SP",
+    "papers": [
+      "arxiv_2606.18122v1"
+    ]
+  },
+  {
+    "id": "topic_astro-ph_IM",
+    "name": "astro-ph.IM",
+    "papers": [
+      "arxiv_2606.18108v1"
+    ]
+  },
+  {
+    "id": "topic_cs_DC",
+    "name": "cs.DC",
+    "papers": [
+      "arxiv_2606.18096v1"
+    ]
+  },
+  {
+    "id": "topic_cs_SI",
+    "name": "cs.SI",
+    "papers": [
+      "arxiv_2606.18057v1",
+      "arxiv_2606.17579v1"
+    ]
+  },
+  {
+    "id": "topic_econ_GN",
+    "name": "econ.GN",
+    "papers": [
+      "arxiv_2606.18005v1"
+    ]
+  },
+  {
+    "id": "topic_cs_NI",
+    "name": "cs.NI",
+    "papers": [
+      "arxiv_2606.18000v1",
+      "arxiv_2606.17368v1"
+    ]
+  },
+  {
+    "id": "topic_cs_DB",
+    "name": "cs.DB",
+    "papers": [
+      "arxiv_2606.17915v1"
+    ]
+  },
+  {
+    "id": "topic_cs_NE",
+    "name": "cs.NE",
+    "papers": [
+      "arxiv_2606.17889v1",
+      "arxiv_2606.17775v1"
+    ]
+  },
+  {
+    "id": "topic_cs_LO",
+    "name": "cs.LO",
+    "papers": [
+      "arxiv_2606.17851v1"
+    ]
+  },
+  {
+    "id": "topic_cs_CG",
+    "name": "cs.CG",
+    "papers": [
+      "arxiv_2606.17836v1"
+    ]
+  },
+  {
+    "id": "topic_cs_GR",
+    "name": "cs.GR",
+    "papers": [
+      "arxiv_2606.17836v1",
+      "arxiv_2606.17696v1"
+    ]
+  },
+  {
+    "id": "topic_math_OC",
+    "name": "math.OC",
+    "papers": [
+      "arxiv_2606.17762v1",
+      "arxiv_2606.17317v1"
+    ]
+  },
+  {
+    "id": "topic_q-bio_QM",
+    "name": "q-bio.QM",
+    "papers": [
+      "arxiv_2606.17668v1",
+      "arxiv_2606.17420v1"
+    ]
+  },
+  {
+    "id": "topic_cs_PL",
+    "name": "cs.PL",
+    "papers": [
+      "arxiv_2606.17581v1",
+      "arxiv_2606.17164v1"
+    ]
+  },
+  {
+    "id": "topic_cs_CE",
+    "name": "cs.CE",
+    "papers": [
+      "arxiv_2606.17555v1"
+    ]
+  },
+  {
+    "id": "topic_cs_ET",
+    "name": "cs.ET",
+    "papers": [
+      "arxiv_2606.17555v1"
+    ]
+  },
+  {
+    "id": "topic_stat_ME",
+    "name": "stat.ME",
+    "papers": [
+      "arxiv_2606.17516v1",
+      "arxiv_2606.17165v1",
+      "arxiv_2606.17005v1"
+    ]
+  },
+  {
+    "id": "topic_stat_ML",
+    "name": "stat.ML",
+    "papers": [
+      "arxiv_2606.17516v1",
+      "arxiv_2606.17383v1"
+    ]
+  },
+  {
+    "id": "topic_cs_MM",
+    "name": "cs.MM",
+    "papers": [
+      "arxiv_2606.17449v1",
+      "arxiv_2606.17006v1"
+    ]
+  },
+  {
+    "id": "topic_eess_IV",
+    "name": "eess.IV",
+    "papers": [
+      "arxiv_2606.17420v1",
+      "arxiv_2606.17379v1"
+    ]
+  },
+  {
+    "id": "topic_q-fin_RM",
+    "name": "q-fin.RM",
+    "papers": [
+      "arxiv_2606.17383v1"
+    ]
+  },
+  {
+    "id": "topic_cond-mat_mtrl-sci",
+    "name": "cond-mat.mtrl-sci",
+    "papers": [
+      "arxiv_2606.17235v1"
+    ]
+  },
+  {
+    "id": "topic_econ_EM",
+    "name": "econ.EM",
+    "papers": [
+      "arxiv_2606.17165v1"
+    ]
+  },
+  {
+    "id": "topic_math_ST",
+    "name": "math.ST",
+    "papers": [
+      "arxiv_2606.17165v1"
+    ]
+  },
+  {
+    "id": "topic_cs_GT",
+    "name": "cs.GT",
+    "papers": [
+      "arxiv_2606.16989v1"
+    ]
+  }
+]

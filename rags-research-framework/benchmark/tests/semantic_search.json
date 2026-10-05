@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "query": "Architecture introduced in 2017 that changed NLP with parallel processing",
+    "expected_doc_ids": ["paper_001"],
+    "type": "semantic",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "query": "Model using self-attention for bidirectional context",
+    "expected_doc_ids": ["paper_002"],
+    "type": "semantic",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "query": "Large model with 175 billion parameters that performs tasks in-context",
+    "expected_doc_ids": ["paper_004"],
+    "type": "semantic",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "query": "Applying transformers to images as patches",
+    "expected_doc_ids": ["paper_005"],
+    "type": "semantic",
+    "difficulty": "hard"
+  },
+  {
+    "id": 5,
+    "query": "How to make neural models faster and smaller while maintaining performance",
+    "expected_doc_ids": ["paper_006", "paper_007"],
+    "type": "semantic",
+    "difficulty": "hard"
+  },
+  {
+    "id": 6,
+    "query": "Combining external knowledge retrieval with generation models",
+    "expected_doc_ids": ["paper_010"],
+    "type": "semantic",
+    "difficulty": "hard"
+  },
+  {
+    "id": 7,
+    "query": "Handling longer sequences in transformers",
+    "expected_doc_ids": ["paper_009"],
+    "type": "semantic",
+    "difficulty": "hard"
+  },
+  {
+    "id": 8,
+    "query": "Early work on unsupervised language understanding from raw text",
+    "expected_doc_ids": ["paper_002", "paper_003"],
+    "type": "semantic",
+    "difficulty": "hard"
+  },
+  {
+    "id": 9,
+    "query": "Foundation work showing parallel attention mechanisms in neural networks",
+    "expected_doc_ids": ["paper_001", "paper_008"],
+    "type": "semantic",
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "query": "Scaling neural language models to achieve better generalization",
+    "expected_doc_ids": ["paper_004", "paper_003"],
+    "type": "semantic",
+    "difficulty": "hard"
+  }
+]

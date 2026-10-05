@@ -1,0 +1,92 @@
+[
+  {
+    "id": 1,
+    "query": "Which university is associated with the author of the Transformer paper?",
+    "reasoning_path": ["Paper: Attention Is All You Need", "Author: Ashish Vaswani", "Affiliation: Google Research"],
+    "expected_answer": "Google Research",
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "query": "Who authored papers about Vision Transformers at Google?",
+    "reasoning_path": ["Paper: Vision Transformer", "Author: Alexei Dosovitskiy", "Affiliation: Google Research"],
+    "expected_answer": "Alexei Dosovitskiy",
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "query": "Which organization is associated with RAG paper authors?",
+    "reasoning_path": ["Paper: RAG", "Author: Patrick Lewis", "Affiliation: Facebook AI Research"],
+    "expected_answer": "Facebook AI Research",
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "query": "What papers cite models based on Transformers?",
+    "reasoning_path": ["Papers: BERT, GPT-2, GPT-3", "Citations: Cite-based tracking"],
+    "expected_answer": ["paper_007", "paper_010"],
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": 5,
+    "query": "Which papers about efficiency cite foundational Transformer work?",
+    "reasoning_path": ["Efficient papers: DistilBERT, Efficient Transformers", "Citations to: Transformer paper"],
+    "expected_answer": ["paper_006", "paper_007"],
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": 6,
+    "query": "What is the research focus of the author who wrote Vision Transformer?",
+    "reasoning_path": ["Paper: Vision Transformer", "Author: Alexei Dosovitskiy", "Specialization: Computer vision & transformers"],
+    "expected_answer": "Computer vision, transformers",
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": 7,
+    "query": "Which papers discuss efficiency in models from Google Research?",
+    "reasoning_path": ["Google authors", "Papers by Google authors", "Papers discussing efficiency"],
+    "expected_answer": ["paper_006", "paper_007"],
+    "type": "multi_hop",
+    "hops": 3,
+    "difficulty": "hard"
+  },
+  {
+    "id": 8,
+    "query": "What topics are covered in papers by the original Transformer authors?",
+    "reasoning_path": ["Paper: Attention Is All You Need", "Authors: Vaswani, Shazeer, etc.", "Papers: All Transformer-related papers"],
+    "expected_answer": ["attention", "transformers", "sequence models"],
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "query": "Which papers from 2020 discuss model efficiency or pre-training?",
+    "reasoning_path": ["Year: 2020", "Papers: Vision Transformer, DistilBERT, RAG", "Topics: efficiency OR pre-training"],
+    "expected_answer": ["paper_005", "paper_006", "paper_010"],
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "query": "What foundational work do efficiency papers build upon?",
+    "reasoning_path": ["Efficiency papers: DistilBERT, Efficient Transformers", "Citations: foundational papers"],
+    "expected_answer": ["paper_001", "paper_002"],
+    "type": "multi_hop",
+    "hops": 2,
+    "difficulty": "hard"
+  }
+]

@@ -1,0 +1,162 @@
+[
+  {
+    "id": "ex_file_tests_test_subclassing_py",
+    "query": "tests/test_subclassing.py",
+    "expected_ids": [
+      "file_tests_test_subclassing_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_examples_javascript_js_example_views_py",
+    "query": "examples/javascript/js_example/views.py",
+    "expected_ids": [
+      "file_examples_javascript_js_example_views_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_src_flask_sessions_py",
+    "query": "src/flask/sessions.py",
+    "expected_ids": [
+      "file_src_flask_sessions_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_examples_javascript_tests_conftest_py",
+    "query": "examples/javascript/tests/conftest.py",
+    "expected_ids": [
+      "file_examples_javascript_tests_conftest_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_examples_tutorial_tests_test_factory_py",
+    "query": "examples/tutorial/tests/test_factory.py",
+    "expected_ids": [
+      "file_examples_tutorial_tests_test_factory_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_src_flask_sansio_scaffold_py",
+    "query": "src/flask/sansio/scaffold.py",
+    "expected_ids": [
+      "file_src_flask_sansio_scaffold_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_src_flask_wrappers_py",
+    "query": "src/flask/wrappers.py",
+    "expected_ids": [
+      "file_src_flask_wrappers_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_tests_test_config_py",
+    "query": "tests/test_config.py",
+    "expected_ids": [
+      "file_tests_test_config_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_src_flask_typing_py",
+    "query": "src/flask/typing.py",
+    "expected_ids": [
+      "file_src_flask_typing_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_examples_celery_src_task_app_tasks_py",
+    "query": "examples/celery/src/task_app/tasks.py",
+    "expected_ids": [
+      "file_examples_celery_src_task_app_tasks_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_docs_conf_py",
+    "query": "docs/conf.py",
+    "expected_ids": [
+      "file_docs_conf_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_tests_test_apps_cliapp_factory_py",
+    "query": "tests/test_apps/cliapp/factory.py",
+    "expected_ids": [
+      "file_tests_test_apps_cliapp_factory_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_examples_tutorial_tests_test_db_py",
+    "query": "examples/tutorial/tests/test_db.py",
+    "expected_ids": [
+      "file_examples_tutorial_tests_test_db_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_src_flask_signals_py",
+    "query": "src/flask/signals.py",
+    "expected_ids": [
+      "file_src_flask_signals_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_tests_test_request_py",
+    "query": "tests/test_request.py",
+    "expected_ids": [
+      "file_tests_test_request_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_examples_javascript_tests_test_js_example_py",
+    "query": "examples/javascript/tests/test_js_example.py",
+    "expected_ids": [
+      "file_examples_javascript_tests_test_js_example_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_src_flask___init___py",
+    "query": "src/flask/__init__.py",
+    "expected_ids": [
+      "file_src_flask___init___py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_tests_test_async_py",
+    "query": "tests/test_async.py",
+    "expected_ids": [
+      "file_tests_test_async_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_tests_test_basic_py",
+    "query": "tests/test_basic.py",
+    "expected_ids": [
+      "file_tests_test_basic_py"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_file_tests_test_apps_helloworld_hello_py",
+    "query": "tests/test_apps/helloworld/hello.py",
+    "expected_ids": [
+      "file_tests_test_apps_helloworld_hello_py"
+    ],
+    "type": "exact"
+  }
+]

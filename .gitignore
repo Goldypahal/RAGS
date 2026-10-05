@@ -1,0 +1,71 @@
+# ==========================================
+# Security & Privacy - Exclude Confidential Files
+# ==========================================
+*Aadhaar*
+*EAadhaar*
+*api_key*
+*ReceiptPrint*
+*.env
+*.env.*
+*.key
+*.pem
+secrets.json
+
+# ==========================================
+# Large Binaries & Archive Files
+# ==========================================
+*.mp4
+*.zip
+*.tar
+*.gz
+*.7z
+train-v2.0.json
+
+# ==========================================
+# Python & Environment
+# ==========================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==========================================
+# Testing & Cache
+# ==========================================
+.pytest_cache/
+.coverage
+htmlcov/
+.cache
+
+# ==========================================
+# External Third-Party Repositories
+# ==========================================
+Dataset/flask_repo/
+
+# ==========================================
+# OS & Editor Specific
+# ==========================================
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.log

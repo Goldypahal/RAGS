@@ -1,0 +1,41 @@
+# RAG Research Framework Requirements
+
+# Core dependencies (minimal)
+# Python 3.8+
+
+# Optional dependencies for benchmarking and research
+numpy>=1.21.0                          # Numerical computations
+psutil>=5.8.0                          # System and process utilities
+scipy>=1.7.0                          # Scientific computing
+
+# Optional: For advanced features
+networkx>=2.6.0                        # Graph algorithms
+pandas>=1.3.0                          # Data analysis
+matplotlib>=3.4.0                      # Visualization
+scikit-learn>=0.24.0                   # ML utilities
+
+# Development dependencies
+pytest>=6.2.0                          # Testing
+black>=21.0                            # Code formatting
+flake8>=3.9.0                          # Linting
+mypy>=0.900                            # Type checking
+
+# Documentation
+sphinx>=4.0.0                          # Documentation generation
+sphinx-rtd-theme>=1.0.0                # RTD theme
+
+# Notes:
+# - Core framework runs with Python standard library only
+# - numpy needed for vector operations and benchmarking
+# - psutil needed for memory profiling
+# - Optional packages add convenience features
+#
+# Installation:
+#   pip install -r requirements.txt
+#
+# Minimal installation (core only):
+#   No installation needed - uses Python stdlib
+#
+# For development:
+#   pip install -r requirements.txt
+#   pip install -e .

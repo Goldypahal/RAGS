@@ -1,0 +1,199 @@
+[
+  {
+    "id": "topic_docs",
+    "name": "docs",
+    "papers": [
+      "file_docs_conf_py"
+    ]
+  },
+  {
+    "id": "topic_tests",
+    "name": "tests",
+    "papers": [
+      "file_tests_conftest_py",
+      "file_tests_test_appctx_py",
+      "file_tests_test_async_py",
+      "file_tests_test_basic_py",
+      "file_tests_test_blueprints_py",
+      "file_tests_test_cli_py",
+      "file_tests_test_config_py",
+      "file_tests_test_converters_py",
+      "file_tests_test_helpers_py",
+      "file_tests_test_instance_config_py",
+      "file_tests_test_json_py",
+      "file_tests_test_json_tag_py",
+      "file_tests_test_logging_py",
+      "file_tests_test_regression_py",
+      "file_tests_test_reqctx_py",
+      "file_tests_test_request_py",
+      "file_tests_test_session_interface_py",
+      "file_tests_test_signals_py",
+      "file_tests_test_subclassing_py",
+      "file_tests_test_templating_py",
+      "file_tests_test_testing_py",
+      "file_tests_test_user_error_handler_py",
+      "file_tests_test_views_py",
+      "file_examples_tutorial_tests_conftest_py",
+      "file_examples_tutorial_tests_test_auth_py",
+      "file_examples_tutorial_tests_test_blog_py",
+      "file_examples_tutorial_tests_test_db_py",
+      "file_examples_tutorial_tests_test_factory_py",
+      "file_examples_javascript_tests_conftest_py",
+      "file_examples_javascript_tests_test_js_example_py"
+    ]
+  },
+  {
+    "id": "topic_type_check",
+    "name": "type_check",
+    "papers": [
+      "file_tests_type_check_typing_app_decorators_py",
+      "file_tests_type_check_typing_error_handler_py",
+      "file_tests_type_check_typing_route_py"
+    ]
+  },
+  {
+    "id": "topic_blueprintapp",
+    "name": "blueprintapp",
+    "papers": [
+      "file_tests_test_apps_blueprintapp___init___py"
+    ]
+  },
+  {
+    "id": "topic_cliapp",
+    "name": "cliapp",
+    "papers": [
+      "file_tests_test_apps_cliapp_app_py",
+      "file_tests_test_apps_cliapp_factory_py",
+      "file_tests_test_apps_cliapp_importerrorapp_py",
+      "file_tests_test_apps_cliapp_multiapp_py",
+      "file_tests_test_apps_cliapp___init___py"
+    ]
+  },
+  {
+    "id": "topic_helloworld",
+    "name": "helloworld",
+    "papers": [
+      "file_tests_test_apps_helloworld_hello_py",
+      "file_tests_test_apps_helloworld_wsgi_py"
+    ]
+  },
+  {
+    "id": "topic_subdomaintestmodule",
+    "name": "subdomaintestmodule",
+    "papers": [
+      "file_tests_test_apps_subdomaintestmodule___init___py"
+    ]
+  },
+  {
+    "id": "topic_inner1",
+    "name": "inner1",
+    "papers": [
+      "file_tests_test_apps_cliapp_inner1___init___py"
+    ]
+  },
+  {
+    "id": "topic_inner2",
+    "name": "inner2",
+    "papers": [
+      "file_tests_test_apps_cliapp_inner1_inner2_flask_py",
+      "file_tests_test_apps_cliapp_inner1_inner2___init___py"
+    ]
+  },
+  {
+    "id": "topic_apps",
+    "name": "apps",
+    "papers": [
+      "file_tests_test_apps_blueprintapp_apps___init___py"
+    ]
+  },
+  {
+    "id": "topic_admin",
+    "name": "admin",
+    "papers": [
+      "file_tests_test_apps_blueprintapp_apps_admin___init___py"
+    ]
+  },
+  {
+    "id": "topic_frontend",
+    "name": "frontend",
+    "papers": [
+      "file_tests_test_apps_blueprintapp_apps_frontend___init___py"
+    ]
+  },
+  {
+    "id": "topic_flask",
+    "name": "flask",
+    "papers": [
+      "file_src_flask_app_py",
+      "file_src_flask_blueprints_py",
+      "file_src_flask_cli_py",
+      "file_src_flask_config_py",
+      "file_src_flask_ctx_py",
+      "file_src_flask_debughelpers_py",
+      "file_src_flask_globals_py",
+      "file_src_flask_helpers_py",
+      "file_src_flask_logging_py",
+      "file_src_flask_sessions_py",
+      "file_src_flask_signals_py",
+      "file_src_flask_templating_py",
+      "file_src_flask_testing_py",
+      "file_src_flask_typing_py",
+      "file_src_flask_views_py",
+      "file_src_flask_wrappers_py",
+      "file_src_flask___init___py",
+      "file_src_flask___main___py"
+    ]
+  },
+  {
+    "id": "topic_json",
+    "name": "json",
+    "papers": [
+      "file_src_flask_json_provider_py",
+      "file_src_flask_json_tag_py",
+      "file_src_flask_json___init___py"
+    ]
+  },
+  {
+    "id": "topic_sansio",
+    "name": "sansio",
+    "papers": [
+      "file_src_flask_sansio_app_py",
+      "file_src_flask_sansio_blueprints_py",
+      "file_src_flask_sansio_scaffold_py"
+    ]
+  },
+  {
+    "id": "topic_celery",
+    "name": "celery",
+    "papers": [
+      "file_examples_celery_make_celery_py"
+    ]
+  },
+  {
+    "id": "topic_flaskr",
+    "name": "flaskr",
+    "papers": [
+      "file_examples_tutorial_flaskr_auth_py",
+      "file_examples_tutorial_flaskr_blog_py",
+      "file_examples_tutorial_flaskr_db_py",
+      "file_examples_tutorial_flaskr___init___py"
+    ]
+  },
+  {
+    "id": "topic_js_example",
+    "name": "js_example",
+    "papers": [
+      "file_examples_javascript_js_example_views_py",
+      "file_examples_javascript_js_example___init___py"
+    ]
+  },
+  {
+    "id": "topic_task_app",
+    "name": "task_app",
+    "papers": [
+      "file_examples_celery_src_task_app_tasks_py",
+      "file_examples_celery_src_task_app_views_py",
+      "file_examples_celery_src_task_app___init___py"
+    ]
+  }
+]

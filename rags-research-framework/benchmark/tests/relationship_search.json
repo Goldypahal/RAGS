@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "query": "Which models are based on Transformer architecture?",
+    "expected_results": ["BERT", "GPT-2", "GPT-3", "Vision Transformer", "Transformer-XL"],
+    "type": "relationship",
+    "difficulty": "medium"
+  },
+  {
+    "id": 2,
+    "query": "Which authors work at Google Research?",
+    "expected_results": ["Ashish Vaswani", "Noam Shazeer", "Jacob Devlin", "Ming-Wei Chang", "Alexei Dosovitskiy", "Yi Tay"],
+    "type": "relationship",
+    "difficulty": "medium"
+  },
+  {
+    "id": 3,
+    "query": "Which papers cite the original Transformer paper?",
+    "expected_results": ["BERT", "GPT-2", "GPT-3", "Vision Transformer", "Transformer-XL"],
+    "type": "relationship",
+    "difficulty": "medium"
+  },
+  {
+    "id": 4,
+    "query": "What papers are published at NeurIPS?",
+    "expected_results": ["Attention Is All You Need", "Language Models are Few-Shot Learners", "DistilBERT"],
+    "type": "relationship",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "query": "Which papers focus on efficiency?",
+    "expected_results": ["DistilBERT", "Efficient Transformers"],
+    "type": "relationship",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "query": "Which models evolved from Transformers?",
+    "expected_results": ["BERT", "GPT series", "Vision Transformer"],
+    "type": "relationship",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "query": "Papers in the retrieval and generation area",
+    "expected_results": ["Retrieval-Augmented Generation"],
+    "type": "relationship",
+    "difficulty": "hard"
+  },
+  {
+    "id": 8,
+    "query": "Authors who worked on language models",
+    "expected_results": ["Alec Radford", "Tom Brown", "Jacob Devlin", "Patrick Lewis"],
+    "type": "relationship",
+    "difficulty": "hard"
+  },
+  {
+    "id": 9,
+    "query": "Papers related to pre-training and fine-tuning",
+    "expected_results": ["BERT", "Language Models are Few-Shot Learners"],
+    "type": "relationship",
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "query": "Which papers discuss attention mechanisms?",
+    "expected_results": ["Attention Is All You Need", "BERT", "Vision Transformer"],
+    "type": "relationship",
+    "difficulty": "easy"
+  }
+]

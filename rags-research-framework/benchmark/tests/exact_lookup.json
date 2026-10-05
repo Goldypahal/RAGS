@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "query": "What is Transformer?",
+    "expected_doc_ids": ["paper_001"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "query": "Explain BERT",
+    "expected_doc_ids": ["paper_002"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "query": "What is GPT-3?",
+    "expected_doc_ids": ["paper_004"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "query": "Vision Transformer",
+    "expected_doc_ids": ["paper_005"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "query": "What is RAG?",
+    "expected_doc_ids": ["paper_010"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 6,
+    "query": "DistilBERT",
+    "expected_doc_ids": ["paper_006"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 7,
+    "query": "Transformer-XL",
+    "expected_doc_ids": ["paper_009"],
+    "type": "exact",
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "query": "Attention is all you need",
+    "expected_doc_ids": ["paper_001"],
+    "type": "exact",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "query": "Sequence to sequence",
+    "expected_doc_ids": ["paper_008"],
+    "type": "exact",
+    "difficulty": "medium"
+  },
+  {
+    "id": 10,
+    "query": "Efficient transformers survey",
+    "expected_doc_ids": ["paper_007"],
+    "type": "exact",
+    "difficulty": "medium"
+  }
+]

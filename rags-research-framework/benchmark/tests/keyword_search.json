@@ -1,0 +1,72 @@
+[
+  {
+    "id": 1,
+    "query": "attention mechanism",
+    "expected_doc_ids": ["paper_001", "paper_002", "paper_005"],
+    "type": "keyword",
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "query": "language model",
+    "expected_doc_ids": ["paper_002", "paper_003", "paper_004", "paper_009", "paper_010"],
+    "type": "keyword",
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "query": "transformer architecture",
+    "expected_doc_ids": ["paper_001", "paper_002", "paper_004", "paper_005", "paper_009"],
+    "type": "keyword",
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "query": "pre-training BERT",
+    "expected_doc_ids": ["paper_002"],
+    "type": "keyword",
+    "difficulty": "easy"
+  },
+  {
+    "id": 5,
+    "query": "few-shot learning",
+    "expected_doc_ids": ["paper_003", "paper_004"],
+    "type": "keyword",
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "query": "image classification vision",
+    "expected_doc_ids": ["paper_005"],
+    "type": "keyword",
+    "difficulty": "medium"
+  },
+  {
+    "id": 7,
+    "query": "knowledge distillation efficiency",
+    "expected_doc_ids": ["paper_006", "paper_007"],
+    "type": "keyword",
+    "difficulty": "medium"
+  },
+  {
+    "id": 8,
+    "query": "machine translation sequence",
+    "expected_doc_ids": ["paper_008", "paper_001"],
+    "type": "keyword",
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "query": "long sequences context",
+    "expected_doc_ids": ["paper_009"],
+    "type": "keyword",
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "query": "retrieval generation QA",
+    "expected_doc_ids": ["paper_010"],
+    "type": "keyword",
+    "difficulty": "hard"
+  }
+]

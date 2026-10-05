@@ -1,0 +1,402 @@
+[
+  {
+    "id": "sem_arxiv_2606.17687v1",
+    "query": "Papers about ['SuCo:', 'Sufficiency-guided', 'Continuous'] and cs.CL",
+    "expected_ids": [
+      "arxiv_2606.17687v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17409v1",
+    "query": "Papers about ['Discrete', 'Autoregressive', 'Transformer'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17409v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.16989v1",
+    "query": "Papers about ['Stable', 'Menus', 'of'] and cs.GT",
+    "expected_ids": [
+      "arxiv_2606.16989v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18191v1",
+    "query": "Papers about ['DRFLOW:', 'A', 'Deep'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.18191v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17924v1",
+    "query": "Papers about ['PearlVLA:', 'Progressive', 'Embodied'] and cs.RO",
+    "expected_ids": [
+      "arxiv_2606.17924v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17220v1",
+    "query": "Papers about ['When', 'Rules', 'Learn:'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17220v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17698v1",
+    "query": "Papers about ['EComAgentBench:', 'Benchmarking', 'Shopping'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17698v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18237v1",
+    "query": "Papers about ['ReproRepo:', 'Scaling', 'Reproducibility'] and cs.CL",
+    "expected_ids": [
+      "arxiv_2606.18237v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17539v1",
+    "query": "Papers about ['Reinforcing', 'Dual-Path', 'Reasoning'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17539v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18154v1",
+    "query": "Papers about ['Learning', 'Cardiac', 'Electrophysiology'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.18154v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17020v1",
+    "query": "Papers about ['FusionRS:', 'A', 'Large-Scale'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17020v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18114v1",
+    "query": "Papers about ['Ternary', 'Mamba:', 'Grouped'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.18114v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17668v1",
+    "query": "Papers about ['ASTEROID:', 'A', 'Spatiotemporal'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17668v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17269v1",
+    "query": "Papers about ['Skill-Constrained', 'Model', 'Predictive'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17269v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17541v1",
+    "query": "Papers about ['Offline', 'Preference-Based', 'Trajectory'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17541v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17989v1",
+    "query": "Papers about ['Recover', 'Semantics', 'First,'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17989v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18206v1",
+    "query": "Papers about ['Fixed-Point', 'Reasoners:', 'Stable'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.18206v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18142v1",
+    "query": "Papers about ['Your', 'AI', 'Travel'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.18142v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.16973v1",
+    "query": "Papers about ['How', 'Much', 'Do'] and cs.IR",
+    "expected_ids": [
+      "arxiv_2606.16973v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18108v1",
+    "query": "Papers about ['Querying', 'an', 'astronomical'] and astro-ph.IM",
+    "expected_ids": [
+      "arxiv_2606.18108v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18120v1",
+    "query": "Papers about ['Structural', 'Role', 'Injection'] and cs.CR",
+    "expected_ids": [
+      "arxiv_2606.18120v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17847v1",
+    "query": "Papers about ['WallZero:', 'Mastering', 'the'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17847v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17889v1",
+    "query": "Papers about ['Dimensionality', 'Controls', 'When'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17889v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17781v1",
+    "query": "Papers about ['MIVE:', 'A', 'Minimalist'] and cs.AR",
+    "expected_ids": [
+      "arxiv_2606.17781v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18247v1",
+    "query": "Papers about ['Visual', 'Verification', 'Enables'] and cs.RO",
+    "expected_ids": [
+      "arxiv_2606.18247v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17830v1",
+    "query": "Papers about ['Functional', 'Equivalence', 'in'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17830v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17835v1",
+    "query": "Papers about ['Perceptual', 'compensation', 'for'] and cs.CL",
+    "expected_ids": [
+      "arxiv_2606.17835v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17459v1",
+    "query": "Papers about ['Can', 'LLMs', 'Be'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17459v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17767v1",
+    "query": "Papers about ['Talking', 'to', 'Your'] and cs.HC",
+    "expected_ids": [
+      "arxiv_2606.17767v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18096v1",
+    "query": "Papers about ['S4oP:', 'Operator-level', 'Pruning'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.18096v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17412v1",
+    "query": "Papers about ['Enhancing', 'Pathological', 'VLMs'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17412v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18071v1",
+    "query": "Papers about ['Volterra', 'Generative', 'Models'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.18071v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18005v1",
+    "query": "Papers about ['LLM', 'Consumer', 'Behavior'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.18005v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17383v1",
+    "query": "Papers about ['Model', 'Validation', 'of'] and q-fin.RM",
+    "expected_ids": [
+      "arxiv_2606.17383v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17979v1",
+    "query": "Papers about ['STAR:', 'SpatioTemporal', 'Adaptive'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17979v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17519v1",
+    "query": "Papers about ['Scaling', 'Enterprise', 'Agent'] and cs.CL",
+    "expected_ids": [
+      "arxiv_2606.17519v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.16996v1",
+    "query": "Papers about ['ActiveSAM:', 'Image-Conditional', 'Class'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.16996v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17711v1",
+    "query": "Papers about ['Structured', 'Adversarial', 'Camouflage'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17711v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17403v1",
+    "query": "Papers about ['Bridging', 'Spatial', 'And'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17403v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.18122v1",
+    "query": "Papers about ['Embedded', 'Machine', 'Learning'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.18122v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17706v1",
+    "query": "Papers about ['Confusion-Aware', 'Transfer', 'Teacher'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17706v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17229v1",
+    "query": "Papers about ['Rift:', 'A', 'Conflict'] and cs.LG",
+    "expected_ids": [
+      "arxiv_2606.17229v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17836v1",
+    "query": "Papers about ['High-Fidelity', '3D', 'Geometric'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17836v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17450v1",
+    "query": "Papers about ['A', 'Machine-Learned', 'Comorbidity'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17450v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17824v1",
+    "query": "Papers about ['Human-in-the-Loop', 'Atlas-Based', '3D'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17824v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17644v1",
+    "query": "Papers about ['Bounding', 'Box', 'Label'] and cs.CV",
+    "expected_ids": [
+      "arxiv_2606.17644v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17962v1",
+    "query": "Papers about ['A', 'Neuro-Symbolic', 'Approach'] and cs.MA",
+    "expected_ids": [
+      "arxiv_2606.17962v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17368v1",
+    "query": "Papers about ['Distributed', 'General-Purpose', 'Agent'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17368v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17915v1",
+    "query": "Papers about ['Trustworthy', 'Self-Composable', 'Big-Data-as-a-Service:'] and cs.MA",
+    "expected_ids": [
+      "arxiv_2606.17915v1"
+    ],
+    "type": "semantic"
+  },
+  {
+    "id": "sem_arxiv_2606.17443v1",
+    "query": "Papers about ['Incumbent', 'Advantage:', 'Brand'] and cs.AI",
+    "expected_ids": [
+      "arxiv_2606.17443v1"
+    ],
+    "type": "semantic"
+  }
+]

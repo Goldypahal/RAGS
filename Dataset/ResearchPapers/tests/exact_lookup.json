@@ -1,0 +1,402 @@
+[
+  {
+    "id": "ex_arxiv_2606.17564v1",
+    "query": "Geometric Consistency Protocol for Foundation Model Features in Multi-View Satellite Imagery",
+    "expected_ids": [
+      "arxiv_2606.17564v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17165v1",
+    "query": "Statistical Foundations of LLM-based A/B Testing: A Surrogacy Framework for Human Causal Inference",
+    "expected_ids": [
+      "arxiv_2606.17165v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18005v1",
+    "query": "LLM Consumer Behavior Theory: Foundations of a Novel Research Field",
+    "expected_ids": [
+      "arxiv_2606.18005v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17702v1",
+    "query": "SegTME-UNI2: A Foundation Model-Based Framework for Generalisable Multiclass Cell Segmentation and LLM-Driven Tumour Microenvironment Characterisation in Histopathology",
+    "expected_ids": [
+      "arxiv_2606.17702v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17443v1",
+    "query": "Incumbent Advantage: Brand Bias and Cognitive Manipulation Dynamics in LLM Recommendation Systems",
+    "expected_ids": [
+      "arxiv_2606.17443v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18000v1",
+    "query": "A T-API-Compliant ReAct Agentic Loop for Optical Networks: Generic vs. Domain-Specific Tool Abstractions",
+    "expected_ids": [
+      "arxiv_2606.18000v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18111v1",
+    "query": "Learning Fair Pareto-Optimal Policies in Multi-Objective Reinforcement Learning",
+    "expected_ids": [
+      "arxiv_2606.18111v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18037v1",
+    "query": "ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents",
+    "expected_ids": [
+      "arxiv_2606.18037v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17579v1",
+    "query": "LLM Features Can Hurt GNNs: Concatenation Interference on Homophilous Graph Benchmarks",
+    "expected_ids": [
+      "arxiv_2606.17579v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17819v1",
+    "query": "A Framework for Evaluating Agentic Skills at Scale",
+    "expected_ids": [
+      "arxiv_2606.17819v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18132v1",
+    "query": "Knowledge Reutilization in Meta-Reinforcement Learning",
+    "expected_ids": [
+      "arxiv_2606.18132v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17459v1",
+    "query": "Can LLMs Be CEOs? Benchmarking Strategic Resource Reallocation with Multi-Role Agent Simulation",
+    "expected_ids": [
+      "arxiv_2606.17459v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17028v1",
+    "query": "HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting",
+    "expected_ids": [
+      "arxiv_2606.17028v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17197v1",
+    "query": "Cluster-Aware Dual-Level Test Specification Generation for Large-Scale Automotive Software Requirements",
+    "expected_ids": [
+      "arxiv_2606.17197v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17461v1",
+    "query": "AUTOGATE: Automated Clock Gating via Toggling-Aware LLM-based RTL Rewriting",
+    "expected_ids": [
+      "arxiv_2606.17461v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17269v1",
+    "query": "Skill-Constrained Model Predictive Control for Resilient Manufacturing Supply Chains",
+    "expected_ids": [
+      "arxiv_2606.17269v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18114v1",
+    "query": "Ternary Mamba: Grouped Quantization-Aware Training of W1.58A16 State Space Models",
+    "expected_ids": [
+      "arxiv_2606.18114v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18237v1",
+    "query": "ReproRepo: Scaling Reproducibility Audits with GitHub Repository Issues",
+    "expected_ids": [
+      "arxiv_2606.18237v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17889v1",
+    "query": "Dimensionality Controls When Modularity Helps in Continual Learning",
+    "expected_ids": [
+      "arxiv_2606.17889v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17835v1",
+    "query": "Perceptual compensation for tonal context in self-supervised speech models",
+    "expected_ids": [
+      "arxiv_2606.17835v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17871v1",
+    "query": "StepGuard: Guarding Web Navigation via Single-Step Calibration",
+    "expected_ids": [
+      "arxiv_2606.17871v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17698v1",
+    "query": "EComAgentBench: Benchmarking Shopping Agents on Long-Horizon Tasks with Distributed Hidden Intent",
+    "expected_ids": [
+      "arxiv_2606.17698v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17453v1",
+    "query": "MapSatisfyBench: Benchmarking Satisfaction-Aware Map Agents through Behavior-Grounded Implicit Decision Factors",
+    "expected_ids": [
+      "arxiv_2606.17453v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17317v1",
+    "query": "Transformer-Based Warm-Starting for Feasible and Optimal Terminal Approach to Tumbling Objects with Space Manipulators",
+    "expected_ids": [
+      "arxiv_2606.17317v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.16987v1",
+    "query": "Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification",
+    "expected_ids": [
+      "arxiv_2606.16987v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18186v1",
+    "query": "Kolmogorov Regression for Robust Diffusion Policies",
+    "expected_ids": [
+      "arxiv_2606.18186v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17383v1",
+    "query": "Model Validation of Agentic AI Systems: A POMDP-Based Framework for Belief-State, Forecast, and Policy Validation",
+    "expected_ids": [
+      "arxiv_2606.17383v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18119v1",
+    "query": "First Proof Second Batch",
+    "expected_ids": [
+      "arxiv_2606.18119v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17847v1",
+    "query": "WallZero: Mastering the Game of WallGo with Strategic Analysis",
+    "expected_ids": [
+      "arxiv_2606.17847v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17952v1",
+    "query": "SoftMoE: Soft Differentiable Routing for Mixture-of-Experts in LLMs",
+    "expected_ids": [
+      "arxiv_2606.17952v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17420v1",
+    "query": "Feynman Kac Reweighted Schrödinger Bridge Matching for Surface-Based Tau PET Harmonization",
+    "expected_ids": [
+      "arxiv_2606.17420v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.16996v1",
+    "query": "ActiveSAM: Image-Conditional Class Pruning for Fast and Accurate Open-Vocabulary Segmentation",
+    "expected_ids": [
+      "arxiv_2606.16996v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17678v1",
+    "query": "See First, Answer Later: Visual Evidence Pre-Alignment via Sufficiency-Driven RL",
+    "expected_ids": [
+      "arxiv_2606.17678v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17350v1",
+    "query": "Do Large Language Models Always Tell The Same Stories?",
+    "expected_ids": [
+      "arxiv_2606.17350v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17454v1",
+    "query": "Dissecting model behavior through agent trajectories",
+    "expected_ids": [
+      "arxiv_2606.17454v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17389v1",
+    "query": "Visuals Lie, Consistency Speaks: Disentangling Spatial Attention from Reliability in Vision-Language Models",
+    "expected_ids": [
+      "arxiv_2606.17389v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17266v1",
+    "query": "SkillChain-Gym: A Benchmark for Reskilling-Aware Production-Inventory Control under Disruptions",
+    "expected_ids": [
+      "arxiv_2606.17266v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17961v1",
+    "query": "Robustness of Similarity-based Positional Encoding Under Rotations: Theoretical Analysis and Experimental Validation",
+    "expected_ids": [
+      "arxiv_2606.17961v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17403v1",
+    "query": "Bridging Spatial And Frequency Views For Disaster Assessment: Benefits And Limitations",
+    "expected_ids": [
+      "arxiv_2606.17403v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17888v1",
+    "query": "MathVis-Fine: Aligning Visual Supervision with Necessity via Progressive Dependency-Guided Training for Multimodal Mathematical Reasoning",
+    "expected_ids": [
+      "arxiv_2606.17888v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17399v1",
+    "query": "The Discrete-Log Clock: How a Transformer Learns Modular Multiplication",
+    "expected_ids": [
+      "arxiv_2606.17399v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17851v1",
+    "query": "A homotopy-type-theoretic generalization of neurosymbolic inference",
+    "expected_ids": [
+      "arxiv_2606.17851v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17235v1",
+    "query": "Physics-Informed Attention Mechanism and Generalization Capability of Deep Learning-Based Grain Growth Evolution Prediction",
+    "expected_ids": [
+      "arxiv_2606.17235v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17910v1",
+    "query": "Non-negative Elastic Net Decoding for Information Retrieval",
+    "expected_ids": [
+      "arxiv_2606.17910v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17735v1",
+    "query": "Shattering the Autoregressive Curse: Dynamic Epistemic Entropy Orchestrated Erasable Reinforcement Learning for LLMs",
+    "expected_ids": [
+      "arxiv_2606.17735v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18154v1",
+    "query": "Learning Cardiac Electrophysiology Digital Twins Through Agentic Discovery of Hybrid Structure",
+    "expected_ids": [
+      "arxiv_2606.18154v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17416v1",
+    "query": "L-Proto: Language-Aware Episodic Prototypical Training for Multilingual Speaker Verification",
+    "expected_ids": [
+      "arxiv_2606.17416v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17775v1",
+    "query": "A Neuromorphic Trigger for Efficient Audio Event Detection",
+    "expected_ids": [
+      "arxiv_2606.17775v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.18023v1",
+    "query": "LoopCoder-v2: Only Loop Once for Efficient Test-Time Computation Scaling",
+    "expected_ids": [
+      "arxiv_2606.18023v1"
+    ],
+    "type": "exact"
+  },
+  {
+    "id": "ex_arxiv_2606.17648v1",
+    "query": "From Brewing to Resolution: Tracing the Internal Lifecycle of Code Reasoning in LLMs",
+    "expected_ids": [
+      "arxiv_2606.17648v1"
+    ],
+    "type": "exact"
+  }
+]

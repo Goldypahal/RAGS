@@ -1,0 +1,107 @@
+[
+  {
+    "id": 1,
+    "query": "BERT",
+    "type": "exact",
+    "expected_doc_ids": ["paper_002"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 2,
+    "query": "Trans",
+    "type": "prefix",
+    "expected_matches": ["Transformer", "Transformers", "Transformer-XL"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 3,
+    "query": "attention mechanism transformer",
+    "type": "keyword",
+    "expected_doc_ids": ["paper_001", "paper_002", "paper_005"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 4,
+    "query": "Architecture that enabled parallel processing in sequence models",
+    "type": "semantic",
+    "expected_doc_ids": ["paper_001"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 5,
+    "query": "Which papers extend the Transformer?",
+    "type": "relationship",
+    "expected_results": ["BERT", "GPT-2", "GPT-3", "Vision Transformer", "Transformer-XL"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 6,
+    "query": "GPT-3",
+    "type": "exact",
+    "expected_doc_ids": ["paper_004"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 7,
+    "query": "Eff",
+    "type": "prefix",
+    "expected_matches": ["Efficient", "Efficient Transformers"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 8,
+    "query": "knowledge distillation compression model",
+    "type": "keyword",
+    "expected_doc_ids": ["paper_006", "paper_007"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 9,
+    "query": "How to retrieve external knowledge and generate answers",
+    "type": "semantic",
+    "expected_doc_ids": ["paper_010"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 10,
+    "query": "Author of Vision Transformer at Google",
+    "type": "multi_hop",
+    "expected_answer": "Alexei Dosovitskiy",
+    "difficulty": "hard"
+  },
+  {
+    "id": 11,
+    "query": "Vision Transformer",
+    "type": "exact",
+    "expected_doc_ids": ["paper_005"],
+    "difficulty": "easy"
+  },
+  {
+    "id": 12,
+    "query": "Lang",
+    "type": "prefix",
+    "expected_matches": ["Language", "Language Models"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 13,
+    "query": "pre-training bidirectional language models",
+    "type": "keyword",
+    "expected_doc_ids": ["paper_002"],
+    "difficulty": "medium"
+  },
+  {
+    "id": 14,
+    "query": "Scaling neural networks to remarkable reasoning abilities",
+    "type": "semantic",
+    "expected_doc_ids": ["paper_004"],
+    "difficulty": "hard"
+  },
+  {
+    "id": 15,
+    "query": "Papers combining retrieval with generation for QA",
+    "type": "relationship",
+    "expected_results": ["Retrieval-Augmented Generation"],
+    "difficulty": "hard"
+  }
+]

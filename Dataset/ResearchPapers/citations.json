@@ -1,0 +1,677 @@
+[
+  {
+    "source": "arxiv_2606.18247v1",
+    "target": "arxiv_2606.17398v1",
+    "context": "As shown in SoK: AI-Augmented Binary Reversing, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18247v1",
+    "target": "arxiv_2606.17339v1",
+    "context": "As shown in SpeechDx: A Multi-Task Benchmark for Clinical Speech AI, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18247v1",
+    "target": "arxiv_2606.17354v1",
+    "context": "As shown in Translating the Untranslatable: An Operationalizable Ontology for Untranslatability, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18247v1",
+    "target": "arxiv_2606.18203v1",
+    "context": "As shown in RubricsTree: Scalable and Evolving Open-Ended Evaluation of Personal Health Agents across Health Memory and Medical Skills, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18208v1",
+    "target": "arxiv_2606.17915v1",
+    "context": "As shown in Trustworthy Self-Composable Big-Data-as-a-Service: An LLM-Orchestrated Multi-Agent Framework for Automated Data Engineering, AutoML, MLOps Deployment, and Drift-Aware Lifecycle Optimization, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18208v1",
+    "target": "arxiv_2606.18206v1",
+    "context": "As shown in Fixed-Point Reasoners: Stable and Adaptive Deep Looped Transformers, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18208v1",
+    "target": "arxiv_2606.17437v1",
+    "context": "As shown in Spatio-Temporal Fusion Model for Standard View Classification of Echocardiographic Videos, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18208v1",
+    "target": "arxiv_2606.17579v1",
+    "context": "As shown in LLM Features Can Hurt GNNs: Concatenation Interference on Homophilous Graph Benchmarks, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18208v1",
+    "target": "arxiv_2606.17664v1",
+    "context": "As shown in Temporal Preference Optimization for Unsupervised Retrieval, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18186v1",
+    "target": "arxiv_2606.17950v1",
+    "context": "As shown in Plug-and-Adapt: Multimodal Coreference Resolution at First Sight with a Pretrained Alignment Model, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18186v1",
+    "target": "arxiv_2606.17165v1",
+    "context": "As shown in Statistical Foundations of LLM-based A/B Testing: A Surrogacy Framework for Human Causal Inference, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18186v1",
+    "target": "arxiv_2606.17551v1",
+    "context": "As shown in Reversal Q-Learning, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18156v1",
+    "target": "arxiv_2606.17564v1",
+    "context": "As shown in Geometric Consistency Protocol for Foundation Model Features in Multi-View Satellite Imagery, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18156v1",
+    "target": "arxiv_2606.17362v1",
+    "context": "As shown in DriveJudge: Rethinking Autonomous Driving Evaluation with Vision-Language Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18156v1",
+    "target": "arxiv_2606.17450v1",
+    "context": "As shown in A Machine-Learned Comorbidity Index, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18156v1",
+    "target": "arxiv_2606.17702v1",
+    "context": "As shown in SegTME-UNI2: A Foundation Model-Based Framework for Generalisable Multiclass Cell Segmentation and LLM-Driven Tumour Microenvironment Characterisation in Histopathology, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18154v1",
+    "target": "arxiv_2606.17539v1",
+    "context": "As shown in Reinforcing Dual-Path Reasoning in Spatial Vision Language Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18144v1",
+    "target": "arxiv_2606.17203v1",
+    "context": "As shown in Trust-Aware Multi-Agent Traceability: Confidence-Calibrated Knowledge Graphs for Consistent Software Artifact Management, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18144v1",
+    "target": "arxiv_2606.16973v1",
+    "context": "As shown in How Much Do Reviews Really Contribute? A Study on Text-Enriched Matrix Factorization for Recommendations, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18144v1",
+    "target": "arxiv_2606.18208v1",
+    "context": "As shown in Looped World Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18132v1",
+    "target": "arxiv_2606.17197v1",
+    "context": "As shown in Cluster-Aware Dual-Level Test Specification Generation for Large-Scale Automotive Software Requirements, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18132v1",
+    "target": "arxiv_2606.17354v1",
+    "context": "As shown in Translating the Untranslatable: An Operationalizable Ontology for Untranslatability, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18132v1",
+    "target": "arxiv_2606.17762v1",
+    "context": "As shown in Symplectic Transversality and Endpoint Green Estimates for Finite-Horizon Pontryagin Systems, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18132v1",
+    "target": "arxiv_2606.18193v1",
+    "context": "As shown in A Red-Team Study of Anthropic Fable 5 & Opus 4.8 Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18132v1",
+    "target": "arxiv_2606.18120v1",
+    "context": "As shown in Structural Role Injection in Handlebars-Templated LLM Prompts: Triple-Brace Interpolation, Delimiter Family, and the Limits of HTML Auto-Escaping, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18119v1",
+    "target": "arxiv_2606.18114v1",
+    "context": "As shown in Ternary Mamba: Grouped Quantization-Aware Training of W1.58A16 State Space Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18119v1",
+    "target": "arxiv_2606.17826v1",
+    "context": "As shown in When Multiple Scripts Matter: Evaluating ASR in Clinical Settings, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18119v1",
+    "target": "arxiv_2606.17474v1",
+    "context": "As shown in AIPatient Arena: EHR-grounded evaluation of large language models in end-to-end clinical consultation workflows, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18108v1",
+    "target": "arxiv_2606.17972v1",
+    "context": "As shown in SegDINO: Introducing Multi-Scale Structure into DINO for Efficient Medical Image Segmentation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18108v1",
+    "target": "arxiv_2606.17453v1",
+    "context": "As shown in MapSatisfyBench: Benchmarking Satisfaction-Aware Map Agents through Behavior-Grounded Implicit Decision Factors, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18108v1",
+    "target": "arxiv_2606.17615v1",
+    "context": "As shown in SkillMoV: Mixture-of-View Routing with Prototype-Conditioned Gating for Unified Multi-View Proficiency Estimation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18108v1",
+    "target": "arxiv_2606.18192v1",
+    "context": "As shown in The Stanford EDGAR Filings Dataset: Reconstructing U.S. Corporate and Financial Disclosures into Layout-Faithful and Token-Efficient Pretraining Data, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18098v1",
+    "target": "arxiv_2606.16995v1",
+    "context": "As shown in When in Doubt, Plan It Out: Committed Small Language Model Deliberation for Reactive Reinforcement Learning, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18098v1",
+    "target": "arxiv_2606.17507v1",
+    "context": "As shown in LLM-as-Judge in Education: A Curriculum-Grounded Marking Pipeline, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18098v1",
+    "target": "arxiv_2606.17824v1",
+    "context": "As shown in Human-in-the-Loop Atlas-Based 3D Asset Segmentation for Interactive Content Workflows, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18068v1",
+    "target": "arxiv_2606.17924v1",
+    "context": "As shown in PearlVLA: Progressive Embodied Action-Plan Refinement in Latent Space, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18068v1",
+    "target": "arxiv_2606.17459v1",
+    "context": "As shown in Can LLMs Be CEOs? Benchmarking Strategic Resource Reallocation with Multi-Role Agent Simulation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18063v1",
+    "target": "arxiv_2606.18075v1",
+    "context": "As shown in A Unified Framework for Context-Aware and Relation-Aware Graph Retrieval-Augmented Generation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18063v1",
+    "target": "arxiv_2606.17978v1",
+    "context": "As shown in MoCo-AIS: A Contrastive Learning Framework for Similarity Computation of Vessel Trajectories, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18062v1",
+    "target": "arxiv_2606.17897v1",
+    "context": "As shown in Learn to Quantify Social Interaction with Constraints for Pedestrian Walking, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18062v1",
+    "target": "arxiv_2606.17450v1",
+    "context": "As shown in A Machine-Learned Comorbidity Index, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18062v1",
+    "target": "arxiv_2606.17406v1",
+    "context": "As shown in Graph Neural Networks for Semi-Supervised Image Classification with Multi-Feature Aggregation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18062v1",
+    "target": "arxiv_2606.18119v1",
+    "context": "As shown in First Proof Second Batch, this is effective."
+  },
+  {
+    "source": "arxiv_2606.18003v1",
+    "target": "arxiv_2606.18168v1",
+    "context": "As shown in All Smoke, No Alarm: Oracle Signals in Agent-Authored Test Code, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17972v1",
+    "target": "arxiv_2606.17546v1",
+    "context": "As shown in SEAGym: An Evaluation Environment for Self-Evolving LLM Agents, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17961v1",
+    "target": "arxiv_2606.16989v1",
+    "context": "As shown in Stable Menus of Public Goods: AI-Enabled Progress, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17961v1",
+    "target": "arxiv_2606.17209v1",
+    "context": "As shown in Beyond Parallel Sampling: Diverse Query Initialization for Agentic Search, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17889v1",
+    "target": "arxiv_2606.17005v1",
+    "context": "As shown in Bayesian Inference and Decision Audits for Public Archives of Frontier AI Evaluations, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17856v1",
+    "target": "arxiv_2606.17824v1",
+    "context": "As shown in Human-in-the-Loop Atlas-Based 3D Asset Segmentation for Interactive Content Workflows, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17767v1",
+    "target": "arxiv_2606.17588v1",
+    "context": "As shown in Understanding LLMs in Title-Abstract Screening: From Disagreements to Recommendations, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17767v1",
+    "target": "arxiv_2606.17678v1",
+    "context": "As shown in See First, Answer Later: Visual Evidence Pre-Alignment via Sufficiency-Driven RL, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17767v1",
+    "target": "arxiv_2606.17637v1",
+    "context": "As shown in Brick-DICL: Dynamic In-Context Learning for Automated Brick Schema Classification, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17767v1",
+    "target": "arxiv_2606.17220v1",
+    "context": "As shown in When Rules Learn: A Self-Evolving Agent for Legal Case Retrieval, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17767v1",
+    "target": "arxiv_2606.18119v1",
+    "context": "As shown in First Proof Second Batch, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17739v1",
+    "target": "arxiv_2606.17950v1",
+    "context": "As shown in Plug-and-Adapt: Multimodal Coreference Resolution at First Sight with a Pretrained Alignment Model, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17710v1",
+    "target": "arxiv_2606.17269v1",
+    "context": "As shown in Skill-Constrained Model Predictive Control for Resilient Manufacturing Supply Chains, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17710v1",
+    "target": "arxiv_2606.17539v1",
+    "context": "As shown in Reinforcing Dual-Path Reasoning in Spatial Vision Language Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17698v1",
+    "target": "arxiv_2606.17904v1",
+    "context": "As shown in DiagFlowBench: Evaluating How Language Models Handle Off-Procedure Inputs in Grounded Diagnostic Dialogue, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17698v1",
+    "target": "arxiv_2606.18186v1",
+    "context": "As shown in Kolmogorov Regression for Robust Diffusion Policies, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17698v1",
+    "target": "arxiv_2606.18129v1",
+    "context": "As shown in Towards Understanding and Measuring COGNITIVE ATROPHY in LLM Behaviour, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17698v1",
+    "target": "arxiv_2606.17668v1",
+    "context": "As shown in ASTEROID: A Spatiotemporal Information Transformer for Forecasting Multi-Step Time Series of Molecular Dynamics, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17667v1",
+    "target": "arxiv_2606.17767v1",
+    "context": "As shown in Talking to Your Data: Exploring Embodied Conversation as an Interface for Personal Health Reflection, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17667v1",
+    "target": "arxiv_2606.16987v1",
+    "context": "As shown in Consensus-based Agentic Large Language Model Framework for Harmonized Tariff Schedule Code Classification, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17667v1",
+    "target": "arxiv_2606.17819v1",
+    "context": "As shown in A Framework for Evaluating Agentic Skills at Scale, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17667v1",
+    "target": "arxiv_2606.18247v1",
+    "context": "As shown in Visual Verification Enables Inference-time Steering and Autonomous Policy Improvement, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17666v1",
+    "target": "arxiv_2606.18191v1",
+    "context": "As shown in DRFLOW: A Deep Research Benchmark for Personalized Workflow Prediction, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17666v1",
+    "target": "arxiv_2606.17489v1",
+    "context": "As shown in Online LLM Selection via Constrained Bandits with Time-Varying Demand, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17664v1",
+    "target": "arxiv_2606.17386v1",
+    "context": "As shown in TerraTransfer: Learning End-to-End Driving Policies Without Expert Demonstrations, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17664v1",
+    "target": "arxiv_2606.17978v1",
+    "context": "As shown in MoCo-AIS: A Contrastive Learning Framework for Similarity Computation of Vessel Trajectories, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17642v1",
+    "target": "arxiv_2606.17164v1",
+    "context": "As shown in PromptMN: Pseudo Prompting Language, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17642v1",
+    "target": "arxiv_2606.18144v1",
+    "context": "As shown in Memory as a Wasting Asset: Pricing Flash Endurance for Embodied Agents, and the Limits of Doing So, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17591v1",
+    "target": "arxiv_2606.17312v1",
+    "context": "As shown in Quantifying Consistency in LLM Logical Reasoning via Structural Uncertainty, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17591v1",
+    "target": "arxiv_2606.17698v1",
+    "context": "As shown in EComAgentBench: Benchmarking Shopping Agents on Long-Horizon Tasks with Distributed Hidden Intent, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17591v1",
+    "target": "arxiv_2606.18037v1",
+    "context": "As shown in ProvenanceGuard: Source-Aware Factuality Verification for MCP-Based LLM Agents, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17588v1",
+    "target": "arxiv_2606.17350v1",
+    "context": "As shown in Do Large Language Models Always Tell The Same Stories?, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17539v1",
+    "target": "arxiv_2606.17229v1",
+    "context": "As shown in Rift: A Conflict Signature for Deception in Language Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17539v1",
+    "target": "arxiv_2606.18033v1",
+    "context": "As shown in When English Isn't the Best Teacher: Source Language Effects in Cross-Lingual In-Context Learning, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17539v1",
+    "target": "arxiv_2606.17350v1",
+    "context": "As shown in Do Large Language Models Always Tell The Same Stories?, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17539v1",
+    "target": "arxiv_2606.17950v1",
+    "context": "As shown in Plug-and-Adapt: Multimodal Coreference Resolution at First Sight with a Pretrained Alignment Model, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17516v1",
+    "target": "arxiv_2606.17461v1",
+    "context": "As shown in AUTOGATE: Automated Clock Gating via Toggling-Aware LLM-based RTL Rewriting, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17516v1",
+    "target": "arxiv_2606.17197v1",
+    "context": "As shown in Cluster-Aware Dual-Level Test Specification Generation for Large-Scale Automotive Software Requirements, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17516v1",
+    "target": "arxiv_2606.17454v1",
+    "context": "As shown in Dissecting model behavior through agent trajectories, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17514v1",
+    "target": "arxiv_2606.17197v1",
+    "context": "As shown in Cluster-Aware Dual-Level Test Specification Generation for Large-Scale Automotive Software Requirements, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17514v1",
+    "target": "arxiv_2606.17819v1",
+    "context": "As shown in A Framework for Evaluating Agentic Skills at Scale, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17514v1",
+    "target": "arxiv_2606.17810v1",
+    "context": "As shown in No-Free-Fairness: Fundamental Limits and Trade-offs in Learning Systems, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17474v1",
+    "target": "arxiv_2606.17775v1",
+    "context": "As shown in A Neuromorphic Trigger for Efficient Audio Event Detection, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17474v1",
+    "target": "arxiv_2606.18132v1",
+    "context": "As shown in Knowledge Reutilization in Meta-Reinforcement Learning, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17474v1",
+    "target": "arxiv_2606.17511v1",
+    "context": "As shown in MagicSim: A Unified Infrastructure for Executable Embodied Interaction, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17474v1",
+    "target": "arxiv_2606.17739v1",
+    "context": "As shown in ED3R: Energy-Aware Distributed Disaster Detection Enabled by Cooperative Robotic Agents, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17449v1",
+    "target": "arxiv_2606.17507v1",
+    "context": "As shown in LLM-as-Judge in Education: A Curriculum-Grounded Marking Pipeline, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17449v1",
+    "target": "arxiv_2606.17950v1",
+    "context": "As shown in Plug-and-Adapt: Multimodal Coreference Resolution at First Sight with a Pretrained Alignment Model, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17437v1",
+    "target": "arxiv_2606.18142v1",
+    "context": "As shown in Your AI Travel Agent Would Book You a Bullfight: An Agentic Benchmark for Implicit Animal Welfare in Frontier AI Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17437v1",
+    "target": "arxiv_2606.17220v1",
+    "context": "As shown in When Rules Learn: A Self-Evolving Agent for Legal Case Retrieval, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17420v1",
+    "target": "arxiv_2606.17642v1",
+    "context": "As shown in FinAcumen: Financial Multimodal Reasoning via Self-Evolving Experience Memory Harness, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17406v1",
+    "target": "arxiv_2606.17383v1",
+    "context": "As shown in Model Validation of Agentic AI Systems: A POMDP-Based Framework for Belief-State, Forecast, and Policy Validation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17406v1",
+    "target": "arxiv_2606.17637v1",
+    "context": "As shown in Brick-DICL: Dynamic In-Context Learning for Automated Brick Schema Classification, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17403v1",
+    "target": "arxiv_2606.17197v1",
+    "context": "As shown in Cluster-Aware Dual-Level Test Specification Generation for Large-Scale Automotive Software Requirements, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17391v1",
+    "target": "arxiv_2606.17702v1",
+    "context": "As shown in SegTME-UNI2: A Foundation Model-Based Framework for Generalisable Multiclass Cell Segmentation and LLM-Driven Tumour Microenvironment Characterisation in Histopathology, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17389v1",
+    "target": "arxiv_2606.17555v1",
+    "context": "As shown in An AI Security Agent for Banking: Multi-Vector Fraud and AML Detection Across Retail and Corporate Accounts, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17389v1",
+    "target": "arxiv_2606.17420v1",
+    "context": "As shown in Feynman Kac Reweighted Schrödinger Bridge Matching for Surface-Based Tau PET Harmonization, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17389v1",
+    "target": "arxiv_2606.18206v1",
+    "context": "As shown in Fixed-Point Reasoners: Stable and Adaptive Deep Looped Transformers, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17383v1",
+    "target": "arxiv_2606.17972v1",
+    "context": "As shown in SegDINO: Introducing Multi-Scale Structure into DINO for Efficient Medical Image Segmentation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17383v1",
+    "target": "arxiv_2606.17646v1",
+    "context": "As shown in SketchXplain: Intuitive Visual Explanations of Image Classifiers with Sketches, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17372v1",
+    "target": "arxiv_2606.17799v1",
+    "context": "As shown in Position: Coding Benchmarks Are Misaligned with Agentic Software Engineering, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17372v1",
+    "target": "arxiv_2606.17350v1",
+    "context": "As shown in Do Large Language Models Always Tell The Same Stories?, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17372v1",
+    "target": "arxiv_2606.17209v1",
+    "context": "As shown in Beyond Parallel Sampling: Diverse Query Initialization for Agentic Search, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17362v1",
+    "target": "arxiv_2606.18101v1",
+    "context": "As shown in Trust the Right Teacher: Quality-Aware Self-Distillation for GUI Grounding, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17362v1",
+    "target": "arxiv_2606.17648v1",
+    "context": "As shown in From Brewing to Resolution: Tracing the Internal Lifecycle of Code Reasoning in LLMs, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17362v1",
+    "target": "arxiv_2606.17266v1",
+    "context": "As shown in SkillChain-Gym: A Benchmark for Reskilling-Aware Production-Inventory Control under Disruptions, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17362v1",
+    "target": "arxiv_2606.17028v1",
+    "context": "As shown in HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17362v1",
+    "target": "arxiv_2606.17391v1",
+    "context": "As shown in NarrativeWorldBench: A Frontier-Saturated Benchmark and a Latent World Model for Long-Horizon Co-Creative Audio Drama, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17350v1",
+    "target": "arxiv_2606.18144v1",
+    "context": "As shown in Memory as a Wasting Asset: Pricing Flash Endurance for Embodied Agents, and the Limits of Doing So, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17340v1",
+    "target": "arxiv_2606.17478v1",
+    "context": "As shown in Decoding Hidden Deception in Reasoning LLMs: Activation Explainers for Deception Auditing, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17340v1",
+    "target": "arxiv_2606.17888v1",
+    "context": "As shown in MathVis-Fine: Aligning Visual Supervision with Necessity via Progressive Dependency-Guided Training for Multimodal Mathematical Reasoning, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17340v1",
+    "target": "arxiv_2606.17727v1",
+    "context": "As shown in LongWebBench: Evaluating Structural and Functional Webpage Generation in Long-Horizon Settings, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17286v1",
+    "target": "arxiv_2606.17028v1",
+    "context": "As shown in HAMON: Passive Optical Sequence Mixing for Long-Horizon Forecasting, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17220v1",
+    "target": "arxiv_2606.17406v1",
+    "context": "As shown in Graph Neural Networks for Semi-Supervised Image Classification with Multi-Feature Aggregation, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17220v1",
+    "target": "arxiv_2606.17627v1",
+    "context": "As shown in Divide, Deliberate, Decide: A Multi-Agent Framework for Fine-Grained Egocentric Action Recognition, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17220v1",
+    "target": "arxiv_2606.18003v1",
+    "context": "As shown in C2FL: Clustered Continual Federated Learning under Spatial and Temporal Drift, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17220v1",
+    "target": "arxiv_2606.17514v1",
+    "context": "As shown in Unlocking LLM Code Correction with Iterative Feedback Loops, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17028v1",
+    "target": "arxiv_2606.18208v1",
+    "context": "As shown in Looped World Models, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17028v1",
+    "target": "arxiv_2606.17667v1",
+    "context": "As shown in Handling Feature Heterogeneity with Learnable Graph Patches, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17028v1",
+    "target": "arxiv_2606.17391v1",
+    "context": "As shown in NarrativeWorldBench: A Frontier-Saturated Benchmark and a Latent World Model for Long-Horizon Co-Creative Audio Drama, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17028v1",
+    "target": "arxiv_2606.17816v1",
+    "context": "As shown in Conservation Laws for Modern Neural Architectures, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17005v1",
+    "target": "arxiv_2606.17660v1",
+    "context": "As shown in TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17005v1",
+    "target": "arxiv_2606.17727v1",
+    "context": "As shown in LongWebBench: Evaluating Structural and Functional Webpage Generation in Long-Horizon Settings, this is effective."
+  },
+  {
+    "source": "arxiv_2606.17005v1",
+    "target": "arxiv_2606.17989v1",
+    "context": "As shown in Recover Semantics First, Generate Better: Improved Latent Modeling for 3D MRI Reconstruction and Cross-Contrast Synthesis, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16989v1",
+    "target": "arxiv_2606.17551v1",
+    "context": "As shown in Reversal Q-Learning, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16987v1",
+    "target": "arxiv_2606.17660v1",
+    "context": "As shown in TuneAhead: Predicting Fine-tuning Performance Before Full Training Begins, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16974v1",
+    "target": "arxiv_2606.17836v1",
+    "context": "As shown in High-Fidelity 3D Geometric Reconstruction of Pelvic Organs from MRI: A Hybrid Deep Learning and Iterative Optimization Approach, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16974v1",
+    "target": "arxiv_2606.18181v1",
+    "context": "As shown in IUU+DB: Tracking Illegal, Unreported, and Unregulated Fishing, Seafood Fraud, and Labor Abuse through LLM-driven Information Extraction, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16974v1",
+    "target": "arxiv_2606.17564v1",
+    "context": "As shown in Geometric Consistency Protocol for Foundation Model Features in Multi-View Satellite Imagery, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16974v1",
+    "target": "arxiv_2606.17706v1",
+    "context": "As shown in Confusion-Aware Transfer Teacher Curriculum Learning Framework: Disentangling Scoring and Pacing Effects, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16974v1",
+    "target": "arxiv_2606.17646v1",
+    "context": "As shown in SketchXplain: Intuitive Visual Explanations of Image Classifiers with Sketches, this is effective."
+  },
+  {
+    "source": "arxiv_2606.16969v1",
+    "target": "arxiv_2606.17516v1",
+    "context": "As shown in FoundCause: Causal Discovery with Latent Confounders from Observational Data, this is effective."
+  }
+]
