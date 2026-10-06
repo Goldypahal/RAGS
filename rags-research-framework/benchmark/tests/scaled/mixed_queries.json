@@ -1,0 +1,968 @@
+[
+  {
+    "id": "mixed_001",
+    "query": "What is Attention Is All You Need?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_002",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_003",
+    "query": "GPT-2 few-shot learning",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_004",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_005",
+    "query": "Which papers were published at ICLR?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_006",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_007",
+    "query": "What is Efficient Transformers: A Survey?",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_008",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_009",
+    "query": "segment-level recurrence relative positional encoding Transformer-XL",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_010",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_011",
+    "query": "What models cite or build upon Attention Is All You Need?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_004",
+      "paper_006",
+      "paper_008",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_012",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_013",
+    "query": "Paper: Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_014",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_015",
+    "query": "Vision Transformer image classification",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_016",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_017",
+    "query": "Which papers were published at ACM Computing Surveys?",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_018",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_019",
+    "query": "Paper: Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_020",
+    "query": "Retrieval-Augmented Generation",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_021",
+    "query": "attention mechanism sequence modeling",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_022",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_023",
+    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_024",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_025",
+    "query": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_026",
+    "query": "DistilBERT, a",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_027",
+    "query": "attention mechanisms complexity reduction survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_028",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_029",
+    "query": "Which papers were published at ACL?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_030",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_031",
+    "query": "Explain Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_032",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_033",
+    "query": "language model few-shot learning",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_034",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_035",
+    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_036",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_037",
+    "query": "Explain Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_038",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_039",
+    "query": "relative positional encoding segment-level recurrence Transformer-XL",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_040",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_041",
+    "query": "Which papers were published at NeurIPS?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_004",
+      "paper_006",
+      "paper_008",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_042",
+    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_043",
+    "query": "Lookup document paper_003",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_044",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_045",
+    "query": "Vision Transformer image classification computer vision",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_046",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_047",
+    "query": "What models cite or build upon Efficient Transformers: A Survey?",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_048",
+    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_049",
+    "query": "Lookup document paper_009",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_050",
+    "query": "Retrieval-Augmented Generation",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_051",
+    "query": "attention mechanism transformer",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002",
+      "paper_005",
+      "paper_007",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_052",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_053",
+    "query": "Which papers were published at OpenAI Blog?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_054",
+    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_055",
+    "query": "What is An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_056",
+    "query": "DistilBERT, a",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_057",
+    "query": "survey complexity reduction efficient transformers",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_058",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_059",
+    "query": "What models cite or build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_060",
+    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_061",
+    "query": "Paper: Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_062",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_063",
+    "query": "language model GPT-2",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_064",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_065",
+    "query": "Which papers were published at ICLR?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_066",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_067",
+    "query": "Paper: Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_068",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_069",
+    "query": "long sequences relative positional encoding",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_070",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_071",
+    "query": "What models cite or build upon Attention Is All You Need?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_004",
+      "paper_006",
+      "paper_008",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_072",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_073",
+    "query": "Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_074",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_075",
+    "query": "Vision Transformer computer vision ViT",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_076",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_077",
+    "query": "Which papers were published at ACM Computing Surveys?",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_078",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_079",
+    "query": "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_080",
+    "query": "Retrieval-Augmented Generation",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_081",
+    "query": "sequence modeling attention mechanism transformer",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002",
+      "paper_005",
+      "paper_007",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_082",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_083",
+    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_084",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_085",
+    "query": "Explain An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_086",
+    "query": "DistilBERT, a",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_087",
+    "query": "efficient transformers attention mechanisms survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_088",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_089",
+    "query": "Which papers were published at ACL?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_090",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_091",
+    "query": "Lookup document paper_001",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_092",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_093",
+    "query": "few-shot learning GPT-2",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_094",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_095",
+    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005",
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_096",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  },
+  {
+    "id": "mixed_097",
+    "query": "Lookup document paper_007",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_098",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "easy"
+  },
+  {
+    "id": "mixed_099",
+    "query": "Transformer-XL segment-level recurrence",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "medium"
+  },
+  {
+    "id": "mixed_100",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "mixed_queries",
+    "difficulty": "hard"
+  }
+]

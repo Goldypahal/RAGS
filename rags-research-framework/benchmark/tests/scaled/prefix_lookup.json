@@ -1,0 +1,902 @@
+[
+  {
+    "id": "prefix_001",
+    "query": "Attention",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_002",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_003",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_004",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_005",
+    "query": "An Image",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_006",
+    "query": "DistilBERT, a distilled",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_007",
+    "query": "Efficient",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_008",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_009",
+    "query": "Transformer-XL: Attentive Language",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_010",
+    "query": "Retrieval-Augmented",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_011",
+    "query": "Attention Is",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_012",
+    "query": "BERT: Pre-training of",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_013",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_014",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_015",
+    "query": "An Image is",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_016",
+    "query": "DistilBERT,",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_017",
+    "query": "Efficient Transformers:",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_018",
+    "query": "Sequence to Sequence",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_019",
+    "query": "Transformer-XL:",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_020",
+    "query": "Retrieval-Augmented Generation",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_021",
+    "query": "Attention Is All",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_022",
+    "query": "BERT:",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_023",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_024",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_025",
+    "query": "An",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_026",
+    "query": "DistilBERT, a",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_027",
+    "query": "Efficient Transformers: A",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_028",
+    "query": "Sequence",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_029",
+    "query": "Transformer-XL: Attentive",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_030",
+    "query": "Retrieval-Augmented Generation for",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_031",
+    "query": "Attention",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_032",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_033",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_034",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_035",
+    "query": "An Image",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_036",
+    "query": "DistilBERT, a distilled",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_037",
+    "query": "Efficient",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_038",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_039",
+    "query": "Transformer-XL: Attentive Language",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_040",
+    "query": "Retrieval-Augmented",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_041",
+    "query": "Attention Is",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_042",
+    "query": "BERT: Pre-training of",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_043",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_044",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_045",
+    "query": "An Image is",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_046",
+    "query": "DistilBERT,",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_047",
+    "query": "Efficient Transformers:",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_048",
+    "query": "Sequence to Sequence",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_049",
+    "query": "Transformer-XL:",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_050",
+    "query": "Retrieval-Augmented Generation",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_051",
+    "query": "Attention Is All",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_052",
+    "query": "BERT:",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_053",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_054",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_055",
+    "query": "An",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_056",
+    "query": "DistilBERT, a",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_057",
+    "query": "Efficient Transformers: A",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_058",
+    "query": "Sequence",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_059",
+    "query": "Transformer-XL: Attentive",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_060",
+    "query": "Retrieval-Augmented Generation for",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_061",
+    "query": "Attention",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_062",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_063",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_064",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_065",
+    "query": "An Image",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_066",
+    "query": "DistilBERT, a distilled",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_067",
+    "query": "Efficient",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_068",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_069",
+    "query": "Transformer-XL: Attentive Language",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_070",
+    "query": "Retrieval-Augmented",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_071",
+    "query": "Attention Is",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_072",
+    "query": "BERT: Pre-training of",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_073",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_074",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_075",
+    "query": "An Image is",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_076",
+    "query": "DistilBERT,",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_077",
+    "query": "Efficient Transformers:",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_078",
+    "query": "Sequence to Sequence",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_079",
+    "query": "Transformer-XL:",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_080",
+    "query": "Retrieval-Augmented Generation",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_081",
+    "query": "Attention Is All",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_082",
+    "query": "BERT:",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_083",
+    "query": "Language Models",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_084",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_085",
+    "query": "An",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_086",
+    "query": "DistilBERT, a",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_087",
+    "query": "Efficient Transformers: A",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_088",
+    "query": "Sequence",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_089",
+    "query": "Transformer-XL: Attentive",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_090",
+    "query": "Retrieval-Augmented Generation for",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_091",
+    "query": "Attention",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_092",
+    "query": "BERT: Pre-training",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_093",
+    "query": "Language Models are",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_094",
+    "query": "Language",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_095",
+    "query": "An Image",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_096",
+    "query": "DistilBERT, a distilled",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_097",
+    "query": "Efficient",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  },
+  {
+    "id": "prefix_098",
+    "query": "Sequence to",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_099",
+    "query": "Transformer-XL: Attentive Language",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "prefix_100",
+    "query": "Retrieval-Augmented",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "prefix_lookup",
+    "difficulty": "medium"
+  }
+]

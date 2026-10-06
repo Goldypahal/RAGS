@@ -1,0 +1,1002 @@
+[
+  {
+    "id": "multihop_001",
+    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_002",
+    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_003",
+    "query": "What is the connection between GPT-2 and GPT-3?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_004",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_005",
+    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_006",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_007",
+    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_008",
+    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_009",
+    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_010",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_011",
+    "query": "What is the connection between attention and BERT?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_012",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_013",
+    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_014",
+    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_015",
+    "query": "What is the connection between Vision Transformer and model compression?",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_016",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_017",
+    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_018",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_019",
+    "query": "What is the connection between long sequences and RAG?",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_020",
+    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_021",
+    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_022",
+    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_023",
+    "query": "What is the connection between GPT-2 and GPT-3?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_024",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_025",
+    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_026",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_027",
+    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_028",
+    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_029",
+    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_030",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_031",
+    "query": "What is the connection between attention and BERT?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_032",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_033",
+    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_034",
+    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_035",
+    "query": "What is the connection between Vision Transformer and model compression?",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_036",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_037",
+    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_038",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_039",
+    "query": "What is the connection between long sequences and RAG?",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_040",
+    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_041",
+    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_042",
+    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_043",
+    "query": "What is the connection between GPT-2 and GPT-3?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_044",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_045",
+    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_046",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_047",
+    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_048",
+    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_049",
+    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_050",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_051",
+    "query": "What is the connection between attention and BERT?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_052",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_053",
+    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_054",
+    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_055",
+    "query": "What is the connection between Vision Transformer and model compression?",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_056",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_057",
+    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_058",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_059",
+    "query": "What is the connection between long sequences and RAG?",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_060",
+    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_061",
+    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_062",
+    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_063",
+    "query": "What is the connection between GPT-2 and GPT-3?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_064",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_065",
+    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_066",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_067",
+    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_068",
+    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_069",
+    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_070",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_071",
+    "query": "What is the connection between attention and BERT?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_072",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_073",
+    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_074",
+    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_075",
+    "query": "What is the connection between Vision Transformer and model compression?",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_076",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_077",
+    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_078",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_079",
+    "query": "What is the connection between long sequences and RAG?",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_080",
+    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_081",
+    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_082",
+    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_083",
+    "query": "What is the connection between GPT-2 and GPT-3?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_084",
+    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_085",
+    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_086",
+    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_087",
+    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_088",
+    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_089",
+    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_090",
+    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_091",
+    "query": "What is the connection between attention and BERT?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_092",
+    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_003"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_093",
+    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_004"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_094",
+    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_095",
+    "query": "What is the connection between Vision Transformer and model compression?",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_006"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_096",
+    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_007"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_097",
+    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_008"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_098",
+    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_009"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_099",
+    "query": "What is the connection between long sequences and RAG?",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_010"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  },
+  {
+    "id": "multihop_100",
+    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_001"
+    ],
+    "type": "multi_hop_reasoning",
+    "difficulty": "hard"
+  }
+]

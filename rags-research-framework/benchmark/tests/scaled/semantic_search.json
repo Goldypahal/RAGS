@@ -1,0 +1,902 @@
+[
+  {
+    "id": "semantic_001",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_002",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_003",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_004",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_005",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_006",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_007",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_008",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_009",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_010",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_011",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_012",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_013",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_014",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_015",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_016",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_017",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_018",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_019",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_020",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_021",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_022",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_023",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_024",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_025",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_026",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_027",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_028",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_029",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_030",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_031",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_032",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_033",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_034",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_035",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_036",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_037",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_038",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_039",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_040",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_041",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_042",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_043",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_044",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_045",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_046",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_047",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_048",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_049",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_050",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_051",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_052",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_053",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_054",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_055",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_056",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_057",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_058",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_059",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_060",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_061",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_062",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_063",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_064",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_065",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_066",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_067",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_068",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_069",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_070",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_071",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_072",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_073",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_074",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_075",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_076",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_077",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_078",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_079",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_080",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_081",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_082",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_083",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_084",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_085",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_086",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_087",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_088",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_089",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_090",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_091",
+    "query": "How do models using attention perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_092",
+    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_093",
+    "query": "What are the main advantages and limitations of GPT-2?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_094",
+    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_095",
+    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_096",
+    "query": "How do models using model compression perform on modern benchmarks?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_097",
+    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_098",
+    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_099",
+    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  },
+  {
+    "id": "semantic_100",
+    "query": "A survey on computational efficiency and scalability of RAG.",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "semantic_search",
+    "difficulty": "hard"
+  }
+]

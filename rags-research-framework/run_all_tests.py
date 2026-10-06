@@ -24,6 +24,7 @@ if sys.platform == 'win32':
 sys.path.insert(0, str(Path(__file__).parent))
 
 from benchmark.benchmark_evaluator import BenchmarkEvaluator, BenchmarkLoader, MetricsCalculator
+from benchmark.routing_analyzer import RoutingAnalyzer
 from common.base import BaseRAG, RetrievalResult, Document
 
 # Import all 9 RAG systems
@@ -158,8 +159,18 @@ def load_all_test_suites(test_dir: str):
 
 
 def run_benchmark_suite(systems, test_suites, build_stats=None):
-    """Run comprehensive benchmark across all systems and tests with warm-ups and high-res timing."""
+    """Run comprehensive benchmark across all systems and tests with warm-ups, high-res timing, and routing regret analysis."""
     evaluator = BenchmarkEvaluator()
+    routing_analyzer = RoutingAnalyzer()
+    
+    method_to_system_name = {
+        'hashmap': 'HashMapRAG',
+        'trie': 'TrieRAG',
+        'graph': 'GraphRAG',
+        'vector': 'VectorRAG',
+        'inverted_index': 'InvertedIndexGraphRAG'
+    }
+    
     if build_stats:
         for sys_name, (b_time, b_mem) in build_stats.items():
             evaluator.record_build_stats(sys_name, b_time, b_mem)
@@ -185,7 +196,11 @@ def run_benchmark_suite(systems, test_suites, build_stats=None):
         for test in tests:
             test_id = test.get('id', tests.index(test))
             query = test['query']
-            expected_docs = test.get('expected_doc_ids', test.get('expected_ids', []))
+            expected_docs = test.get('expected_doc_ids', test.get('expected_ids', test.get('expected_results', [])))
+            
+            query_qualities = {}
+            query_latencies = {}
+            adaptive_chosen_system = "AdaptiveRetrievalRAG"
             
             # Run each system on this test
             for system_name, system in systems.items():
@@ -199,11 +214,11 @@ def run_benchmark_suite(systems, test_suites, build_stats=None):
                     # Extract document IDs
                     retrieved_docs = [doc.doc_id for doc in result.documents]
                     
-                    # Synthetic token proxy (query words + retrieved context estimate)
+                    # Synthetic token proxy
                     tokens_used = len(query.split()) + len(retrieved_docs) * 50
                     
                     # Evaluate
-                    evaluator.evaluate_retrieval(
+                    metric = evaluator.evaluate_retrieval(
                         system_name=system_name,
                         test_type=suite_name,
                         test_id=test_id,
@@ -214,23 +229,45 @@ def run_benchmark_suite(systems, test_suites, build_stats=None):
                         tokens_used=tokens_used
                     )
                     
+                    # Compute individual query quality score (mean of IR metrics)
+                    q_score = (metric.precision_at_1 + metric.precision_at_5 + metric.recall_at_5 + metric.mrr + metric.ndcg_at_5) / 5.0
+                    query_qualities[system_name] = q_score
+                    query_latencies[system_name] = elapsed_ms
+                    
+                    # If adaptive system, inspect its chosen engine
+                    if system_name == "AdaptiveRetrievalRAG" and hasattr(result, 'metadata'):
+                        methods = result.metadata.get('methods_used', [])
+                        if methods:
+                            adaptive_chosen_system = method_to_system_name.get(methods[0], "AdaptiveRetrievalRAG")
+                    
                 except Exception as e:
                     print(f"    ⚠️  Error - {system_name} on '{query[:30]}': {str(e)}")
             
+            # Record routing decision and regret
+            routing_analyzer.add_query_evaluation(
+                query_id=test_id,
+                query=query,
+                query_type=suite_name,
+                system_qualities=query_qualities,
+                system_latencies=query_latencies,
+                adaptive_chosen_system=adaptive_chosen_system
+            )
+            
             completed += 1
-            if completed % 10 == 0:
+            if completed % 25 == 0 or completed == total_tests:
                 print(f"  Progress: {completed}/{total_tests} test queries processed")
     
-    return evaluator
+    return evaluator, routing_analyzer
 
 
-def generate_detailed_report(evaluator):
+def generate_detailed_report(evaluator, routing_analyzer):
     """Generate comprehensive report with rankings and analysis."""
     evaluator.print_report()
-    return evaluator.generate_report()
+    routing_analyzer.print_summary()
+    return evaluator.generate_report(), routing_analyzer.compute_summary()
 
 
-def save_results(report, evaluator):
+def save_results(report, routing_summary, evaluator, routing_analyzer):
     """Save detailed results to JSON and markdown summary."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_dir = Path("benchmark/results")
@@ -239,6 +276,12 @@ def save_results(report, evaluator):
     output_file = results_dir / f"benchmark_results_{timestamp}.json"
     evaluator.save_results(f"benchmark_results_{timestamp}.json")
     print(f"\n💾 Results saved to: {output_file}")
+    
+    # Save routing analysis json
+    routing_file = results_dir / f"routing_analysis_{timestamp}.json"
+    with open(routing_file, 'w', encoding='utf-8') as f:
+        json.dump(routing_summary, f, indent=2)
+    print(f"💾 Routing analysis saved to: {routing_file}")
     
     # Save formatted human-readable summary
     summary_file = results_dir / f"summary_{timestamp}.txt"
@@ -261,10 +304,16 @@ def save_results(report, evaluator):
             idx = metrics['index_construction']
             f.write(f"{name:<26} p50: {lat['p50']:6.2f}ms | p95: {lat['p95']:6.2f}ms | Mean: {lat['mean']:6.2f}ms | Build: {idx['build_time_ms']:5.1f}ms\n")
             
-        f.write("\nCOMPOSITE UTILITY RANKINGS (Secondary Metric)\n")
+        f.write("\nORACLE & ROUTING REGRET ANALYSIS\n")
         f.write("-" * 85 + "\n")
-        for entry in report.get('ranking_by_utility', []):
-            f.write(f"{entry['rank']}. {entry['system']:<26} Utility: {entry['utility']:.4f}\n")
+        comp = routing_summary.get('router_comparison', {})
+        regret = routing_summary.get('routing_regret_analysis', {})
+        f.write(f"Oracle Quality:        {comp.get('oracle_router', {}).get('mean_quality', 0):.4f}\n")
+        f.write(f"Adaptive Quality:      {comp.get('adaptive_router', {}).get('mean_quality', 0):.4f} ({comp.get('adaptive_router', {}).get('oracle_gap_ratio', 0)*100:.1f}% of Oracle)\n")
+        f.write(f"Vector Baseline:       {comp.get('vector_baseline', {}).get('mean_quality', 0):.4f}\n")
+        f.write(f"Random Router:         {comp.get('random_router', {}).get('mean_quality', 0):.4f}\n")
+        f.write(f"Mean Quality Regret:   {regret.get('mean_quality_regret', 0):.4f}\n")
+        f.write(f"Routing Accuracy:      {regret.get('routing_accuracy', 0)*100:.1f}%\n")
     
     print(f"📄 Summary saved to: {summary_file}\n")
 
@@ -272,10 +321,14 @@ def save_results(report, evaluator):
 def main():
     parser = argparse.ArgumentParser(description="Run RAG Benchmarks")
     parser.add_argument("--dataset", type=str, default="benchmark/dataset", help="Path to the dataset directory")
+    parser.add_argument("--scale", action="store_true", help="Run on scaled 700-query benchmark suite")
     args = parser.parse_args()
     
     dataset_dir = args.dataset
-    test_dir = os.path.join(dataset_dir, "tests") if "Dataset" in dataset_dir else "benchmark/tests"
+    if args.scale:
+        test_dir = "benchmark/tests/scaled"
+    else:
+        test_dir = os.path.join(dataset_dir, "tests") if "Dataset" in dataset_dir else "benchmark/tests"
 
     try:
         print("\n" + "="*80)
@@ -290,13 +343,13 @@ def main():
         
         # Run benchmark
         print(f"\n📊 Testing {len(systems)} systems on {sum(len(tests) for tests in test_suites.values())} queries\n")
-        evaluator = run_benchmark_suite(systems, test_suites, build_stats=build_stats)
+        evaluator, routing_analyzer = run_benchmark_suite(systems, test_suites, build_stats=build_stats)
         
         # Generate report
-        report = generate_detailed_report(evaluator)
+        report, routing_summary = generate_detailed_report(evaluator, routing_analyzer)
         
         # Save results
-        save_results(report, evaluator)
+        save_results(report, routing_summary, evaluator, routing_analyzer)
         
         print("\n" + "="*80)
         print("✅ BENCHMARK COMPLETE!")

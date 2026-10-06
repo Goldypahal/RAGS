@@ -159,31 +159,43 @@ class BaseRAG(ABC):
 
 
 class QueryClassifier:
-    """Classify queries for adaptive retrieval."""
+    """Classify queries for structure-aware adaptive retrieval."""
     
-    EXACT_KEYWORDS = {'what is', 'define', 'what are', 'who is', 'which'}
-    PREFIX_KEYWORDS = {'autocomplete', 'suggest', 'complete', 'find similar'}
-    RELATION_KEYWORDS = {'related', 'connected', 'how', 'why', 'evolve', 'depend'}
-    SEMANTIC_KEYWORDS = {'about', 'discuss', 'explain', 'summarize', 'describe'}
+    RELATION_KEYWORDS = {
+        'cite', 'cites', 'cited', 'author', 'authors', 'authored', 'venue', 
+        'published', 'connected', 'connection', 'relation', 'relationship', 
+        'compare', 'versus', 'vs', 'extend', 'extends', 'based on', 'evolve', 
+        'depend', 'depends', 'co-author', 'multi-hop', 'reference', 'referenced'
+    }
+    EXACT_KEYWORDS = {'what is', 'define', 'definition of', 'paper:', 'lookup', 'id:', 'document'}
+    PREFIX_KEYWORDS = {'autocomplete', 'suggest', 'complete', 'prefix', 'starts with', 'begins with'}
+    SEMANTIC_KEYWORDS = {'explain', 'discuss', 'survey', 'summarize', 'describe', 'theoretical', 'foundations', 'overview', 'concept', 'intuition', 'how does', 'why does'}
     
     @classmethod
     def classify(cls, query: str) -> str:
-        """Classify query type."""
-        query_lower = query.lower()
+        """Classify query type with priority ranking."""
+        query_lower = query.lower().strip()
+        words = query_lower.split()
         
-        # Check for exact queries
-        if any(kw in query_lower for kw in cls.EXACT_KEYWORDS):
-            return 'exact'
-        
-        # Check for prefix queries
-        if any(kw in query_lower for kw in cls.PREFIX_KEYWORDS):
-            return 'prefix'
-        
-        # Check for relationship queries
+        # 1. Check for relationship / multi-hop queries first (relational markers)
         if any(kw in query_lower for kw in cls.RELATION_KEYWORDS):
             return 'relationship'
-        
-        # Default to semantic
+            
+        # 2. Check for explicit prefix requests or short fragment prefixes (<3 words, no punctuation/question marks)
+        if any(kw in query_lower for kw in cls.PREFIX_KEYWORDS):
+            return 'prefix'
+        if len(words) <= 2 and not any(q_word in query_lower for q_word in {'what', 'how', 'why', 'who', 'where', 'when', '?'}):
+            return 'prefix'
+            
+        # 3. Check for exact title / ID definitions
+        if any(kw in query_lower for kw in cls.EXACT_KEYWORDS):
+            return 'exact'
+            
+        # 4. Check for keyword style queries (short comma or space-separated technical keywords)
+        if len(words) in (2, 3, 4) and not any(q_word in query_lower for q_word in {'what', 'how', 'why', 'who', 'explain', 'describe', '?'}):
+            return 'keyword'
+            
+        # 5. Default to semantic
         return 'semantic'
 
 

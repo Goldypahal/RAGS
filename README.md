@@ -76,20 +76,58 @@ RAGS/
 
 ## 📊 Benchmark & Evaluation Suite (Hardened Protocol)
 
-The evaluation suite rigorously tests all 9 systems under identical conditions across **7 query dimensions** (75 test queries):
-- **Exact Lookup**: Precise entity and title retrieval
-- **Prefix Lookup**: Partial token & autocomplete matching
-- **Keyword Search**: BM25 multi-term relevance
-- **Semantic Search**: Paraphrased and conceptual queries
-- **Relationship Search**: 1-hop connected entity queries
-- **Multi-Hop Reasoning**: Multi-step graph reasoning paths
-- **Mixed Real-World**: Blended production traffic
+The evaluation suite rigorously tests all 9 systems under identical conditions across **7 query dimensions** with two testing suites:
+- **Standard Suite**: 75 curated test queries.
+- **Scaled Benchmark Suite (`--scale`)**: 700 test queries (100 per category, 6,300 total evaluations) providing high statistical power.
 
-### Decoupled Evaluation Dimensions
-- **Primary Accuracy**: Strict Precision@K ($\frac{|\text{Retrieved}_{1..K} \cap \text{Relevant}|}{K}$), Recall@K, MRR, NDCG@K
-- **Decoupled Latency Profile**: High-resolution nanosecond timer (`perf_counter_ns`) with warm-up, measuring p50 (median), p95, p99, and standard deviation
-- **Decoupled Index Profile**: Dedicated tracking of Index Construction Time (ms) and differential RAM footprint (MB)
-- **Empirical Pareto Frontier**: Non-dominated architectures (`VectorRAG`, `InvertedIndexGraphRAG`, `GraphRAG`, `HashMapRAG`) mapped in `benchmark/results/plots/speed_vs_accuracy.png`
+### Scaled Benchmark Results (700 Queries, N=6,300)
+
+| Rank | Architecture | Retrieval Quality (0-1) | P@5 | MRR | NDCG@5 | Latency p50 | Latency p95 | Index RAM | Build Time |
+|---|---|---|---|---|---|---|---|---|---|
+| **1** | **VectorRAG** | **0.7051** | 0.2649 | 0.8390 | 0.8053 | 0.12 ms | 28.68 ms | 49.1 MB | 301.6 ms |
+| **2** | **InvertedIndexGraphRAG** ⭐ | **0.6474** | 0.2506 | 0.7656 | 0.7245 | **0.05 ms** | **0.10 ms** | <0.1 MB | 0.6 ms |
+| **3** | **TrieRAG** | **0.5909** | 0.2066 | 0.7102 | 0.6666 | 0.32 ms | 0.57 ms | <0.1 MB | 1.7 ms |
+| **4** | **AdaptiveRetrievalRAG** | **0.5826** | 0.2340 | 0.6863 | 0.6595 | 0.21 ms | 24.64 ms | 0.2 MB | 272.1 ms |
+| **5** | **TrieGraphRAG** | **0.5625** | 0.2026 | 0.6759 | 0.6307 | 0.33 ms | 0.60 ms | 0.8 MB | 2.7 ms |
+| **6** | **HashMapTrieRAG** | **0.5404** | 0.1754 | 0.6660 | 0.6079 | 0.10 ms | 0.42 ms | 0.3 MB | 3.7 ms |
+| **7** | **HashMapGraphRAG** | **0.3252** | 0.1657 | 0.3665 | 0.3697 | 0.04 ms | 0.08 ms | <0.1 MB | 0.3 ms |
+| **8** | **GraphRAG** | **0.3135** | 0.1597 | 0.3420 | 0.3564 | 0.04 ms | 0.08 ms | <0.1 MB | 0.2 ms |
+| **9** | **HashMapRAG** | **0.2047** | 0.0583 | 0.2686 | 0.2212 | **0.02 ms** | **0.04 ms** | <0.1 MB | 0.1 ms |
+
+> **Key Pareto Finding**: `InvertedIndexGraphRAG` achieves **91.8% of VectorRAG's retrieval quality** while running **119× faster at the mean (0.06 ms vs 7.14 ms)** with virtually zero additional memory footprint (<0.1 MB vs 49.1 MB).
+
+---
+
+### 🧠 The Oracle Router & Routing Regret Experiment
+
+To test whether dynamic routing outperforms fixed retrieval architectures, we implemented an **Oracle Router** (theoretical upper-bound selecting $\arg\max_i \text{Quality}(S_i, q)$ for each query):
+
+- **Oracle Upper Bound**: **0.7839** ($\pm 0.0126$ at 95% CI) — **+7.88 points over VectorRAG**. This proves that no single static retriever is universally optimal across all query types.
+- **VectorRAG Baseline**: **0.7051** ($\pm 0.0191$).
+- **Adaptive Router**: **0.5373** (Query analyzer) / **0.5826** (System overall) — reaches **68.5% of Oracle potential**.
+- **Random Router Baseline**: **0.4969** (Null hypothesis).
+- **Mean Quality Regret**: **0.2466** ($Best(q) - Chosen(q)$).
+- **Routing Decision Accuracy**: **29.3%** optimal system match rate.
+
+---
+
+### 📊 Architecture × Query-Type Performance Matrix
+
+Mean retrieval quality across heterogeneous query categories:
+
+| Architecture | Exact Lookup | Keyword Search | Mixed Queries | Multi-Hop | Prefix Lookup | Relationship | Semantic Search |
+|---|---|---|---|---|---|---|---|
+| **VectorRAG** | **0.722** | 0.774 | **0.733** | **0.833** | 0.787 | 0.454 | **0.635** |
+| **InvertedIndexGraphRAG** | 0.672 | 0.742 | 0.651 | 0.763 | **0.790** | **0.542** | 0.372 |
+| **TrieGraphRAG** | 0.538 | **0.809** | 0.573 | 0.588 | 0.731 | 0.325 | 0.374 |
+| **TrieRAG** | 0.569 | 0.806 | 0.618 | 0.648 | 0.755 | 0.324 | 0.417 |
+| **AdaptiveRetrievalRAG** | 0.622 | 0.686 | 0.565 | 0.440 | **0.799** | 0.459 | 0.507 |
+| **HashMapTrieRAG** | 0.508 | 0.730 | 0.558 | 0.513 | 0.752 | 0.308 | 0.414 |
+| **HashMapGraphRAG** | 0.312 | 0.409 | 0.315 | 0.445 | 0.239 | 0.265 | 0.291 |
+| **GraphRAG** | 0.359 | 0.350 | 0.312 | 0.344 | 0.287 | 0.253 | 0.291 |
+| **HashMapRAG** | 0.185 | 0.513 | 0.244 | 0.265 | 0.059 | 0.000 | 0.168 |
+
+> **Key Discovery**: Classical and graph-hybrid structures outperform dense vectors in specific domains: `TrieGraphRAG` and `TrieRAG` exceed `VectorRAG` on keyword queries (0.809 vs 0.774), while `InvertedIndexGraphRAG` outperforms `VectorRAG` on relationship search (0.542 vs 0.454) and prefix lookups (0.790 vs 0.787).
 
 ---
 

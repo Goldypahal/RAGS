@@ -64,6 +64,8 @@ class QueryRouter:
             methods = ['hashmap', 'vector']  # Primary + backup
         elif query_type == 'prefix':
             methods = ['trie', 'inverted_index']
+        elif query_type == 'keyword':
+            methods = ['inverted_index', 'vector']
         elif query_type == 'relationship':
             methods = ['graph', 'inverted_index']
         elif query_type == 'semantic':

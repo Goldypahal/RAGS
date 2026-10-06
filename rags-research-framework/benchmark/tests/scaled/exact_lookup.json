@@ -1,0 +1,902 @@
+[
+  {
+    "id": "exact_001",
+    "query": "What is Attention Is All You Need?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_002",
+    "query": "What is BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_003",
+    "query": "What is Language Models are Unsupervised Multitask Learners?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_004",
+    "query": "What is Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_005",
+    "query": "What is An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_006",
+    "query": "What is DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_007",
+    "query": "What is Efficient Transformers: A Survey?",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_008",
+    "query": "What is Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_009",
+    "query": "What is Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_010",
+    "query": "What is Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_011",
+    "query": "Paper: Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_012",
+    "query": "Paper: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_013",
+    "query": "Paper: Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_014",
+    "query": "Paper: Language Models are Few-Shot Learners",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_015",
+    "query": "Paper: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_016",
+    "query": "Paper: DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_017",
+    "query": "Paper: Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_018",
+    "query": "Paper: Sequence to Sequence Learning with Neural Networks",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_019",
+    "query": "Paper: Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_020",
+    "query": "Paper: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_021",
+    "query": "Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_022",
+    "query": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_023",
+    "query": "Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_024",
+    "query": "Language Models are Few-Shot Learners",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_025",
+    "query": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_026",
+    "query": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_027",
+    "query": "Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_028",
+    "query": "Sequence to Sequence Learning with Neural Networks",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_029",
+    "query": "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_030",
+    "query": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_031",
+    "query": "Explain Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_032",
+    "query": "Explain BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_033",
+    "query": "Explain Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_034",
+    "query": "Explain Language Models are Few-Shot Learners",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_035",
+    "query": "Explain An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_036",
+    "query": "Explain DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_037",
+    "query": "Explain Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_038",
+    "query": "Explain Sequence to Sequence Learning with Neural Networks",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_039",
+    "query": "Explain Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_040",
+    "query": "Explain Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_041",
+    "query": "Lookup document paper_001",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_042",
+    "query": "Lookup document paper_002",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_043",
+    "query": "Lookup document paper_003",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_044",
+    "query": "Lookup document paper_004",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_045",
+    "query": "Lookup document paper_005",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_046",
+    "query": "Lookup document paper_006",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_047",
+    "query": "Lookup document paper_007",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_048",
+    "query": "Lookup document paper_008",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_049",
+    "query": "Lookup document paper_009",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_050",
+    "query": "Lookup document paper_010",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_051",
+    "query": "What is Attention Is All You Need?",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_052",
+    "query": "What is BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_053",
+    "query": "What is Language Models are Unsupervised Multitask Learners?",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_054",
+    "query": "What is Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_055",
+    "query": "What is An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_056",
+    "query": "What is DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_057",
+    "query": "What is Efficient Transformers: A Survey?",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_058",
+    "query": "What is Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_059",
+    "query": "What is Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_060",
+    "query": "What is Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_061",
+    "query": "Paper: Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_062",
+    "query": "Paper: BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_063",
+    "query": "Paper: Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_064",
+    "query": "Paper: Language Models are Few-Shot Learners",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_065",
+    "query": "Paper: An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_066",
+    "query": "Paper: DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_067",
+    "query": "Paper: Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_068",
+    "query": "Paper: Sequence to Sequence Learning with Neural Networks",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_069",
+    "query": "Paper: Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_070",
+    "query": "Paper: Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_071",
+    "query": "Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_072",
+    "query": "BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_073",
+    "query": "Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_074",
+    "query": "Language Models are Few-Shot Learners",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_075",
+    "query": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_076",
+    "query": "DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_077",
+    "query": "Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_078",
+    "query": "Sequence to Sequence Learning with Neural Networks",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_079",
+    "query": "Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_080",
+    "query": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_081",
+    "query": "Explain Attention Is All You Need",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_082",
+    "query": "Explain BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_083",
+    "query": "Explain Language Models are Unsupervised Multitask Learners",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_084",
+    "query": "Explain Language Models are Few-Shot Learners",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_085",
+    "query": "Explain An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_086",
+    "query": "Explain DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_087",
+    "query": "Explain Efficient Transformers: A Survey",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_088",
+    "query": "Explain Sequence to Sequence Learning with Neural Networks",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_089",
+    "query": "Explain Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_090",
+    "query": "Explain Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_091",
+    "query": "Lookup document paper_001",
+    "expected_doc_ids": [
+      "paper_001"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_092",
+    "query": "Lookup document paper_002",
+    "expected_doc_ids": [
+      "paper_002"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_093",
+    "query": "Lookup document paper_003",
+    "expected_doc_ids": [
+      "paper_003"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_094",
+    "query": "Lookup document paper_004",
+    "expected_doc_ids": [
+      "paper_004"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_095",
+    "query": "Lookup document paper_005",
+    "expected_doc_ids": [
+      "paper_005"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_096",
+    "query": "Lookup document paper_006",
+    "expected_doc_ids": [
+      "paper_006"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_097",
+    "query": "Lookup document paper_007",
+    "expected_doc_ids": [
+      "paper_007"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_098",
+    "query": "Lookup document paper_008",
+    "expected_doc_ids": [
+      "paper_008"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_099",
+    "query": "Lookup document paper_009",
+    "expected_doc_ids": [
+      "paper_009"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  },
+  {
+    "id": "exact_100",
+    "query": "Lookup document paper_010",
+    "expected_doc_ids": [
+      "paper_010"
+    ],
+    "type": "exact_lookup",
+    "difficulty": "easy"
+  }
+]

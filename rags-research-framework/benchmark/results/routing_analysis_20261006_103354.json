@@ -1,0 +1,132 @@
+{
+  "total_queries_evaluated": 700,
+  "router_comparison": {
+    "oracle_router": {
+      "mean_quality": 0.7839,
+      "ci_95": 0.0126
+    },
+    "adaptive_router": {
+      "mean_quality": 0.5373,
+      "ci_95": 0.0269,
+      "oracle_gap_ratio": 0.6854
+    },
+    "best_fixed_architecture": {
+      "system": "VectorRAG",
+      "mean_quality": 0.7051
+    },
+    "vector_baseline": {
+      "mean_quality": 0.7051,
+      "ci_95": 0.0191
+    },
+    "random_router": {
+      "mean_quality": 0.4969
+    }
+  },
+  "routing_regret_analysis": {
+    "mean_quality_regret": 0.2466,
+    "std_quality_regret": 0.3131,
+    "routing_accuracy": 0.2929,
+    "paired_t_statistic_vs_vector": -15.053
+  },
+  "category_counts": {
+    "exact_lookup": 100,
+    "keyword_search": 100,
+    "mixed_queries": 100,
+    "multi_hop_reasoning": 100,
+    "prefix_lookup": 100,
+    "relationship_search": 100,
+    "semantic_search": 100
+  },
+  "architecture_by_query_type_matrix": {
+    "VectorRAG": {
+      "exact_lookup": 0.7197,
+      "keyword_search": 0.7744,
+      "mixed_queries": 0.7332,
+      "multi_hop_reasoning": 0.8329,
+      "prefix_lookup": 0.7869,
+      "relationship_search": 0.4542,
+      "semantic_search": 0.6346,
+      "OVERALL": 0.7051
+    },
+    "GraphRAG": {
+      "exact_lookup": 0.3587,
+      "keyword_search": 0.3499,
+      "mixed_queries": 0.3119,
+      "multi_hop_reasoning": 0.3436,
+      "prefix_lookup": 0.2866,
+      "relationship_search": 0.2525,
+      "semantic_search": 0.291,
+      "OVERALL": 0.3135
+    },
+    "HashMapRAG": {
+      "exact_lookup": 0.1848,
+      "keyword_search": 0.5126,
+      "mixed_queries": 0.2438,
+      "multi_hop_reasoning": 0.2651,
+      "prefix_lookup": 0.0588,
+      "relationship_search": 0.0,
+      "semantic_search": 0.168,
+      "OVERALL": 0.2047
+    },
+    "TrieRAG": {
+      "exact_lookup": 0.5688,
+      "keyword_search": 0.8058,
+      "mixed_queries": 0.618,
+      "multi_hop_reasoning": 0.6476,
+      "prefix_lookup": 0.755,
+      "relationship_search": 0.3241,
+      "semantic_search": 0.4173,
+      "OVERALL": 0.5909
+    },
+    "HashMapTrieRAG": {
+      "exact_lookup": 0.5077,
+      "keyword_search": 0.73,
+      "mixed_queries": 0.5578,
+      "multi_hop_reasoning": 0.513,
+      "prefix_lookup": 0.7519,
+      "relationship_search": 0.3081,
+      "semantic_search": 0.4143,
+      "OVERALL": 0.5404
+    },
+    "HashMapGraphRAG": {
+      "exact_lookup": 0.3125,
+      "keyword_search": 0.4087,
+      "mixed_queries": 0.3153,
+      "multi_hop_reasoning": 0.4445,
+      "prefix_lookup": 0.239,
+      "relationship_search": 0.2652,
+      "semantic_search": 0.2913,
+      "OVERALL": 0.3252
+    },
+    "TrieGraphRAG": {
+      "exact_lookup": 0.5378,
+      "keyword_search": 0.8086,
+      "mixed_queries": 0.5732,
+      "multi_hop_reasoning": 0.5879,
+      "prefix_lookup": 0.7311,
+      "relationship_search": 0.3249,
+      "semantic_search": 0.374,
+      "OVERALL": 0.5625
+    },
+    "InvertedIndexGraphRAG": {
+      "exact_lookup": 0.672,
+      "keyword_search": 0.7424,
+      "mixed_queries": 0.6507,
+      "multi_hop_reasoning": 0.7635,
+      "prefix_lookup": 0.7896,
+      "relationship_search": 0.5417,
+      "semantic_search": 0.3717,
+      "OVERALL": 0.6474
+    },
+    "AdaptiveRetrievalRAG": {
+      "exact_lookup": 0.6222,
+      "keyword_search": 0.6857,
+      "mixed_queries": 0.5653,
+      "multi_hop_reasoning": 0.44,
+      "prefix_lookup": 0.7989,
+      "relationship_search": 0.4588,
+      "semantic_search": 0.5075,
+      "OVERALL": 0.5826
+    }
+  }
+}
