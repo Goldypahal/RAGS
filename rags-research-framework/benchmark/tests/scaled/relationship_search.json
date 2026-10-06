@@ -1,1165 +1,650 @@
 [
   {
-    "id": "rel_001",
-    "query": "Which papers were published at NeurIPS?",
+    "id": "relation_001",
+    "query": "Which papers were published at NeurIPS in 2017?",
     "expected_doc_ids": [
       "paper_001",
+      "paper_002",
+      "paper_003",
       "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
+      "paper_005"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_002",
-    "query": "Find all papers authored by Devlin, J.",
+    "id": "relation_002",
+    "query": "Which papers were published at ACL in 2018?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_003",
-    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_004",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
       "paper_001",
-      "paper_004",
-      "paper_005",
       "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_005",
-    "query": "Which papers were published at ICLR?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
       "paper_010"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_006",
-    "query": "Find all papers authored by Sanh, V.",
+    "id": "relation_003",
+    "query": "Which papers were published at OpenAI Blog in 2019?",
     "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_004",
+    "query": "Which papers were published at NeurIPS in 2020?",
+    "expected_doc_ids": [
+      "paper_004",
       "paper_001",
       "paper_003",
-      "paper_004",
-      "paper_006",
+      "paper_010",
       "paper_008"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_007",
-    "query": "What models cite or build upon Efficient Transformers: A Survey?",
+    "id": "relation_005",
+    "query": "Which papers were published at ICLR in 2020?",
     "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_006",
+    "query": "Which papers were published at NeurIPS in 2019?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_008",
-    "query": "Which publications from 2014 introduce attention or transformers?",
+    "id": "relation_007",
+    "query": "Which papers were published at ACM Computing Surveys in 2022?",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
-      "paper_004",
       "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_008",
+    "query": "Which papers were published at NeurIPS in 2014?",
+    "expected_doc_ids": [
       "paper_008",
-      "paper_010"
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_009",
-    "query": "Which papers were published at ACL?",
+    "id": "relation_009",
+    "query": "Which papers were published at ACL in 2019?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_010",
-    "query": "Find all papers authored by Lewis, P.",
-    "expected_doc_ids": [
+      "paper_009",
       "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_011",
-    "query": "What models cite or build upon Attention Is All You Need?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_012",
-    "query": "Which publications from 2018 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_013",
-    "query": "Which papers were published at OpenAI Blog?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_014",
-    "query": "Find all papers authored by Brown, T. B.",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_015",
-    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_016",
-    "query": "Which publications from 2019 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_003",
-      "paper_004",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_017",
-    "query": "Which papers were published at ACM Computing Surveys?",
-    "expected_doc_ids": [
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_018",
-    "query": "Find all papers authored by Sutskever, I.",
+    "id": "relation_010",
+    "query": "Which papers were published at NeurIPS in 2020? [Query #9]",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
+      "paper_010",
+      "paper_002",
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_019",
-    "query": "What models cite or build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "id": "relation_011",
+    "query": "Find all works authored or co-authored by Vaswani, A..",
     "expected_doc_ids": [
+      "paper_001",
       "paper_002",
       "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_020",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
       "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
+      "paper_005"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_021",
-    "query": "Which papers were published at NeurIPS?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_022",
-    "query": "Find all papers authored by Devlin, J.",
+    "id": "relation_012",
+    "query": "Find all works authored or co-authored by Devlin, J..",
     "expected_doc_ids": [
       "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_023",
-    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_024",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
       "paper_001",
-      "paper_004",
-      "paper_005",
       "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_025",
-    "query": "Which papers were published at ICLR?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
       "paper_010"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_026",
-    "query": "Find all papers authored by Sanh, V.",
+    "id": "relation_013",
+    "query": "Find all works authored or co-authored by Radford, A..",
     "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_014",
+    "query": "Find all works authored or co-authored by Brown, T. B..",
+    "expected_doc_ids": [
+      "paper_004",
       "paper_001",
       "paper_003",
-      "paper_004",
-      "paper_006",
+      "paper_010",
       "paper_008"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_027",
-    "query": "What models cite or build upon Efficient Transformers: A Survey?",
+    "id": "relation_015",
+    "query": "Find all works authored or co-authored by Dosovitskiy, A..",
     "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_016",
+    "query": "Find all works authored or co-authored by Sanh, V..",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_028",
-    "query": "Which publications from 2014 introduce attention or transformers?",
+    "id": "relation_017",
+    "query": "Find all works authored or co-authored by Tay, Y..",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
-      "paper_004",
       "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_018",
+    "query": "Find all works authored or co-authored by Sutskever, I..",
+    "expected_doc_ids": [
       "paper_008",
-      "paper_010"
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_029",
-    "query": "Which papers were published at ACL?",
+    "id": "relation_019",
+    "query": "Find all works authored or co-authored by Dai, Z..",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_030",
-    "query": "Find all papers authored by Lewis, P.",
-    "expected_doc_ids": [
+      "paper_009",
       "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_031",
-    "query": "What models cite or build upon Attention Is All You Need?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_032",
-    "query": "Which publications from 2018 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_033",
-    "query": "Which papers were published at OpenAI Blog?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_034",
-    "query": "Find all papers authored by Brown, T. B.",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_035",
-    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_036",
-    "query": "Which publications from 2019 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_003",
-      "paper_004",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_037",
-    "query": "Which papers were published at ACM Computing Surveys?",
-    "expected_doc_ids": [
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_038",
-    "query": "Find all papers authored by Sutskever, I.",
+    "id": "relation_020",
+    "query": "Find all works authored or co-authored by Lewis, P..",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
+      "paper_010",
+      "paper_002",
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_039",
-    "query": "What models cite or build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "id": "relation_021",
+    "query": "What papers cite or directly build upon Attention Is All You Need?",
     "expected_doc_ids": [
+      "paper_001",
       "paper_002",
       "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_040",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
       "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
+      "paper_005"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_041",
-    "query": "Which papers were published at NeurIPS?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_042",
-    "query": "Find all papers authored by Devlin, J.",
+    "id": "relation_022",
+    "query": "What papers cite or directly build upon BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_043",
-    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_044",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
       "paper_001",
-      "paper_004",
-      "paper_005",
       "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_045",
-    "query": "Which papers were published at ICLR?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
       "paper_010"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_046",
-    "query": "Find all papers authored by Sanh, V.",
+    "id": "relation_023",
+    "query": "What papers cite or directly build upon Language Models are Unsupervised Multitask Learners?",
     "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_024",
+    "query": "What papers cite or directly build upon Language Models are Few-Shot Learners?",
+    "expected_doc_ids": [
+      "paper_004",
       "paper_001",
       "paper_003",
-      "paper_004",
-      "paper_006",
+      "paper_010",
       "paper_008"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_047",
-    "query": "What models cite or build upon Efficient Transformers: A Survey?",
+    "id": "relation_025",
+    "query": "What papers cite or directly build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
     "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_026",
+    "query": "What papers cite or directly build upon DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_048",
-    "query": "Which publications from 2014 introduce attention or transformers?",
+    "id": "relation_027",
+    "query": "What papers cite or directly build upon Efficient Transformers: A Survey?",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
-      "paper_004",
       "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_028",
+    "query": "What papers cite or directly build upon Sequence to Sequence Learning with Neural Networks?",
+    "expected_doc_ids": [
       "paper_008",
-      "paper_010"
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_049",
-    "query": "Which papers were published at ACL?",
+    "id": "relation_029",
+    "query": "What papers cite or directly build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_050",
-    "query": "Find all papers authored by Lewis, P.",
-    "expected_doc_ids": [
+      "paper_009",
       "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_051",
-    "query": "What models cite or build upon Attention Is All You Need?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_052",
-    "query": "Which publications from 2018 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_053",
-    "query": "Which papers were published at OpenAI Blog?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_054",
-    "query": "Find all papers authored by Brown, T. B.",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_055",
-    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_056",
-    "query": "Which publications from 2019 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_003",
-      "paper_004",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_057",
-    "query": "Which papers were published at ACM Computing Surveys?",
-    "expected_doc_ids": [
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_058",
-    "query": "Find all papers authored by Sutskever, I.",
+    "id": "relation_030",
+    "query": "What papers cite or directly build upon Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
+      "paper_010",
+      "paper_002",
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_059",
-    "query": "What models cite or build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "id": "relation_031",
+    "query": "Identify direct citation links originating from Attention Is All You Need.",
     "expected_doc_ids": [
+      "paper_001",
       "paper_002",
       "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_060",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
       "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
+      "paper_005"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_061",
-    "query": "Which papers were published at NeurIPS?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_062",
-    "query": "Find all papers authored by Devlin, J.",
+    "id": "relation_032",
+    "query": "Identify direct citation links originating from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_063",
-    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_064",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
       "paper_001",
-      "paper_004",
-      "paper_005",
       "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_065",
-    "query": "Which papers were published at ICLR?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
       "paper_010"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_066",
-    "query": "Find all papers authored by Sanh, V.",
+    "id": "relation_033",
+    "query": "Identify direct citation links originating from Language Models are Unsupervised Multitask Learners.",
     "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_034",
+    "query": "Identify direct citation links originating from Language Models are Few-Shot Learners.",
+    "expected_doc_ids": [
+      "paper_004",
       "paper_001",
       "paper_003",
-      "paper_004",
-      "paper_006",
+      "paper_010",
       "paper_008"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_067",
-    "query": "What models cite or build upon Efficient Transformers: A Survey?",
+    "id": "relation_035",
+    "query": "Identify direct citation links originating from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
     "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_036",
+    "query": "Identify direct citation links originating from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_068",
-    "query": "Which publications from 2014 introduce attention or transformers?",
+    "id": "relation_037",
+    "query": "Identify direct citation links originating from Efficient Transformers: A Survey.",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
-      "paper_004",
       "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_038",
+    "query": "Identify direct citation links originating from Sequence to Sequence Learning with Neural Networks.",
+    "expected_doc_ids": [
       "paper_008",
-      "paper_010"
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_069",
-    "query": "Which papers were published at ACL?",
+    "id": "relation_039",
+    "query": "Identify direct citation links originating from Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_070",
-    "query": "Find all papers authored by Lewis, P.",
-    "expected_doc_ids": [
+      "paper_009",
       "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_071",
-    "query": "What models cite or build upon Attention Is All You Need?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_072",
-    "query": "Which publications from 2018 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_073",
-    "query": "Which papers were published at OpenAI Blog?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_074",
-    "query": "Find all papers authored by Brown, T. B.",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_075",
-    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_076",
-    "query": "Which publications from 2019 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_003",
-      "paper_004",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_077",
-    "query": "Which papers were published at ACM Computing Surveys?",
-    "expected_doc_ids": [
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_078",
-    "query": "Find all papers authored by Sutskever, I.",
+    "id": "relation_040",
+    "query": "Identify direct citation links originating from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
+      "paper_010",
+      "paper_002",
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_079",
-    "query": "What models cite or build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "id": "relation_041",
+    "query": "Which models in the citation network reference Vaswani, A.?",
     "expected_doc_ids": [
+      "paper_001",
       "paper_002",
       "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_080",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
       "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
+      "paper_005"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_081",
-    "query": "Which papers were published at NeurIPS?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_082",
-    "query": "Find all papers authored by Devlin, J.",
+    "id": "relation_042",
+    "query": "Which models in the citation network reference Devlin, J.?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_083",
-    "query": "What models cite or build upon Language Models are Unsupervised Multitask Learners?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_084",
-    "query": "Which publications from 2020 introduce attention or transformers?",
-    "expected_doc_ids": [
       "paper_001",
-      "paper_004",
-      "paper_005",
       "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_085",
-    "query": "Which papers were published at ICLR?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
       "paper_010"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_086",
-    "query": "Find all papers authored by Sanh, V.",
+    "id": "relation_043",
+    "query": "Which models in the citation network reference Radford, A.?",
     "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_044",
+    "query": "Which models in the citation network reference Brown, T. B.?",
+    "expected_doc_ids": [
+      "paper_004",
       "paper_001",
       "paper_003",
-      "paper_004",
-      "paper_006",
+      "paper_010",
       "paper_008"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_087",
-    "query": "What models cite or build upon Efficient Transformers: A Survey?",
+    "id": "relation_045",
+    "query": "Which models in the citation network reference Dosovitskiy, A.?",
     "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_046",
+    "query": "Which models in the citation network reference Sanh, V.?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_088",
-    "query": "Which publications from 2014 introduce attention or transformers?",
+    "id": "relation_047",
+    "query": "Which models in the citation network reference Tay, Y.?",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
-      "paper_004",
       "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_048",
+    "query": "Which models in the citation network reference Sutskever, I.?",
+    "expected_doc_ids": [
       "paper_008",
-      "paper_010"
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_089",
-    "query": "Which papers were published at ACL?",
+    "id": "relation_049",
+    "query": "Which models in the citation network reference Dai, Z.?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_090",
-    "query": "Find all papers authored by Lewis, P.",
-    "expected_doc_ids": [
+      "paper_009",
       "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_091",
-    "query": "What models cite or build upon Attention Is All You Need?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_006",
-      "paper_008",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_092",
-    "query": "Which publications from 2018 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_002",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_093",
-    "query": "Which papers were published at OpenAI Blog?",
-    "expected_doc_ids": [
-      "paper_003",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_094",
-    "query": "Find all papers authored by Brown, T. B.",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_004",
-      "paper_005",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_095",
-    "query": "What models cite or build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_005",
-      "paper_010"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_096",
-    "query": "Which publications from 2019 introduce attention or transformers?",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_003",
-      "paper_004",
-      "paper_006",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "rel_097",
-    "query": "Which papers were published at ACM Computing Surveys?",
-    "expected_doc_ids": [
       "paper_007"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_098",
-    "query": "Find all papers authored by Sutskever, I.",
+    "id": "relation_050",
+    "query": "Which models in the citation network reference Lewis, P.?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_002",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_051",
+    "query": "List research publications presented at NeurIPS.",
     "expected_doc_ids": [
       "paper_001",
+      "paper_002",
+      "paper_003",
       "paper_004",
+      "paper_005"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_052",
+    "query": "List research publications presented at ACL.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_001",
       "paper_006",
-      "paper_008",
       "paper_010"
     ],
     "type": "relationship_search",
     "difficulty": "medium"
   },
   {
-    "id": "rel_099",
-    "query": "What models cite or build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
+    "id": "relation_053",
+    "query": "List research publications presented at OpenAI Blog.",
     "expected_doc_ids": [
-      "paper_002",
       "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_054",
+    "query": "List research publications presented at NeurIPS. [Query #53]",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_001",
+      "paper_003",
+      "paper_010",
+      "paper_008"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_055",
+    "query": "List research publications presented at ICLR.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_056",
+    "query": "List research publications presented at NeurIPS. [Query #55]",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_057",
+    "query": "List research publications presented at ACM Computing Surveys.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_001",
       "paper_006",
       "paper_009"
     ],
@@ -1167,14 +652,489 @@
     "difficulty": "medium"
   },
   {
-    "id": "rel_100",
-    "query": "Which publications from 2020 introduce attention or transformers?",
+    "id": "relation_058",
+    "query": "List research publications presented at NeurIPS. [Query #57]",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_059",
+    "query": "List research publications presented at ACL. [Query #58]",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_001",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_060",
+    "query": "List research publications presented at NeurIPS. [Query #59]",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_002",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_061",
+    "query": "Trace the co-authorship network of Vaswani, A..",
     "expected_doc_ids": [
       "paper_001",
+      "paper_002",
+      "paper_003",
       "paper_004",
-      "paper_005",
+      "paper_005"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_062",
+    "query": "Trace the co-authorship network of Devlin, J..",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_001",
       "paper_006",
+      "paper_010"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_063",
+    "query": "Trace the co-authorship network of Radford, A..",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_064",
+    "query": "Trace the co-authorship network of Brown, T. B..",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_001",
+      "paper_003",
+      "paper_010",
       "paper_008"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_065",
+    "query": "Trace the co-authorship network of Dosovitskiy, A..",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_066",
+    "query": "Trace the co-authorship network of Sanh, V..",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_067",
+    "query": "Trace the co-authorship network of Tay, Y..",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_001",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_068",
+    "query": "Trace the co-authorship network of Sutskever, I..",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_069",
+    "query": "Trace the co-authorship network of Dai, Z..",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_001",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_070",
+    "query": "Trace the co-authorship network of Lewis, P..",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_002",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_071",
+    "query": "Which foundational models cite Attention Is All You Need as prior art?",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_072",
+    "query": "Which foundational models cite BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding as prior art?",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_001",
+      "paper_006",
+      "paper_010"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_073",
+    "query": "Which foundational models cite Language Models are Unsupervised Multitask Learners as prior art?",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_074",
+    "query": "Which foundational models cite Language Models are Few-Shot Learners as prior art?",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_001",
+      "paper_003",
+      "paper_010",
+      "paper_008"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_075",
+    "query": "Which foundational models cite An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale as prior art?",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_076",
+    "query": "Which foundational models cite DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter as prior art?",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_077",
+    "query": "Which foundational models cite Efficient Transformers: A Survey as prior art?",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_001",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_078",
+    "query": "Which foundational models cite Sequence to Sequence Learning with Neural Networks as prior art?",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_079",
+    "query": "Which foundational models cite Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context as prior art?",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_001",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_080",
+    "query": "Which foundational models cite Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks as prior art?",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_002",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_081",
+    "query": "Find papers connected to attention at NeurIPS.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_082",
+    "query": "Find papers connected to BERT at ACL.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_001",
+      "paper_006",
+      "paper_010"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_083",
+    "query": "Find papers connected to GPT-2 at OpenAI Blog.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_084",
+    "query": "Find papers connected to GPT-3 at NeurIPS.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_001",
+      "paper_003",
+      "paper_010",
+      "paper_008"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_085",
+    "query": "Find papers connected to Vision Transformer at ICLR.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_086",
+    "query": "Find papers connected to model compression at NeurIPS.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_087",
+    "query": "Find papers connected to efficiency at ACM Computing Surveys.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_001",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_088",
+    "query": "Find papers connected to sequence-to-sequence at NeurIPS.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_089",
+    "query": "Find papers connected to long sequences at ACL.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_001",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_090",
+    "query": "Find papers connected to RAG at NeurIPS.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_002",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_091",
+    "query": "List all citations connecting Attention Is All You Need to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_001",
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_092",
+    "query": "List all citations connecting BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_002",
+      "paper_001",
+      "paper_006",
+      "paper_010"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_093",
+    "query": "List all citations connecting Language Models are Unsupervised Multitask Learners to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_003",
+      "paper_001",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_094",
+    "query": "List all citations connecting Language Models are Few-Shot Learners to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_004",
+      "paper_001",
+      "paper_003",
+      "paper_010",
+      "paper_008"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_095",
+    "query": "List all citations connecting An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_005",
+      "paper_001"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_096",
+    "query": "List all citations connecting DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_006",
+      "paper_002",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_097",
+    "query": "List all citations connecting Efficient Transformers: A Survey to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_007",
+      "paper_001",
+      "paper_006",
+      "paper_009"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_098",
+    "query": "List all citations connecting Sequence to Sequence Learning with Neural Networks to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_008",
+      "paper_004"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_099",
+    "query": "List all citations connecting Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_009",
+      "paper_001",
+      "paper_007"
+    ],
+    "type": "relationship_search",
+    "difficulty": "medium"
+  },
+  {
+    "id": "relation_100",
+    "query": "List all citations connecting Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks to subsequent publications.",
+    "expected_doc_ids": [
+      "paper_010",
+      "paper_002",
+      "paper_004"
     ],
     "type": "relationship_search",
     "difficulty": "medium"

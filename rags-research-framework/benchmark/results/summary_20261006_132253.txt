@@ -1,0 +1,36 @@
+BENCHMARK RESULTS SUMMARY (RESEARCH-HARDENED)
+=====================================================================================
+Timestamp: 2026-10-06T13:22:54.504325
+
+RANKINGS BY RETRIEVAL QUALITY (Primary Metric)
+-------------------------------------------------------------------------------------
+1. VectorRAG                  Quality: 0.6777 (P@5: 0.2629, MRR: 0.8139)
+2. AdaptiveRetrievalRAG       Quality: 0.6762 (P@5: 0.2709, MRR: 0.8023)
+3. InvertedIndexGraphRAG      Quality: 0.6750 (P@5: 0.2674, MRR: 0.8025)
+4. TrieGraphRAG               Quality: 0.5938 (P@5: 0.2503, MRR: 0.6926)
+5. TrieRAG                    Quality: 0.5921 (P@5: 0.2291, MRR: 0.7083)
+6. HashMapTrieRAG             Quality: 0.5381 (P@5: 0.1794, MRR: 0.6769)
+7. GraphRAG                   Quality: 0.3105 (P@5: 0.1791, MRR: 0.3372)
+8. HashMapGraphRAG            Quality: 0.2619 (P@5: 0.1517, MRR: 0.2933)
+9. HashMapRAG                 Quality: 0.2167 (P@5: 0.0669, MRR: 0.2936)
+
+LATENCY & PERFORMANCE PROFILES (Decoupled)
+-------------------------------------------------------------------------------------
+VectorRAG                  p50:  25.54ms | p95:  58.18ms | Mean:  33.01ms | Build: 748.5ms
+GraphRAG                   p50:   0.06ms | p95:   0.17ms | Mean:   0.07ms | Build:   0.4ms
+HashMapRAG                 p50:   0.04ms | p95:   0.10ms | Mean:   0.05ms | Build:   0.1ms
+TrieRAG                    p50:   0.35ms | p95:   0.91ms | Mean:   0.47ms | Build:   2.5ms
+HashMapTrieRAG             p50:   0.14ms | p95:   0.61ms | Mean:   0.21ms | Build:   4.5ms
+HashMapGraphRAG            p50:   0.05ms | p95:   0.16ms | Mean:   0.06ms | Build:   0.8ms
+TrieGraphRAG               p50:   0.36ms | p95:   0.96ms | Mean:   0.48ms | Build:   2.7ms
+InvertedIndexGraphRAG      p50:   0.06ms | p95:   0.21ms | Mean:   0.10ms | Build:   0.7ms
+AdaptiveRetrievalRAG       p50:  20.08ms | p95:  58.44ms | Mean:  21.41ms | Build: 490.0ms
+
+ORACLE & ROUTING REGRET ANALYSIS
+-------------------------------------------------------------------------------------
+Oracle Quality:        0.7755
+Adaptive Quality:      0.6585 (84.9% of Oracle)
+Vector Baseline:       0.6777
+Random Router:         0.5047
+Mean Quality Regret:   0.1169
+Routing Accuracy:      52.4%

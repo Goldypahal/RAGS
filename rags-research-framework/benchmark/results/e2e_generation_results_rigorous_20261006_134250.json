@@ -1,0 +1,410 @@
+{
+  "total_evaluations": 630,
+  "systems": {
+    "AdaptiveRetrievalRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.0571,
+        "ci_95": [
+          0.0143,
+          0.1143
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.9429,
+        "ci_95": [
+          0.8857,
+          0.9857
+        ]
+      },
+      "context_recall": {
+        "mean": 0.6755,
+        "ci_95": [
+          0.5864,
+          0.7614
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.1484,
+        "ci_95": [
+          0.1091,
+          0.1931
+        ]
+      },
+      "latency_ms": {
+        "mean": 660.29,
+        "p50": 607.17,
+        "p95": 1060.21
+      }
+    },
+    "VectorRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.0857,
+        "ci_95": [
+          0.0286,
+          0.1571
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.9143,
+        "ci_95": [
+          0.8429,
+          0.9714
+        ]
+      },
+      "context_recall": {
+        "mean": 0.6876,
+        "ci_95": [
+          0.5942,
+          0.7786
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.145,
+        "ci_95": [
+          0.1074,
+          0.1864
+        ]
+      },
+      "latency_ms": {
+        "mean": 719.2,
+        "p50": 628.11,
+        "p95": 1540.1
+      }
+    },
+    "TrieRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.1714,
+        "ci_95": [
+          0.0857,
+          0.2571
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.8286,
+        "ci_95": [
+          0.7429,
+          0.9143
+        ]
+      },
+      "context_recall": {
+        "mean": 0.6155,
+        "ci_95": [
+          0.5038,
+          0.7114
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.1447,
+        "ci_95": [
+          0.1015,
+          0.1902
+        ]
+      },
+      "latency_ms": {
+        "mean": 548.42,
+        "p50": 544.8,
+        "p95": 939.16
+      }
+    },
+    "HashMapGraphRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.0143,
+        "ci_95": [
+          0.0,
+          0.0429
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.9857,
+        "ci_95": [
+          0.9571,
+          1.0
+        ]
+      },
+      "context_recall": {
+        "mean": 0.2943,
+        "ci_95": [
+          0.1933,
+          0.3986
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.0674,
+        "ci_95": [
+          0.047,
+          0.0905
+        ]
+      },
+      "latency_ms": {
+        "mean": 439.97,
+        "p50": 535.99,
+        "p95": 614.71
+      }
+    },
+    "HashMapTrieRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.2571,
+        "ci_95": [
+          0.1571,
+          0.3571
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.7429,
+        "ci_95": [
+          0.6429,
+          0.8429
+        ]
+      },
+      "context_recall": {
+        "mean": 0.4812,
+        "ci_95": [
+          0.3843,
+          0.5874
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.1287,
+        "ci_95": [
+          0.0931,
+          0.1724
+        ]
+      },
+      "latency_ms": {
+        "mean": 480.58,
+        "p50": 483.02,
+        "p95": 917.07
+      }
+    },
+    "GraphRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.0143,
+        "ci_95": [
+          0.0,
+          0.0432
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.9857,
+        "ci_95": [
+          0.9568,
+          1.0
+        ]
+      },
+      "context_recall": {
+        "mean": 0.2564,
+        "ci_95": [
+          0.1728,
+          0.3391
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.0947,
+        "ci_95": [
+          0.0579,
+          0.1395
+        ]
+      },
+      "latency_ms": {
+        "mean": 447.15,
+        "p50": 541.35,
+        "p95": 663.85
+      }
+    },
+    "TrieGraphRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.1286,
+        "ci_95": [
+          0.0571,
+          0.2143
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.8714,
+        "ci_95": [
+          0.7857,
+          0.9429
+        ]
+      },
+      "context_recall": {
+        "mean": 0.5898,
+        "ci_95": [
+          0.4947,
+          0.6924
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.1476,
+        "ci_95": [
+          0.1069,
+          0.1971
+        ]
+      },
+      "latency_ms": {
+        "mean": 573.18,
+        "p50": 559.5,
+        "p95": 881.67
+      }
+    },
+    "HashMapRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.1,
+        "ci_95": [
+          0.0429,
+          0.1714
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.9,
+        "ci_95": [
+          0.8286,
+          0.9571
+        ]
+      },
+      "context_recall": {
+        "mean": 0.1993,
+        "ci_95": [
+          0.1157,
+          0.2893
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.0675,
+        "ci_95": [
+          0.0371,
+          0.1031
+        ]
+      },
+      "latency_ms": {
+        "mean": 330.5,
+        "p50": 0.12,
+        "p95": 1173.77
+      }
+    },
+    "InvertedIndexGraphRAG": {
+      "n_queries": 70,
+      "faithfulness": {
+        "mean": 0.0714,
+        "ci_95": [
+          0.0143,
+          0.1429
+        ]
+      },
+      "hallucination_rate": {
+        "mean": 0.9286,
+        "ci_95": [
+          0.8571,
+          0.9857
+        ]
+      },
+      "context_recall": {
+        "mean": 0.6312,
+        "ci_95": [
+          0.5338,
+          0.7191
+        ]
+      },
+      "answer_relevance": {
+        "mean": 0.1326,
+        "ci_95": [
+          0.0959,
+          0.176
+        ]
+      },
+      "latency_ms": {
+        "mean": 570.36,
+        "p50": 557.46,
+        "p95": 705.02
+      }
+    }
+  },
+  "rankings_by_faithfulness": [
+    "HashMapTrieRAG",
+    "TrieRAG",
+    "TrieGraphRAG",
+    "HashMapRAG",
+    "VectorRAG",
+    "InvertedIndexGraphRAG",
+    "AdaptiveRetrievalRAG",
+    "HashMapGraphRAG",
+    "GraphRAG"
+  ],
+  "rankings_by_hallucination": [
+    "HashMapTrieRAG",
+    "TrieRAG",
+    "TrieGraphRAG",
+    "HashMapRAG",
+    "VectorRAG",
+    "InvertedIndexGraphRAG",
+    "AdaptiveRetrievalRAG",
+    "HashMapGraphRAG",
+    "GraphRAG"
+  ],
+  "paired_significance_vs_vector": {
+    "InvertedIndexGraphRAG": {
+      "delta_faithfulness": -0.0143,
+      "p_value_faithfulness": 0.658,
+      "delta_context_recall": -0.0564,
+      "p_value_context_recall": 0.2001,
+      "delta_answer_relevance": -0.0124
+    },
+    "AdaptiveRetrievalRAG": {
+      "delta_faithfulness": -0.0286,
+      "p_value_faithfulness": 0.3208,
+      "delta_context_recall": -0.0121,
+      "p_value_context_recall": 0.709,
+      "delta_answer_relevance": 0.0034
+    },
+    "TrieGraphRAG": {
+      "delta_faithfulness": 0.0429,
+      "p_value_faithfulness": 0.3695,
+      "delta_context_recall": -0.0979,
+      "p_value_context_recall": 0.0441,
+      "delta_answer_relevance": 0.0026
+    },
+    "TrieRAG": {
+      "delta_faithfulness": 0.0857,
+      "p_value_faithfulness": 0.1347,
+      "delta_context_recall": -0.0721,
+      "p_value_context_recall": 0.1056,
+      "delta_answer_relevance": -0.0003
+    },
+    "HashMapTrieRAG": {
+      "delta_faithfulness": 0.1714,
+      "p_value_faithfulness": 0.0132,
+      "delta_context_recall": -0.2064,
+      "p_value_context_recall": 0.0003,
+      "delta_answer_relevance": -0.0163
+    },
+    "GraphRAG": {
+      "delta_faithfulness": -0.0714,
+      "p_value_faithfulness": 0.0242,
+      "delta_context_recall": -0.4312,
+      "p_value_context_recall": 0.0,
+      "delta_answer_relevance": -0.0503
+    },
+    "HashMapGraphRAG": {
+      "delta_faithfulness": -0.0714,
+      "p_value_faithfulness": 0.0242,
+      "delta_context_recall": -0.3933,
+      "p_value_context_recall": 0.0,
+      "delta_answer_relevance": -0.0775
+    },
+    "HashMapRAG": {
+      "delta_faithfulness": 0.0143,
+      "p_value_faithfulness": 0.7654,
+      "delta_context_recall": -0.4883,
+      "p_value_context_recall": 0.0,
+      "delta_answer_relevance": -0.0775
+    }
+  },
+  "empirical_speedup_vector_vs_inverted_graph": 1.3
+}

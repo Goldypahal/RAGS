@@ -1,13 +1,14 @@
 """
-Run End-to-End Generation & Faithfulness Benchmark (Phase 4).
+Executable Publication-Grade End-to-End Generation & Faithfulness Benchmark.
 
-Evaluates all 9 RAG architectures across:
-1. Downstream Generated Answers
-2. Faithfulness / Groundedness
-3. Hallucination Rates
-4. Context Recall
-5. Answer Relevance
-6. Generation Latency
+Features:
+- Deterministic random sampling with explicit seed (seed = 42)
+- Real LLM Generation (google/flan-t5-small)
+- Semantic NLI Claim Entailment Judge
+- Dense Embedding Cosine Answer Relevance (all-MiniLM-L6-v2)
+- 95% Bootstrap Confidence Intervals (B = 1,000)
+- Paired Significance Testing vs VectorRAG
+- Empirical Latency Ratio Computation
 """
 
 import sys
@@ -19,8 +20,10 @@ import argparse
 from pathlib import Path
 import matplotlib.pyplot as plt
 import numpy as np
+from scipy import stats
 
-# Ensure UTF-8 output on Windows consoles
+os.environ["KMP_DUPLICATE_LIB_OK"] = "TRUE"
+
 if sys.platform == 'win32':
     try:
         sys.stdout.reconfigure(encoding='utf-8', errors='replace')
@@ -28,7 +31,6 @@ if sys.platform == 'win32':
     except Exception:
         pass
 
-# Add paths
 base_dir = Path(__file__).parent.parent
 sys.path.insert(0, str(base_dir))
 sys.path.insert(0, str(base_dir / "1-vector-rag"))
@@ -79,12 +81,12 @@ def init_systems(documents):
     systems = {
         'VectorRAG': VectorRAG(),
         'InvertedIndexGraphRAG': InvertedIndexGraphRAG(),
-        'TrieRAG': TrieRAG(),
         'AdaptiveRetrievalRAG': AdaptiveRetrievalRAG(),
         'TrieGraphRAG': TrieGraphRAG(),
+        'TrieRAG': TrieRAG(),
         'HashMapTrieRAG': HashMapTrieRAG(),
-        'HashMapGraphRAG': HashMapGraphRAG(),
         'GraphRAG': GraphRAG(),
+        'HashMapGraphRAG': HashMapGraphRAG(),
         'HashMapRAG': HashMapRAG(),
     }
     for name, s in systems.items():
@@ -94,23 +96,22 @@ def init_systems(documents):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="End-to-End Generation & Faithfulness Benchmark")
-    parser.add_argument("--samples-per-type", type=int, default=25, help="Number of queries per type (default: 25)")
+    parser = argparse.ArgumentParser(description="Publication-Grade End-to-End Generation Benchmark")
+    parser.add_argument("--samples-per-type", type=int, default=10, help="Queries sampled per category (default: 10, total 70 queries)")
     args = parser.parse_args()
     
     print("\n" + "=" * 85)
-    print("🤖 PHASE 4: END-TO-END RAG GENERATION & FAITHFULNESS / HALLUCINATION BENCHMARK")
+    print("🤖 PUBLICATION-GRADE END-TO-END RAG GENERATION & FAITHFULNESS BENCHMARK")
     print("=" * 85 + "\n")
     
     dataset_dir = "benchmark/dataset"
     documents, paper_lookup = load_dataset(dataset_dir)
     print(f"✓ Loaded {len(documents)} corpus documents")
     
-    print("⚡ Initializing 9 RAG architectures...")
+    print("⚡ Initializing 9 RAG retrieval architectures...")
     systems = init_systems(documents)
     print("✓ All 9 systems initialized")
     
-    # Load test queries
     test_dir = "benchmark/tests/scaled"
     categories = [
         "exact_lookup",
@@ -122,16 +123,22 @@ def main():
         "prefix_lookup"
     ]
     
+    # Deterministic uniform random sampling with fixed seed
+    rng = np.random.default_rng(42)
     selected_tests = []
+    
     for cat in categories:
         tests = BenchmarkLoader.load_test_suite(cat, test_dir=test_dir)
-        sampled = tests[:args.samples_per_type]
-        for t in sampled:
+        n_sample = min(len(tests), args.samples_per_type)
+        sample_indices = rng.choice(len(tests), size=n_sample, replace=False)
+        for idx in sample_indices:
+            t = tests[idx]
             t['category'] = cat
             selected_tests.append(t)
             
-    print(f"✓ Selected {len(selected_tests)} queries ({args.samples_per_type} per category across {len(categories)} categories)")
-    print(f"📊 Total End-to-End evaluations to perform: {len(selected_tests) * len(systems)}\n")
+    total_evals = len(selected_tests) * len(systems)
+    print(f"✓ Selected {len(selected_tests)} queries via seed=42 uniform sampling ({args.samples_per_type} per category)")
+    print(f"📊 Total End-to-End evaluations to execute: {total_evals} (real LLM generation + NLI entailment)\n")
     
     evaluator = E2EGenerationEvaluator()
     completed = 0
@@ -143,14 +150,6 @@ def main():
         category = test['category']
         expected_doc_ids = test.get('expected_doc_ids', [])
         
-        # Build gold factual propositions from expected documents
-        gold_facts = []
-        for did in expected_doc_ids:
-            if did in paper_lookup:
-                p = paper_lookup[did]
-                gold_facts.append(f"{p['title']} was published in {p.get('year', '')}")
-                gold_facts.append(f"{p['title']} authored by {', '.join(p.get('authors', [])[:2])}")
-                
         for sys_name, system in systems.items():
             t0 = time.perf_counter_ns()
             res = system.retrieve(query, top_k=3)
@@ -163,94 +162,123 @@ def main():
                 query_type=category,
                 system_name=sys_name,
                 retrieved_docs=res.documents,
-                expected_facts=gold_facts,
-                retrieval_time_ms=ret_ms,
-                expected_doc_ids=expected_doc_ids
+                expected_doc_ids=expected_doc_ids,
+                retrieval_time_ms=ret_ms
             )
             
         completed += 1
-        if completed % 25 == 0 or completed == total:
-            print(f"  Progress: {completed}/{total} test queries evaluated across all 9 systems")
+        if completed % 10 == 0 or completed == total:
+            print(f"  Progress: {completed}/{total} queries generated & evaluated ({completed * len(systems)}/{total_evals} evals)")
             
-    # Summarize results
-    summary = evaluator.summarize()
+    # Compute summary with 95% Bootstrap CIs
+    print("\n📐 Computing 95% Bootstrap Confidence Intervals (B = 1,000 resamples)...")
+    summary = evaluator.summarize_with_bootstrap(n_bootstraps=1000)
     
-    print("\n" + "=" * 85)
-    print("🏆 END-TO-END RAG GENERATION & FAITHFULNESS REPORT")
-    print("=" * 85)
-    print(f"{'System':<24} {'Faithfulness':<14} {'Hallucination':<15} {'Context Recall':<16} {'Ans Relevance':<14}")
-    print("-" * 85)
+    # Paired Statistical Significance vs VectorRAG
+    vec_results = [r for r in evaluator.results if r.system_name == 'VectorRAG']
+    paired_significance = {}
     
-    for sys_name in summary['system_rankings_by_faithfulness']:
-        metrics = summary['systems'][sys_name]
+    for sys_name in systems.keys():
+        if sys_name == 'VectorRAG':
+            continue
+        s_results = [r for r in evaluator.results if r.system_name == sys_name]
+        
+        diff_faith = [s.faithfulness - v.faithfulness for s, v in zip(s_results, vec_results)]
+        diff_recall = [s.context_recall - v.context_recall for s, v in zip(s_results, vec_results)]
+        diff_relev = [s.answer_relevance - v.answer_relevance for s, v in zip(s_results, vec_results)]
+        
+        t_f, p_f = stats.ttest_rel([s.faithfulness for s in s_results], [v.faithfulness for v in vec_results])
+        t_r, p_r = stats.ttest_rel([s.context_recall for s in s_results], [v.context_recall for v in vec_results])
+        
+        paired_significance[sys_name] = {
+            'delta_faithfulness': round(float(np.mean(diff_faith)), 4),
+            'p_value_faithfulness': round(float(p_f), 4) if not np.isnan(p_f) else 1.0,
+            'delta_context_recall': round(float(np.mean(diff_recall)), 4),
+            'p_value_context_recall': round(float(p_r), 4) if not np.isnan(p_r) else 1.0,
+            'delta_answer_relevance': round(float(np.mean(diff_relev)), 4)
+        }
+        
+    summary['paired_significance_vs_vector'] = paired_significance
+    
+    # Empirical Speedup Ratio calculation
+    vec_lat = summary['systems']['VectorRAG']['latency_ms']['mean']
+    inv_lat = summary['systems']['InvertedIndexGraphRAG']['latency_ms']['mean']
+    empirical_speedup = round(vec_lat / max(1e-6, inv_lat), 1)
+    summary['empirical_speedup_vector_vs_inverted_graph'] = empirical_speedup
+    
+    print("\n" + "=" * 95)
+    print("🏆 RIGOROUS END-TO-END GENERATION & SEMANTIC FAITHFULNESS REPORT")
+    print("=" * 95)
+    print(f"{'System':<24} {'Faithfulness (95% CI)':<26} {'Hallucination':<16} {'Context Recall':<16} {'Ans Relevance':<14}")
+    print("-" * 95)
+    
+    for sys_name in summary['rankings_by_faithfulness']:
+        m = summary['systems'][sys_name]
+        f_val = m['faithfulness']['mean'] * 100
+        f_ci = [m['faithfulness']['ci_95'][0] * 100, m['faithfulness']['ci_95'][1] * 100]
+        h_val = m['hallucination_rate']['mean'] * 100
+        r_val = m['context_recall']['mean'] * 100
+        a_val = m['answer_relevance']['mean'] * 100
+        
         print(f"{sys_name:<24} "
-              f"{metrics['mean_faithfulness']*100:6.2f}%       "
-              f"{metrics['mean_hallucination_rate']*100:6.2f}%         "
-              f"{metrics['mean_context_recall']*100:6.2f}%           "
-              f"{metrics['mean_answer_relevance']*100:6.2f}%")
+              f"{f_val:5.1f}% [{f_ci[0]:4.1f}%, {f_ci[1]:4.1f}%]     "
+              f"{h_val:5.1f}%          "
+              f"{r_val:5.1f}%          "
+              f"{a_val:5.1f}%")
               
-    print("=" * 85)
+    print("=" * 95)
+    print(f"⚡ Empirical Latency Ratio: VectorRAG ({vec_lat:.1f}ms) vs InvertedIndexGraphRAG ({inv_lat:.1f}ms) = {empirical_speedup}× faster\n")
     
-    # Save JSON results
+    # Save clean telemetry
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     out_dir = Path(__file__).parent / "results"
-    out_json = out_dir / f"e2e_generation_results_{timestamp}.json"
+    out_json = out_dir / f"e2e_generation_results_rigorous_{timestamp}.json"
     with open(out_json, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=2)
-    print(f"\n💾 Saved full telemetry to: {out_json}")
+    print(f"💾 Full telemetry saved to: {out_json}")
     
-    # Generate Plots
+    # Generate Plots with 95% Error Bars
     plots_dir = out_dir / "plots"
     plots_dir.mkdir(parents=True, exist_ok=True)
     
-    systems_ranked = summary['system_rankings_by_faithfulness']
-    faith_scores = [summary['systems'][s]['mean_faithfulness'] * 100 for s in systems_ranked]
-    halluc_scores = [summary['systems'][s]['mean_hallucination_rate'] * 100 for s in systems_ranked]
-    recall_scores = [summary['systems'][s]['mean_context_recall'] * 100 for s in systems_ranked]
+    systems_ranked = summary['rankings_by_faithfulness']
+    means = [summary['systems'][s]['faithfulness']['mean'] * 100 for s in systems_ranked]
+    ci_err_lower = [means[i] - summary['systems'][s]['faithfulness']['ci_95'][0] * 100 for i, s in enumerate(systems_ranked)]
+    ci_err_upper = [summary['systems'][s]['faithfulness']['ci_95'][1] * 100 - means[i] for i, s in enumerate(systems_ranked)]
     
-    # Plot 1: Faithfulness vs Hallucination Rate
-    plt.figure(figsize=(11, 6))
+    plt.figure(figsize=(10, 6))
     y = np.arange(len(systems_ranked))
-    height = 0.35
-    plt.barh(y - height/2, faith_scores, height=height, label='Faithfulness (Grounded)', color='#2ca02c', edgecolor='black', alpha=0.85)
-    plt.barh(y + height/2, halluc_scores, height=height, label='Hallucination Rate', color='#d62728', edgecolor='black', alpha=0.85)
+    plt.barh(y, means, xerr=[ci_err_lower, ci_err_upper], capsize=5, color='#2ca02c', edgecolor='black', alpha=0.85)
     plt.yticks(y, systems_ranked)
     plt.gca().invert_yaxis()
-    plt.xlabel('Percentage (%)')
-    plt.title('RAG Architectures - End-to-End Answer Faithfulness vs Hallucination Rate')
-    plt.legend()
+    plt.xlabel('Semantic Faithfulness (%) via NLI Entailment [with 95% Bootstrap CI]')
+    plt.title('RAG Architectures - End-to-End Generative Faithfulness (Flan-T5 + NLI Judge)')
     plt.grid(axis='x', linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plot1_path = plots_dir / "e2e_faithfulness_comparison.png"
-    plt.savefig(plot1_path, dpi=150)
+    p1 = plots_dir / "e2e_faithfulness_comparison.png"
+    plt.savefig(p1, dpi=150)
     plt.close()
-    print(f"📊 Saved faithfulness comparison plot to: {plot1_path}")
+    print(f"📊 Saved publication plot: {p1}")
     
-    # Plot 2: Hallucination Rate by Query Type (Relational & Multi-Hop focus)
-    plt.figure(figsize=(12, 7))
-    categories_plot = ["relationship_search", "multi_hop_reasoning", "semantic_search", "exact_lookup"]
-    key_systems = ['VectorRAG', 'InvertedIndexGraphRAG', 'GraphRAG', 'TrieGraphRAG', 'AdaptiveRetrievalRAG']
-    x = np.arange(len(categories_plot))
-    w = 0.16
-    colors_k = ['#1f77b4', '#2ca02c', '#9467bd', '#ff7f0e', '#17becf']
+    # Plot 2: Answer Relevance vs Context Recall
+    recalls = [summary['systems'][s]['context_recall']['mean'] * 100 for s in systems_ranked]
+    relevs = [summary['systems'][s]['answer_relevance']['mean'] * 100 for s in systems_ranked]
     
-    for i, sys_k in enumerate(key_systems):
-        if sys_k in summary['systems']:
-            by_q = summary['systems'][sys_k]['by_query_type']
-            h_rates = [by_q.get(c, {}).get('hallucination_rate', 0.0) * 100 for c in categories_plot]
-            plt.bar(x + (i - 2)*w, h_rates, width=w, label=sys_k, color=colors_k[i], edgecolor='black', alpha=0.85)
-            
-    plt.xticks(x, [c.replace('_', ' ').title() for c in categories_plot])
-    plt.ylabel('Hallucination Rate (%) - LOWER is better')
-    plt.title('Hallucination Rate by Query Type (Testing Graph vs. Vector Hallucination Mitigation)')
-    plt.legend()
-    plt.grid(axis='y', linestyle='--', alpha=0.5)
+    plt.figure(figsize=(10, 6))
+    plt.scatter(recalls, relevs, s=120, color='#1f77b4', edgecolor='black', zorder=5)
+    for i, s in enumerate(systems_ranked):
+        plt.annotate(s, (recalls[i], relevs[i]), xytext=(6, 4), textcoords='offset points', fontsize=9, fontweight='bold')
+    plt.xlabel('Context Recall (%) - Ground-Truth Documents Retrieved')
+    plt.ylabel('Semantic Answer Relevance (%) - Cosine Similarity to Query')
+    plt.title('RAG Generation - Context Recall vs Semantic Answer Relevance')
+    plt.grid(linestyle='--', alpha=0.5)
     plt.tight_layout()
-    plot2_path = plots_dir / "e2e_hallucination_by_query_type.png"
-    plt.savefig(plot2_path, dpi=150)
+    p2 = plots_dir / "e2e_recall_vs_relevance.png"
+    plt.savefig(p2, dpi=150)
     plt.close()
-    print(f"📊 Saved query-type hallucination plot to: {plot2_path}")
-    print("\n✅ PHASE 4 BENCHMARK COMPLETE!\n")
+    print(f"📊 Saved publication plot: {p2}")
+    
+    print("\n✅ PUBLICATION-GRADE PHASE 4 BENCHMARK COMPLETED SUCCESSFULLY!\n")
 
 
 if __name__ == "__main__":

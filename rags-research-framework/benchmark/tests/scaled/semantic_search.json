@@ -1,7 +1,7 @@
 [
   {
     "id": "semantic_001",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "In deep learning literature, How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -10,7 +10,7 @@
   },
   {
     "id": "semantic_002",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "In deep learning literature, Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -19,7 +19,7 @@
   },
   {
     "id": "semantic_003",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "In deep learning literature, What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -28,7 +28,7 @@
   },
   {
     "id": "semantic_004",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "In deep learning literature, How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -37,7 +37,7 @@
   },
   {
     "id": "semantic_005",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "In deep learning literature, Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -46,7 +46,7 @@
   },
   {
     "id": "semantic_006",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "In deep learning literature, How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -55,7 +55,7 @@
   },
   {
     "id": "semantic_007",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "In deep learning literature, What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -64,7 +64,7 @@
   },
   {
     "id": "semantic_008",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "In deep learning literature, Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -73,7 +73,7 @@
   },
   {
     "id": "semantic_009",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "In deep learning literature, What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -82,7 +82,7 @@
   },
   {
     "id": "semantic_010",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "In deep learning literature, Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -91,7 +91,7 @@
   },
   {
     "id": "semantic_011",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Provide a comprehensive technical overview: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -100,7 +100,7 @@
   },
   {
     "id": "semantic_012",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Provide a comprehensive technical overview: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -109,7 +109,7 @@
   },
   {
     "id": "semantic_013",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Provide a comprehensive technical overview: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -118,7 +118,7 @@
   },
   {
     "id": "semantic_014",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Provide a comprehensive technical overview: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -127,7 +127,7 @@
   },
   {
     "id": "semantic_015",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Provide a comprehensive technical overview: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -136,7 +136,7 @@
   },
   {
     "id": "semantic_016",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Provide a comprehensive technical overview: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -145,7 +145,7 @@
   },
   {
     "id": "semantic_017",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Provide a comprehensive technical overview: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -154,7 +154,7 @@
   },
   {
     "id": "semantic_018",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Provide a comprehensive technical overview: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -163,7 +163,7 @@
   },
   {
     "id": "semantic_019",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Provide a comprehensive technical overview: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -172,7 +172,7 @@
   },
   {
     "id": "semantic_020",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Provide a comprehensive technical overview: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -181,7 +181,7 @@
   },
   {
     "id": "semantic_021",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "What theoretical evidence demonstrates that: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -190,7 +190,7 @@
   },
   {
     "id": "semantic_022",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "What theoretical evidence demonstrates that: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -199,7 +199,7 @@
   },
   {
     "id": "semantic_023",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "What theoretical evidence demonstrates that: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -208,7 +208,7 @@
   },
   {
     "id": "semantic_024",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "What theoretical evidence demonstrates that: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -217,7 +217,7 @@
   },
   {
     "id": "semantic_025",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "What theoretical evidence demonstrates that: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -226,7 +226,7 @@
   },
   {
     "id": "semantic_026",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "What theoretical evidence demonstrates that: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -235,7 +235,7 @@
   },
   {
     "id": "semantic_027",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "What theoretical evidence demonstrates that: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -244,7 +244,7 @@
   },
   {
     "id": "semantic_028",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "What theoretical evidence demonstrates that: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -253,7 +253,7 @@
   },
   {
     "id": "semantic_029",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "What theoretical evidence demonstrates that: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -262,7 +262,7 @@
   },
   {
     "id": "semantic_030",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "What theoretical evidence demonstrates that: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -271,7 +271,7 @@
   },
   {
     "id": "semantic_031",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Survey findings regarding: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -280,7 +280,7 @@
   },
   {
     "id": "semantic_032",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Survey findings regarding: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -289,7 +289,7 @@
   },
   {
     "id": "semantic_033",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Survey findings regarding: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -298,7 +298,7 @@
   },
   {
     "id": "semantic_034",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Survey findings regarding: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -307,7 +307,7 @@
   },
   {
     "id": "semantic_035",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Survey findings regarding: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -316,7 +316,7 @@
   },
   {
     "id": "semantic_036",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Survey findings regarding: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -325,7 +325,7 @@
   },
   {
     "id": "semantic_037",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Survey findings regarding: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -334,7 +334,7 @@
   },
   {
     "id": "semantic_038",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Survey findings regarding: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -343,7 +343,7 @@
   },
   {
     "id": "semantic_039",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Survey findings regarding: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -352,7 +352,7 @@
   },
   {
     "id": "semantic_040",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Survey findings regarding: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -361,7 +361,7 @@
   },
   {
     "id": "semantic_041",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Empirical analysis: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -370,7 +370,7 @@
   },
   {
     "id": "semantic_042",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Empirical analysis: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -379,7 +379,7 @@
   },
   {
     "id": "semantic_043",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Empirical analysis: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -388,7 +388,7 @@
   },
   {
     "id": "semantic_044",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Empirical analysis: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -397,7 +397,7 @@
   },
   {
     "id": "semantic_045",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Empirical analysis: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -406,7 +406,7 @@
   },
   {
     "id": "semantic_046",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Empirical analysis: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -415,7 +415,7 @@
   },
   {
     "id": "semantic_047",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Empirical analysis: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -424,7 +424,7 @@
   },
   {
     "id": "semantic_048",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Empirical analysis: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -433,7 +433,7 @@
   },
   {
     "id": "semantic_049",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Empirical analysis: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -442,7 +442,7 @@
   },
   {
     "id": "semantic_050",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Empirical analysis: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -451,7 +451,7 @@
   },
   {
     "id": "semantic_051",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Explain clearly: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -460,7 +460,7 @@
   },
   {
     "id": "semantic_052",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Explain clearly: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -469,7 +469,7 @@
   },
   {
     "id": "semantic_053",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Explain clearly: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -478,7 +478,7 @@
   },
   {
     "id": "semantic_054",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Explain clearly: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -487,7 +487,7 @@
   },
   {
     "id": "semantic_055",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Explain clearly: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -496,7 +496,7 @@
   },
   {
     "id": "semantic_056",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Explain clearly: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -505,7 +505,7 @@
   },
   {
     "id": "semantic_057",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Explain clearly: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -514,7 +514,7 @@
   },
   {
     "id": "semantic_058",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Explain clearly: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -523,7 +523,7 @@
   },
   {
     "id": "semantic_059",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Explain clearly: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -532,7 +532,7 @@
   },
   {
     "id": "semantic_060",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Explain clearly: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -541,7 +541,7 @@
   },
   {
     "id": "semantic_061",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "From an architectural perspective: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -550,7 +550,7 @@
   },
   {
     "id": "semantic_062",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "From an architectural perspective: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -559,7 +559,7 @@
   },
   {
     "id": "semantic_063",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "From an architectural perspective: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -568,7 +568,7 @@
   },
   {
     "id": "semantic_064",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "From an architectural perspective: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -577,7 +577,7 @@
   },
   {
     "id": "semantic_065",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "From an architectural perspective: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -586,7 +586,7 @@
   },
   {
     "id": "semantic_066",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "From an architectural perspective: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -595,7 +595,7 @@
   },
   {
     "id": "semantic_067",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "From an architectural perspective: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -604,7 +604,7 @@
   },
   {
     "id": "semantic_068",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "From an architectural perspective: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -613,7 +613,7 @@
   },
   {
     "id": "semantic_069",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "From an architectural perspective: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -622,7 +622,7 @@
   },
   {
     "id": "semantic_070",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "From an architectural perspective: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -631,7 +631,7 @@
   },
   {
     "id": "semantic_071",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Review modern methodologies: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -640,7 +640,7 @@
   },
   {
     "id": "semantic_072",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Review modern methodologies: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -649,7 +649,7 @@
   },
   {
     "id": "semantic_073",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Review modern methodologies: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -658,7 +658,7 @@
   },
   {
     "id": "semantic_074",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Review modern methodologies: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -667,7 +667,7 @@
   },
   {
     "id": "semantic_075",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Review modern methodologies: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -676,7 +676,7 @@
   },
   {
     "id": "semantic_076",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Review modern methodologies: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -685,7 +685,7 @@
   },
   {
     "id": "semantic_077",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Review modern methodologies: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -694,7 +694,7 @@
   },
   {
     "id": "semantic_078",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Review modern methodologies: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -703,7 +703,7 @@
   },
   {
     "id": "semantic_079",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Review modern methodologies: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -712,7 +712,7 @@
   },
   {
     "id": "semantic_080",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Review modern methodologies: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -721,7 +721,7 @@
   },
   {
     "id": "semantic_081",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Detailed investigation into: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -730,7 +730,7 @@
   },
   {
     "id": "semantic_082",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Detailed investigation into: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -739,7 +739,7 @@
   },
   {
     "id": "semantic_083",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Detailed investigation into: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -748,7 +748,7 @@
   },
   {
     "id": "semantic_084",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Detailed investigation into: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -757,7 +757,7 @@
   },
   {
     "id": "semantic_085",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Detailed investigation into: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -766,7 +766,7 @@
   },
   {
     "id": "semantic_086",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Detailed investigation into: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -775,7 +775,7 @@
   },
   {
     "id": "semantic_087",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Detailed investigation into: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -784,7 +784,7 @@
   },
   {
     "id": "semantic_088",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Detailed investigation into: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -793,7 +793,7 @@
   },
   {
     "id": "semantic_089",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Detailed investigation into: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -802,7 +802,7 @@
   },
   {
     "id": "semantic_090",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Detailed investigation into: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -811,7 +811,7 @@
   },
   {
     "id": "semantic_091",
-    "query": "How do models using attention perform on modern benchmarks?",
+    "query": "Scientific inquiry: How do self-attention mechanisms replace recurrence in sequence modeling?",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -820,7 +820,7 @@
   },
   {
     "id": "semantic_092",
-    "query": "Explain the theoretical foundations of BERT in sequence modeling.",
+    "query": "Scientific inquiry: Explain the impact of bidirectional context representations on language understanding.",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -829,7 +829,7 @@
   },
   {
     "id": "semantic_093",
-    "query": "What are the main advantages and limitations of GPT-2?",
+    "query": "Scientific inquiry: What allows large language models to generalize across tasks in zero-shot settings?",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -838,7 +838,7 @@
   },
   {
     "id": "semantic_094",
-    "query": "Describe how deep neural networks apply GPT-3 to natural language.",
+    "query": "Scientific inquiry: How does in-context few-shot prompting eliminate task-specific parameter fine-tuning?",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -847,7 +847,7 @@
   },
   {
     "id": "semantic_095",
-    "query": "A survey on computational efficiency and scalability of Vision Transformer.",
+    "query": "Scientific inquiry: Describe the adaptation of pure transformer architectures to patch-based computer vision.",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -856,7 +856,7 @@
   },
   {
     "id": "semantic_096",
-    "query": "How do models using model compression perform on modern benchmarks?",
+    "query": "Scientific inquiry: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -865,7 +865,7 @@
   },
   {
     "id": "semantic_097",
-    "query": "Explain the theoretical foundations of efficiency in sequence modeling.",
+    "query": "Scientific inquiry: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -874,7 +874,7 @@
   },
   {
     "id": "semantic_098",
-    "query": "What are the main advantages and limitations of sequence-to-sequence?",
+    "query": "Scientific inquiry: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -883,7 +883,7 @@
   },
   {
     "id": "semantic_099",
-    "query": "Describe how deep neural networks apply long sequences to natural language.",
+    "query": "Scientific inquiry: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -892,7 +892,7 @@
   },
   {
     "id": "semantic_100",
-    "query": "A survey on computational efficiency and scalability of RAG.",
+    "query": "Scientific inquiry: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
       "paper_010"
     ],

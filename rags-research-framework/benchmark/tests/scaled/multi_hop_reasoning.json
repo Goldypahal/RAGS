@@ -1,7 +1,7 @@
 [
   {
     "id": "multihop_001",
-    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "query": "If BERT builds on Attention Is All You Need, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -11,7 +11,7 @@
   },
   {
     "id": "multihop_002",
-    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "query": "If BERT builds on BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -21,7 +21,7 @@
   },
   {
     "id": "multihop_003",
-    "query": "What is the connection between GPT-2 and GPT-3?",
+    "query": "If BERT builds on Language Models are Unsupervised Multitask Learners, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -31,7 +31,7 @@
   },
   {
     "id": "multihop_004",
-    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "query": "If BERT builds on Language Models are Few-Shot Learners, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -41,7 +41,7 @@
   },
   {
     "id": "multihop_005",
-    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "query": "If BERT builds on An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -51,7 +51,7 @@
   },
   {
     "id": "multihop_006",
-    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "query": "If BERT builds on DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -61,7 +61,7 @@
   },
   {
     "id": "multihop_007",
-    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "query": "If BERT builds on Efficient Transformers: A Survey, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -71,7 +71,7 @@
   },
   {
     "id": "multihop_008",
-    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "query": "If BERT builds on Sequence to Sequence Learning with Neural Networks, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -81,7 +81,7 @@
   },
   {
     "id": "multihop_009",
-    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "query": "If BERT builds on Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -91,7 +91,7 @@
   },
   {
     "id": "multihop_010",
-    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "query": "If BERT builds on Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -101,7 +101,7 @@
   },
   {
     "id": "multihop_011",
-    "query": "What is the connection between attention and BERT?",
+    "query": "Trace the influence path from Vaswani, A. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -111,7 +111,7 @@
   },
   {
     "id": "multihop_012",
-    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "query": "Trace the influence path from Devlin, J. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -121,7 +121,7 @@
   },
   {
     "id": "multihop_013",
-    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "query": "Trace the influence path from Radford, A. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -131,7 +131,7 @@
   },
   {
     "id": "multihop_014",
-    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "query": "Trace the influence path from Brown, T. B. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -141,7 +141,7 @@
   },
   {
     "id": "multihop_015",
-    "query": "What is the connection between Vision Transformer and model compression?",
+    "query": "Trace the influence path from Dosovitskiy, A. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -151,7 +151,7 @@
   },
   {
     "id": "multihop_016",
-    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "query": "Trace the influence path from Sanh, V. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -161,7 +161,7 @@
   },
   {
     "id": "multihop_017",
-    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "query": "Trace the influence path from Tay, Y. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -171,7 +171,7 @@
   },
   {
     "id": "multihop_018",
-    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "query": "Trace the influence path from Sutskever, I. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -181,7 +181,7 @@
   },
   {
     "id": "multihop_019",
-    "query": "What is the connection between long sequences and RAG?",
+    "query": "Trace the influence path from Dai, Z. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -191,7 +191,7 @@
   },
   {
     "id": "multihop_020",
-    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "query": "Trace the influence path from Lewis, P. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -201,7 +201,7 @@
   },
   {
     "id": "multihop_021",
-    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "query": "What common architectural principle links Attention Is All You Need to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -211,7 +211,7 @@
   },
   {
     "id": "multihop_022",
-    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "query": "What common architectural principle links BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -221,7 +221,7 @@
   },
   {
     "id": "multihop_023",
-    "query": "What is the connection between GPT-2 and GPT-3?",
+    "query": "What common architectural principle links Language Models are Unsupervised Multitask Learners to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -231,7 +231,7 @@
   },
   {
     "id": "multihop_024",
-    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "query": "What common architectural principle links Language Models are Few-Shot Learners to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -241,7 +241,7 @@
   },
   {
     "id": "multihop_025",
-    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "query": "What common architectural principle links An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -251,7 +251,7 @@
   },
   {
     "id": "multihop_026",
-    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "query": "What common architectural principle links DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -261,7 +261,7 @@
   },
   {
     "id": "multihop_027",
-    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "query": "What common architectural principle links Efficient Transformers: A Survey to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -271,7 +271,7 @@
   },
   {
     "id": "multihop_028",
-    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "query": "What common architectural principle links Sequence to Sequence Learning with Neural Networks to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -281,7 +281,7 @@
   },
   {
     "id": "multihop_029",
-    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "query": "What common architectural principle links Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -291,7 +291,7 @@
   },
   {
     "id": "multihop_030",
-    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "query": "What common architectural principle links Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -301,7 +301,7 @@
   },
   {
     "id": "multihop_031",
-    "query": "What is the connection between attention and BERT?",
+    "query": "Connect Vaswani, A.'s self-attention to NeurIPS publications in 2017.",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -311,7 +311,7 @@
   },
   {
     "id": "multihop_032",
-    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "query": "Connect Devlin, J.'s self-attention to ACL publications in 2018.",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -321,7 +321,7 @@
   },
   {
     "id": "multihop_033",
-    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "query": "Connect Radford, A.'s self-attention to OpenAI Blog publications in 2019.",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -331,7 +331,7 @@
   },
   {
     "id": "multihop_034",
-    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "query": "Connect Brown, T. B.'s self-attention to NeurIPS publications in 2020.",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -341,7 +341,7 @@
   },
   {
     "id": "multihop_035",
-    "query": "What is the connection between Vision Transformer and model compression?",
+    "query": "Connect Dosovitskiy, A.'s self-attention to ICLR publications in 2020.",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -351,7 +351,7 @@
   },
   {
     "id": "multihop_036",
-    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "query": "Connect Sanh, V.'s self-attention to NeurIPS publications in 2019.",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -361,7 +361,7 @@
   },
   {
     "id": "multihop_037",
-    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "query": "Connect Tay, Y.'s self-attention to ACM Computing Surveys publications in 2022.",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -371,7 +371,7 @@
   },
   {
     "id": "multihop_038",
-    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "query": "Connect Sutskever, I.'s self-attention to NeurIPS publications in 2014.",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -381,7 +381,7 @@
   },
   {
     "id": "multihop_039",
-    "query": "What is the connection between long sequences and RAG?",
+    "query": "Connect Dai, Z.'s self-attention to ACL publications in 2019.",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -391,7 +391,7 @@
   },
   {
     "id": "multihop_040",
-    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "query": "Connect Lewis, P.'s self-attention to NeurIPS publications in 2020.",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -401,7 +401,7 @@
   },
   {
     "id": "multihop_041",
-    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "query": "Follow the citation path from Attention Is All You Need through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -411,7 +411,7 @@
   },
   {
     "id": "multihop_042",
-    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "query": "Follow the citation path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -421,7 +421,7 @@
   },
   {
     "id": "multihop_043",
-    "query": "What is the connection between GPT-2 and GPT-3?",
+    "query": "Follow the citation path from Language Models are Unsupervised Multitask Learners through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -431,7 +431,7 @@
   },
   {
     "id": "multihop_044",
-    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "query": "Follow the citation path from Language Models are Few-Shot Learners through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -441,7 +441,7 @@
   },
   {
     "id": "multihop_045",
-    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "query": "Follow the citation path from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -451,7 +451,7 @@
   },
   {
     "id": "multihop_046",
-    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "query": "Follow the citation path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -461,7 +461,7 @@
   },
   {
     "id": "multihop_047",
-    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "query": "Follow the citation path from Efficient Transformers: A Survey through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -471,7 +471,7 @@
   },
   {
     "id": "multihop_048",
-    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "query": "Follow the citation path from Sequence to Sequence Learning with Neural Networks through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -481,7 +481,7 @@
   },
   {
     "id": "multihop_049",
-    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "query": "Follow the citation path from Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -491,7 +491,7 @@
   },
   {
     "id": "multihop_050",
-    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "query": "Follow the citation path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -501,7 +501,7 @@
   },
   {
     "id": "multihop_051",
-    "query": "What is the connection between attention and BERT?",
+    "query": "How did innovations in Attention Is All You Need enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -511,7 +511,7 @@
   },
   {
     "id": "multihop_052",
-    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "query": "How did innovations in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -521,7 +521,7 @@
   },
   {
     "id": "multihop_053",
-    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "query": "How did innovations in Language Models are Unsupervised Multitask Learners enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -531,7 +531,7 @@
   },
   {
     "id": "multihop_054",
-    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "query": "How did innovations in Language Models are Few-Shot Learners enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -541,7 +541,7 @@
   },
   {
     "id": "multihop_055",
-    "query": "What is the connection between Vision Transformer and model compression?",
+    "query": "How did innovations in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -551,7 +551,7 @@
   },
   {
     "id": "multihop_056",
-    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "query": "How did innovations in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -561,7 +561,7 @@
   },
   {
     "id": "multihop_057",
-    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "query": "How did innovations in Efficient Transformers: A Survey enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -571,7 +571,7 @@
   },
   {
     "id": "multihop_058",
-    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "query": "How did innovations in Sequence to Sequence Learning with Neural Networks enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -581,7 +581,7 @@
   },
   {
     "id": "multihop_059",
-    "query": "What is the connection between long sequences and RAG?",
+    "query": "How did innovations in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -591,7 +591,7 @@
   },
   {
     "id": "multihop_060",
-    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "query": "How did innovations in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -601,7 +601,7 @@
   },
   {
     "id": "multihop_061",
-    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "query": "Identify the lineage from recurrent replacement in 2017 to vision patch processing.",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -611,7 +611,7 @@
   },
   {
     "id": "multihop_062",
-    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "query": "Identify the lineage from recurrent replacement in 2018 to vision patch processing.",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -621,7 +621,7 @@
   },
   {
     "id": "multihop_063",
-    "query": "What is the connection between GPT-2 and GPT-3?",
+    "query": "Identify the lineage from recurrent replacement in 2019 to vision patch processing.",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -631,7 +631,7 @@
   },
   {
     "id": "multihop_064",
-    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "query": "Identify the lineage from recurrent replacement in 2020 to vision patch processing.",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -641,7 +641,7 @@
   },
   {
     "id": "multihop_065",
-    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "query": "Identify the lineage from recurrent replacement in 2020 to vision patch processing. [Multi-hop step 64]",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -651,7 +651,7 @@
   },
   {
     "id": "multihop_066",
-    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "query": "Identify the lineage from recurrent replacement in 2019 to vision patch processing. [Multi-hop step 65]",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -661,7 +661,7 @@
   },
   {
     "id": "multihop_067",
-    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "query": "Identify the lineage from recurrent replacement in 2022 to vision patch processing.",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -671,7 +671,7 @@
   },
   {
     "id": "multihop_068",
-    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "query": "Identify the lineage from recurrent replacement in 2014 to vision patch processing.",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -681,7 +681,7 @@
   },
   {
     "id": "multihop_069",
-    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "query": "Identify the lineage from recurrent replacement in 2019 to vision patch processing. [Multi-hop step 68]",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -691,7 +691,7 @@
   },
   {
     "id": "multihop_070",
-    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "query": "Identify the lineage from recurrent replacement in 2020 to vision patch processing. [Multi-hop step 69]",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -701,7 +701,7 @@
   },
   {
     "id": "multihop_071",
-    "query": "What is the connection between attention and BERT?",
+    "query": "Which authors of Attention Is All You Need influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -711,7 +711,7 @@
   },
   {
     "id": "multihop_072",
-    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "query": "Which authors of BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding influenced transformer scaling laws in ACL?",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -721,7 +721,7 @@
   },
   {
     "id": "multihop_073",
-    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "query": "Which authors of Language Models are Unsupervised Multitask Learners influenced transformer scaling laws in OpenAI Blog?",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -731,7 +731,7 @@
   },
   {
     "id": "multihop_074",
-    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "query": "Which authors of Language Models are Few-Shot Learners influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -741,7 +741,7 @@
   },
   {
     "id": "multihop_075",
-    "query": "What is the connection between Vision Transformer and model compression?",
+    "query": "Which authors of An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale influenced transformer scaling laws in ICLR?",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -751,7 +751,7 @@
   },
   {
     "id": "multihop_076",
-    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "query": "Which authors of DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -761,7 +761,7 @@
   },
   {
     "id": "multihop_077",
-    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "query": "Which authors of Efficient Transformers: A Survey influenced transformer scaling laws in ACM Computing Surveys?",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -771,7 +771,7 @@
   },
   {
     "id": "multihop_078",
-    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "query": "Which authors of Sequence to Sequence Learning with Neural Networks influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -781,7 +781,7 @@
   },
   {
     "id": "multihop_079",
-    "query": "What is the connection between long sequences and RAG?",
+    "query": "Which authors of Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context influenced transformer scaling laws in ACL?",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -791,7 +791,7 @@
   },
   {
     "id": "multihop_080",
-    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "query": "Which authors of Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -801,7 +801,7 @@
   },
   {
     "id": "multihop_081",
-    "query": "Compare the attention mechanisms in Attention Is All You Need and BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
+    "query": "Connect multi-head attention in Attention Is All You Need to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -811,7 +811,7 @@
   },
   {
     "id": "multihop_082",
-    "query": "How does the architecture in Language Models are Unsupervised Multitask Learners extend the concepts in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
+    "query": "Connect multi-head attention in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -821,7 +821,7 @@
   },
   {
     "id": "multihop_083",
-    "query": "What is the connection between GPT-2 and GPT-3?",
+    "query": "Connect multi-head attention in Language Models are Unsupervised Multitask Learners to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -831,7 +831,7 @@
   },
   {
     "id": "multihop_084",
-    "query": "Trace the evolutionary path from Language Models are Few-Shot Learners through downstream models to An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
+    "query": "Connect multi-head attention in Language Models are Few-Shot Learners to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -841,7 +841,7 @@
   },
   {
     "id": "multihop_085",
-    "query": "Compare the attention mechanisms in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale and DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
+    "query": "Connect multi-head attention in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -851,7 +851,7 @@
   },
   {
     "id": "multihop_086",
-    "query": "How does the architecture in Efficient Transformers: A Survey extend the concepts in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
+    "query": "Connect multi-head attention in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -861,7 +861,7 @@
   },
   {
     "id": "multihop_087",
-    "query": "What is the connection between efficiency and sequence-to-sequence?",
+    "query": "Connect multi-head attention in Efficient Transformers: A Survey to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -871,7 +871,7 @@
   },
   {
     "id": "multihop_088",
-    "query": "Trace the evolutionary path from Sequence to Sequence Learning with Neural Networks through downstream models to Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
+    "query": "Connect multi-head attention in Sequence to Sequence Learning with Neural Networks to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -881,7 +881,7 @@
   },
   {
     "id": "multihop_089",
-    "query": "Compare the attention mechanisms in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context and Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
+    "query": "Connect multi-head attention in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -891,7 +891,7 @@
   },
   {
     "id": "multihop_090",
-    "query": "How does the architecture in Attention Is All You Need extend the concepts in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
+    "query": "Connect multi-head attention in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"
@@ -901,7 +901,7 @@
   },
   {
     "id": "multihop_091",
-    "query": "What is the connection between attention and BERT?",
+    "query": "What 2-hop sequence connects Vaswani, A. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_001",
       "paper_002"
@@ -911,7 +911,7 @@
   },
   {
     "id": "multihop_092",
-    "query": "Trace the evolutionary path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through downstream models to Language Models are Unsupervised Multitask Learners.",
+    "query": "What 2-hop sequence connects Devlin, J. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_002",
       "paper_003"
@@ -921,7 +921,7 @@
   },
   {
     "id": "multihop_093",
-    "query": "Compare the attention mechanisms in Language Models are Unsupervised Multitask Learners and Language Models are Few-Shot Learners.",
+    "query": "What 2-hop sequence connects Radford, A. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_003",
       "paper_004"
@@ -931,7 +931,7 @@
   },
   {
     "id": "multihop_094",
-    "query": "How does the architecture in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale extend the concepts in Language Models are Few-Shot Learners?",
+    "query": "What 2-hop sequence connects Brown, T. B. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_004",
       "paper_005"
@@ -941,7 +941,7 @@
   },
   {
     "id": "multihop_095",
-    "query": "What is the connection between Vision Transformer and model compression?",
+    "query": "What 2-hop sequence connects Dosovitskiy, A. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_005",
       "paper_006"
@@ -951,7 +951,7 @@
   },
   {
     "id": "multihop_096",
-    "query": "Trace the evolutionary path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through downstream models to Efficient Transformers: A Survey.",
+    "query": "What 2-hop sequence connects Sanh, V. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_006",
       "paper_007"
@@ -961,7 +961,7 @@
   },
   {
     "id": "multihop_097",
-    "query": "Compare the attention mechanisms in Efficient Transformers: A Survey and Sequence to Sequence Learning with Neural Networks.",
+    "query": "What 2-hop sequence connects Tay, Y. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_007",
       "paper_008"
@@ -971,7 +971,7 @@
   },
   {
     "id": "multihop_098",
-    "query": "How does the architecture in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context extend the concepts in Sequence to Sequence Learning with Neural Networks?",
+    "query": "What 2-hop sequence connects Sutskever, I. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_008",
       "paper_009"
@@ -981,7 +981,7 @@
   },
   {
     "id": "multihop_099",
-    "query": "What is the connection between long sequences and RAG?",
+    "query": "What 2-hop sequence connects Dai, Z. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_009",
       "paper_010"
@@ -991,7 +991,7 @@
   },
   {
     "id": "multihop_100",
-    "query": "Trace the evolutionary path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through downstream models to Attention Is All You Need.",
+    "query": "What 2-hop sequence connects Lewis, P. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_010",
       "paper_001"

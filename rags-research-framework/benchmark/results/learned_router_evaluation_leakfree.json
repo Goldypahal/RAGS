@@ -1,0 +1,19 @@
+{
+  "total_unique_queries": 700,
+  "train_samples": 420,
+  "val_samples": 140,
+  "test_samples": 140,
+  "split_seed": 42,
+  "test_metrics": {
+    "oracle_quality": 0.771825199385537,
+    "learned_router_quality": 0.6784312399090641,
+    "vector_baseline_quality": 0.6918309880018619,
+    "heuristic_adaptive_quality": 0.675382822744709,
+    "random_quality": 0.5064489414439439,
+    "learned_quality_regret": 0.09339395947647278,
+    "heuristic_quality_regret": 0.09644237664082796,
+    "strict_accuracy": 0.6071428571428571,
+    "epsilon_optimal_accuracy": 0.7857142857142857,
+    "avg_inference_latency_ms": 0.9655692857142857
+  }
+}

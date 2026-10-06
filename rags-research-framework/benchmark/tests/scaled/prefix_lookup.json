@@ -1,7 +1,7 @@
 [
   {
     "id": "prefix_001",
-    "query": "Attention",
+    "query": "Atte",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -10,25 +10,25 @@
   },
   {
     "id": "prefix_002",
-    "query": "BERT: Pre-training",
+    "query": "BERT:",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_003",
-    "query": "Language Models are",
+    "query": "Langua",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_004",
-    "query": "Language",
+    "query": "Lang",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -37,25 +37,25 @@
   },
   {
     "id": "prefix_005",
-    "query": "An Image",
+    "query": "An",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_006",
-    "query": "DistilBERT, a distilled",
+    "query": "Distil",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_007",
-    "query": "Efficient",
+    "query": "Effi",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -64,25 +64,25 @@
   },
   {
     "id": "prefix_008",
-    "query": "Sequence to",
+    "query": "Seque",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_009",
-    "query": "Transformer-XL: Attentive Language",
+    "query": "Transf",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_010",
-    "query": "Retrieval-Augmented",
+    "query": "Retr",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -96,20 +96,20 @@
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_012",
-    "query": "BERT: Pre-training of",
+    "query": "BERT: Pre-training",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_013",
-    "query": "Language",
+    "query": "Language Models",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -118,25 +118,25 @@
   },
   {
     "id": "prefix_014",
-    "query": "Language Models",
+    "query": "Langu 13",
     "expected_doc_ids": [
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_015",
-    "query": "An Image is",
+    "query": "An Image",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_016",
-    "query": "DistilBERT,",
+    "query": "DistilBERT, a",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -150,20 +150,20 @@
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_018",
-    "query": "Sequence to Sequence",
+    "query": "Sequence to",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_019",
-    "query": "Transformer-XL:",
+    "query": "Transformer-XL: Attentive",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -177,7 +177,7 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_021",
@@ -186,11 +186,11 @@
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_022",
-    "query": "BERT:",
+    "query": "BERT: Pre-training of",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -199,25 +199,25 @@
   },
   {
     "id": "prefix_023",
-    "query": "Language Models",
+    "query": "Language Models are",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_024",
-    "query": "Language Models are",
+    "query": "Langu 23",
     "expected_doc_ids": [
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_025",
-    "query": "An",
+    "query": "An Image is",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -226,12 +226,12 @@
   },
   {
     "id": "prefix_026",
-    "query": "DistilBERT, a",
+    "query": "DistilBERT, a distilled",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_027",
@@ -240,11 +240,11 @@
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_028",
-    "query": "Sequence",
+    "query": "Sequence to Sequence",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -253,12 +253,12 @@
   },
   {
     "id": "prefix_029",
-    "query": "Transformer-XL: Attentive",
+    "query": "Transformer-XL: Attentive Language",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_030",
@@ -267,11 +267,11 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_031",
-    "query": "Attention",
+    "query": "Attention Is All You",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -280,25 +280,25 @@
   },
   {
     "id": "prefix_032",
-    "query": "BERT: Pre-training",
+    "query": "BERT: Pre-training of Deep",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_033",
-    "query": "Language Models are",
+    "query": "Language Models are Unsupervised",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_034",
-    "query": "Language",
+    "query": "Language Models are Few-Shot",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -307,25 +307,25 @@
   },
   {
     "id": "prefix_035",
-    "query": "An Image",
+    "query": "An Image is Worth",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_036",
-    "query": "DistilBERT, a distilled",
+    "query": "DistilBERT, a distilled version",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_037",
-    "query": "Efficient",
+    "query": "Effic 36",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -334,25 +334,25 @@
   },
   {
     "id": "prefix_038",
-    "query": "Sequence to",
+    "query": "Sequence to Sequence Learning",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_039",
-    "query": "Transformer-XL: Attentive Language",
+    "query": "Transformer-XL: Attentive Language Models",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_040",
-    "query": "Retrieval-Augmented",
+    "query": "Retrieval-Augmented Generation for Knowledge-Intensive",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -361,25 +361,25 @@
   },
   {
     "id": "prefix_041",
-    "query": "Attention Is",
+    "query": "Atten 40",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_042",
-    "query": "BERT: Pre-training of",
+    "query": "BERT: Pre-training of Deep Bidirectional",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_043",
-    "query": "Language",
+    "query": "Language Models are Unsupervised Multitask",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -388,25 +388,25 @@
   },
   {
     "id": "prefix_044",
-    "query": "Language Models",
+    "query": "Langu 43",
     "expected_doc_ids": [
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_045",
-    "query": "An Image is",
+    "query": "An Image is Worth 16x16",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_046",
-    "query": "DistilBERT,",
+    "query": "DistilBERT, a distilled version of",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -415,25 +415,25 @@
   },
   {
     "id": "prefix_047",
-    "query": "Efficient Transformers:",
+    "query": "Effic 46",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_048",
-    "query": "Sequence to Sequence",
+    "query": "Sequence to Sequence Learning with",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_049",
-    "query": "Transformer-XL:",
+    "query": "Transformer-XL: Attentive Language Models Beyond",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -442,25 +442,25 @@
   },
   {
     "id": "prefix_050",
-    "query": "Retrieval-Augmented Generation",
+    "query": "Retrieval-Augmented Generation for Knowledge-Intensive NLP",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_051",
-    "query": "Attention Is All",
+    "query": "Vaswani Attention 5",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_052",
-    "query": "BERT:",
+    "query": "Devlin BERT: 5",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -469,25 +469,25 @@
   },
   {
     "id": "prefix_053",
-    "query": "Language Models",
+    "query": "Radford Language 5",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_054",
-    "query": "Language Models are",
+    "query": "Brown Language 5",
     "expected_doc_ids": [
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_055",
-    "query": "An",
+    "query": "Dosovitskiy An 5",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -496,25 +496,25 @@
   },
   {
     "id": "prefix_056",
-    "query": "DistilBERT, a",
+    "query": "Sanh DistilBERT, 5",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_057",
-    "query": "Efficient Transformers: A",
+    "query": "Tay Efficient 5",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_058",
-    "query": "Sequence",
+    "query": "Sutskever Sequence 5",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -523,25 +523,25 @@
   },
   {
     "id": "prefix_059",
-    "query": "Transformer-XL: Attentive",
+    "query": "Dai Transformer-XL: 5",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_060",
-    "query": "Retrieval-Augmented Generation for",
+    "query": "Lewis Retrieval-Augmented 5",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_061",
-    "query": "Attention",
+    "query": "Vaswani Attention 6",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -550,25 +550,25 @@
   },
   {
     "id": "prefix_062",
-    "query": "BERT: Pre-training",
+    "query": "Devlin BERT: 6",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_063",
-    "query": "Language Models are",
+    "query": "Radford Language 6",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_064",
-    "query": "Language",
+    "query": "Brown Language 6",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -577,25 +577,25 @@
   },
   {
     "id": "prefix_065",
-    "query": "An Image",
+    "query": "Dosovitskiy An 6",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_066",
-    "query": "DistilBERT, a distilled",
+    "query": "Sanh DistilBERT, 6",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_067",
-    "query": "Efficient",
+    "query": "Tay Efficient 6",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -604,25 +604,25 @@
   },
   {
     "id": "prefix_068",
-    "query": "Sequence to",
+    "query": "Sutskever Sequence 6",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_069",
-    "query": "Transformer-XL: Attentive Language",
+    "query": "Dai Transformer-XL: 6",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_070",
-    "query": "Retrieval-Augmented",
+    "query": "Lewis Retrieval-Augmented 6",
     "expected_doc_ids": [
       "paper_010"
     ],
@@ -631,25 +631,25 @@
   },
   {
     "id": "prefix_071",
-    "query": "Attention Is",
+    "query": "Vaswani Attention 7",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_072",
-    "query": "BERT: Pre-training of",
+    "query": "Devlin BERT: 7",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_073",
-    "query": "Language",
+    "query": "Radford Language 7",
     "expected_doc_ids": [
       "paper_003"
     ],
@@ -658,25 +658,25 @@
   },
   {
     "id": "prefix_074",
-    "query": "Language Models",
+    "query": "Brown Language 7",
     "expected_doc_ids": [
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_075",
-    "query": "An Image is",
+    "query": "Dosovitskiy An 7",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_076",
-    "query": "DistilBERT,",
+    "query": "Sanh DistilBERT, 7",
     "expected_doc_ids": [
       "paper_006"
     ],
@@ -685,25 +685,25 @@
   },
   {
     "id": "prefix_077",
-    "query": "Efficient Transformers:",
+    "query": "Tay Efficient 7",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_078",
-    "query": "Sequence to Sequence",
+    "query": "Sutskever Sequence 7",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_079",
-    "query": "Transformer-XL:",
+    "query": "Dai Transformer-XL: 7",
     "expected_doc_ids": [
       "paper_009"
     ],
@@ -712,25 +712,25 @@
   },
   {
     "id": "prefix_080",
-    "query": "Retrieval-Augmented Generation",
+    "query": "Lewis Retrieval-Augmented 7",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_081",
-    "query": "Attention Is All",
+    "query": "Vaswani Attention 8",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_082",
-    "query": "BERT:",
+    "query": "Devlin BERT: 8",
     "expected_doc_ids": [
       "paper_002"
     ],
@@ -739,25 +739,25 @@
   },
   {
     "id": "prefix_083",
-    "query": "Language Models",
+    "query": "Radford Language 8",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_084",
-    "query": "Language Models are",
+    "query": "Brown Language 8",
     "expected_doc_ids": [
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_085",
-    "query": "An",
+    "query": "Dosovitskiy An 8",
     "expected_doc_ids": [
       "paper_005"
     ],
@@ -766,25 +766,25 @@
   },
   {
     "id": "prefix_086",
-    "query": "DistilBERT, a",
+    "query": "Sanh DistilBERT, 8",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_087",
-    "query": "Efficient Transformers: A",
+    "query": "Tay Efficient 8",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_088",
-    "query": "Sequence",
+    "query": "Sutskever Sequence 8",
     "expected_doc_ids": [
       "paper_008"
     ],
@@ -793,25 +793,25 @@
   },
   {
     "id": "prefix_089",
-    "query": "Transformer-XL: Attentive",
+    "query": "Dai Transformer-XL: 8",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_090",
-    "query": "Retrieval-Augmented Generation for",
+    "query": "Lewis Retrieval-Augmented 8",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_091",
-    "query": "Attention",
+    "query": "Vaswani Attention 9",
     "expected_doc_ids": [
       "paper_001"
     ],
@@ -820,25 +820,25 @@
   },
   {
     "id": "prefix_092",
-    "query": "BERT: Pre-training",
+    "query": "Devlin BERT: 9",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_093",
-    "query": "Language Models are",
+    "query": "Radford Language 9",
     "expected_doc_ids": [
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_094",
-    "query": "Language",
+    "query": "Brown Language 9",
     "expected_doc_ids": [
       "paper_004"
     ],
@@ -847,25 +847,25 @@
   },
   {
     "id": "prefix_095",
-    "query": "An Image",
+    "query": "Dosovitskiy An 9",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_096",
-    "query": "DistilBERT, a distilled",
+    "query": "Sanh DistilBERT, 9",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_097",
-    "query": "Efficient",
+    "query": "Tay Efficient 9",
     "expected_doc_ids": [
       "paper_007"
     ],
@@ -874,25 +874,25 @@
   },
   {
     "id": "prefix_098",
-    "query": "Sequence to",
+    "query": "Sutskever Sequence 9",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_099",
-    "query": "Transformer-XL: Attentive Language",
+    "query": "Dai Transformer-XL: 9",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "easy"
+    "difficulty": "medium"
   },
   {
     "id": "prefix_100",
-    "query": "Retrieval-Augmented",
+    "query": "Lewis Retrieval-Augmented 9",
     "expected_doc_ids": [
       "paper_010"
     ],
