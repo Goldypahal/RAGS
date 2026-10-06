@@ -130,10 +130,18 @@ By construction, $\text{Quality} \in [0.0, 1.0]$. Retrieval latency is measured 
 The benchmark consists of 700 verified unique queries ($N=700$) evenly balanced across seven morphological categories ($n=100$ each): Exact Lookup, Keyword Search, Prefix Lookup, Relationship Search, Multi-Hop Reasoning, Semantic Search, and Mixed Queries. Evaluating nine architectures yields $6{,}300$ individual retrieval evaluations.
 
 \subsection{Disambiguation of Empirical Oracles}
-We explicitly distinguish between two empirical oracles:
+We explicitly distinguish between two empirical oracles to prevent methodological ambiguity:
 \begin{itemize}
-    \item \textbf{Full-Corpus Empirical Oracle ($\text{Oracle}_{\text{full}}$):} The theoretical ceiling across all 700 queries: $\text{Oracle}_{\text{full}} \triangleq \frac{1}{|\mathcal{Q}_{\text{all}}|} \sum_{q} \max_a \text{Quality}(a, q) = \mathbf{0.7755}$ [95\% CI: $0.7615, 0.7895$], representing a $\mathbf{+14.43\%}$ relative improvement over VectorRAG ($0.6777$).
-    \item \textbf{Held-Out Test Oracle ($\text{Oracle}_{\text{test}}$):} The empirical oracle evaluated strictly on the 20\% held-out test split ($N_{\text{test}} = 140$): $\text{Oracle}_{\text{test}} \triangleq \frac{1}{|\mathcal{Q}_{\text{test}}|} \sum_{q} \max_a \text{Quality}(a, q) = \mathbf{0.7718}$.
+    \item \textbf{Full-Corpus Empirical Ceiling ($\text{Oracle}_{\text{full}}$):}
+    \begin{equation}
+        \text{Oracle}_{\text{full}} \triangleq \frac{1}{|\mathcal{Q}|} \sum_{q \in \mathcal{Q}} \max_{a \in \mathcal{A}} \text{Quality}(a, q) = \mathbf{0.7755}
+    \end{equation}
+    representing the empirical ceiling achievable by selecting the best-performing architecture among the nine evaluated systems independently for each query across the full 700-query benchmark ($+14.43\%$ relative quality improvement over VectorRAG's $0.6777$, $95\%$ CI: $[0.7615, 0.7895]$). We do not denote this a theoretical maximum, as it represents the upper envelope over the nine evaluated retrieval systems on this corpus.
+    \item \textbf{Held-Out Test Oracle ($\text{Oracle}_{\text{test}}$):}
+    \begin{equation}
+        \text{Oracle}_{\text{test}} \triangleq \frac{1}{|\mathcal{Q}_{\text{test}}|} \sum_{q \in \mathcal{Q}_{\text{test}}} \max_{a \in \mathcal{A}} \text{Quality}(a, q) = \mathbf{0.7718}
+    \end{equation}
+    representing the empirical upper bound evaluated strictly on the 20\% held-out test split ($N_{\text{test}} = 140$). This serves as the ground-truth target against which the learned router's test generalization, quality regret, and decision optimality are measured.
 \end{itemize}
 
 \subsection{Leakage-Free Router Protocol}
@@ -224,7 +232,11 @@ Random Router & 0.5064 & 65.61\% & 22.86\% \\
 \end{table}
 
 \subsection{Downstream Generation and NLI Verification}
-Evaluating Flan-T5 generation across 630 runs reveals that concise structures (\texttt{HashMapTrieRAG}, \texttt{TrieRAG}) achieve the highest claim-level faithfulness ($0.2571$ and $0.1714$, $p=0.0132$ vs.~VectorRAG's $0.0857$) by minimizing extraneous context tokens. In terms of end-to-end latency, \texttt{InvertedIndexGraphRAG} finishes generation in $570.36\text{ ms}$ vs.~$719.20\text{ ms}$ for VectorRAG, delivering a $\mathbf{1.3\times}$ wall-clock pipeline speedup.
+Evaluating Flan-T5 generation across 630 runs ($70$ sampled queries $\times$ $9$ architectures) reveals that concise structures (\texttt{HashMapTrieRAG}, \texttt{TrieRAG}) achieve the highest claim-level faithfulness ($0.2571$ and $0.1714$, with \texttt{HashMapTrieRAG} demonstrating a statistically significant improvement over VectorRAG at $p=0.0132$) by minimizing extraneous context tokens. However, differences for other architectures did not reach statistical significance against VectorRAG (TrieRAG $p=0.1347$, InvertedIndexGraphRAG $p=0.6580$, AdaptiveRetrievalRAG $p=0.3208$).
+
+The downstream experiment provides evidence that retrieval structure can affect generation grounding, with the strongest observed faithfulness improvement occurring for HashMapTrieRAG; however, the small sampled E2E evaluation does not establish universal downstream superiority.
+
+In terms of end-to-end latency, \texttt{InvertedIndexGraphRAG} finishes generation in $570.36\text{ ms}$ vs.~$719.20\text{ ms}$ for VectorRAG, delivering a $\mathbf{1.3\times}$ wall-clock pipeline speedup (where total execution time is dominated by autoregressive token generation).
 
 \section{Ablations and Generalization}
 \paragraph{Soft-Utility $\epsilon$-Tolerance.} As $\epsilon$ increases from $0.00$ to $0.15$, router optimality expands from $60.71\%$ ($\epsilon=0.00$) to $78.57\%$ ($\epsilon=0.05$) and $94.29\%$ ($\epsilon=0.15$), confirming that router misclassifications select proximate points on the Pareto frontier.
@@ -234,9 +246,11 @@ Evaluating Flan-T5 generation across 630 runs reveals that concise structures (\
 \paragraph{Hardware Profile.} Dense vector encoding was executed on multicore CPU without dedicated GPU acceleration. While GPU batching can reduce encoding latency to $\sim 5\text{ ms}$, \texttt{InvertedIndexGraphRAG} ($0.10\text{ ms}$) remains $50\times$ faster without requiring GPU accelerators.
 \paragraph{Domain Scope and Scale.} Evaluation was conducted on a controlled 700-query corpus. In billion-scale web collections, inverted indices require distributed partitioning and graph traversals require distributed graph databases.
 \paragraph{Generator Scale.} Downstream generation used an 80M-parameter model. Larger foundation models (e.g., Llama-3-70B) may exhibit different contextual noise tolerance.
+\paragraph{Audit Scope and Protocol Verification.} The stored retrieval telemetry and reported aggregate metrics were independently recomputed for numerical consistency. The leakage-free router split is verified from the stored evaluation artifact and experimental protocol; full leakage reconstruction is not performed by the audit script.
+\paragraph{Downstream E2E Sample Size and Statistical Scope.} The downstream generation experiment was conducted on a sampled evaluation subset ($N = 70$ queries, 630 total generation runs) to enable deterministic claim decomposition under resource constraints. While HashMapTrieRAG demonstrated a statistically significant gain in claim faithfulness ($p = 0.0132$), differences for other architectures (e.g., TrieRAG $p=0.1347$, InvertedIndexGraphRAG $p=0.6580$, AdaptiveRetrievalRAG $p=0.3208$) did not meet the $\alpha=0.05$ significance threshold against VectorRAG. Consequently, the downstream experiment provides evidence that retrieval structure can affect generation grounding, with the strongest observed faithfulness improvement occurring for HashMapTrieRAG; however, the small sampled E2E evaluation does not establish universal downstream superiority.
 
 \section{Conclusion}
-This paper demonstrated that different query morphologies favor distinct retrieval structures. Classical Tries and inverted indices outperform dense vectors on prefix and keyword searches, while \texttt{InvertedIndexGraphRAG} matches VectorRAG's quality at $336.2\times$ faster retrieval speed. Adaptive meta-routing reveals an empirical oracle ceiling of $\text{Oracle}_{\text{full}} = 0.7755$ (+14.43\% over VectorRAG), with a lightweight router capturing $87.90\%$ of $\text{Oracle}_{\text{test}}$ on unseen data. The experimental implementation and stored telemetry passed an independent consistency audit; remaining limitations are addressed in the threats-to-validity section.
+This paper demonstrated that different query morphologies favor distinct retrieval structures. Classical Tries and inverted indices outperform dense vectors on prefix and keyword searches, while \texttt{InvertedIndexGraphRAG} matches VectorRAG's quality at $336.2\times$ faster retrieval speed ($1.3\times$ faster end-to-end RAG pipeline). Adaptive meta-routing reveals an empirical corpus ceiling of $\text{Oracle}_{\text{full}} = 0.7755$ (+14.43\% over VectorRAG), with a lightweight router capturing $87.90\%$ of $\text{Oracle}_{\text{test}}$ on unseen data. The stored retrieval telemetry and reported aggregate metrics were independently recomputed for numerical consistency; remaining limitations are addressed in the threats-to-validity section.
 
 \bibliographystyle{plain}
 \bibliography{references}

@@ -15,10 +15,10 @@ Retrieval-Augmented Generation (RAG) grounds Large Language Models (LLMs) in ext
 We conduct an empirical investigation comparing nine distinct retrieval architectures—spanning pure classical structures (Hash Maps, Tries, Inverted Indices), relational representations (Knowledge Graphs), multi-structure hybrids, and learned adaptive routers—across a verified benchmark of 700 unique queries categorized into seven morphological archetypes ($N_{\text{eval}} = 6,300$ retrieval runs). Our findings establish three key insights:
 
 1. **Static Structural Specialization:** Structural inductive biases govern domain performance. Prefix queries achieve peak retrieval quality on Trie indices (0.7685 vs. 0.6658 for VectorRAG), exact symbol lookups favor inverted indices (0.8400 vs. 0.8316), and relational citation searches favor graph-fused indices (0.5893 vs. 0.5641), whereas pure vector search dominates only in broad unconstrained semantic matching (0.5346 vs. 0.4747).
-2. **Sub-Millisecond Hybrid Pareto Sweetspot:** A dual-structure hybrid index combining token inverted lists with relational graph traversals (`InvertedIndexGraphRAG`) achieves a retrieval quality of 0.6750—retaining 99.60% of `VectorRAG`'s quality (0.6777)—while executing at an average retrieval latency of **0.10 ms**, representing a **336.2× speedup** over `VectorRAG` (33.01 ms), with a median (p50) speedup of **410.0×** (0.06 ms vs. 25.54 ms) and an index RAM footprint under 0.1 MB (vs. 51.0 MB).
-3. **Adaptive Meta-Routing Potential:** Query-level architecture selection establishes an empirical corpus ceiling of $\text{Oracle}_{\text{full}} = 0.7755$ (+14.43% relative quality improvement over `VectorRAG`). On a strictly partitioned, leakage-free held-out test split ($N_{\text{test}} = 140$), a lightweight morphological meta-classifier achieves 0.6784 quality (87.90% of the held-out test oracle $\text{Oracle}_{\text{test}} = 0.7718$) with a 78.57% $\epsilon$-optimal decision rate ($\epsilon \le 0.05$) while incurring an inference overhead of only 0.966 ms.
+2. **Sub-Millisecond Hybrid Pareto Sweetspot:** A dual-structure hybrid index combining token inverted lists with relational graph traversals (`InvertedIndexGraphRAG`) achieves a retrieval quality of 0.6750—retaining 99.60% of `VectorRAG`'s quality (0.6777)—while executing at an average retrieval latency of **0.10 ms**, representing a **336.2× retrieval speedup** over `VectorRAG` (33.01 ms), with a median (p50) retrieval speedup of **410.0×** (0.06 ms vs. 25.54 ms) and an index RAM footprint under 0.1 MB (vs. 51.0 MB).
+3. **Adaptive Meta-Routing Potential:** Query-level architecture selection establishes a full-corpus empirical ceiling of $\text{Oracle}_{\text{full}} = 0.7755$ (+14.43% relative quality improvement over `VectorRAG`). On a strictly partitioned, leakage-free held-out test split ($N_{\text{test}} = 140$), a lightweight morphological meta-classifier achieves 0.6784 quality (87.90% of the held-out test oracle $\text{Oracle}_{\text{test}} = 0.7718$) with a 78.57% $\epsilon$-optimal decision rate ($\epsilon \le 0.05$) while incurring an inference overhead of only 0.966 ms.
 
-Downstream generation experiments pairing retrieved context with a sequence-to-sequence language model (`google/flan-t5-small`, $N = 630$) and natural language inference (NLI) claim entailment confirm that structural alignment directly impacts contextual recall and downstream grounding. The current experimental implementation and stored telemetry passed an independent consistency audit; remaining limitations are addressed explicitly in the paper's threats-to-validity section.
+Downstream generation experiments pairing retrieved context with a sequence-to-sequence language model (`google/flan-t5-small`, $N = 630$) and natural language inference (NLI) claim entailment confirm that structural alignment directly impacts contextual recall and downstream grounding. The stored retrieval telemetry and reported aggregate metrics were independently recomputed for numerical consistency; remaining limitations are addressed explicitly in the paper's threats-to-validity section.
 
 ---
 
@@ -228,10 +228,9 @@ Evaluating nine architectures across 700 queries yields **6,300 unique retrieval
 
 To prevent methodological ambiguity, we explicitly distinguish between two separate empirical oracles in this paper:
 
-#### Definition 1: Full-Corpus Empirical Oracle ($\text{Oracle}_{\text{full}}$)
-The theoretical performance ceiling across the entire benchmark dataset ($N=700$), assuming an omniscient router picks the highest-scoring architecture for every query:
-$$\text{Oracle}_{\text{full}} \triangleq \frac{1}{|\mathcal{Q}_{\text{all}}|} \sum_{q \in \mathcal{Q}_{\text{all}}} \max_{a \in \mathcal{A}} \text{Quality}(a, q)$$
-$\text{Oracle}_{\text{full}}$ measures the total untapped headroom present across all 700 queries in the benchmark. In our audited experimental telemetry, $\mathbf{\text{Oracle}_{\text{full}} = 0.7755}$ [95% CI: $0.7615, 0.7895$], representing a **+14.43% relative quality improvement** over the best single fixed architecture (`VectorRAG`, 0.6777).
+#### Definition 1: Full-Corpus Empirical Ceiling ($\text{Oracle}_{\text{full}}$)
+$$\text{Oracle}_{\text{full}} \triangleq \frac{1}{|\mathcal{Q}|} \sum_{q \in \mathcal{Q}} \max_{a \in \mathcal{A}} \text{Quality}(a, q) = \mathbf{0.7755}$$
+representing the empirical ceiling achievable by selecting the best-performing architecture among the nine evaluated systems independently for each query across the full 700-query benchmark ($+14.43\%$ relative quality improvement over `VectorRAG`'s $0.6777$, $95\%$ CI: $[0.7615, 0.7895]$). We do not denote this a theoretical maximum, as it represents the empirical upper envelope over the nine evaluated retrieval architectures on this corpus.
 
 #### Definition 2: Held-Out Test Oracle ($\text{Oracle}_{\text{test}}$)
 The empirical oracle computed strictly on the held-out test split ($N_{\text{test}}=140$) of a 60/20/20 train/validation/test partition:
@@ -325,16 +324,16 @@ Quality
 ```
 
 As demonstrated in Table 3, `InvertedIndexGraphRAG` represents a compelling engineering sweetspot on the Pareto frontier. By combining token-level inverted indices with relational graph edges, it achieves virtually identical retrieval accuracy (0.6750 vs. 0.6777, with higher Recall@5 and Precision@5) while reducing query retrieval latency by two orders of magnitude:
-- **Mean Latency:** Reduced from 33.01 ms to 0.10 ms (**336.2× faster**).
-- **p50 Latency:** Reduced from 25.54 ms to 0.06 ms (**410.0× faster**).
-- **p95 Latency:** Reduced from 58.18 ms to 0.21 ms (**277.0× faster**).
+- **Mean Latency:** Reduced from 33.01 ms to 0.10 ms (**336.2× faster retrieval**).
+- **p50 Latency:** Reduced from 25.54 ms to 0.06 ms (**410.0× faster retrieval**).
+- **p95 Latency:** Reduced from 58.18 ms to 0.21 ms (**277.0× faster retrieval**).
 - **Memory Consumption:** Eliminates the need to hold floating-point vector tensors in memory, dropping working RAM from 51.0 MB to negligible heap allocations (<0.1 MB).
 - **Index Build Time:** Builds in 0.7 ms compared to 748.5 ms for neural embeddings, enabling real-time index updates without GPU acceleration.
 
 ### 5.3 Level 3: Adaptive Meta-Routing and Held-Out Generalization
 
-#### 5.3.1 Corpus Headroom Analysis ($\text{Oracle}_{\text{full}}$)
-Across the full 700-query corpus, selecting the best-performing architecture per query yields $\mathbf{\text{Oracle}_{\text{full}} = 0.7755}$ [95% CI: $0.7615, 0.7895$]. Compared to `VectorRAG` (0.6777), this represents a **+14.43% relative quality improvement** ($+0.0978$ absolute quality delta). A random router achieves only 0.5047, confirming that the oracle ceiling is driven by structural compatibility rather than arbitrary score fluctuations.
+#### 5.3.1 Full-Corpus Empirical Ceiling ($\text{Oracle}_{\text{full}}$)
+Across the full 700-query corpus, selecting the best-performing architecture per query yields the empirical ceiling $\mathbf{\text{Oracle}_{\text{full}} = 0.7755}$ [95% CI: $0.7615, 0.7895$]. Compared to `VectorRAG` (0.6777), this represents a **+14.43% relative quality improvement** ($+0.0978$ absolute quality delta). A random router achieves only 0.5047, confirming that the empirical ceiling is driven by structural compatibility rather than arbitrary score fluctuations.
 
 #### 5.3.2 Held-Out Test Evaluation ($\text{Oracle}_{\text{test}}$)
 To verify whether this potential can be realized without data leakage, Table 4 reports evaluation results on the strictly partitioned 20% held-out test split ($N_{\text{test}} = 140$).
@@ -369,9 +368,11 @@ Table 5 reports downstream generation performance across 70 sampled queries ($N_
 | **HashMapGraphRAG** ($A_6$) | 0.0143 [0.0000, 0.0429] | 0.9857 | 0.2943 [0.1933, 0.3986] | 0.0674 | 439.97 ms |
 
 #### Key Downstream Observations:
-1. **Precision vs. Hallucination Dynamics:** Concise, exact-matching structures (`HashMapTrieRAG`, `TrieRAG`) achieve the highest claim-level faithfulness (0.2571 and 0.1714, statistically significant vs. `VectorRAG` at $p = 0.0132$). Because their retrieved context contains exact key facts without extraneous tokens, the generator hallucinated fewer extraneous assertions.
+1. **Precision vs. Hallucination Dynamics:** Concise, exact-matching structures (`HashMapTrieRAG`, `TrieRAG`) achieve the highest claim-level faithfulness ($0.2571$ and $0.1714$, with `HashMapTrieRAG` demonstrating a statistically significant gain over `VectorRAG` at $p = 0.0132$) by minimizing extraneous context tokens. However, differences for other architectures did not reach statistical significance against `VectorRAG` (e.g., `TrieRAG` $p = 0.1347$, `InvertedIndexGraphRAG` $p = 0.6580$, `AdaptiveRetrievalRAG` $p = 0.3208$).
 2. **Context Recall Superiority:** `VectorRAG` (0.6876) and `AdaptiveRetrievalRAG` (0.6755) achieve the highest context recall, closely followed by `InvertedIndexGraphRAG` (0.6312).
-3. **End-to-End Latency:** Total pipeline latency is dominated by LLM autoregressive decoding (~400–600 ms). However, `InvertedIndexGraphRAG` completes the entire retrieval-and-generation cycle in **570.36 ms** vs. **719.20 ms** for `VectorRAG`, providing a **1.3× end-to-end wall-clock speedup**.
+3. **End-to-End Latency vs. Retrieval Latency:** While `InvertedIndexGraphRAG` achieves a **336.2× retrieval speedup** (0.10 ms vs. 33.01 ms), total pipeline latency is dominated by LLM autoregressive token decoding (~400–600 ms). Consequently, `InvertedIndexGraphRAG` completes the full retrieval-and-generation cycle in **570.36 ms** vs. **719.20 ms** for `VectorRAG`, providing an empirical **1.3× end-to-end wall-clock speedup**.
+
+> **Downstream Generalization Scope:** The downstream experiment provides evidence that retrieval structure can affect generation grounding, with the strongest observed faithfulness improvement occurring for HashMapTrieRAG; however, the small sampled E2E evaluation ($N=70$ queries, 630 generation runs) does not establish universal downstream superiority.
 
 ---
 
@@ -422,6 +423,12 @@ In accordance with rigorous scientific practice, we explicitly detail the method
 - **Generator Size:** Downstream generation was evaluated using `google/flan-t5-small` (80M parameters) to enable deterministic, reproducible claim decomposition across 630 runs. Larger frontier models (e.g., Llama-3-70B, GPT-4) possess higher in-context synthesis capacity and may be more robust to noisy or missing context.
 - **NLI Metric Sensitivity:** While claim-level NLI entailment represents a major advance over superficial lexical overlap, NLI classifiers have known calibration biases on counterfactual assertions.
 
+### 7.4 Audit Scope and Protocol Verification
+The stored retrieval telemetry and reported aggregate metrics were independently recomputed for numerical consistency. The leakage-free router split is verified from the stored evaluation artifact and experimental protocol; full leakage reconstruction is not performed by the audit script.
+
+### 7.5 Downstream E2E Sample Size and Statistical Scope
+The downstream generation experiment was conducted on a sampled evaluation subset ($N = 70$ queries, 630 total generation runs) to enable deterministic claim decomposition under resource constraints. While HashMapTrieRAG demonstrated a statistically significant gain in claim faithfulness ($p = 0.0132$), differences for other architectures (e.g., TrieRAG $p=0.1347$, InvertedIndexGraphRAG $p=0.6580$, AdaptiveRetrievalRAG $p=0.3208$) did not meet the $\alpha=0.05$ significance threshold against VectorRAG. Consequently, the downstream experiment provides evidence that retrieval structure can affect generation grounding, with the strongest observed faithfulness improvement occurring for HashMapTrieRAG; however, the small sampled E2E evaluation does not establish universal downstream superiority.
+
 ---
 
 ## 8. Conclusion
@@ -430,10 +437,10 @@ This paper challenged the default reliance on monolithic dense vector retrieval 
 
 Our findings support three central conclusions:
 1. **Structural Inductive Biases Matter:** Tries and inverted indices systematically outperform dense vector embeddings on prefix and exact keyword lookups, while relational graphs enhance multi-hop reasoning.
-2. **Sub-Millisecond Hybrid Superiority:** `InvertedIndexGraphRAG` provides a ready-to-deploy operating point on the Pareto frontier, achieving **99.60% of VectorRAG's retrieval quality** while delivering a **336.2× mean latency speedup** (0.10 ms vs. 33.01 ms) and operating with virtually zero memory overhead.
-3. **Adaptive Meta-Routing Potential:** Conditioned routing unlocks an empirical quality ceiling of $\text{Oracle}_{\text{full}} = 0.7755$ (+14.43% over VectorRAG). On unseen data, a lightweight morphological classifier achieves 87.90% of the held-out test oracle ($\text{Oracle}_{\text{test}} = 0.7718$) and 78.57% $\epsilon$-optimal decisions with under 1 ms CPU overhead.
+2. **Sub-Millisecond Hybrid Superiority:** `InvertedIndexGraphRAG` provides a ready-to-deploy operating point on the Pareto frontier, achieving **99.60% of VectorRAG's retrieval quality** while delivering a **336.2× mean retrieval latency speedup** (0.10 ms vs. 33.01 ms, translating to a **1.3× end-to-end RAG pipeline speedup**) and operating with virtually zero memory overhead.
+3. **Adaptive Meta-Routing Potential:** Conditioned routing unlocks a full-corpus empirical ceiling of $\text{Oracle}_{\text{full}} = 0.7755$ (+14.43% over VectorRAG). On unseen data, a lightweight morphological classifier achieves 87.90% of the held-out test oracle ($\text{Oracle}_{\text{test}} = 0.7718$) and 78.57% $\epsilon$-optimal decisions with under 1 ms CPU overhead.
 
-The experimental implementation and stored telemetry passed an independent consistency audit; remaining limitations are addressed explicitly in the paper's threats-to-validity section. All benchmarking code, datasets, telemetry, and evaluation scripts are publicly available to support reproducible research in structure-aware information retrieval.
+The stored retrieval telemetry and reported aggregate metrics were independently recomputed for numerical consistency; remaining limitations are addressed explicitly in the paper's threats-to-validity section. All benchmarking code, datasets, telemetry, and evaluation scripts are publicly available to support reproducible research in structure-aware information retrieval.
 
 ---
 
