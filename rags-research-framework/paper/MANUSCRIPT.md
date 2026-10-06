@@ -279,6 +279,9 @@ Table 2 presents the complete Architecture $\times$ Query Morphology performance
 | **AdaptiveRetrievalRAG** ($A_9$) | 0.8137 | 0.8407 | 0.7795 | 0.5039 | 0.7159 | **0.6231** | 0.4566 | **0.6762** |
 | **Morphology Winner** | *InvertedGraph* | *InvertedGraph* | *VectorRAG* | *InvertedGraph* | *TrieRAG* | *Adaptive* | *VectorRAG* | *VectorRAG* |
 
+![Figure 1: Architecture by Query Morphology Performance Matrix](../benchmark/results/plots/architecture_query_matrix.png)
+*Figure 1: Architecture $\times$ Query Morphology Performance Heatmap ($N=700$ queries across 7 categories). Highlights structural specialization across prefix, exact lookup, relational citation, and broad semantic archetypes.*
+
 The empirical results in Table 2 provide definitive evidence for the structural specialization thesis:
 - **Prefix Queries:** `TrieRAG` achieves **0.7685** quality, substantially outperforming `VectorRAG` (0.6658, a +15.4% relative gain). Continuous embeddings struggle to capture sub-word prefix wildcards, whereas Trie nodes resolve them deterministically in $O(L)$ character traversals.
 - **Exact Alphanumeric Lookups:** `InvertedIndexGraphRAG` achieves **0.8400** quality, outperforming `VectorRAG` (0.8316). Lexical inverted posting lists retain exact symbol identifiers without embedding distortion.
@@ -323,7 +326,10 @@ Quality
        0.05ms       0.5ms         5.0ms         25.0ms       50.0ms    Latency (log)
 ```
 
-As demonstrated in Table 3, `InvertedIndexGraphRAG` represents a compelling engineering sweetspot on the Pareto frontier. By combining token-level inverted indices with relational graph edges, it achieves virtually identical retrieval accuracy (0.6750 vs. 0.6777, with higher Recall@5 and Precision@5) while reducing query retrieval latency by two orders of magnitude:
+![Figure 2: Quality vs. Retrieval Latency Pareto Frontier](../benchmark/results/plots/speed_vs_accuracy.png)
+*Figure 2: Retrieval Quality versus Mean Latency across the nine evaluated architectures. InvertedIndexGraphRAG establishes the dominant Pareto sweetspot (336.2× faster than VectorRAG with 99.60% quality retention).*
+
+As demonstrated in Table 3 and Figure 2, `InvertedIndexGraphRAG` represents a compelling engineering sweetspot on the Pareto frontier. By combining token-level inverted indices with relational graph edges, it achieves virtually identical retrieval accuracy (0.6750 vs. 0.6777, with higher Recall@5 and Precision@5) while reducing query retrieval latency by two orders of magnitude:
 - **Mean Latency:** Reduced from 33.01 ms to 0.10 ms (**336.2× faster retrieval**).
 - **p50 Latency:** Reduced from 25.54 ms to 0.06 ms (**410.0× faster retrieval**).
 - **p95 Latency:** Reduced from 58.18 ms to 0.21 ms (**277.0× faster retrieval**).
@@ -346,7 +352,10 @@ To verify whether this potential can be realized without data leakage, Table 4 r
 | **Fixed VectorRAG Baseline** | 0.6918 | 89.63% | 0.0800 | 28.57% | 67.14% | 0.000 ms |
 | **Random Router** | 0.5064 | 65.61% | 0.2654 | 11.11% | 22.86% | 0.001 ms |
 
-Key findings from Table 4 include:
+![Figure 3: Router Comparison & Regret Analysis](../benchmark/results/plots/router_comparison.png)
+*Figure 3: Quality Regret and Accuracy across Routing Strategies on Held-Out Test Data ($N_{\text{test}}=140$). Demonstrates that the learned meta-classifier captures 87.90% of the held-out test oracle with 78.57% $\epsilon$-optimal decisions.*
+
+Key findings from Table 4 and Figure 3 include:
 1. **Oracle Recovery:** The learned router achieves **0.6784** quality on unseen queries, capturing **87.90%** of the held-out test oracle ($\text{Oracle}_{\text{test}} = 0.7718$) and outperforming the rule-based heuristic router (0.6754).
 2. **$\epsilon$-Optimal Decision Making:** While strict Top-1 exact match accuracy is 60.71% (identifying the single best architecture), the router makes **$\epsilon$-optimal routing decisions 78.57% of the time** ($\epsilon \le 0.05$). In the remaining cases, the router selects an alternative architecture whose quality is within 0.05 of the optimal structure (e.g., selecting `InvertedIndexGraphRAG` instead of `VectorRAG` on an exact query).
 3. **Sub-Millisecond Overhead:** Total feature extraction and model inference time averages **0.966 ms** on standard CPU, preserving low overall latency.
@@ -366,6 +375,9 @@ Table 5 reports downstream generation performance across 70 sampled queries ($N_
 | **AdaptiveRetrievalRAG** ($A_9$) | 0.0571 [0.0143, 0.1143] | 0.9429 | 0.6755 [0.5864, 0.7614] | **0.1484** | 660.29 ms |
 | **GraphRAG** ($A_2$) | 0.0143 [0.0000, 0.0432] | 0.9857 | 0.2564 [0.1728, 0.3391] | 0.0947 | 447.15 ms |
 | **HashMapGraphRAG** ($A_6$) | 0.0143 [0.0000, 0.0429] | 0.9857 | 0.2943 [0.1933, 0.3986] | 0.0674 | 439.97 ms |
+
+![Figure 4: Downstream Generation Claim Faithfulness Comparison](../benchmark/results/plots/e2e_faithfulness_comparison.png)
+*Figure 4: Downstream Generation Claim Faithfulness with 95% Bootstrap Confidence Intervals ($N_{\text{eval}}=630$ runs with Flan-T5). Concise, exact-matching structures achieve highest factual grounding by minimizing token hallucinations.*
 
 #### Key Downstream Observations:
 1. **Precision vs. Hallucination Dynamics:** Concise, exact-matching structures (`HashMapTrieRAG`, `TrieRAG`) achieve the highest claim-level faithfulness ($0.2571$ and $0.1714$, with `HashMapTrieRAG` demonstrating a statistically significant gain over `VectorRAG` at $p = 0.0132$) by minimizing extraneous context tokens. However, differences for other architectures did not reach statistical significance against `VectorRAG` (e.g., `TrieRAG` $p = 0.1347$, `InvertedIndexGraphRAG` $p = 0.6580$, `AdaptiveRetrievalRAG` $p = 0.3208$).

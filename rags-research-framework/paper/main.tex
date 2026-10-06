@@ -95,6 +95,8 @@ We evaluate nine distinct retrieval systems $\mathcal{A} = \{A_1, \dots, A_9\}$:
     \item \textbf{AdaptiveRetrievalRAG ($A_9$):} Query morphological feature extractor $\phi(q) \in \mathbb{R}^{11}$ and meta-classifier predicting $a^* = \arg\max_{a} P(a \mid \phi(q))$.
 \end{enumerate}
 
+As summarized in Table~\ref{tab:complexity}, the structural inductive biases of each retrieval architecture correspond to distinct operational and asymptotic profiles.
+
 \begin{table*}[t]
 \centering
 \small
@@ -176,8 +178,15 @@ AdaptiveRetrievalRAG ($A_9$) & 0.8137 & 0.8407 & 0.7795 & 0.5039 & 0.7159 & \tex
 \end{tabular}
 \end{table*}
 
+\begin{figure*}[t]
+\centering
+\includegraphics[width=0.85\textwidth]{../benchmark/results/plots/architecture_query_matrix.png}
+\caption{Architecture $\times$ Query Morphology Performance Heatmap ($N=700$ queries across 7 categories). Demonstrates structural specialization across prefix, exact lookup, relational citation, and broad semantic archetypes.}
+\label{fig:matrix}
+\end{figure*}
+
 \subsection{Level 1: Static Structural Specialization}
-As shown in Table~\ref{tab:matrix}, structural inductive biases dictate domain performance:
+As shown in Table~\ref{tab:matrix} and Figure~\ref{fig:matrix}, structural inductive biases dictate domain performance:
 \begin{itemize}
     \item \textbf{Prefix Queries:} \texttt{TrieRAG} achieves $\mathbf{0.7685}$ quality, significantly outperforming VectorRAG ($0.6658$, $+15.4\%$ relative gain).
     \item \textbf{Exact Alphanumeric Lookups:} \texttt{InvertedIndexGraphRAG} achieves $\mathbf{0.8400}$, outperforming VectorRAG ($0.8316$).
@@ -187,7 +196,14 @@ As shown in Table~\ref{tab:matrix}, structural inductive biases dictate domain p
 \end{itemize}
 
 \subsection{Level 2: The Sub-Millisecond Hybrid Sweetspot}
-Table~\ref{tab:pareto} shows that \texttt{InvertedIndexGraphRAG} achieves $0.6750$ quality ($99.60\%$ retention of VectorRAG's $0.6777$) while providing a $\mathbf{336.2\times}$ mean retrieval speedup ($0.10\text{ ms}$ vs.~$33.01\text{ ms}$), a $\mathbf{410.0\times}$ median (p50) speedup ($0.06\text{ ms}$ vs.~$25.54\text{ ms}$), and reducing process RAM footprint from $51.0\text{ MB}$ to $<0.1\text{ MB}$.
+Table~\ref{tab:pareto} and Figure~\ref{fig:pareto} show that \texttt{InvertedIndexGraphRAG} achieves $0.6750$ quality ($99.60\%$ retention of VectorRAG's $0.6777$) while providing a $\mathbf{336.2\times}$ mean retrieval speedup ($0.10\text{ ms}$ vs.~$33.01\text{ ms}$), a $\mathbf{410.0\times}$ median (p50) speedup ($0.06\text{ ms}$ vs.~$25.54\text{ ms}$), and reducing process RAM footprint from $51.0\text{ MB}$ to $<0.1\text{ MB}$.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=\columnwidth]{../benchmark/results/plots/speed_vs_accuracy.png}
+\caption{Retrieval Quality versus Mean Latency across the nine evaluated architectures. InvertedIndexGraphRAG achieves the dominant Pareto operating point ($336.2\times$ faster than VectorRAG with 99.60\% quality retention).}
+\label{fig:pareto}
+\end{figure}
 
 \begin{table}[h]
 \centering
@@ -211,7 +227,7 @@ Process RAM & 51.0 MB & \textbf{$<0.1$ MB} \\
 \end{table}
 
 \subsection{Level 3: Adaptive Meta-Routing on Held-Out Data}
-On the strictly held-out test split ($N_{\text{test}} = 140$), the learned router achieves $0.6784$ quality, capturing $\mathbf{87.90\%}$ of the held-out test oracle ($\text{Oracle}_{\text{test}} = 0.7718$) with an average quality regret of $0.0934$. While strict exact-match accuracy is $60.71\%$, the router makes $\mathbf{\epsilon}$\textbf{-optimal decisions} $\mathbf{78.57\%}$ \textbf{of the time} ($\epsilon \le 0.05$). Routing inference overhead averages $0.966\text{ ms}$ on CPU.
+As detailed in Table~\ref{tab:router}, on the strictly held-out test split ($N_{\text{test}} = 140$), the learned router achieves $0.6784$ quality, capturing $\mathbf{87.90\%}$ of the held-out test oracle ($\text{Oracle}_{\text{test}} = 0.7718$) with an average quality regret of $0.0934$. While strict exact-match accuracy is $60.71\%$, the router makes $\mathbf{\epsilon}$\textbf{-optimal decisions} $\mathbf{78.57\%}$ \textbf{of the time} ($\epsilon \le 0.05$). Routing inference overhead averages $0.966\text{ ms}$ on CPU.
 
 \begin{table}[h]
 \centering
