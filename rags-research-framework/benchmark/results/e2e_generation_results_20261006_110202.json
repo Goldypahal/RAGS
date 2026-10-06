@@ -1,0 +1,432 @@
+{
+  "total_evaluations": 1260,
+  "system_rankings_by_faithfulness": [
+    "AdaptiveRetrievalRAG",
+    "VectorRAG",
+    "InvertedIndexGraphRAG",
+    "TrieGraphRAG",
+    "TrieRAG",
+    "HashMapTrieRAG",
+    "HashMapGraphRAG",
+    "GraphRAG",
+    "HashMapRAG"
+  ],
+  "system_rankings_by_hallucination_rate": [
+    "AdaptiveRetrievalRAG",
+    "VectorRAG",
+    "InvertedIndexGraphRAG",
+    "TrieGraphRAG",
+    "TrieRAG",
+    "HashMapTrieRAG",
+    "HashMapGraphRAG",
+    "GraphRAG",
+    "HashMapRAG"
+  ],
+  "systems": {
+    "HashMapTrieRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 0.9071,
+      "mean_hallucination_rate": 0.0929,
+      "mean_context_recall": 0.6469,
+      "mean_answer_relevance": 0.2045,
+      "mean_latency_ms": 0.254,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 0.8,
+          "hallucination_rate": 0.2,
+          "context_recall": 0.5
+        },
+        "prefix_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.95
+        },
+        "exact_lookup": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.8
+        },
+        "keyword_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.8
+        },
+        "relationship_search": {
+          "faithfulness": 0.75,
+          "hallucination_rate": 0.25,
+          "context_recall": 0.2183
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.55
+        },
+        "mixed_queries": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.71
+        }
+      }
+    },
+    "AdaptiveRetrievalRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 1.0,
+      "mean_hallucination_rate": 0.0,
+      "mean_context_recall": 0.6719,
+      "mean_answer_relevance": 0.215,
+      "mean_latency_ms": 11.127,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.6
+        },
+        "prefix_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "exact_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "keyword_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.735
+        },
+        "relationship_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.2717
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.4
+        },
+        "mixed_queries": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.6967
+        }
+      }
+    },
+    "HashMapGraphRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 0.7286,
+      "mean_hallucination_rate": 0.2714,
+      "mean_context_recall": 0.2745,
+      "mean_answer_relevance": 0.1344,
+      "mean_latency_ms": 0.144,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 0.7,
+          "hallucination_rate": 0.3,
+          "context_recall": 0.3
+        },
+        "prefix_lookup": {
+          "faithfulness": 0.55,
+          "hallucination_rate": 0.45,
+          "context_recall": 0.25
+        },
+        "exact_lookup": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.4
+        },
+        "keyword_search": {
+          "faithfulness": 0.8,
+          "hallucination_rate": 0.2,
+          "context_recall": 0.2475
+        },
+        "relationship_search": {
+          "faithfulness": 0.5,
+          "hallucination_rate": 0.5,
+          "context_recall": 0.1542
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.3
+        },
+        "mixed_queries": {
+          "faithfulness": 0.75,
+          "hallucination_rate": 0.25,
+          "context_recall": 0.27
+        }
+      }
+    },
+    "GraphRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 0.7286,
+      "mean_hallucination_rate": 0.2714,
+      "mean_context_recall": 0.326,
+      "mean_answer_relevance": 0.147,
+      "mean_latency_ms": 0.122,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 0.7,
+          "hallucination_rate": 0.3,
+          "context_recall": 0.3
+        },
+        "prefix_lookup": {
+          "faithfulness": 0.55,
+          "hallucination_rate": 0.45,
+          "context_recall": 0.35
+        },
+        "exact_lookup": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.5
+        },
+        "keyword_search": {
+          "faithfulness": 0.8,
+          "hallucination_rate": 0.2,
+          "context_recall": 0.35
+        },
+        "relationship_search": {
+          "faithfulness": 0.5,
+          "hallucination_rate": 0.5,
+          "context_recall": 0.1267
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.375
+        },
+        "mixed_queries": {
+          "faithfulness": 0.75,
+          "hallucination_rate": 0.25,
+          "context_recall": 0.28
+        }
+      }
+    },
+    "VectorRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 1.0,
+      "mean_hallucination_rate": 0.0,
+      "mean_context_recall": 0.821,
+      "mean_answer_relevance": 0.2392,
+      "mean_latency_ms": 19.005,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.8
+        },
+        "prefix_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "exact_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "keyword_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.9175
+        },
+        "relationship_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.3008
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.875
+        },
+        "mixed_queries": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.8533
+        }
+      }
+    },
+    "HashMapRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 0.3571,
+      "mean_hallucination_rate": 0.6429,
+      "mean_context_recall": 0.2196,
+      "mean_answer_relevance": 0.1024,
+      "mean_latency_ms": 0.051,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 0.5,
+          "hallucination_rate": 0.5,
+          "context_recall": 0.2
+        },
+        "prefix_lookup": {
+          "faithfulness": 0.1,
+          "hallucination_rate": 0.9,
+          "context_recall": 0.1
+        },
+        "exact_lookup": {
+          "faithfulness": 0.25,
+          "hallucination_rate": 0.75,
+          "context_recall": 0.25
+        },
+        "keyword_search": {
+          "faithfulness": 0.75,
+          "hallucination_rate": 0.25,
+          "context_recall": 0.5375
+        },
+        "relationship_search": {
+          "faithfulness": 0.0,
+          "hallucination_rate": 1.0,
+          "context_recall": 0.0
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 0.5,
+          "hallucination_rate": 0.5,
+          "context_recall": 0.2
+        },
+        "mixed_queries": {
+          "faithfulness": 0.4,
+          "hallucination_rate": 0.6,
+          "context_recall": 0.25
+        }
+      }
+    },
+    "InvertedIndexGraphRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 1.0,
+      "mean_hallucination_rate": 0.0,
+      "mean_context_recall": 0.7386,
+      "mean_answer_relevance": 0.2423,
+      "mean_latency_ms": 0.202,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.5
+        },
+        "prefix_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "exact_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "keyword_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.785
+        },
+        "relationship_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.3883
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.725
+        },
+        "mixed_queries": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.7717
+        }
+      }
+    },
+    "TrieGraphRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 0.95,
+      "mean_hallucination_rate": 0.05,
+      "mean_context_recall": 0.6355,
+      "mean_answer_relevance": 0.2092,
+      "mean_latency_ms": 0.511,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 0.9,
+          "hallucination_rate": 0.1,
+          "context_recall": 0.5
+        },
+        "prefix_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.9
+        },
+        "exact_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.9
+        },
+        "keyword_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.76
+        },
+        "relationship_search": {
+          "faithfulness": 0.75,
+          "hallucination_rate": 0.25,
+          "context_recall": 0.2433
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.5
+        },
+        "mixed_queries": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.645
+        }
+      }
+    },
+    "TrieRAG": {
+      "total_queries": 140,
+      "mean_faithfulness": 0.9357,
+      "mean_hallucination_rate": 0.0643,
+      "mean_context_recall": 0.7012,
+      "mean_answer_relevance": 0.2206,
+      "mean_latency_ms": 0.505,
+      "by_query_type": {
+        "semantic_search": {
+          "faithfulness": 0.8,
+          "hallucination_rate": 0.2,
+          "context_recall": 0.6
+        },
+        "prefix_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 1.0
+        },
+        "exact_lookup": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.9
+        },
+        "keyword_search": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.8425
+        },
+        "relationship_search": {
+          "faithfulness": 0.75,
+          "hallucination_rate": 0.25,
+          "context_recall": 0.2058
+        },
+        "multi_hop_reasoning": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.65
+        },
+        "mixed_queries": {
+          "faithfulness": 1.0,
+          "hallucination_rate": 0.0,
+          "context_recall": 0.71
+        }
+      }
+    }
+  }
+}

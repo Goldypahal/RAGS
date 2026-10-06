@@ -1,0 +1,13 @@
+{
+  "timestamp": 1791264399.0997763,
+  "n_queries": 277,
+  "oracle_quality": 0.7964415751931969,
+  "learned_router_quality": 0.7309110820854249,
+  "vector_baseline_quality": 0.7381905311505028,
+  "heuristic_adaptive_quality": 0.6082617611012413,
+  "random_quality": 0.5428075518580266,
+  "learned_quality_regret": 0.06553049310777218,
+  "heuristic_quality_regret": 0.18817981409195567,
+  "learned_accuracy": 0.7689530685920578,
+  "avg_inference_latency_ms": 1.1539768953068592
+}

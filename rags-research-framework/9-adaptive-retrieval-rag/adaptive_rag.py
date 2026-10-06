@@ -52,11 +52,38 @@ class RoutingDecision:
 class QueryRouter:
     """Routes queries to appropriate retrieval methods."""
     
-    def __init__(self):
+    SYSTEM_TO_METHODS = {
+        'VectorRAG': ['vector', 'inverted_index'],
+        'InvertedIndexGraphRAG': ['inverted_index', 'graph'],
+        'TrieRAG': ['trie', 'inverted_index'],
+        'TrieGraphRAG': ['trie', 'graph'],
+        'HashMapTrieRAG': ['hashmap', 'trie'],
+        'HashMapGraphRAG': ['hashmap', 'graph'],
+        'GraphRAG': ['graph', 'inverted_index'],
+        'HashMapRAG': ['hashmap', 'vector']
+    }
+    
+    def __init__(self, use_learned_router: bool = True):
         self.routing_history: List[RoutingDecision] = []
+        self.learned_router = None
+        if use_learned_router:
+            model_path = Path(__file__).parent.parent / "benchmark" / "results" / "learned_router_model.joblib"
+            if model_path.exists():
+                try:
+                    import sys
+                    sys.path.insert(0, str(Path(__file__).parent.parent))
+                    from benchmark.learned_router import LearnedRouter
+                    self.learned_router = LearnedRouter.load(str(model_path))
+                except Exception:
+                    self.learned_router = None
         
     def route(self, query: str) -> Tuple[str, List[str]]:
         """Determine best retrieval method(s) for query."""
+        if self.learned_router is not None:
+            pred_sys, conf = self.learned_router.predict(query)
+            methods = self.SYSTEM_TO_METHODS.get(pred_sys, ['inverted_index', 'vector'])
+            return f"learned_{pred_sys}", methods
+            
         query_type = QueryClassifier.classify(query)
         methods = []
         
