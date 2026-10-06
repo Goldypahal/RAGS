@@ -6,10 +6,19 @@ Usage: python run_all_tests.py
 
 import sys
 import os
+import io
 import time
 import json
 from datetime import datetime
 from pathlib import Path
+
+# Ensure UTF-8 output on Windows consoles
+if sys.platform == 'win32':
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 # Add project root to path
 sys.path.insert(0, str(Path(__file__).parent))
@@ -40,9 +49,13 @@ from adaptive_rag import AdaptiveRetrievalRAG
 
 
 import argparse
+import psutil
 
 def initialize_rag_systems(dataset_dir: str):
-    """Initialize all 9 RAG systems with benchmark data."""
+    """
+    Initialize all 9 RAG systems with benchmark data.
+    Decouples and records index construction time and differential memory footprint.
+    """
     print(f"🚀 Initializing all 9 RAG systems with dataset {dataset_dir}...")
     
     # Load shared data
@@ -93,17 +106,32 @@ def initialize_rag_systems(dataset_dir: str):
         )
         documents.append(doc)
     
-    # Initialize each system and add documents
+    # Profile index construction for each system separately
+    process = psutil.Process(os.getpid())
+    build_stats = {}
+    
     for system_name, system in systems.items():
+        # Baseline memory before index build
+        mem_before = process.memory_info().rss / (1024 * 1024)
+        t_start = time.perf_counter_ns()
+        
         system.initialize()
         system.add_documents(documents)
-        print(f"  ✓ {system_name} initialized with {len(documents)} documents")
+        
+        t_end = time.perf_counter_ns()
+        mem_after = process.memory_info().rss / (1024 * 1024)
+        
+        build_time_ms = (t_end - t_start) / 1_000_000.0
+        index_memory_mb = max(0.0, mem_after - mem_before)
+        build_stats[system_name] = (build_time_ms, index_memory_mb)
+        
+        print(f"  ✓ {system_name:<24} built in {build_time_ms:6.1f}ms | Index RAM: ~{index_memory_mb:4.1f}MB ({len(documents)} docs)")
     
-    return systems, papers, authors, topics, citations
+    return systems, papers, authors, topics, citations, build_stats
 
 
 def load_all_test_suites(test_dir: str):
-    """Load all 7 test suites."""
+    """Load all test suites."""
     print(f"\n📋 Loading test suites from {test_dir}...")
     test_suites = {}
     suite_names = [
@@ -129,16 +157,30 @@ def load_all_test_suites(test_dir: str):
     return test_suites
 
 
-def run_benchmark_suite(systems, test_suites):
-    """Run comprehensive benchmark across all systems and tests."""
+def run_benchmark_suite(systems, test_suites, build_stats=None):
+    """Run comprehensive benchmark across all systems and tests with warm-ups and high-res timing."""
     evaluator = BenchmarkEvaluator()
+    if build_stats:
+        for sys_name, (b_time, b_mem) in build_stats.items():
+            evaluator.record_build_stats(sys_name, b_time, b_mem)
+            
     total_tests = sum(len(tests) for tests in test_suites.values())
     completed = 0
     
-    print(f"\n⚙️  Running benchmark suite ({total_tests} total tests)...\n")
+    # Warm-up phase: run sample queries to eliminate runtime JIT / allocation cold start artifacts
+    print("\n🔥 Warming up systems (2 queries to prime caches)...")
+    for system in systems.values():
+        try:
+            system.retrieve("warmup attention query", top_k=2)
+            system.retrieve("deep learning neural", top_k=2)
+        except Exception:
+            pass
+    print("  ✓ Warm-up complete.")
+    
+    print(f"\n⚙️  Running benchmark suite ({total_tests} total tests across {len(systems)} systems)...\n")
     
     for suite_name, tests in test_suites.items():
-        print(f"📊 Testing: {suite_name.upper()}")
+        print(f"📊 Testing: {suite_name.upper()} ({len(tests)} queries)")
         
         for test in tests:
             test_id = test.get('id', tests.index(test))
@@ -148,15 +190,16 @@ def run_benchmark_suite(systems, test_suites):
             # Run each system on this test
             for system_name, system in systems.items():
                 try:
-                    # Measure retrieval
-                    start_time = time.time()
+                    # High-resolution nanosecond measurement
+                    t_start = time.perf_counter_ns()
                     result = system.retrieve(query, top_k=5)
-                    elapsed_ms = (time.time() - start_time) * 1000
+                    t_end = time.perf_counter_ns()
+                    elapsed_ms = (t_end - t_start) / 1_000_000.0
                     
                     # Extract document IDs
                     retrieved_docs = [doc.doc_id for doc in result.documents]
                     
-                    # Estimate tokens (simple approximation)
+                    # Synthetic token proxy (query words + retrieved context estimate)
                     tokens_used = len(query.split()) + len(retrieved_docs) * 50
                     
                     # Evaluate
@@ -172,99 +215,23 @@ def run_benchmark_suite(systems, test_suites):
                     )
                     
                 except Exception as e:
-                    print(f"    ⚠️  Error - {system_name} on {query[:30]}: {str(e)}")
+                    print(f"    ⚠️  Error - {system_name} on '{query[:30]}': {str(e)}")
             
             completed += 1
             if completed % 10 == 0:
-                print(f"  Progress: {completed}/{total_tests} tests completed")
+                print(f"  Progress: {completed}/{total_tests} test queries processed")
     
     return evaluator
 
 
 def generate_detailed_report(evaluator):
     """Generate comprehensive report with rankings and analysis."""
-    print("\n" + "="*80)
-    print("📈 COMPREHENSIVE BENCHMARK RESULTS")
-    print("="*80 + "\n")
-    
-    # Generate main report
-    report = evaluator.generate_report()
-    
-    # Print rankings
-    print("🏆 SYSTEM RANKINGS (by Combined Score)\n")
-    print("Rank | System                    | Score | Accuracy | Latency | Memory")
-    print("-" * 75)
-    
-    for i, entry in enumerate(report['ranking'], 1):
-        system_name = entry['system']
-        score = entry['score']
-        metrics = report['systems'][system_name]
-        
-        accuracy = metrics['accuracy'].get('precision_at_1', 0)
-        latency = metrics['performance'].get('avg_latency_ms', 0)
-        memory = metrics['performance'].get('avg_memory_mb', 0)
-        
-        print(f"{i:4d} | {system_name:25s} | {score:5.3f} | {accuracy:8.3f} | {latency:7.1f}ms | {memory:6.1f}MB")
-    
-    print("\n" + "-"*75)
-    print(f"Total Tests Run: {report['total_tests']}")
-    print(f"Timestamp: {report['timestamp']}\n")
-    
-    # Detailed system breakdown
-    print("\n📊 DETAILED SYSTEM ANALYSIS\n")
-    
-    for system_name in sorted(report['systems'].keys()):
-        metrics = report['systems'][system_name]
-        print(f"\n{system_name}")
-        print("─" * 75)
-        
-        print("  Accuracy Metrics:")
-        accuracy = metrics.get('accuracy', {})
-        print(f"    • Precision@1:  {accuracy.get('precision_at_1', 0):.3f}")
-        print(f"    • Precision@5:  {accuracy.get('precision_at_5', 0):.3f}")
-        print(f"    • Recall@5:     {accuracy.get('recall_at_5', 0):.3f}")
-        print(f"    • MRR:          {accuracy.get('mrr', 0):.3f}")
-        print(f"    • NDCG@5:       {accuracy.get('ndcg_at_5', 0):.3f}")
-        
-        print("  Performance Metrics:")
-        perf = metrics.get('performance', {})
-        print(f"    • Avg Latency:  {perf.get('avg_latency_ms', 0):.2f}ms")
-        print(f"    • P50 Latency:  {perf.get('p50_latency_ms', 0):.2f}ms")
-        print(f"    • P95 Latency:  {perf.get('p95_latency_ms', 0):.2f}ms")
-        print(f"    • Memory Usage: {perf.get('avg_memory_mb', 0):.2f}MB")
-        print(f"    • CPU Usage:    {perf.get('avg_cpu_percent', 0):.1f}%")
-        
-        print("  Cost Metrics:")
-        cost = metrics.get('cost', {})
-        print(f"    • Total Tokens: {cost.get('total_tokens_used', 0)}")
-        print(f"    • Avg Tokens:   {cost.get('avg_tokens_used', 0):.0f}")
-        print(f"    • Total Cost:   ${cost.get('total_usd_cost', 0):.4f}")
-        print(f"    • Avg Cost:     ${cost.get('avg_usd_cost', 0):.6f}")
-        
-        print(f"  Score: {report['ranking'][next((i for i, r in enumerate(report['ranking']) if r['system'] == system_name), 0)]['score']:.4f}")
-    
-    # Per-test-type analysis
-    print("\n\n📋 PERFORMANCE BY TEST TYPE\n")
-    
-    test_types = {}
-    for metric in report.get('metrics', []):
-        test_type = metric['test_type']
-        if test_type not in test_types:
-            test_types[test_type] = []
-        test_types[test_type].append(metric)
-    
-    for test_type in sorted(test_types.keys()):
-        tests = test_types[test_type]
-        avg_p1 = sum(t.get('precision_at_1', 0) for t in tests) / len(tests)
-        avg_lat = sum(t.get('retrieval_time_ms', 0) for t in tests) / len(tests)
-        
-        print(f"  {test_type:25s}: P@1={avg_p1:.3f}, Lat={avg_lat:.1f}ms")
-    
-    return report
+    evaluator.print_report()
+    return evaluator.generate_report()
 
 
 def save_results(report, evaluator):
-    """Save detailed results to JSON."""
+    """Save detailed results to JSON and markdown summary."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
     results_dir = Path("benchmark/results")
     results_dir.mkdir(exist_ok=True)
@@ -273,17 +240,31 @@ def save_results(report, evaluator):
     evaluator.save_results(f"benchmark_results_{timestamp}.json")
     print(f"\n💾 Results saved to: {output_file}")
     
-    # Also save human-readable summary
+    # Save formatted human-readable summary
     summary_file = results_dir / f"summary_{timestamp}.txt"
-    with open(summary_file, 'w') as f:
-        f.write("BENCHMARK RESULTS SUMMARY\n")
-        f.write("=" * 80 + "\n")
+    with open(summary_file, 'w', encoding='utf-8') as f:
+        f.write("BENCHMARK RESULTS SUMMARY (RESEARCH-HARDENED)\n")
+        f.write("=" * 85 + "\n")
         f.write(f"Timestamp: {datetime.now().isoformat()}\n\n")
         
-        f.write("SYSTEM RANKINGS\n")
-        f.write("-" * 80 + "\n")
-        for i, entry in enumerate(report['ranking'], 1):
-            f.write(f"{i}. {entry['system']}: {entry['score']:.4f}\n")
+        f.write("RANKINGS BY RETRIEVAL QUALITY (Primary Metric)\n")
+        f.write("-" * 85 + "\n")
+        for entry in report.get('ranking_by_quality', []):
+            name = entry['system']
+            acc = report['systems'][name]['accuracy']
+            f.write(f"{entry['rank']}. {name:<26} Quality: {acc['mean_quality']:.4f} (P@5: {acc['precision_at_5']:.4f}, MRR: {acc['mrr']:.4f})\n")
+            
+        f.write("\nLATENCY & PERFORMANCE PROFILES (Decoupled)\n")
+        f.write("-" * 85 + "\n")
+        for name, metrics in report['systems'].items():
+            lat = metrics['latency_profile_ms']
+            idx = metrics['index_construction']
+            f.write(f"{name:<26} p50: {lat['p50']:6.2f}ms | p95: {lat['p95']:6.2f}ms | Mean: {lat['mean']:6.2f}ms | Build: {idx['build_time_ms']:5.1f}ms\n")
+            
+        f.write("\nCOMPOSITE UTILITY RANKINGS (Secondary Metric)\n")
+        f.write("-" * 85 + "\n")
+        for entry in report.get('ranking_by_utility', []):
+            f.write(f"{entry['rank']}. {entry['system']:<26} Utility: {entry['utility']:.4f}\n")
     
     print(f"📄 Summary saved to: {summary_file}\n")
 
@@ -301,15 +282,15 @@ def main():
         print("🎯 COMPREHENSIVE RAG BENCHMARK SUITE")
         print("="*80 + "\n")
         
-        # Initialize systems
-        systems, papers, authors, topics, citations = initialize_rag_systems(dataset_dir)
+        # Initialize systems and record decoupled build stats
+        systems, papers, authors, topics, citations, build_stats = initialize_rag_systems(dataset_dir)
         
         # Load tests
         test_suites = load_all_test_suites(test_dir)
         
         # Run benchmark
         print(f"\n📊 Testing {len(systems)} systems on {sum(len(tests) for tests in test_suites.values())} queries\n")
-        evaluator = run_benchmark_suite(systems, test_suites)
+        evaluator = run_benchmark_suite(systems, test_suites, build_stats=build_stats)
         
         # Generate report
         report = generate_detailed_report(evaluator)

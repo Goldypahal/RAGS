@@ -36,50 +36,53 @@ class BenchmarkSuite:
     def benchmark_system(self, rag_system: Any, query: str, 
                         relevant_docs: List[str], top_k: int = 5) -> BenchmarkResult:
         """Benchmark a single system on a single query."""
-        
-        # Measure retrieval time and memory
+        import math
         import psutil
         import os
         
         process = psutil.Process(os.getpid())
         mem_before = process.memory_info().rss / (1024 * 1024)  # MB
         
-        start_time = time.time()
+        start_time = time.perf_counter()
         result = rag_system.retrieve(query, top_k=top_k)
-        elapsed_time = time.time() - start_time
+        elapsed_time = time.perf_counter() - start_time
         
         mem_after = process.memory_info().rss / (1024 * 1024)
-        memory_used = mem_after - mem_before
+        memory_used = max(0.0, mem_after - mem_before)
         
-        # Calculate metrics
-        retrieved_doc_ids = [doc.doc_id for doc in result.documents]
+        # Calculate metrics with ordered deduplication
+        seen = set()
+        retrieved_doc_ids = []
+        for doc in result.documents:
+            if doc.doc_id not in seen:
+                seen.add(doc.doc_id)
+                retrieved_doc_ids.append(doc.doc_id)
+            if len(retrieved_doc_ids) == top_k:
+                break
+                
+        relevant_set = set(relevant_docs)
+        correct = sum(1 for doc_id in retrieved_doc_ids if doc_id in relevant_set)
         
-        # Precision: correct retrievals / total retrievals
-        if len(retrieved_doc_ids) > 0:
-            precision = len(set(retrieved_doc_ids) & set(relevant_docs)) / len(retrieved_doc_ids)
-        else:
-            precision = 0.0
+        # Standard Precision@k
+        precision = correct / top_k if top_k > 0 else 0.0
         
-        # Recall: correct retrievals / relevant documents
-        if len(relevant_docs) > 0:
-            recall = len(set(retrieved_doc_ids) & set(relevant_docs)) / len(relevant_docs)
-        else:
-            recall = 0.0
+        # Standard Recall@k
+        recall = correct / len(relevant_set) if len(relevant_set) > 0 else 0.0
         
         # MRR (Mean Reciprocal Rank)
         mrr = 0.0
         for i, doc_id in enumerate(retrieved_doc_ids, 1):
-            if doc_id in relevant_docs:
+            if doc_id in relevant_set:
                 mrr = 1.0 / i
                 break
         
         # NDCG (Normalized Discounted Cumulative Gain)
         dcg = 0.0
         for i, doc_id in enumerate(retrieved_doc_ids, 1):
-            if doc_id in relevant_docs:
-                dcg += 1.0 / (1 + np.log2(i))
+            if doc_id in relevant_set:
+                dcg += 1.0 / math.log2(i + 1)
         
-        ideal_dcg = sum(1.0 / (1 + np.log2(i)) for i in range(1, min(len(relevant_docs), top_k) + 1))
+        ideal_dcg = sum(1.0 / math.log2(i + 1) for i in range(1, min(len(relevant_set), top_k) + 1))
         ndcg = dcg / ideal_dcg if ideal_dcg > 0 else 0.0
         
         # Accuracy: F1 score
@@ -100,7 +103,7 @@ class BenchmarkSuite:
             precision=precision,
             mrr=mrr,
             ndcg=ndcg,
-            hallucination_rate=0.0,  # Would need LLM to calculate
+            hallucination_rate=0.0,  # Reserved for Phase 4 end-to-end LLM generation
             token_cost=len(query.split()) + len(" ".join(
                 [doc.content for doc in result.documents]
             ).split())

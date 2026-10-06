@@ -1,0 +1,39 @@
+BENCHMARK RESULTS SUMMARY (RESEARCH-HARDENED)
+=====================================================================================
+Timestamp: 2026-10-06T10:18:22.083753
+
+RANKINGS BY RETRIEVAL QUALITY (Primary Metric)
+-------------------------------------------------------------------------------------
+1. VectorRAG                  Quality: 0.4023 (P@5: 0.1360, MRR: 0.4811)
+2. InvertedIndexGraphRAG      Quality: 0.3749 (P@5: 0.1360, MRR: 0.4433)
+3. TrieGraphRAG               Quality: 0.3190 (P@5: 0.1200, MRR: 0.3682)
+4. TrieRAG                    Quality: 0.3156 (P@5: 0.1093, MRR: 0.3778)
+5. HashMapTrieRAG             Quality: 0.3011 (P@5: 0.0960, MRR: 0.3733)
+6. AdaptiveRetrievalRAG       Quality: 0.2829 (P@5: 0.1120, MRR: 0.3278)
+7. GraphRAG                   Quality: 0.1731 (P@5: 0.0800, MRR: 0.1898)
+8. HashMapRAG                 Quality: 0.1376 (P@5: 0.0400, MRR: 0.1733)
+9. HashMapGraphRAG            Quality: 0.1255 (P@5: 0.0747, MRR: 0.1247)
+
+LATENCY & PERFORMANCE PROFILES (Decoupled)
+-------------------------------------------------------------------------------------
+VectorRAG                  p50:  18.24ms | p95:  36.09ms | Mean:  20.37ms | Build: 871.8ms
+GraphRAG                   p50:   0.04ms | p95:   0.11ms | Mean:   0.05ms | Build:   0.7ms
+HashMapRAG                 p50:   0.03ms | p95:   0.06ms | Mean:   0.03ms | Build:   0.1ms
+TrieRAG                    p50:   0.30ms | p95:   0.65ms | Mean:   0.36ms | Build:   4.7ms
+HashMapTrieRAG             p50:   0.07ms | p95:   0.21ms | Mean:   0.09ms | Build:   9.4ms
+HashMapGraphRAG            p50:   0.04ms | p95:   0.10ms | Mean:   0.04ms | Build:   0.5ms
+TrieGraphRAG               p50:   0.27ms | p95:   0.65ms | Mean:   0.33ms | Build:   3.3ms
+InvertedIndexGraphRAG      p50:   0.04ms | p95:   0.14ms | Mean:   0.06ms | Build:   1.2ms
+AdaptiveRetrievalRAG       p50:  17.02ms | p95:  33.15ms | Mean:  17.80ms | Build: 423.7ms
+
+COMPOSITE UTILITY RANKINGS (Secondary Metric)
+-------------------------------------------------------------------------------------
+1. InvertedIndexGraphRAG      Utility: 0.5612
+2. TrieGraphRAG               Utility: 0.5168
+3. TrieRAG                    Utility: 0.5140
+4. HashMapTrieRAG             Utility: 0.5091
+5. GraphRAG                   Utility: 0.4202
+6. VectorRAG                  Utility: 0.3979
+7. HashMapRAG                 Utility: 0.3958
+8. HashMapGraphRAG            Utility: 0.3870
+9. AdaptiveRetrievalRAG       Utility: 0.3684

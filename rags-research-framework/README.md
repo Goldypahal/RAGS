@@ -1,99 +1,98 @@
-# RAG Research Framework: Comprehensive Multi-Architecture Comparison
+# 🔬 Adaptive Structure-Aware Retrieval: RAG Research & Benchmarking Framework
 
-A production-ready research framework for evaluating and comparing 9 different Retrieval-Augmented Generation (RAG) architectures.
+An experimental research framework and benchmarking testbed for evaluating and comparing **9 different retrieval architectures** for Retrieval-Augmented Generation (RAG) systems.
 
-## 🎯 Overview
+**Status**: 🧪 *Research Prototype & Experimental Benchmarking Framework undergoing empirical validation*
 
-This framework implements and benchmarks 9 distinct RAG architectures to answer fundamental research questions:
+## 🎯 Research Questions & Core Hypothesis
 
-- Can intelligent query routing outperform single-method RAG systems?
-- What is the speed/accuracy tradeoff for different retrieval methods?
-- How does hybrid retrieval reduce hallucination?
-- Which architectures scale best with data size?
+This framework investigates the hypothesis that **no single retrieval index is optimal across all query intents**:
+- **Semantic Queries** favor dense vector spaces ($\mathcal{O}(n \cdot d)$).
+- **Exact & Identifier Lookups** favor constant-time HashMaps (expected $\mathcal{O}(1)$).
+- **Hierarchical & Prefix Queries** favor Trie representations ($\mathcal{O}(m + z)$).
+- **Relational & Citation Reasoning** favor Subgraph traversals ($\mathcal{O}(k \cdot \bar{d}^h)$).
+- **Adaptive Query Routing** can achieve non-dominated Pareto tradeoffs across accuracy, query latency, and index footprint.
 
 ## 🏗️ Architecture Overview
 
 ### 1. **VectorRAG** (Baseline)
 ```
-Query → Embedding Model → Vector Database → Top-K Chunks → LLM
+Query → Embedding Model → Dense Vector Space → Top-K Cosine Similarity → Context
 ```
-- **Characteristics**: Medium latency, high accuracy, medium cost
-- **Best for**: General semantic search
-- **Complexity**: O(n) where n = number of documents
+- **Characteristics**: Dense semantic representations, higher latency due to model inference
+- **Best for**: General semantic similarity and paraphrase matching
+- **Complexity**: $\mathcal{O}(n \cdot d)$ where $n$ is corpus size and $d$ is embedding dimension (linear scan without ANN index)
 
 ### 2. **GraphRAG**
 ```
-Documents → Entity Extraction → Knowledge Graph → Graph Traversal → LLM
+Corpus → Entity/Relation Graph → Subgraph Traversal → Context
 ```
-- **Characteristics**: Medium latency, high accuracy, low cost
-- **Best for**: Multi-hop reasoning, relationship discovery
-- **Complexity**: O(V+E) graph traversal
+- **Characteristics**: Structural reasoning, multi-hop connection paths
+- **Best for**: Citation tracking, co-authorship networks, relational hops
+- **Complexity**: $\mathcal{O}(k \cdot \bar{d}^h)$ bounded $h$-hop traversal from $k$ seeds with average node degree $\bar{d}$
 
 ### 3. **HashMapRAG**
 ```
-Query → Entity Extraction → HashMap → Documents → LLM
+Query → Key Normalization → Hash Table Lookup → Context
 ```
-- **Characteristics**: Excellent latency (O(1)), low accuracy, very low cost
-- **Best for**: Exact keyword searches, author names, IDs
-- **Complexity**: O(1) average case
+- **Characteristics**: Microsecond retrieval, zero semantic generalization
+- **Best for**: Exact keyword matching, author/paper IDs, canonical titles
+- **Complexity**: Expected $\mathcal{O}(1)$ average case (subject to hash collision resolution)
 
 ### 4. **TrieRAG**
 ```
-Query → Trie Search → Topic Hierarchy → Documents → LLM
+Query → Prefix Tree Walk → Subtree Enumeration → Context
 ```
-- **Characteristics**: Excellent latency (O(m)), medium accuracy, low cost
-- **Best for**: Autocomplete, prefix matching, hierarchical topics
-- **Complexity**: O(m) where m = query length
+- **Characteristics**: Fast prefix matching, hierarchical taxonomy traversal
+- **Best for**: Autocomplete, prefix lookup, hierarchical topic classification
+- **Complexity**: $\mathcal{O}(m + z)$ where $m$ is prefix length and $z$ is count of matching enumerated tokens
 
 ### 5. **HashMap+TrieRAG**
 ```
-Query → HashMap (main topic) → Trie (subtopics) → Documents
+Query → Exact HashMap Check (O(1)) → Fallback to Trie Subtree Walk (O(m+z)) → Context
 ```
-- **Characteristics**: Excellent latency, medium-high accuracy
-- **Best for**: Multi-level hierarchical search
-- **Complexity**: O(1) + O(m)
+- **Characteristics**: Two-tier exact match with prefix exploration
+- **Best for**: Multi-level hierarchical search and entity resolution
+- **Complexity**: Expected $\mathcal{O}(1) + \mathcal{O}(m + z)$
 
-### 6. **HashMap+GraphRAG** ⭐
+### 6. **HashMap+GraphRAG**
 ```
-Query → HashMap (O(1) entity lookup) → Graph Traversal → Documents
+Query → HashMap Entity Entry-point (O(1)) → Local Graph Expansion → Context
 ```
-- **Characteristics**: Excellent latency, high accuracy, low cost
-- **Best for**: Fast entity discovery with semantic reasoning
-- **Complexity**: O(1) + O(V+E)
-- **Key Insight**: Combines speed of HashMap with reasoning of Graph
+- **Characteristics**: Instant entry-point resolution coupled with relational graph reasoning
+- **Best for**: Known entity multi-hop neighborhood exploration
+- **Complexity**: Expected $\mathcal{O}(1) + \mathcal{O}(k \cdot \bar{d}^h)$
 
 ### 7. **Trie+GraphRAG**
 ```
-Query → Trie (hierarchy) → Graph (relationships) → Documents
+Query → Trie Prefix Exploration → Seed Entity Identification → Graph Traversal → Context
 ```
-- **Characteristics**: Good latency, high accuracy, low cost
-- **Best for**: Educational content, hierarchical papers
-- **Complexity**: O(m) + O(V+E)
+- **Characteristics**: Prefix-tolerant entry points connecting into entity relationship networks
+- **Best for**: Partial query formulation and taxonomical graph exploration
+- **Complexity**: $\mathcal{O}(m + z) + \mathcal{O}(k \cdot \bar{d}^h)$
 
-### 8. **InvertedIndex+GraphRAG**
+### 8. **InvertedIndex+GraphRAG** ⭐ (Pareto-Optimal)
 ```
-Query → Inverted Index (keywords) → Graph Expansion → Documents
+Query → Token Inverted Index (BM25/TF) → Top Seed Expansion → Graph Reasoning → Context
 ```
-- **Characteristics**: Good latency, high accuracy, very low cost
-- **Best for**: Large document collections, traditional search + reasoning
-- **Complexity**: O(log n + V+E)
-- **Publication Potential**: Strong candidate
+- **Characteristics**: Sub-millisecond retrieval, high keyword relevance, graph structural expansion
+- **Best for**: Large corpora combining lexical search with relationship verification
+- **Complexity**: Posting list intersection $\mathcal{O}(L) + \mathcal{O}(k \cdot \bar{d}^h)$
 
-### 9. **AdaptiveRetrievalRAG** ⭐⭐ (Main Contribution)
+### 9. **AdaptiveRetrievalRAG** ⭐⭐ (Core Research Focus)
 ```
-Query → Query Classifier
-    ├─ Exact → HashMap
-    ├─ Prefix → Trie
-    ├─ Keyword → Inverted Index
-    ├─ Relationship → Graph
-    └─ Semantic → Vector DB
+Query → Intent Classifier
+    ├─ Exact Identifier    → HashMapRAG
+    ├─ Prefix/Partial       → TrieRAG
+    ├─ Multi-Keyword        → InvertedIndexGraphRAG
+    ├─ Relational/Citation  → GraphRAG
+    └─ Conceptual/Semantic  → VectorRAG
     ↓
-    Context Merger → LLM
+    Result Verification & Context Assembly
 ```
-- **Characteristics**: Variable but optimal latency, very high accuracy
-- **Best for**: Mixed query types, high-quality results required
-- **Key Innovation**: Intelligent routing + multi-method fusion
-- **Publication Potential**: Excellent - novel approach to RAG
+- **Characteristics**: Dynamically matches query morphology to the optimal indexing data structure
+- **Best for**: Heterogeneous workloads spanning exact lookups, multi-hop reasoning, and conceptual queries
+- **Complexity**: Routing classification $\mathcal{O}(c) + \mathcal{O}(\text{selected retriever})$
 
 ## 📊 Benchmark Metrics
 
@@ -189,28 +188,38 @@ rags-research-framework/
 └── requirements.txt           # Dependencies
 ```
 
-## 🔬 Research Findings (Preliminary)
+## 🔬 Empirical Benchmark Findings (Hardened Protocol)
 
-### Speed Rankings
-1. **HashMapRAG** - O(1) perfect for exact matches
-2. **InvertedIndex+GraphRAG** - Fast search engine + graph
-3. **TrieRAG** - Good prefix matching
-4. **HashMap+GraphRAG** - Combines speed and reasoning
-5. **AdaptiveRetrievalRAG** - Smart routing overhead
+Results from the standardized benchmark suite across 75 test queries spanning 7 categories (Exact, Prefix, Keyword, Semantic, Relational, Multi-Hop, Mixed):
 
-### Accuracy Rankings
-1. **AdaptiveRetrievalRAG** - Multiple confirmations
-2. **VectorRAG + GraphRAG** - Semantic understanding
-3. **InvertedIndex+GraphRAG** - Search + reasoning
-4. **HashMap+GraphRAG** - Fast with context
-5. **Trie+GraphRAG** - Hierarchical + relational
+### 1. Retrieval Quality (Primary Scientific Metric)
+1. 🏆 **VectorRAG** — Quality: **0.4023** (P@5: 0.1360, MRR: 0.4811, NDCG@5: 0.4600)
+2. 🥈 **InvertedIndex+GraphRAG** — Quality: **0.3749** (P@5: 0.1360, MRR: 0.4433, NDCG@5: 0.4315)
+3. 🥉 **Trie+GraphRAG** — Quality: **0.3190** (P@5: 0.1200, MRR: 0.3682, NDCG@5: 0.3635)
+4. **TrieRAG** — Quality: 0.3156 (P@5: 0.1093, MRR: 0.3778, NDCG@5: 0.3551)
+5. **HashMap+TrieRAG** — Quality: 0.3011 (P@5: 0.0960, MRR: 0.3733, NDCG@5: 0.3368)
+6. **AdaptiveRetrievalRAG** — Quality: 0.2829 (P@5: 0.1120, MRR: 0.3278, NDCG@5: 0.3251)
+7. **GraphRAG** — Quality: 0.1731 (P@5: 0.0800, MRR: 0.1898, NDCG@5: 0.1995)
+8. **HashMapRAG** — Quality: 0.1376 (P@5: 0.0400, MRR: 0.1733, NDCG@5: 0.1539)
+9. **HashMap+GraphRAG** — Quality: 0.1255 (P@5: 0.0747, MRR: 0.1247, NDCG@5: 0.1516)
 
-### Cost-Effectiveness Rankings
-1. **HashMapRAG** - Minimal resources
-2. **InvertedIndex+GraphRAG** - No embeddings needed
-3. **TrieRAG** - Compact data structure
-4. **HashMap+GraphRAG** - Low overhead hybrid
-5. **AdaptiveRetrievalRAG** - Multiple indices
+### 2. High-Resolution Latency Profiles (Decoupled Performance)
+1. ⚡ **HashMapRAG** — p50: **0.03 ms**, Mean: 0.03 ms, Build: 0.1 ms, RAM: ~0.0 MB
+2. ⚡ **HashMap+GraphRAG** — p50: **0.04 ms**, Mean: 0.04 ms, Build: 0.5 ms, RAM: ~0.0 MB
+3. ⚡ **GraphRAG** — p50: **0.04 ms**, Mean: 0.05 ms, Build: 0.7 ms, RAM: ~0.0 MB
+4. ⚡ **InvertedIndex+GraphRAG** — p50: **0.04 ms**, Mean: 0.06 ms, Build: 1.2 ms, RAM: ~0.1 MB
+5. ⚡ **HashMap+TrieRAG** — p50: **0.07 ms**, Mean: 0.09 ms, Build: 9.4 ms, RAM: ~0.0 MB
+6. **Trie+GraphRAG** — p50: 0.27 ms, Mean: 0.33 ms, Build: 3.3 ms, RAM: ~0.0 MB
+7. **TrieRAG** — p50: 0.30 ms, Mean: 0.36 ms, Build: 4.7 ms, RAM: ~0.0 MB
+8. **AdaptiveRetrievalRAG** — p50: 17.02 ms, Mean: 17.80 ms, Build: 423.7 ms, RAM: ~0.8 MB
+9. **VectorRAG** — p50: 18.24 ms, Mean: 20.37 ms, Build: 871.8 ms, RAM: ~49.0 MB
+
+### 3. Empirical Pareto Frontier (Quality vs Latency Tradeoff)
+Non-dominated architectures defining the optimal empirical boundary (`speed_vs_accuracy.png`):
+- **Maximum Quality**: `VectorRAG` (0.4023 Quality, 20.37 ms)
+- **High-Quality / Sub-millisecond**: `InvertedIndex+GraphRAG` (0.3749 Quality, 0.06 ms — **340x faster than VectorRAG with 93% quality**)
+- **Graph Traversal**: `GraphRAG` (0.1731 Quality, 0.05 ms)
+- **Minimum Latency**: `HashMapRAG` (0.1376 Quality, 0.03 ms)
 
 ## 🎓 Key Research Questions
 

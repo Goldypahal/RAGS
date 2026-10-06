@@ -9,13 +9,23 @@ This module provides utilities to:
 5. Compare systems and create scorecards
 """
 
+import sys
+import os
+import io
 import json
 import time
 import psutil
-import os
 from typing import List, Dict, Tuple, Any
 from dataclasses import dataclass
 from datetime import datetime
+
+# Ensure UTF-8 output on Windows consoles
+if sys.platform == 'win32':
+    try:
+        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+    except Exception:
+        pass
 
 
 @dataclass
@@ -102,139 +112,142 @@ class BenchmarkLoader:
 
 
 class MetricsCalculator:
-    """Calculate evaluation metrics."""
+    """Calculate standard information retrieval evaluation metrics."""
     
     @staticmethod
     def calculate_precision_at_k(retrieved: List[str], relevant: List[str], k: int) -> float:
         """
-        Calculate precision@k.
+        Calculate standard Precision@k: (number of relevant items in top-k) / k.
         
         Args:
-            retrieved: List of retrieved document IDs
+            retrieved: List of retrieved document IDs (ordered)
             relevant: List of relevant document IDs
-            k: Number of top results to consider
+            k: Cutoff rank
             
         Returns:
             Precision@k value (0.0 to 1.0)
         """
-        if k == 0:
+        if k <= 0:
             return 0.0
         
-        top_k = set(retrieved[:k])
         relevant_set = set(relevant)
-        
+        # Deduplicate while preserving first-seen ranking order
+        seen = set()
+        top_k = []
+        for doc_id in retrieved:
+            if doc_id not in seen:
+                seen.add(doc_id)
+                top_k.append(doc_id)
+            if len(top_k) == k:
+                break
+                
         if not top_k:
             return 0.0
-        
-        correct = len(top_k.intersection(relevant_set))
-        return correct / min(k, len(top_k))
+            
+        correct = sum(1 for doc_id in top_k if doc_id in relevant_set)
+        return correct / k
     
     @staticmethod
     def calculate_recall_at_k(retrieved: List[str], relevant: List[str], k: int) -> float:
         """
-        Calculate recall@k.
+        Calculate Recall@k: (number of relevant items in top-k) / (total relevant items).
         
         Args:
-            retrieved: List of retrieved document IDs
+            retrieved: List of retrieved document IDs (ordered)
             relevant: List of relevant document IDs
-            k: Number of top results to consider
+            k: Cutoff rank
             
         Returns:
             Recall@k value (0.0 to 1.0)
         """
-        if not relevant:
+        if not relevant or k <= 0:
             return 0.0
-        
-        top_k = set(retrieved[:k])
+            
         relevant_set = set(relevant)
-        
-        correct = len(top_k.intersection(relevant_set))
+        seen = set()
+        top_k = []
+        for doc_id in retrieved:
+            if doc_id not in seen:
+                seen.add(doc_id)
+                top_k.append(doc_id)
+            if len(top_k) == k:
+                break
+                
+        correct = sum(1 for doc_id in top_k if doc_id in relevant_set)
         return correct / len(relevant_set)
     
     @staticmethod
     def calculate_mrr(retrieved: List[str], relevant: List[str]) -> float:
         """
-        Calculate Mean Reciprocal Rank.
+        Calculate Mean Reciprocal Rank (MRR) based on first relevant document rank.
         
         Args:
-            retrieved: List of retrieved document IDs
+            retrieved: List of retrieved document IDs (ordered)
             relevant: List of relevant document IDs
             
         Returns:
-            MRR value (0.0 to 1.0)
+            Reciprocal rank (1/rank) or 0.0 if no relevant items found
         """
+        if not relevant:
+            return 0.0
+            
         relevant_set = set(relevant)
-        
-        for rank, doc_id in enumerate(retrieved, 1):
+        seen = set()
+        rank = 1
+        for doc_id in retrieved:
+            if doc_id in seen:
+                continue
+            seen.add(doc_id)
             if doc_id in relevant_set:
                 return 1.0 / rank
-        
+            rank += 1
+            
         return 0.0
     
     @staticmethod
     def calculate_ndcg_at_k(retrieved: List[str], relevant: List[str], k: int) -> float:
         """
-        Calculate Normalized Discounted Cumulative Gain@k.
+        Calculate Normalized Discounted Cumulative Gain@k (NDCG@k).
         
         Args:
-            retrieved: List of retrieved document IDs
+            retrieved: List of retrieved document IDs (ordered)
             relevant: List of relevant document IDs
-            k: Number of top results to consider
+            k: Cutoff rank
             
         Returns:
             NDCG@k value (0.0 to 1.0)
         """
-        if not relevant or k == 0:
+        import math
+        if not relevant or k <= 0:
             return 0.0
-        
+            
         relevant_set = set(relevant)
-        
-        # Calculate DCG
+        seen = set()
+        top_k = []
+        for doc_id in retrieved:
+            if doc_id not in seen:
+                seen.add(doc_id)
+                top_k.append(doc_id)
+            if len(top_k) == k:
+                break
+                
+        # Calculate DCG: sum of 1 / log2(rank + 1) for relevant docs
         dcg = 0.0
-        for rank, doc_id in enumerate(retrieved[:k], 1):
+        for rank, doc_id in enumerate(top_k, 1):
             if doc_id in relevant_set:
-                dcg += 1.0 / (1 + log2(rank))
-        
-        # Calculate Ideal DCG
-        ideal_dcg = 0.0
-        for rank in range(1, min(len(relevant), k) + 1):
-            ideal_dcg += 1.0 / (1 + log2(rank))
+                dcg += 1.0 / math.log2(rank + 1)
+                
+        # Calculate Ideal DCG (IDCG)
+        ideal_dcg = sum(1.0 / math.log2(r + 1) for r in range(1, min(len(relevant_set), k) + 1))
         
         if ideal_dcg == 0:
             return 0.0
-        
-        return dcg / ideal_dcg
-    
-    @staticmethod
-    def calculate_cost(tokens_used: int, model: str = "gpt-3.5-turbo") -> float:
-        """
-        Calculate estimated cost based on tokens.
-        
-        Args:
-            tokens_used: Number of tokens consumed
-            model: Model name for pricing lookup
             
-        Returns:
-            Estimated cost in USD
-        """
-        # GPT-3.5-turbo pricing: $0.002 per 1K tokens (approx)
-        pricing = {
-            "gpt-3.5-turbo": 0.002 / 1000,
-            "gpt-4": 0.03 / 1000,
-            "claude": 0.008 / 1000,
-        }
-        
-        rate = pricing.get(model, 0.002 / 1000)
-        return tokens_used * rate
-
-
-def log2(x: float) -> float:
-    """Calculate log base 2."""
-    return __import__('math').log2(x)
+        return dcg / ideal_dcg
 
 
 class BenchmarkEvaluator:
-    """Main benchmark evaluation orchestrator."""
+    """Main benchmark evaluation orchestrator with rigorous statistical tracking."""
     
     def __init__(self, results_dir: str = "benchmark/results"):
         """Initialize evaluator."""
@@ -242,15 +255,23 @@ class BenchmarkEvaluator:
         self.metrics: List[EvaluationMetrics] = []
         self.loader = BenchmarkLoader()
         self.calculator = MetricsCalculator()
+        self.system_build_stats: Dict[str, Dict[str, float]] = {}
         
         if not os.path.exists(results_dir):
             os.makedirs(results_dir)
+            
+    def record_build_stats(self, system_name: str, build_time_ms: float, index_memory_mb: float):
+        """Record decoupled index construction statistics."""
+        self.system_build_stats[system_name] = {
+            "build_time_ms": round(build_time_ms, 2),
+            "index_memory_mb": round(index_memory_mb, 2)
+        }
     
     def evaluate_retrieval(
         self,
         system_name: str,
         test_type: str,
-        test_id: int,
+        test_id: Any,
         query: str,
         retrieved_docs: List[str],
         relevant_docs: List[str],
@@ -262,13 +283,13 @@ class BenchmarkEvaluator:
         
         Args:
             system_name: Name of RAG system
-            test_type: Type of test (exact, semantic, etc.)
-            test_id: Test ID
+            test_type: Type of test (exact, semantic, multi_hop, etc.)
+            test_id: Test identifier
             query: Query string
-            retrieved_docs: List of retrieved document IDs
-            relevant_docs: List of relevant document IDs
-            retrieval_time_ms: Retrieval time in milliseconds
-            tokens_used: Number of tokens consumed
+            retrieved_docs: Ordered list of retrieved document IDs
+            relevant_docs: List of ground-truth relevant document IDs
+            retrieval_time_ms: High-resolution retrieval time in milliseconds
+            tokens_used: Synthetic proxy of query + context words
             
         Returns:
             EvaluationMetrics object
@@ -276,47 +297,43 @@ class BenchmarkEvaluator:
         metrics = EvaluationMetrics(
             system_name=system_name,
             test_type=test_type,
-            test_id=test_id,
+            test_id=test_id if isinstance(test_id, int) else hash(str(test_id)) % 100000,
             query=query
         )
         
-        # Calculate retrieval metrics
+        # Calculate standard IR retrieval metrics
         metrics.precision_at_1 = self.calculator.calculate_precision_at_k(retrieved_docs, relevant_docs, 1)
         metrics.precision_at_5 = self.calculator.calculate_precision_at_k(retrieved_docs, relevant_docs, 5)
         metrics.recall_at_5 = self.calculator.calculate_recall_at_k(retrieved_docs, relevant_docs, 5)
         metrics.mrr = self.calculator.calculate_mrr(retrieved_docs, relevant_docs)
         metrics.ndcg_at_5 = self.calculator.calculate_ndcg_at_k(retrieved_docs, relevant_docs, 5)
         
-        # Set performance metrics
+        # Performance metrics
         metrics.retrieval_time_ms = retrieval_time_ms
         metrics.tokens_used = tokens_used
-        metrics.estimated_cost_usd = self.calculator.calculate_cost(tokens_used)
-        
-        # Memory usage (estimate based on system)
-        try:
-            process = psutil.Process(os.getpid())
-            metrics.memory_used_mb = process.memory_info().rss / 1024 / 1024
-            metrics.cpu_percent = process.cpu_percent(interval=0.1)
-        except:
-            metrics.memory_used_mb = 0.0
-            metrics.cpu_percent = 0.0
+        metrics.estimated_cost_usd = 0.0  # Decoupled: retrieval benchmark does not make LLM calls
         
         self.metrics.append(metrics)
         return metrics
     
     def generate_report(self) -> Dict[str, Any]:
-        """Generate comprehensive benchmark report."""
+        """
+        Generate comprehensive, publication-grade benchmark report.
+        Reports Accuracy, Latency distribution (p50, p95, p99, std),
+        Decoupled Index Build metrics, and a mathematically sound composite utility.
+        """
+        import numpy as np
+        
         if not self.metrics:
             return {"error": "No metrics recorded"}
         
-        # Group by system
+        # Group metrics by system
         by_system = {}
         for metric in self.metrics:
             if metric.system_name not in by_system:
                 by_system[metric.system_name] = []
             by_system[metric.system_name].append(metric)
         
-        # Calculate aggregates
         report = {
             "timestamp": datetime.now().isoformat(),
             "total_tests": len(self.metrics),
@@ -324,62 +341,95 @@ class BenchmarkEvaluator:
         }
         
         for system_name, system_metrics in by_system.items():
-            avg_precision_1 = sum(m.precision_at_1 for m in system_metrics) / len(system_metrics)
-            avg_precision_5 = sum(m.precision_at_5 for m in system_metrics) / len(system_metrics)
-            avg_recall_5 = sum(m.recall_at_5 for m in system_metrics) / len(system_metrics)
-            avg_mrr = sum(m.mrr for m in system_metrics) / len(system_metrics)
-            avg_ndcg = sum(m.ndcg_at_5 for m in system_metrics) / len(system_metrics)
+            n = len(system_metrics)
+            avg_precision_1 = sum(m.precision_at_1 for m in system_metrics) / n
+            avg_precision_5 = sum(m.precision_at_5 for m in system_metrics) / n
+            avg_recall_5 = sum(m.recall_at_5 for m in system_metrics) / n
+            avg_mrr = sum(m.mrr for m in system_metrics) / n
+            avg_ndcg = sum(m.ndcg_at_5 for m in system_metrics) / n
             
-            avg_latency = sum(m.retrieval_time_ms for m in system_metrics) / len(system_metrics)
-            max_latency = max(m.retrieval_time_ms for m in system_metrics)
-            min_latency = min(m.retrieval_time_ms for m in system_metrics)
+            # Latency statistics across all query runs
+            latencies = [m.retrieval_time_ms for m in system_metrics]
+            avg_latency = float(np.mean(latencies))
+            p50_latency = float(np.percentile(latencies, 50))
+            p95_latency = float(np.percentile(latencies, 95))
+            p99_latency = float(np.percentile(latencies, 99))
+            std_latency = float(np.std(latencies))
+            min_latency = float(np.min(latencies))
+            max_latency = float(np.max(latencies))
             
-            avg_memory = sum(m.memory_used_mb for m in system_metrics) / len(system_metrics)
-            total_cost = sum(m.estimated_cost_usd for m in system_metrics)
+            # Index construction stats
+            build_stats = self.system_build_stats.get(system_name, {
+                "build_time_ms": 0.0,
+                "index_memory_mb": 0.0
+            })
             
-            # Calculate combined score
-            score = (
-                0.2 * avg_precision_1 +
-                0.2 * avg_precision_5 +
-                0.2 * avg_recall_5 +
-                0.2 * avg_mrr +
-                0.1 * min(1.0, avg_latency / 100) +  # Normalize latency
-                0.1 * min(1.0, avg_memory / 1000)     # Normalize memory
+            # Pure retrieval quality score (mean of standard metrics)
+            retrieval_quality = (avg_precision_1 + avg_precision_5 + avg_recall_5 + avg_mrr + avg_ndcg) / 5.0
+            
+            # Mathematically sound efficiency scaling (penalty for latency and memory)
+            # Higher latency -> smaller factor, bounded in (0, 1]
+            latency_scale_ms = 10.0   # 10ms reference scale
+            memory_scale_mb = 50.0    # 50MB reference scale
+            latency_efficiency = 1.0 / (1.0 + avg_latency / latency_scale_ms)
+            memory_efficiency = 1.0 / (1.0 + build_stats["index_memory_mb"] / memory_scale_mb)
+            
+            # Composite utility (secondary metric): Quality (70%) + Latency Efficiency (20%) + Memory (10%)
+            composite_utility = (
+                0.70 * retrieval_quality +
+                0.20 * latency_efficiency +
+                0.10 * memory_efficiency
             )
             
             report["systems"][system_name] = {
-                "tests_run": len(system_metrics),
+                "tests_run": n,
                 "accuracy": {
                     "precision_at_1": round(avg_precision_1, 4),
                     "precision_at_5": round(avg_precision_5, 4),
                     "recall_at_5": round(avg_recall_5, 4),
                     "mrr": round(avg_mrr, 4),
-                    "ndcg_at_5": round(avg_ndcg, 4)
+                    "ndcg_at_5": round(avg_ndcg, 4),
+                    "mean_quality": round(retrieval_quality, 4)
                 },
-                "performance": {
-                    "avg_latency_ms": round(avg_latency, 2),
-                    "min_latency_ms": round(min_latency, 2),
-                    "max_latency_ms": round(max_latency, 2),
-                    "avg_memory_mb": round(avg_memory, 2)
+                "latency_profile_ms": {
+                    "mean": round(avg_latency, 3),
+                    "p50": round(p50_latency, 3),
+                    "p95": round(p95_latency, 3),
+                    "p99": round(p99_latency, 3),
+                    "std_dev": round(std_latency, 3),
+                    "min": round(min_latency, 3),
+                    "max": round(max_latency, 3)
                 },
-                "cost": {
-                    "total_cost_usd": round(total_cost, 6),
-                    "avg_cost_per_query": round(total_cost / len(system_metrics), 6)
+                "index_construction": {
+                    "build_time_ms": build_stats["build_time_ms"],
+                    "index_memory_mb": build_stats["index_memory_mb"]
                 },
-                "combined_score": round(score, 4)
+                "composite_utility": round(composite_utility, 4),
+                # Backward-compatibility alias
+                "combined_score": round(composite_utility, 4)
             }
         
-        # Rank systems
-        ranked = sorted(
+        # Rankings: Rank primarily by Retrieval Quality, secondary by Composite Utility
+        ranked_by_quality = sorted(
             report["systems"].items(),
-            key=lambda x: x[1]["combined_score"],
+            key=lambda x: x[1]["accuracy"]["mean_quality"],
+            reverse=True
+        )
+        ranked_by_utility = sorted(
+            report["systems"].items(),
+            key=lambda x: x[1]["composite_utility"],
             reverse=True
         )
         
-        report["ranking"] = [
-            {"rank": i+1, "system": name, "score": data["combined_score"]}
-            for i, (name, data) in enumerate(ranked)
+        report["ranking_by_quality"] = [
+            {"rank": i+1, "system": name, "quality": data["accuracy"]["mean_quality"]}
+            for i, (name, data) in enumerate(ranked_by_quality)
         ]
+        report["ranking_by_utility"] = [
+            {"rank": i+1, "system": name, "utility": data["composite_utility"]}
+            for i, (name, data) in enumerate(ranked_by_utility)
+        ]
+        report["ranking"] = report["ranking_by_utility"]
         
         return report
     
@@ -401,42 +451,40 @@ class BenchmarkEvaluator:
         return filepath
     
     def print_report(self):
-        """Print formatted report."""
+        """Print formatted publication-grade report with decoupled dimensions."""
         report = self.generate_report()
         
-        print("\n" + "="*80)
-        print("BENCHMARK REPORT")
-        print("="*80)
+        print("\n" + "="*85)
+        print("📊 RIGOROUS RETRIEVAL BENCHMARK REPORT")
+        print("="*85)
         print(f"Timestamp: {report['timestamp']}")
-        print(f"Total Tests: {report['total_tests']}\n")
+        print(f"Total Tests Run: {report['total_tests']}\n")
         
-        print("RANKING:")
-        print("-" * 80)
-        for rank_info in report.get("ranking", []):
-            print(f"{rank_info['rank']}. {rank_info['system']}: {rank_info['score']:.4f}")
+        print("🏆 RANKINGS BY RETRIEVAL QUALITY (Primary Scientific Metric):")
+        print("-" * 85)
+        print(f"{'Rank':<5} {'System':<28} {'Mean Quality':<15} {'P@5':<10} {'MRR':<10} {'NDCG@5':<10}")
+        print("-" * 85)
+        for rank_info in report.get("ranking_by_quality", []):
+            name = rank_info["system"]
+            acc = report["systems"][name]["accuracy"]
+            print(f"{rank_info['rank']:<5} {name:<28} {acc['mean_quality']:<15.4f} {acc['precision_at_5']:<10.4f} {acc['mrr']:<10.4f} {acc['ndcg_at_5']:<10.4f}")
+            
+        print("\n⚡ LATENCY PROFILE & INDEX CONSTRUCTION (Decoupled Performance):")
+        print("-" * 85)
+        print(f"{'System':<28} {'p50 (ms)':<10} {'p95 (ms)':<10} {'p99 (ms)':<10} {'Mean (ms)':<10} {'Std (ms)':<10} {'Build (ms)':<12} {'RAM (MB)':<10}")
+        print("-" * 85)
+        for name, metrics in report["systems"].items():
+            lat = metrics["latency_profile_ms"]
+            idx = metrics["index_construction"]
+            print(f"{name:<28} {lat['p50']:<10.2f} {lat['p95']:<10.2f} {lat['p99']:<10.2f} {lat['mean']:<10.2f} {lat['std_dev']:<10.2f} {idx['build_time_ms']:<12.1f} {idx['index_memory_mb']:<10.1f}")
+            
+        print("\n🎯 COMPOSITE EFFICIENCY UTILITY (Secondary Bounded Score):")
+        print("-" * 85)
+        for rank_info in report.get("ranking_by_utility", []):
+            name = rank_info["system"]
+            print(f"{rank_info['rank']}. {name:<28} Utility: {rank_info['utility']:.4f}")
         
-        print("\nDETAILED METRICS:")
-        print("-" * 80)
-        
-        for system_name, metrics in report["systems"].items():
-            print(f"\n{system_name}:")
-            print(f"  Tests Run: {metrics['tests_run']}")
-            print(f"  Accuracy:")
-            print(f"    Precision@1: {metrics['accuracy']['precision_at_1']:.4f}")
-            print(f"    Precision@5: {metrics['accuracy']['precision_at_5']:.4f}")
-            print(f"    Recall@5: {metrics['accuracy']['recall_at_5']:.4f}")
-            print(f"    MRR: {metrics['accuracy']['mrr']:.4f}")
-            print(f"    NDCG@5: {metrics['accuracy']['ndcg_at_5']:.4f}")
-            print(f"  Performance:")
-            print(f"    Avg Latency: {metrics['performance']['avg_latency_ms']:.2f}ms")
-            print(f"    Latency Range: {metrics['performance']['min_latency_ms']:.2f}ms - {metrics['performance']['max_latency_ms']:.2f}ms")
-            print(f"    Avg Memory: {metrics['performance']['avg_memory_mb']:.2f}MB")
-            print(f"  Cost:")
-            print(f"    Total Cost: ${metrics['cost']['total_cost_usd']:.6f}")
-            print(f"    Avg per Query: ${metrics['cost']['avg_cost_per_query']:.6f}")
-            print(f"  Combined Score: {metrics['combined_score']:.4f}")
-        
-        print("\n" + "="*80)
+        print("\n" + "="*85)
 
 
 if __name__ == "__main__":

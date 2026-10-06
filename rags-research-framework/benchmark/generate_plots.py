@@ -29,104 +29,128 @@ def main():
     
     # Extract metrics for plotting
     systems = list(systems_data.keys())
-    # Sort systems by combined score for consistent ordering in plots
-    systems = sorted(systems, key=lambda s: systems_data[s]["combined_score"], reverse=True)
     
-    combined_scores = [systems_data[s]["combined_score"] for s in systems]
-    p1 = [systems_data[s]["accuracy"]["precision_at_1"] for s in systems]
-    p5 = [systems_data[s]["accuracy"]["precision_at_5"] for s in systems]
-    r5 = [systems_data[s]["accuracy"]["recall_at_5"] for s in systems]
-    mrr = [systems_data[s]["accuracy"]["mrr"] for s in systems]
-    ndcg = [systems_data[s]["accuracy"]["ndcg_at_5"] for s in systems]
+    # Extract accuracy, quality, and latency
+    def get_quality(s):
+        acc = systems_data[s].get("accuracy", {})
+        if "mean_quality" in acc:
+            return acc["mean_quality"]
+        # Fallback to mean of available accuracy metrics
+        p1 = acc.get("precision_at_1", 0)
+        p5 = acc.get("precision_at_5", 0)
+        r5 = acc.get("recall_at_5", 0)
+        mrr = acc.get("mrr", 0)
+        return (p1 + p5 + r5 + mrr) / 4.0
+
+    def get_latency(s):
+        perf = systems_data[s].get("performance", {})
+        lat_prof = systems_data[s].get("latency_profile_ms", {})
+        if "mean" in lat_prof:
+            return lat_prof["mean"]
+        return perf.get("avg_latency_ms", 0)
+
+    # Sort systems by retrieval quality for consistent ordering in plots
+    systems = sorted(systems, key=get_quality, reverse=True)
     
-    latency = [systems_data[s]["performance"]["avg_latency_ms"] for s in systems]
-    memory = [systems_data[s]["performance"]["avg_memory_mb"] for s in systems]
+    quality_scores = [get_quality(s) for s in systems]
+    p1 = [systems_data[s]["accuracy"].get("precision_at_1", 0) for s in systems]
+    p5 = [systems_data[s]["accuracy"].get("precision_at_5", 0) for s in systems]
+    r5 = [systems_data[s]["accuracy"].get("recall_at_5", 0) for s in systems]
+    mrr = [systems_data[s]["accuracy"].get("mrr", 0) for s in systems]
+    ndcg = [systems_data[s]["accuracy"].get("ndcg_at_5", 0) for s in systems]
+    
+    latencies = [get_latency(s) for s in systems]
+    p50_latencies = [systems_data[s].get("latency_profile_ms", {}).get("p50", get_latency(s)) for s in systems]
+    p95_latencies = [systems_data[s].get("latency_profile_ms", {}).get("p95", get_latency(s) * 1.5) for s in systems]
     
     # Color palette
-    colors = plt.cm.plasma(np.linspace(0.1, 0.9, len(systems)))
+    colors = plt.cm.viridis(np.linspace(0.15, 0.85, len(systems)))
     
-    # Plot 1: Combined Scores
+    # Plot 1: Retrieval Quality Ranking (Primary Scientific Result)
     plt.figure(figsize=(10, 6))
     y_pos = np.arange(len(systems))
-    plt.barh(y_pos, combined_scores, align='center', color=colors, edgecolor='black', alpha=0.8)
+    plt.barh(y_pos, quality_scores, align='center', color=colors, edgecolor='black', alpha=0.85)
     plt.yticks(y_pos, systems)
     plt.gca().invert_yaxis()  # Top-down ranking
-    plt.xlabel('Combined Score (higher is better)')
-    plt.title('RAG Architecture Comparison - Combined Score')
+    plt.xlabel('Mean Retrieval Quality (Precision@K, Recall@K, MRR, NDCG)')
+    plt.title('RAG Systems - Retrieval Quality Ranking (Scientific Benchmark)')
     plt.grid(axis='x', linestyle='--', alpha=0.5)
     plt.tight_layout()
+    plt.savefig(os.path.join(plots_dir, "retrieval_quality_ranking.png"), dpi=150)
+    # Also save as combined_scores.png for backwards-compat
     plt.savefig(os.path.join(plots_dir, "combined_scores.png"), dpi=150)
     plt.close()
     
-    # Plot 2: Latency Comparison
-    plt.figure(figsize=(10, 6))
-    plt.barh(y_pos, latency, align='center', color='skyblue', edgecolor='black', alpha=0.8)
+    # Plot 2: Latency Comparison (p50 vs p95 vs Mean)
+    plt.figure(figsize=(11, 6))
+    y_pos = np.arange(len(systems))
+    bar_height = 0.35
+    plt.barh(y_pos - bar_height/2, p50_latencies, height=bar_height, label='Median (p50)', color='#4292c6', edgecolor='black', alpha=0.85)
+    plt.barh(y_pos + bar_height/2, p95_latencies, height=bar_height, label='Tail (p95)', color='#fc9272', edgecolor='black', alpha=0.85)
     plt.yticks(y_pos, systems)
     plt.gca().invert_yaxis()
-    plt.xlabel('Average Retrieval Latency (ms) - lower is better')
-    plt.title('RAG Architecture Comparison - Latency')
+    plt.xlabel('Retrieval Latency (ms) - Lower is Better')
+    plt.title('RAG Systems - High-Resolution Latency Distribution (p50 vs p95)')
+    plt.legend()
     plt.grid(axis='x', linestyle='--', alpha=0.5)
     plt.tight_layout()
     plt.savefig(os.path.join(plots_dir, "latency_comparison.png"), dpi=150)
     plt.close()
     
-    # Plot 3: Accuracy Metrics Comparison (Precision@1, Precision@5, Recall@5)
+    # Plot 3: Accuracy Metrics Comparison (Precision@1, Precision@5, Recall@5, MRR)
     plt.figure(figsize=(12, 7))
     x = np.arange(len(systems))
-    width = 0.25
+    width = 0.2
     
-    plt.bar(x - width, p1, width, label='Precision@1', color='#1f77b4', edgecolor='black', alpha=0.8)
-    plt.bar(x, p5, width, label='Precision@5', color='#ff7f0e', edgecolor='black', alpha=0.8)
-    plt.bar(x + width, r5, width, label='Recall@5', color='#2ca02c', edgecolor='black', alpha=0.8)
+    plt.bar(x - 1.5*width, p1, width, label='Precision@1', color='#1f77b4', edgecolor='black', alpha=0.85)
+    plt.bar(x - 0.5*width, p5, width, label='Precision@5', color='#ff7f0e', edgecolor='black', alpha=0.85)
+    plt.bar(x + 0.5*width, r5, width, label='Recall@5', color='#2ca02c', edgecolor='black', alpha=0.85)
+    plt.bar(x + 1.5*width, mrr, width, label='MRR', color='#9467bd', edgecolor='black', alpha=0.85)
     
     plt.xlabel('RAG Architecture')
-    plt.ylabel('Score')
-    plt.title('RAG Architecture Comparison - Accuracy Metrics')
-    plt.xticks(x, systems, rotation=45, ha='right')
+    plt.ylabel('Score (0.0 - 1.0)')
+    plt.title('RAG Systems - Comprehensive Retrieval Accuracy Metrics')
+    plt.xticks(x, systems, rotation=40, ha='right')
     plt.legend()
     plt.grid(axis='y', linestyle='--', alpha=0.5)
     plt.tight_layout()
     plt.savefig(os.path.join(plots_dir, "accuracy_comparison.png"), dpi=150)
     plt.close()
     
-    # Plot 4: Speed vs Accuracy Pareto Frontier
+    # Plot 4: Speed vs True Accuracy Pareto Frontier
     plt.figure(figsize=(10, 7))
-    # Note: For Pareto, higher combined_score and lower latency is better
-    plt.scatter(latency, combined_scores, color='red', s=100, edgecolor='black', zorder=5)
+    plt.scatter(latencies, quality_scores, color='#d95f02', s=120, edgecolor='black', zorder=5)
     
     for i, txt in enumerate(systems):
-        # Add labels with offset to avoid overlap
-        plt.annotate(txt, (latency[i], combined_scores[i]), xytext=(7, 4), 
+        plt.annotate(txt, (latencies[i], quality_scores[i]), xytext=(7, 4), 
                      textcoords='offset points', fontsize=9, fontweight='bold')
         
-    plt.xlabel('Average Latency (ms) - LOWER is better')
-    plt.ylabel('Combined Score - HIGHER is better')
-    plt.title('Speed vs. Accuracy Tradeoff (Pareto Space)')
+    plt.xlabel('Mean Retrieval Latency (ms) - LOWER is better')
+    plt.ylabel('Mean Retrieval Quality - HIGHER is better')
+    plt.title('Speed vs. Accuracy Tradeoff (Empirical Pareto Frontier)')
     plt.grid(linestyle='--', alpha=0.5)
     
-    # Highlight Pareto optimal systems (best tradeoff)
-    # A system is Pareto optimal if no other system has both higher score and lower latency.
+    # Highlight Pareto optimal systems (non-dominated)
     pareto_systems = []
     for i, s1 in enumerate(systems):
         dominated = False
         for j, s2 in enumerate(systems):
             if i == j:
                 continue
-            # If s2 is faster and has a higher score, then s1 is dominated
-            if latency[j] <= latency[i] and combined_scores[j] >= combined_scores[i]:
-                if latency[j] < latency[i] or combined_scores[j] > combined_scores[i]:
+            if latencies[j] <= latencies[i] and quality_scores[j] >= quality_scores[i]:
+                if latencies[j] < latencies[i] or quality_scores[j] > quality_scores[i]:
                     dominated = True
                     break
         if not dominated:
             pareto_systems.append(s1)
             
-    print(f"Pareto optimal architectures: {pareto_systems}")
+    print(f"Pareto optimal architectures (Quality vs Latency): {pareto_systems}")
     
     plt.tight_layout()
     plt.savefig(os.path.join(plots_dir, "speed_vs_accuracy.png"), dpi=150)
     plt.close()
     
-    print("All plots generated successfully!")
+    print("All research-hardened plots generated successfully!")
     print(f"Saved to: {plots_dir}")
 
 if __name__ == "__main__":

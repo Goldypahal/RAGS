@@ -60,23 +60,23 @@ RAGS/
 
 ## 🏗️ The 9 RAG Architectures
 
-| # | System | Complexity | Primary Use Case |
+| # | System | Algorithmic Complexity | Primary Use Case |
 |---|---|---|---|
-| **1** | **VectorRAG** | $O(n)$ | Dense semantic understanding and conceptual queries |
-| **2** | **GraphRAG** | $O(V+E)$ | Multi-hop reasoning across entities, authors, and citation networks |
-| **3** | **HashMapRAG** | $O(1)$ | Real-time exact keyword, ID, and term matching |
-| **4** | **TrieRAG** | $O(m)$ | Autocomplete, prefix filtering, and hierarchical taxonomy navigation |
-| **5** | **HashMap + Trie** | $O(1) + O(m)$ | Two-tier exact match fallback to prefix matching |
-| **6** | **HashMap + Graph** | $O(1) + O(V+E)$ | Instant entity entry-point resolution with relational graph reasoning |
-| **7** | **Trie + Graph** | $O(m) + O(V+E)$ | Prefix-guided entity entry connecting to graph traversal |
-| **8** | **Inverted Index + Graph** | $O(\log n + V + E)$ | Hybrid BM25 keyword relevance combined with graph expansion |
-| **9** | **Adaptive Retrieval RAG** | Dynamic | Query intent classification routing to the optimal engine |
+| **1** | **VectorRAG** | $\mathcal{O}(n \cdot d)$ | Dense semantic understanding and conceptual queries |
+| **2** | **GraphRAG** | $\mathcal{O}(k \cdot \bar{d}^h)$ | Multi-hop reasoning across entities, authors, and citation networks |
+| **3** | **HashMapRAG** | Expected $\mathcal{O}(1)$ | Real-time exact keyword, ID, and canonical term matching |
+| **4** | **TrieRAG** | $\mathcal{O}(m + z)$ | Autocomplete, prefix filtering, and hierarchical taxonomy navigation |
+| **5** | **HashMap + Trie** | Expected $\mathcal{O}(1) + \mathcal{O}(m + z)$ | Two-tier exact match fallback to prefix matching |
+| **6** | **HashMap + Graph** | Expected $\mathcal{O}(1) + \mathcal{O}(k \cdot \bar{d}^h)$ | Instant entity entry-point resolution with relational graph reasoning |
+| **7** | **Trie + Graph** | $\mathcal{O}(m + z) + \mathcal{O}(k \cdot \bar{d}^h)$ | Prefix-guided entity entry connecting to graph traversal |
+| **8** | **Inverted Index + Graph** ⭐ | $\mathcal{O}(L) + \mathcal{O}(k \cdot \bar{d}^h)$ | Hybrid BM25 keyword relevance combined with graph expansion |
+| **9** | **Adaptive Retrieval RAG** | $\mathcal{O}(c) + \mathcal{O}(\text{engine})$ | Dynamic query morphology routing to the optimal indexing engine |
 
 ---
 
-## 📊 Benchmark & Evaluation Suite
+## 📊 Benchmark & Evaluation Suite (Hardened Protocol)
 
-The benchmark engine rigorously tests all 9 systems on identical datasets across **7 query dimensions**:
+The evaluation suite rigorously tests all 9 systems under identical conditions across **7 query dimensions** (75 test queries):
 - **Exact Lookup**: Precise entity and title retrieval
 - **Prefix Lookup**: Partial token & autocomplete matching
 - **Keyword Search**: BM25 multi-term relevance
@@ -85,10 +85,11 @@ The benchmark engine rigorously tests all 9 systems on identical datasets across
 - **Multi-Hop Reasoning**: Multi-step graph reasoning paths
 - **Mixed Real-World**: Blended production traffic
 
-### Metrics Measured
-- **Accuracy**: Precision@1, Precision@5, Recall@5, MRR (Mean Reciprocal Rank), NDCG
-- **Performance**: Latency (p50, p95), CPU, and Memory usage
-- **Composite Score**: Weighted multi-objective optimization ranking
+### Decoupled Evaluation Dimensions
+- **Primary Accuracy**: Strict Precision@K ($\frac{|\text{Retrieved}_{1..K} \cap \text{Relevant}|}{K}$), Recall@K, MRR, NDCG@K
+- **Decoupled Latency Profile**: High-resolution nanosecond timer (`perf_counter_ns`) with warm-up, measuring p50 (median), p95, p99, and standard deviation
+- **Decoupled Index Profile**: Dedicated tracking of Index Construction Time (ms) and differential RAM footprint (MB)
+- **Empirical Pareto Frontier**: Non-dominated architectures (`VectorRAG`, `InvertedIndexGraphRAG`, `GraphRAG`, `HashMapRAG`) mapped in `benchmark/results/plots/speed_vs_accuracy.png`
 
 ---
 
