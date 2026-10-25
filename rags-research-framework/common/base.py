@@ -4,12 +4,34 @@ Publication-ready implementations for research.
 """
 
 from abc import ABC, abstractmethod
-from typing import List, Dict, Any, Tuple, Optional
+from typing import List, Dict, Any, Tuple, Optional, Iterable
 from dataclasses import dataclass, field
 from datetime import datetime
 import json
 import hashlib
+import re
 import time
+
+
+STOPWORDS = frozenset({
+    'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
+    'of', 'with', 'by', 'from', 'as', 'is', 'are', 'was', 'were', 'be', 'been',
+    'have', 'has', 'had', 'do', 'does', 'did', 'will', 'would', 'could',
+    'should', 'may', 'might', 'it', 'its', 'this', 'that', 'these', 'those',
+    'what', 'which', 'who', 'whom', 'how', 'why', 'when', 'where', 'into',
+    'than', 'then', 'there', 'their', 'they', 'them', 'not', 'no', 'so', 'if'
+})
+
+_TOKEN_RE = re.compile(r"[a-z0-9]+")
+
+
+def rank_scores(doc_scores: Dict[str, float]) -> List[Tuple[str, float]]:
+    """Sort (doc_id, score) by score desc with a deterministic doc_id tie-break.
+
+    Plain ``sorted(..., key=score)`` keeps insertion order for ties, and that
+    order comes from iterating string sets, which changes with PYTHONHASHSEED.
+    """
+    return sorted(doc_scores.items(), key=lambda x: (-x[1], x[0]))
 
 
 @dataclass
@@ -122,7 +144,11 @@ class BaseRAG(ABC):
         """Add documents to the system."""
         self.documents.extend(documents)
         self.index_documents(documents)
-    
+
+    def add_citation_links(self, links: Iterable[Tuple[str, str]]) -> None:
+        """Register (citing_doc_id, cited_doc_id) edges. No-op unless the system has a graph."""
+        pass
+
     def clear(self) -> None:
         """Clear all indexed data."""
         self.documents = []
@@ -210,21 +236,21 @@ class TextPreprocessor:
     @staticmethod
     def extract_keywords(text: str, n_keywords: int = 10) -> List[str]:
         """Extract keywords from text."""
-        # Simple keyword extraction - split and filter
-        words = text.lower().split()
-        # Remove common stopwords
-        stopwords = {
-            'the', 'a', 'an', 'and', 'or', 'but', 'in', 'on', 'at', 'to', 'for',
-            'of', 'with', 'by', 'from', 'as', 'is', 'be', 'have', 'has', 'do',
-            'does', 'did', 'will', 'would', 'could', 'should', 'may', 'might'
-        }
-        keywords = [w for w in words if w not in stopwords and len(w) > 3]
+        words = TextPreprocessor.tokenize(text)
+        keywords = [w for w in words if w not in STOPWORDS and len(w) > 3]
         return list(dict.fromkeys(keywords))[:n_keywords]
-    
+
     @staticmethod
     def tokenize(text: str) -> List[str]:
-        """Simple tokenization."""
-        return text.lower().split()
+        """Lowercase alphanumeric tokenization (punctuation is stripped, so 'transformers?' -> 'transformers')."""
+        return _TOKEN_RE.findall(text.lower())
+
+    @staticmethod
+    def content_terms(text: str) -> List[str]:
+        """Tokens with stopwords removed; falls back to all tokens if nothing is left."""
+        tokens = TextPreprocessor.tokenize(text)
+        content = [t for t in tokens if t not in STOPWORDS]
+        return content or tokens
 
 
 if __name__ == "__main__":

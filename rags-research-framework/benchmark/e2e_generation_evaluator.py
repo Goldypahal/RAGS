@@ -59,6 +59,25 @@ class GenerationResult:
     context_recall: float        # fraction of gold expected documents retrieved
     answer_relevance: float      # cosine similarity(embed(query), embed(answer))
     latency_ms: float
+    answer_em: Optional[float] = None   # exact match vs reference answer (SQuAD normalization)
+    answer_f1: Optional[float] = None   # token F1 vs reference answer
+
+
+def _normalize_answer(text: str) -> List[str]:
+    """SQuAD-style normalization: lowercase, strip punctuation and articles."""
+    text = re.sub(r"\b(a|an|the)\b", " ", re.sub(r"[^\w\s]", " ", text.lower()))
+    return text.split()
+
+
+def answer_em_f1(prediction: str, reference: str) -> Tuple[float, float]:
+    """Exact match and token-level F1 between a generated and a reference answer."""
+    pred, ref = _normalize_answer(prediction), _normalize_answer(reference)
+    em = float(pred == ref)
+    common = sum(min(pred.count(t), ref.count(t)) for t in set(pred) & set(ref))
+    if not pred or not ref or common == 0:
+        return em, em
+    precision, recall = common / len(pred), common / len(ref)
+    return em, 2 * precision * recall / (precision + recall)
 
 
 class FlanT5GeneratorAndJudge:
@@ -86,7 +105,8 @@ class FlanT5GeneratorAndJudge:
         )
         inputs = self.tokenizer(prompt, return_tensors="pt", max_length=512, truncation=True)
         with torch.no_grad():
-            outputs = self.model.generate(**inputs, max_new_tokens=40, temperature=0.1)
+            # Greedy decoding (temperature has no effect without do_sample=True)
+            outputs = self.model.generate(**inputs, max_new_tokens=40, do_sample=False)
         answer = self.tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
         return answer if answer else "Uncertain based on provided context."
 
@@ -107,6 +127,25 @@ class FlanT5GeneratorAndJudge:
             outputs = self.model.generate(**inputs, max_new_tokens=5)
         response = self.tokenizer.decode(outputs[0], skip_special_tokens=True).strip().lower()
         return response.startswith("yes")
+
+
+class CrossEncoderNLIJudge:
+    """
+    Independent NLI entailment judge (a model trained for NLI, separate from the generator).
+    Using the generator as its own judge conflates generation quality with judge bias.
+    """
+
+    def __init__(self, model_name: str = "cross-encoder/nli-deberta-v3-base"):
+        from sentence_transformers import CrossEncoder
+        self.model = CrossEncoder(model_name)
+        id2label = self.model.model.config.id2label
+        self.entail_idx = next(i for i, l in id2label.items() if l.lower().startswith("entail"))
+
+    def verify_claim_nli(self, claim: str, context: str) -> bool:
+        if not context.strip() or not claim.strip():
+            return False
+        logits = self.model.predict([(context, claim)], convert_to_numpy=True)[0]
+        return int(np.argmax(logits)) == self.entail_idx
 
 
 class SemanticRelevanceEvaluator:
@@ -142,9 +181,19 @@ class E2EGenerationEvaluator:
     Coordinates genuine LLM generation and publication-grade evaluation.
     """
     
-    def __init__(self):
-        print("🧠 Initializing Flan-T5 LLM Generation & NLI Entailment Judge...")
+    def __init__(self, judge: str = "cross-encoder"):
+        """judge: 'cross-encoder' (independent NLI model, default) or 'flan-t5' (legacy self-judging)."""
+        print("🧠 Initializing Flan-T5 LLM Generator...")
         self.llm = FlanT5GeneratorAndJudge()
+        if judge == "cross-encoder":
+            print("⚖️  Initializing independent NLI judge (cross-encoder/nli-deberta-v3-base)...")
+            self.judge = CrossEncoderNLIJudge()
+        elif judge == "flan-t5":
+            print("⚠️  Using the generator as its own NLI judge (legacy; biased)")
+            self.judge = self.llm
+        else:
+            raise ValueError(f"Unknown judge '{judge}'")
+        self.judge_name = judge
         print("🔍 Initializing Semantic Relevance Embedder (all-MiniLM-L6-v2)...")
         self.relevance_eval = SemanticRelevanceEvaluator()
         self.results: List[GenerationResult] = []
@@ -157,7 +206,8 @@ class E2EGenerationEvaluator:
         system_name: str,
         retrieved_docs: List[Document],
         expected_doc_ids: List[str],
-        retrieval_time_ms: float
+        retrieval_time_ms: float,
+        reference_answer: Optional[str] = None
     ) -> GenerationResult:
         t0 = time.perf_counter_ns()
         
@@ -182,7 +232,7 @@ class E2EGenerationEvaluator:
         supported = []
         unsupported = []
         for c in claims:
-            if self.llm.verify_claim_nli(c, context_str):
+            if self.judge.verify_claim_nli(c, context_str):
                 supported.append(c)
             else:
                 unsupported.append(c)
@@ -199,7 +249,10 @@ class E2EGenerationEvaluator:
             
         # 6. Dense Semantic Answer Relevance
         ans_relevance = self.relevance_eval.compute_relevance(query, answer)
-        
+
+        # 7. Answer correctness, when the dataset has reference answers
+        em, f1 = answer_em_f1(answer, reference_answer) if reference_answer else (None, None)
+
         res = GenerationResult(
             query_id=query_id,
             query=query,
@@ -214,7 +267,9 @@ class E2EGenerationEvaluator:
             hallucination_rate=round(hallucination_rate, 4),
             context_recall=round(context_recall, 4),
             answer_relevance=round(ans_relevance, 4),
-            latency_ms=round(total_time_ms, 3)
+            latency_ms=round(total_time_ms, 3),
+            answer_em=em,
+            answer_f1=None if f1 is None else round(f1, 4)
         )
         self.results.append(res)
         return res
@@ -269,9 +324,28 @@ class E2EGenerationEvaluator:
                     'p95': round(float(np.percentile(lats, 95)), 2)
                 }
             }
-            
+
+            scored = [r for r in s_res if r.answer_f1 is not None]
+            if scored:
+                ems = np.array([r.answer_em for r in scored])
+                f1s = np.array([r.answer_f1 for r in scored])
+                boot_em, boot_f1 = [], []
+                for _ in range(n_bootstraps):
+                    idx = rng.integers(0, len(scored), size=len(scored))
+                    boot_em.append(ems[idx].mean())
+                    boot_f1.append(f1s[idx].mean())
+                summary[s]['answer_em'] = {
+                    'mean': round(float(ems.mean()), 4),
+                    'ci_95': [round(float(np.percentile(boot_em, 2.5)), 4), round(float(np.percentile(boot_em, 97.5)), 4)]
+                }
+                summary[s]['answer_f1'] = {
+                    'mean': round(float(f1s.mean()), 4),
+                    'ci_95': [round(float(np.percentile(boot_f1, 2.5)), 4), round(float(np.percentile(boot_f1, 97.5)), 4)]
+                }
+
         return {
             'total_evaluations': len(self.results),
+            'nli_judge': self.judge_name,
             'systems': summary,
             'rankings_by_faithfulness': sorted(systems, key=lambda s: summary[s]['faithfulness']['mean'], reverse=True),
             'rankings_by_hallucination': sorted(systems, key=lambda s: summary[s]['hallucination_rate']['mean'])

@@ -1,41 +1,24 @@
-# RAG Research Framework Requirements
+# RAG Research Framework Requirements (Python 3.9+)
 
-# Core dependencies (minimal)
-# Python 3.8+
+# --- Core: all lexical/graph systems, the retrieval benchmark, router training ---
+numpy>=1.21.0
+scipy>=1.7.0                  # Wilcoxon signed-rank test in benchmark reports
+psutil>=5.8.0                 # index memory profiling
+scikit-learn>=1.0             # learned router; TF-IDF embedder (--embedder tfidf)
+joblib>=1.0                   # learned router persistence
+matplotlib>=3.4.0             # benchmark/generate_plots.py, E2E plots
 
-# Optional dependencies for benchmarking and research
-numpy>=1.21.0                          # Numerical computations
-psutil>=5.8.0                          # System and process utilities
-scipy>=1.7.0                          # Scientific computing
+# --- Dense retrieval (default VectorRAG embedder, --embedder minilm) ---
+# Without these, VectorRAG raises; it never silently falls back.
+sentence-transformers>=2.2.0
+torch>=1.13
 
-# Optional: For advanced features
-networkx>=2.6.0                        # Graph algorithms
-pandas>=1.3.0                          # Data analysis
-matplotlib>=3.4.0                      # Visualization
-scikit-learn>=0.24.0                   # ML utilities
+# --- End-to-end generation benchmark (benchmark/run_e2e_generation_benchmark.py) ---
+transformers>=4.30            # Flan-T5 generator; cross-encoder NLI judge via sentence-transformers
 
-# Development dependencies
-pytest>=6.2.0                          # Testing
-black>=21.0                            # Code formatting
-flake8>=3.9.0                          # Linting
-mypy>=0.900                            # Type checking
+# --- Development ---
+pytest>=6.2.0
 
-# Documentation
-sphinx>=4.0.0                          # Documentation generation
-sphinx-rtd-theme>=1.0.0                # RTD theme
-
-# Notes:
-# - Core framework runs with Python standard library only
-# - numpy needed for vector operations and benchmarking
-# - psutil needed for memory profiling
-# - Optional packages add convenience features
-#
-# Installation:
-#   pip install -r requirements.txt
-#
-# Minimal installation (core only):
-#   No installation needed - uses Python stdlib
-#
-# For development:
-#   pip install -r requirements.txt
-#   pip install -e .
+# Lightweight install (no dense retrieval / E2E):
+#   pip install numpy scipy psutil scikit-learn joblib matplotlib pytest
+#   python run_all_tests.py --embedder tfidf

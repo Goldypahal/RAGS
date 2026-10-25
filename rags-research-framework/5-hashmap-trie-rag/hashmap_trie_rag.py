@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "3-hashmap-rag"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "4-trie-rag"))
 
-from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor
+from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor, rank_scores
 from hashmap_rag import HashMapIndex
 from trie_rag import Trie
 
@@ -71,7 +71,7 @@ class HashMapTrieIndex:
             return set()
         
         doc_ids = set()
-        for term in query.lower().split():
+        for term in TextPreprocessor.content_terms(query):
             # Exact match
             doc_ids.update(trie.exact_search(term))
             # Prefix match
@@ -131,10 +131,9 @@ class HashMapTrieRAG(BaseRAG):
     
     def retrieve(self, query: str, top_k: int = 5) -> RetrievalResult:
         """Retrieve using two-level lookup."""
-        start_time = time.time()
-        
-        query_lower = query.lower()
-        query_terms = query_lower.split()
+        start_time = time.perf_counter()
+
+        query_terms = TextPreprocessor.content_terms(query)
         
         doc_scores: Dict[str, float] = {}
         retrieved_topics = []
@@ -164,19 +163,18 @@ class HashMapTrieRAG(BaseRAG):
                     for doc_id in doc_ids:
                         doc_scores[doc_id] = doc_scores.get(doc_id, 0) + 1.0
         
-        # Sort by score
-        sorted_docs = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
-        
+        sorted_docs = rank_scores(doc_scores)
+
         # Build result
         retrieved_docs = []
         scores = []
-        
+
         for doc_id, score in sorted_docs[:top_k]:
             if doc_id in self.index.doc_map:
                 retrieved_docs.append(self.index.doc_map[doc_id])
                 scores.append(float(score))
-        
-        retrieval_time = time.time() - start_time
+
+        retrieval_time = time.perf_counter() - start_time
         self.update_metrics(retrieval_time)
         
         return RetrievalResult(

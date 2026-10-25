@@ -1,0 +1,72 @@
+{
+  "total_queries_evaluated": 500,
+  "router_comparison": {
+    "oracle_router": {
+      "mean_quality": 0.7686,
+      "ci_95": 0.0147
+    },
+    "adaptive_router": {
+      "mean_quality": 0.6474,
+      "ci_95": 0.0232,
+      "oracle_gap_ratio": 0.8423
+    },
+    "best_fixed_architecture": {
+      "system": "InvertedIndexGraphRAG",
+      "mean_quality": 0.6784
+    },
+    "vector_baseline": {
+      "mean_quality": 0.6647,
+      "ci_95": 0.0215
+    },
+    "random_router": {
+      "mean_quality": 0.4372
+    }
+  },
+  "routing_regret_analysis": {
+    "mean_quality_regret": 0.1212,
+    "std_quality_regret": 0.2021,
+    "routing_accuracy": 0.514,
+    "paired_t_statistic_vs_vector": -3.159
+  },
+  "category_counts": {
+    "multi_hop_reasoning": 500
+  },
+  "architecture_by_query_type_matrix": {
+    "VectorRAG": {
+      "multi_hop_reasoning": 0.6647,
+      "OVERALL": 0.6647
+    },
+    "GraphRAG": {
+      "multi_hop_reasoning": 0.0013,
+      "OVERALL": 0.0013
+    },
+    "HashMapRAG": {
+      "multi_hop_reasoning": 0.6106,
+      "OVERALL": 0.6106
+    },
+    "TrieRAG": {
+      "multi_hop_reasoning": 0.513,
+      "OVERALL": 0.513
+    },
+    "HashMapTrieRAG": {
+      "multi_hop_reasoning": 0.5157,
+      "OVERALL": 0.5157
+    },
+    "HashMapGraphRAG": {
+      "multi_hop_reasoning": 0.0,
+      "OVERALL": 0.0
+    },
+    "TrieGraphRAG": {
+      "multi_hop_reasoning": 0.5139,
+      "OVERALL": 0.5139
+    },
+    "InvertedIndexGraphRAG": {
+      "multi_hop_reasoning": 0.6784,
+      "OVERALL": 0.6784
+    },
+    "AdaptiveRetrievalRAG": {
+      "multi_hop_reasoning": 0.6474,
+      "OVERALL": 0.6474
+    }
+  }
+}

@@ -39,11 +39,17 @@ class QueryRoutingRecord:
     system_latencies: Dict[str, float] = field(default_factory=dict)
 
 
+ADAPTIVE_SYSTEM = "AdaptiveRetrievalRAG"
+TIE_TOLERANCE = 1e-9
+
+
 class RoutingAnalyzer:
     """Evaluates routing efficacy and computes regret metrics."""
-    
+
     def __init__(self):
         self.records: List[QueryRoutingRecord] = []
+        # Queries where the system the router picked ties the oracle (ties are common)
+        self.oracle_tied_routes = 0
         
     def add_query_evaluation(
         self,
@@ -57,22 +63,30 @@ class RoutingAnalyzer:
         """
         Record and analyze a single query across all systems.
         """
-        # Determine Oracle (system with highest retrieval quality)
-        best_sys = max(system_qualities.keys(), key=lambda s: system_qualities[s])
-        oracle_quality = system_qualities[best_sys]
+        # Oracle = best FIXED system for this query (the adaptive system is the thing being judged)
+        fixed = {s: q for s, q in system_qualities.items() if s != ADAPTIVE_SYSTEM}
+        best_sys = max(fixed.keys(), key=lambda s: (fixed[s], s))
+        oracle_quality = fixed[best_sys]
         oracle_latency = system_latencies.get(best_sys, 0.0)
-        
-        # Adaptive performance
-        # If adaptive itself is evaluated, look up its score; otherwise use chosen system's score
-        adaptive_quality = system_qualities.get(adaptive_chosen_system, 0.0)
-        adaptive_latency = system_latencies.get(adaptive_chosen_system, 0.0)
-        
+
+        # Adaptive performance is its ACTUAL fused output, not the score of the
+        # fixed system its first method happens to map to
+        if ADAPTIVE_SYSTEM in system_qualities:
+            adaptive_quality = system_qualities[ADAPTIVE_SYSTEM]
+            adaptive_latency = system_latencies.get(ADAPTIVE_SYSTEM, 0.0)
+        else:
+            adaptive_quality = system_qualities.get(adaptive_chosen_system, 0.0)
+            adaptive_latency = system_latencies.get(adaptive_chosen_system, 0.0)
+
+        if fixed.get(adaptive_chosen_system, -1.0) >= oracle_quality - TIE_TOLERANCE:
+            self.oracle_tied_routes += 1
+
         # Baselines
         vector_quality = system_qualities.get("VectorRAG", 0.0)
         vector_latency = system_latencies.get("VectorRAG", 0.0)
-        
-        # Random baseline: expected mean across all candidate systems
-        random_quality = float(np.mean(list(system_qualities.values())))
+
+        # Random baseline: expected mean across the fixed candidate systems
+        random_quality = float(np.mean(list(fixed.values())))
         
         # Regret calculations
         quality_regret = max(0.0, oracle_quality - adaptive_quality)
@@ -117,12 +131,12 @@ class RoutingAnalyzer:
         fixed_means = {}
         for sys in system_names:
             fixed_means[sys] = float(np.mean([r.system_scores.get(sys, 0.0) for r in self.records]))
-        best_fixed_sys = max(fixed_means.keys(), key=lambda s: fixed_means[s])
+        best_fixed_sys = max((s for s in fixed_means if s != ADAPTIVE_SYSTEM), key=lambda s: fixed_means[s])
         best_fixed_mean = fixed_means[best_fixed_sys]
         
-        # Routing Accuracy: percentage of times Adaptive chose the Oracle best system
-        correct_routes = sum(1 for r in self.records if r.adaptive_chosen_system == r.oracle_system)
-        routing_accuracy = correct_routes / n
+        # Routing Accuracy: the routed system ties the oracle quality (exact-name
+        # matching would penalize picking any of several equally good systems)
+        routing_accuracy = self.oracle_tied_routes / n
         
         # Means & Standard Deviations
         mean_oracle = float(np.mean(oracle_qualities))

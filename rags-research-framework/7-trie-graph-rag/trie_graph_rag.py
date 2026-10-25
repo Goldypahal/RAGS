@@ -17,7 +17,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 sys.path.insert(0, str(Path(__file__).parent.parent / "4-trie-rag"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "2-graph-rag"))
 
-from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor
+from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor, rank_scores
 from trie_rag import Trie, TopicHierarchy
 from graph_rag import KnowledgeGraph, SimpleEntityExtractor
 
@@ -85,14 +85,18 @@ class TrieGraphRAG(BaseRAG):
         """Index documents."""
         for doc in documents:
             self.index.add_document(doc)
-    
-    def retrieve(self, query: str, top_k: int = 5, 
+
+    def add_citation_links(self, links) -> None:
+        """Add citation edges between documents."""
+        for citing, cited in links:
+            self.index.graph.add_doc_link(citing, cited)
+
+    def retrieve(self, query: str, top_k: int = 5,
                  graph_depth: int = 2) -> RetrievalResult:
         """Retrieve using Trie + Graph traversal."""
-        start_time = time.time()
-        
-        query_lower = query.lower()
-        query_terms = query_lower.split()
+        start_time = time.perf_counter()
+
+        query_terms = TextPreprocessor.content_terms(query)
         
         doc_scores: Dict[str, float] = {}
         search_methods = {'trie': 0, 'graph': 0}
@@ -132,19 +136,21 @@ class TrieGraphRAG(BaseRAG):
                         for doc_id in self.index.graph.entities[neighbor].doc_ids:
                             doc_scores[doc_id] = doc_scores.get(doc_id, 0) + 1.0
         
-        # Sort by score
-        sorted_docs = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
-        
+        # Citation hop from the strongest seeds
+        doc_scores = self.index.graph.expand_by_doc_links(doc_scores)
+
+        sorted_docs = rank_scores(doc_scores)
+
         # Build result
         retrieved_docs = []
         scores = []
-        
+
         for doc_id, score in sorted_docs[:top_k]:
             if doc_id in self.index.doc_map:
                 retrieved_docs.append(self.index.doc_map[doc_id])
                 scores.append(float(score))
-        
-        retrieval_time = time.time() - start_time
+
+        retrieval_time = time.perf_counter() - start_time
         self.update_metrics(retrieval_time)
         
         return RetrievalResult(

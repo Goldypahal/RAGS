@@ -16,7 +16,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor
+from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor, rank_scores
 
 
 @dataclass
@@ -188,11 +188,10 @@ class TrieRAG(BaseRAG):
     
     def retrieve(self, query: str, top_k: int = 5) -> RetrievalResult:
         """Retrieve documents using Trie."""
-        start_time = time.time()
-        
+        start_time = time.perf_counter()
+
         # Extract query terms
-        query_lower = query.lower()
-        query_terms = query_lower.split()
+        query_terms = TextPreprocessor.content_terms(query)
         
         # Search for each term
         doc_scores: Dict[str, float] = {}
@@ -210,19 +209,18 @@ class TrieRAG(BaseRAG):
                     # Weight prefix matches lower
                     doc_scores[doc_id] = doc_scores.get(doc_id, 0) + 1.0
         
-        # Sort by score
-        sorted_docs = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
-        
+        sorted_docs = rank_scores(doc_scores)
+
         # Build result
         retrieved_docs = []
         scores = []
-        
+
         for doc_id, score in sorted_docs[:top_k]:
             if doc_id in self.doc_map:
                 retrieved_docs.append(self.doc_map[doc_id])
                 scores.append(float(score))
-        
-        retrieval_time = time.time() - start_time
+
+        retrieval_time = time.perf_counter() - start_time
         self.update_metrics(retrieval_time)
         
         return RetrievalResult(

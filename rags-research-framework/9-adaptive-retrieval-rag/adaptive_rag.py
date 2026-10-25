@@ -9,9 +9,9 @@ Architecture:
         ├─ Relationship → Graph
         └─ Semantic → Vector DB
     ↓
-    Context Merger → LLM
+    Reciprocal Rank Fusion → LLM
 
-Intelligently routes queries to best retrieval method.
+Routes each query to two retrieval methods (run sequentially) and fuses their rankings.
 """
 
 import time
@@ -29,7 +29,7 @@ sys.path.insert(0, str(Path(__file__).parent.parent / "2-graph-rag"))
 sys.path.insert(0, str(Path(__file__).parent.parent / "8-inverted-index-graph-rag"))
 
 from common.base import (
-    Document, RetrievalResult, BaseRAG, TextPreprocessor, QueryClassifier
+    Document, RetrievalResult, BaseRAG, TextPreprocessor, QueryClassifier, rank_scores
 )
 from vector_rag import VectorRAG
 from hashmap_rag import HashMapRAG
@@ -63,19 +63,18 @@ class QueryRouter:
         'HashMapRAG': ['hashmap', 'vector']
     }
     
-    def __init__(self, use_learned_router: bool = True):
+    def __init__(self, learned_router_path: Optional[str] = None):
+        """
+        Heuristic routing by default. Pass ``learned_router_path`` to route with a
+        model saved by ``benchmark/train_and_eval_router.py``. Never load a router
+        trained on the same queries you are about to benchmark.
+        """
         self.routing_history: List[RoutingDecision] = []
         self.learned_router = None
-        if use_learned_router:
-            model_path = Path(__file__).parent.parent / "benchmark" / "results" / "learned_router_model.joblib"
-            if model_path.exists():
-                try:
-                    import sys
-                    sys.path.insert(0, str(Path(__file__).parent.parent))
-                    from benchmark.learned_router import LearnedRouter
-                    self.learned_router = LearnedRouter.load(str(model_path))
-                except Exception:
-                    self.learned_router = None
+        if learned_router_path:
+            sys.path.insert(0, str(Path(__file__).parent.parent))
+            from benchmark.learned_router import LearnedRouter
+            self.learned_router = LearnedRouter.load(learned_router_path)
         
     def route(self, query: str) -> Tuple[str, List[str]]:
         """Determine best retrieval method(s) for query."""
@@ -108,28 +107,29 @@ class QueryRouter:
 
 
 class ContextMerger:
-    """Merges results from multiple retrieval methods."""
-    
+    """Merges results from multiple retrieval methods with weighted Reciprocal Rank Fusion."""
+
+    RRF_K = 60  # Cormack et al. (2009)
+
     @staticmethod
     def merge(results: Dict[str, RetrievalResult], method_weights: Dict[str, float],
               top_k: int = 5) -> Tuple[List[Document], List[float]]:
-        """Merge results from multiple methods."""
+        """
+        Fuse rankings by rank, not raw score: each method emits scores on its own
+        scale (cosine <= 1, BM25 unbounded, trie hit counts), so score-based
+        mixing lets whichever scale is largest dominate.
+        """
         doc_scores: Dict[str, float] = {}
         doc_map: Dict[str, Document] = {}
-        
-        # Combine scores from all methods
+
         for method, result in results.items():
             weight = method_weights.get(method, 1.0)
-            
-            for doc, score in zip(result.documents, result.scores):
+
+            for rank, doc in enumerate(result.documents, 1):
                 doc_map[doc.doc_id] = doc
-                
-                # Normalize score to [0, 1] and apply weight
-                normalized_score = min(1.0, score / 10.0)  # Assume max score ~10
-                doc_scores[doc.doc_id] = doc_scores.get(doc.doc_id, 0) + normalized_score * weight
-        
-        # Sort and return top-k
-        sorted_items = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
+                doc_scores[doc.doc_id] = doc_scores.get(doc.doc_id, 0.0) + weight / (ContextMerger.RRF_K + rank)
+
+        sorted_items = rank_scores(doc_scores)
         
         merged_docs = []
         merged_scores = []
@@ -146,7 +146,7 @@ class AdaptiveRetrievalRAG(BaseRAG):
     Adaptive Multi-Method Retrieval RAG.
     
     Characteristics:
-    - Latency: Variable (runs selected methods in parallel)
+    - Latency: Sum of the selected methods (run sequentially)
     - Accuracy: Very High (multiple confirmation)
     - Cost: Medium (multiple lookups, but smart routing)
     - Memory: Medium-High (multiple indices)
@@ -165,14 +165,14 @@ class AdaptiveRetrievalRAG(BaseRAG):
     def __init__(self, config: Optional[Dict[str, Any]] = None):
         super().__init__("AdaptiveRetrievalRAG", config)
         
-        # Initialize all sub-systems
-        self.vector_rag = VectorRAG()
-        self.hashmap_rag = HashMapRAG()
-        self.trie_rag = TrieRAG()
-        self.graph_rag = GraphRAG()
-        self.inverted_rag = InvertedIndexGraphRAG()
-        
-        self.router = QueryRouter()
+        # Initialize all sub-systems (config is forwarded, e.g. {'embedder': 'tfidf'})
+        self.vector_rag = VectorRAG(self.config)
+        self.hashmap_rag = HashMapRAG(self.config)
+        self.trie_rag = TrieRAG(self.config)
+        self.graph_rag = GraphRAG(self.config)
+        self.inverted_rag = InvertedIndexGraphRAG(self.config)
+
+        self.router = QueryRouter(self.config.get('learned_router_path'))
         self.merger = ContextMerger()
         
         # Method weights for merging
@@ -201,23 +201,26 @@ class AdaptiveRetrievalRAG(BaseRAG):
         self.trie_rag.add_documents(documents)
         self.graph_rag.add_documents(documents)
         self.inverted_rag.add_documents(documents)
-        
-        # Update stored documents
-        self.documents = documents
-    
+
+    def add_citation_links(self, links) -> None:
+        """Forward citation edges to the graph-backed sub-systems."""
+        links = list(links)
+        self.graph_rag.add_citation_links(links)
+        self.inverted_rag.add_citation_links(links)
+
     def retrieve(self, query: str, top_k: int = 5) -> RetrievalResult:
         """Retrieve using adaptive routing."""
-        start_time = time.time()
-        
+        start_time = time.perf_counter()
+
         # Route query to appropriate methods
         query_type, methods = self.router.route(query)
-        
+
         # Execute selected retrieval methods
         results = {}
         retrieval_times = {}
-        method_start = time.time()
-        
+
         for method in methods:
+            method_start = time.perf_counter()
             try:
                 if method == 'hashmap':
                     results['hashmap'] = self.hashmap_rag.retrieve(query, top_k)
@@ -230,7 +233,7 @@ class AdaptiveRetrievalRAG(BaseRAG):
                 elif method == 'inverted_index':
                     results['inverted_index'] = self.inverted_rag.retrieve(query, top_k)
                 
-                retrieval_times[method] = time.time() - method_start
+                retrieval_times[method] = time.perf_counter() - method_start
             except Exception as e:
                 print(f"Error in {method} retrieval: {e}")
                 continue
@@ -251,7 +254,7 @@ class AdaptiveRetrievalRAG(BaseRAG):
         )
         self.router.record_decision(decision)
         
-        total_time = time.time() - start_time
+        total_time = time.perf_counter() - start_time
         self.update_metrics(total_time)
         
         return RetrievalResult(
@@ -265,7 +268,7 @@ class AdaptiveRetrievalRAG(BaseRAG):
                 'methods_used': methods,
                 'method_times': retrieval_times,
                 'results_per_method': results_per_method,
-                'fusion_method': 'weighted_merge'
+                'fusion_method': 'weighted_rrf'
             }
         )
     

@@ -6,7 +6,8 @@
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_002",
@@ -15,25 +16,30 @@
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_003",
     "query": "Langua",
     "expected_doc_ids": [
-      "paper_003"
+      "paper_003",
+      "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_004",
     "query": "Lang",
     "expected_doc_ids": [
-      "paper_004"
+      "paper_004",
+      "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "prefix_005",
@@ -42,7 +48,8 @@
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_006",
@@ -51,7 +58,8 @@
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_007",
@@ -60,7 +68,8 @@
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_008",
@@ -69,7 +78,8 @@
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_009",
@@ -78,7 +88,8 @@
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_010",
@@ -87,7 +98,8 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_011",
@@ -96,7 +108,8 @@
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_012",
@@ -105,25 +118,19 @@
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_013",
     "query": "Language Models",
     "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_014",
-    "query": "Langu 13",
-    "expected_doc_ids": [
+      "paper_003",
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_015",
@@ -132,7 +139,8 @@
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_016",
@@ -141,7 +149,8 @@
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_017",
@@ -150,7 +159,8 @@
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_018",
@@ -159,7 +169,8 @@
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_019",
@@ -168,7 +179,8 @@
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_020",
@@ -177,7 +189,8 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_021",
@@ -186,7 +199,8 @@
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_022",
@@ -195,25 +209,19 @@
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_023",
     "query": "Language Models are",
     "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_024",
-    "query": "Langu 23",
-    "expected_doc_ids": [
+      "paper_003",
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_025",
@@ -222,7 +230,8 @@
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_026",
@@ -231,7 +240,8 @@
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_027",
@@ -240,7 +250,8 @@
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_028",
@@ -249,7 +260,8 @@
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_029",
@@ -258,7 +270,8 @@
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_030",
@@ -267,7 +280,8 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_031",
@@ -276,7 +290,8 @@
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_032",
@@ -285,7 +300,8 @@
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_033",
@@ -294,7 +310,8 @@
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_034",
@@ -303,7 +320,8 @@
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "prefix_035",
@@ -312,7 +330,8 @@
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_036",
@@ -321,16 +340,8 @@
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_037",
-    "query": "Effic 36",
-    "expected_doc_ids": [
-      "paper_007"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_038",
@@ -339,7 +350,8 @@
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_039",
@@ -348,7 +360,8 @@
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_040",
@@ -357,16 +370,8 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_041",
-    "query": "Atten 40",
-    "expected_doc_ids": [
-      "paper_001"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_042",
@@ -375,7 +380,8 @@
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_043",
@@ -384,16 +390,8 @@
       "paper_003"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_044",
-    "query": "Langu 43",
-    "expected_doc_ids": [
-      "paper_004"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_045",
@@ -402,7 +400,8 @@
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_046",
@@ -411,16 +410,8 @@
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_047",
-    "query": "Effic 46",
-    "expected_doc_ids": [
-      "paper_007"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_048",
@@ -429,7 +420,8 @@
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_049",
@@ -438,7 +430,8 @@
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_050",
@@ -447,456 +440,350 @@
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_051",
-    "query": "Vaswani Attention 5",
+    "query": "Attent",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_052",
-    "query": "Devlin BERT: 5",
-    "expected_doc_ids": [
-      "paper_002"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_053",
-    "query": "Radford Language 5",
-    "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_054",
-    "query": "Brown Language 5",
-    "expected_doc_ids": [
-      "paper_004"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_055",
-    "query": "Dosovitskiy An 5",
+    "query": "An Ima",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_056",
-    "query": "Sanh DistilBERT, 5",
-    "expected_doc_ids": [
-      "paper_006"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_057",
-    "query": "Tay Efficient 5",
+    "query": "Effici",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_058",
-    "query": "Sutskever Sequence 5",
+    "query": "Sequen",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_059",
-    "query": "Dai Transformer-XL: 5",
-    "expected_doc_ids": [
-      "paper_009"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_060",
-    "query": "Lewis Retrieval-Augmented 5",
+    "query": "Retrie",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_061",
-    "query": "Vaswani Attention 6",
+    "query": "Attention",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_062",
-    "query": "Devlin BERT: 6",
+    "query": "BERT: Pre",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_063",
-    "query": "Radford Language 6",
+    "query": "Language",
     "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_064",
-    "query": "Brown Language 6",
-    "expected_doc_ids": [
+      "paper_003",
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_065",
-    "query": "Dosovitskiy An 6",
-    "expected_doc_ids": [
-      "paper_005"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_066",
-    "query": "Sanh DistilBERT, 6",
+    "query": "DistilBER",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_067",
-    "query": "Tay Efficient 6",
+    "query": "Efficient",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_068",
-    "query": "Sutskever Sequence 6",
+    "query": "Sequence",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_069",
-    "query": "Dai Transformer-XL: 6",
+    "query": "Transform",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_070",
-    "query": "Lewis Retrieval-Augmented 6",
+    "query": "Retrieval",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_071",
-    "query": "Vaswani Attention 7",
-    "expected_doc_ids": [
-      "paper_001"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_072",
-    "query": "Devlin BERT: 7",
+    "query": "BERT: Pre-tr",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_073",
-    "query": "Radford Language 7",
+    "query": "Language Mod",
     "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_074",
-    "query": "Brown Language 7",
-    "expected_doc_ids": [
+      "paper_003",
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_075",
-    "query": "Dosovitskiy An 7",
-    "expected_doc_ids": [
-      "paper_005"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_076",
-    "query": "Sanh DistilBERT, 7",
+    "query": "DistilBERT,",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_077",
-    "query": "Tay Efficient 7",
+    "query": "Efficient Tr",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_078",
-    "query": "Sutskever Sequence 7",
-    "expected_doc_ids": [
-      "paper_008"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_079",
-    "query": "Dai Transformer-XL: 7",
+    "query": "Transformer-",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_080",
-    "query": "Lewis Retrieval-Augmented 7",
+    "query": "Retrieval-Au",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_081",
-    "query": "Vaswani Attention 8",
+    "query": "Attention Is Al",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_082",
-    "query": "Devlin BERT: 8",
+    "query": "BERT: Pre-train",
     "expected_doc_ids": [
       "paper_002"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_083",
-    "query": "Radford Language 8",
-    "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_084",
-    "query": "Brown Language 8",
-    "expected_doc_ids": [
-      "paper_004"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "prefix_085",
-    "query": "Dosovitskiy An 8",
+    "query": "An Image is Wor",
     "expected_doc_ids": [
       "paper_005"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "prefix_086",
-    "query": "Sanh DistilBERT, 8",
+    "query": "DistilBERT, a d",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_087",
-    "query": "Tay Efficient 8",
+    "query": "Efficient Trans",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_088",
-    "query": "Sutskever Sequence 8",
+    "query": "Sequence to Seq",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_089",
-    "query": "Dai Transformer-XL: 8",
+    "query": "Transformer-XL:",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_090",
-    "query": "Lewis Retrieval-Augmented 8",
+    "query": "Retrieval-Augme",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "prefix_091",
-    "query": "Vaswani Attention 9",
+    "query": "Attention Is All Y",
     "expected_doc_ids": [
       "paper_001"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_092",
-    "query": "Devlin BERT: 9",
-    "expected_doc_ids": [
-      "paper_002"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "prefix_093",
-    "query": "Radford Language 9",
+    "query": "Language Models ar",
     "expected_doc_ids": [
-      "paper_003"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_094",
-    "query": "Brown Language 9",
-    "expected_doc_ids": [
+      "paper_003",
       "paper_004"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
-  },
-  {
-    "id": "prefix_095",
-    "query": "Dosovitskiy An 9",
-    "expected_doc_ids": [
-      "paper_005"
-    ],
-    "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "prefix_096",
-    "query": "Sanh DistilBERT, 9",
+    "query": "DistilBERT, a dist",
     "expected_doc_ids": [
       "paper_006"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "prefix_097",
-    "query": "Tay Efficient 9",
+    "query": "Efficient Transfor",
     "expected_doc_ids": [
       "paper_007"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "prefix_098",
-    "query": "Sutskever Sequence 9",
+    "query": "Sequence to Sequen",
     "expected_doc_ids": [
       "paper_008"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "prefix_099",
-    "query": "Dai Transformer-XL: 9",
+    "query": "Transformer-XL: At",
     "expected_doc_ids": [
       "paper_009"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "prefix_100",
-    "query": "Lewis Retrieval-Augmented 9",
+    "query": "Retrieval-Augmente",
     "expected_doc_ids": [
       "paper_010"
     ],
     "type": "prefix_lookup",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   }
 ]

@@ -16,7 +16,7 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor
+from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor, rank_scores
 
 
 @dataclass
@@ -65,11 +65,10 @@ class SimpleEntityExtractor:
         for entity_type, patterns in cls.ENTITY_PATTERNS.items():
             for pattern in patterns:
                 if pattern in text_lower:
-                    # Find context around entity
-                    idx = text_lower.find(pattern)
                     entities.append((pattern, entity_type))
-        
-        return list(set(entities))
+
+        # Sorted, not list(set(...)): set order varies with PYTHONHASHSEED
+        return sorted(set(entities))
 
 
 class KnowledgeGraph:
@@ -79,7 +78,9 @@ class KnowledgeGraph:
         self.entities: Dict[str, Entity] = {}
         self.relationships: List[Relationship] = []
         self.adjacency: Dict[str, Set[str]] = {}
-        
+        # Document-level edges (e.g. citations): doc_id -> linked doc_ids
+        self.doc_links: Dict[str, Set[str]] = {}
+
     def add_entity(self, name: str, entity_type: str, doc_id: str) -> None:
         """Add entity to graph."""
         name_lower = name.lower()
@@ -109,9 +110,28 @@ class KnowledgeGraph:
         rel = Relationship(source_lower, target_lower, relation_type, weight, evidence or [])
         self.relationships.append(rel)
         
-        # Update adjacency
+        # Co-occurrence is symmetric, so adjacency is undirected
         self.adjacency[source_lower].add(target_lower)
-    
+        self.adjacency[target_lower].add(source_lower)
+
+    def add_doc_link(self, doc_a: str, doc_b: str) -> None:
+        """Add an undirected document-to-document edge (e.g. a citation)."""
+        if doc_a == doc_b:
+            return
+        self.doc_links.setdefault(doc_a, set()).add(doc_b)
+        self.doc_links.setdefault(doc_b, set()).add(doc_a)
+
+    def expand_by_doc_links(self, doc_scores: Dict[str, float],
+                            decay: float = 0.5, n_seeds: int = 10) -> Dict[str, float]:
+        """One-hop propagation over document edges from the top-scoring seed documents."""
+        if not self.doc_links or not doc_scores:
+            return doc_scores
+        expanded = dict(doc_scores)
+        for doc_id, score in rank_scores(doc_scores)[:n_seeds]:
+            for neighbor in sorted(self.doc_links.get(doc_id, ())):
+                expanded[neighbor] = expanded.get(neighbor, 0.0) + decay * score
+        return expanded
+
     def get_neighbors(self, entity_name: str, depth: int = 1) -> Set[str]:
         """Get all neighbors within depth."""
         entity_lower = entity_name.lower()
@@ -211,10 +231,15 @@ class GraphRAG(BaseRAG):
                         source, target, "co-occurs", weight=1.0,
                         evidence=[doc.doc_id]
                     )
-    
+
+    def add_citation_links(self, links) -> None:
+        """Add citation edges between documents."""
+        for citing, cited in links:
+            self.graph.add_doc_link(citing, cited)
+
     def retrieve(self, query: str, top_k: int = 5) -> RetrievalResult:
         """Retrieve documents using graph traversal."""
-        start_time = time.time()
+        start_time = time.perf_counter()
         
         # Extract entities from query
         query_entities = self.entity_extractor.extract(query, "query")
@@ -239,20 +264,22 @@ class GraphRAG(BaseRAG):
                     if neighbor in self.graph.entities:
                         for doc_id in self.graph.entities[neighbor].doc_ids:
                             doc_scores[doc_id] = doc_scores.get(doc_id, 0) + 1.0
-        
-        # Sort by score
-        sorted_docs = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
-        
+
+        # Citation hop from the strongest seeds
+        doc_scores = self.graph.expand_by_doc_links(doc_scores)
+
+        sorted_docs = rank_scores(doc_scores)
+
         # Build result
         retrieved_docs = []
         scores = []
-        
+
         for doc_id, score in sorted_docs[:top_k]:
             if doc_id in self.doc_map:
                 retrieved_docs.append(self.doc_map[doc_id])
                 scores.append(float(score))
-        
-        retrieval_time = time.time() - start_time
+
+        retrieval_time = time.perf_counter() - start_time
         self.update_metrics(retrieval_time)
         
         return RetrievalResult(

@@ -4,78 +4,82 @@
     "query": "transformer neural networks",
     "expected_doc_ids": [
       "paper_001",
+      "paper_008",
       "paper_002",
       "paper_005",
-      "paper_007",
-      "paper_008"
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_002",
     "query": "language model pre-training BERT",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_003",
     "query": "language model few-shot learning",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_004",
     "query": "GPT-3 in-context learning large language model",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
+      "paper_003",
+      "paper_002",
+      "paper_009",
       "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_005",
     "query": "computer vision Vision Transformer",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_006",
     "query": "DistilBERT efficiency model compression",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
-      "paper_004",
-      "paper_006"
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_007",
@@ -84,34 +88,43 @@
       "paper_007"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_008",
     "query": "sequence-to-sequence LSTM encoder-decoder",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_009",
     "query": "long sequences Transformer-XL",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_010",
     "query": "retrieval-augmented generation knowledge-intensive tasks RAG",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_011",
@@ -119,114 +132,127 @@
     "expected_doc_ids": [
       "paper_001",
       "paper_007",
-      "paper_008",
-      "paper_009"
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_012",
     "query": "transformer language model pre-training 2018",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_009",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_013",
     "query": "language model GPT-2 2019",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_014",
     "query": "in-context learning GPT-3 large language model 2020",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
+      "paper_003",
+      "paper_002",
+      "paper_009",
       "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_015",
     "query": "computer vision Vision Transformer 2020",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_016",
     "query": "model compression knowledge distillation efficiency 2019",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_010"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_017",
     "query": "efficient transformers complexity reduction 2022",
     "expected_doc_ids": [
+      "paper_007",
       "paper_002",
-      "paper_005",
-      "paper_007"
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_018",
     "query": "encoder-decoder LSTM sequence-to-sequence 2014",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_019",
     "query": "long sequences Transformer-XL 2019",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_020",
     "query": "knowledge-intensive tasks retrieval-augmented generation RAG 2020",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_021",
@@ -234,50 +260,53 @@
     "expected_doc_ids": [
       "paper_001",
       "paper_007",
-      "paper_008",
-      "paper_009"
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_022",
     "query": "ACL BERT bidirectional language model",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_023",
     "query": "OpenAI Blog language model zero-shot",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_024",
     "query": "NeurIPS GPT-3 large language model in-context learning",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
+      "paper_003",
+      "paper_002",
+      "paper_009",
       "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_025",
@@ -286,121 +315,135 @@
       "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_026",
     "query": "NeurIPS efficiency model compression knowledge distillation",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_010"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_027",
     "query": "ACM Computing Surveys survey attention mechanisms",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_007"
+      "paper_007",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_028",
     "query": "NeurIPS LSTM sequence-to-sequence neural machine translation",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_029",
     "query": "ACL Transformer-XL segment-level recurrence",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_030",
     "query": "NeurIPS knowledge-intensive tasks RAG retrieval-augmented generation",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_031",
     "query": "keyword lookup: attention mechanism neural networks",
     "expected_doc_ids": [
       "paper_001",
-      "paper_007",
-      "paper_008"
+      "paper_008",
+      "paper_007"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_032",
     "query": "keyword lookup: transformer language model bidirectional",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_009",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_033",
     "query": "keyword lookup: language model few-shot learning",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_034",
     "query": "keyword lookup: in-context learning GPT-3 large language model",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
+      "paper_003",
+      "paper_002",
+      "paper_009",
       "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_035",
     "query": "keyword lookup: Vision Transformer ViT",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_036",
@@ -410,7 +453,8 @@
       "paper_010"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_037",
@@ -419,17 +463,19 @@
       "paper_007"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_038",
     "query": "keyword lookup: LSTM sequence-to-sequence neural machine translation",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_039",
@@ -438,16 +484,19 @@
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_040",
     "query": "keyword lookup: retrieval-augmented generation RAG knowledge-intensive tasks",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_041",
@@ -460,20 +509,22 @@
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_042",
     "query": "bidirectional language model transformer terms 41",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_009",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_043",
@@ -484,20 +535,22 @@
       "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_044",
     "query": "large language model few-shot GPT-3 terms 43",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_003",
+      "paper_002",
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_045",
@@ -506,60 +559,69 @@
       "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_046",
     "query": "efficiency DistilBERT model compression terms 45",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
-      "paper_004",
-      "paper_006"
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_047",
     "query": "efficient transformers attention mechanisms terms 46",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007"
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_048",
     "query": "neural machine translation LSTM encoder-decoder terms 47",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_049",
     "query": "Transformer-XL relative positional encoding terms 48",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_050",
     "query": "retrieval-augmented generation knowledge-intensive tasks RAG terms 49",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_051",
@@ -568,24 +630,26 @@
       "paper_001",
       "paper_002",
       "paper_005",
-      "paper_007",
-      "paper_008"
+      "paper_008",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_052",
     "query": "BERT language model transformer terms 51",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_053",
@@ -596,64 +660,70 @@
       "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_054",
     "query": "in-context learning few-shot GPT-3 terms 53",
     "expected_doc_ids": [
-      "paper_003",
       "paper_004",
-      "paper_008"
+      "paper_003",
+      "paper_008",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_055",
     "query": "computer vision Vision Transformer terms 54",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_056",
     "query": "model compression efficiency DistilBERT terms 55",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
-      "paper_004",
-      "paper_006"
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_057",
     "query": "efficient transformers complexity reduction terms 56",
     "expected_doc_ids": [
+      "paper_007",
       "paper_002",
-      "paper_005",
-      "paper_007"
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_058",
     "query": "LSTM encoder-decoder sequence-to-sequence terms 57",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_059",
@@ -662,92 +732,100 @@
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_060",
     "query": "RAG knowledge-intensive tasks retrieval-augmented generation terms 59",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_061",
     "query": "neural networks transformer terms 60",
     "expected_doc_ids": [
       "paper_001",
+      "paper_008",
       "paper_002",
       "paper_005",
-      "paper_007",
-      "paper_008"
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_062",
     "query": "BERT language model pre-training terms 61",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_063",
     "query": "language model GPT-2 terms 62",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_064",
     "query": "few-shot in-context learning GPT-3 terms 63",
     "expected_doc_ids": [
-      "paper_003",
       "paper_004",
-      "paper_008"
+      "paper_003",
+      "paper_008",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_065",
     "query": "Vision Transformer image classification terms 64",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_066",
     "query": "efficiency DistilBERT model compression terms 65",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
-      "paper_004",
-      "paper_006"
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_067",
@@ -756,16 +834,19 @@
       "paper_007"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_068",
     "query": "encoder-decoder LSTM sequence-to-sequence terms 67",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_069",
@@ -774,16 +855,19 @@
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_070",
     "query": "knowledge-intensive tasks retrieval-augmented generation RAG terms 69",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_071",
@@ -791,177 +875,193 @@
     "expected_doc_ids": [
       "paper_001",
       "paper_007",
-      "paper_008",
-      "paper_009"
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_072",
     "query": "language model transformer bidirectional terms 71",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_009",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_073",
     "query": "few-shot learning language model terms 72",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_074",
     "query": "large language model GPT-3 in-context learning terms 73",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
+      "paper_003",
+      "paper_002",
+      "paper_009",
       "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_075",
     "query": "ViT Vision Transformer terms 74",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_076",
     "query": "model compression DistilBERT efficiency terms 75",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
-      "paper_004",
-      "paper_006"
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_077",
     "query": "survey efficient transformers terms 76",
     "expected_doc_ids": [
+      "paper_007",
       "paper_002",
-      "paper_005",
-      "paper_007"
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_078",
     "query": "sequence-to-sequence LSTM encoder-decoder terms 77",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_079",
     "query": "relative positional encoding Transformer-XL terms 78",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_080",
     "query": "RAG retrieval-augmented generation knowledge-intensive tasks terms 79",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_081",
     "query": "attention mechanism neural networks terms 80",
     "expected_doc_ids": [
       "paper_001",
-      "paper_007",
-      "paper_008"
+      "paper_008",
+      "paper_007"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_082",
     "query": "transformer pre-training language model terms 81",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_009",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_083",
     "query": "language model few-shot learning terms 82",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
       "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_002",
+      "paper_006",
+      "paper_008"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_084",
     "query": "large language model GPT-3 few-shot terms 83",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
-      "paper_006"
+      "paper_003",
+      "paper_002",
+      "paper_006",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_085",
     "query": "computer vision Vision Transformer terms 84",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_086",
@@ -971,7 +1071,8 @@
       "paper_010"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_087",
@@ -980,35 +1081,43 @@
       "paper_007"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_088",
     "query": "encoder-decoder neural machine translation sequence-to-sequence terms 87",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_089",
     "query": "Transformer-XL long sequences terms 88",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_090",
     "query": "retrieval-augmented generation knowledge-intensive tasks RAG terms 89",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "keyword_091",
@@ -1021,105 +1130,119 @@
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "keyword_092",
     "query": "pre-training transformer BERT terms 91",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
+      "paper_001",
       "paper_005",
       "paper_006",
-      "paper_007"
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "keyword_093",
     "query": "zero-shot GPT-2 terms 92",
     "expected_doc_ids": [
-      "paper_003"
+      "paper_003",
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "keyword_094",
     "query": "in-context learning few-shot GPT-3 terms 93",
     "expected_doc_ids": [
-      "paper_003",
       "paper_004",
-      "paper_008"
+      "paper_003",
+      "paper_008",
+      "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "keyword_095",
     "query": "Vision Transformer ViT terms 94",
     "expected_doc_ids": [
+      "paper_005",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007",
       "paper_009"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "keyword_096",
     "query": "DistilBERT efficiency model compression terms 95",
     "expected_doc_ids": [
-      "paper_001",
+      "paper_006",
       "paper_002",
       "paper_003",
-      "paper_004",
-      "paper_006"
+      "paper_004"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "keyword_097",
     "query": "efficient transformers attention mechanisms terms 96",
     "expected_doc_ids": [
+      "paper_007",
       "paper_001",
       "paper_002",
-      "paper_005",
-      "paper_007"
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "keyword_098",
     "query": "neural machine translation encoder-decoder LSTM terms 97",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_008"
+      "paper_008",
+      "paper_001"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "keyword_099",
     "query": "long sequences Transformer-XL terms 98",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_009",
+      "paper_001",
+      "paper_002",
+      "paper_005"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "keyword_100",
     "query": "retrieval-augmented generation RAG knowledge-intensive tasks terms 99",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_010",
+      "paper_006"
     ],
     "type": "keyword_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   }
 ]
