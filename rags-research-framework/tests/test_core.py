@@ -122,6 +122,15 @@ def test_vector_rag_tfidf_and_no_silent_fallback():
             VectorRAG()
 
 
+def test_answer_em_f1():
+    pytest.importorskip("torch")
+    from benchmark.e2e_generation_evaluator import answer_em_f1
+    assert answer_em_f1("The Eiffel Tower!", "eiffel tower") == (1.0, 1.0)
+    em, f1 = answer_em_f1("Devlin et al", "Jacob Devlin")
+    assert em == 0.0 and f1 == pytest.approx(0.4)  # 1 shared token: P = 1/3, R = 1/2
+    assert answer_em_f1("no", "yes") == (0.0, 0.0)
+
+
 DETERMINISM_SCRIPT = textwrap.dedent("""
     import json, sys
     sys.path[:0] = {paths!r}

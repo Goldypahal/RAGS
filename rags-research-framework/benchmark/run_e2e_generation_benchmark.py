@@ -104,13 +104,16 @@ def main():
     parser.add_argument("--judge", choices=["cross-encoder", "flan-t5"], default="cross-encoder",
                         help="NLI judge: independent cross-encoder (default) or legacy self-judging Flan-T5")
     parser.add_argument("--embedder", choices=["minilm", "tfidf", "hash"], default="minilm")
+    parser.add_argument("--dataset", default="benchmark/dataset", help="Corpus directory (papers.json)")
+    parser.add_argument("--test-dir", default=None,
+                        help="Test suites (default: <dataset>/tests if present, else benchmark/tests/scaled)")
     args = parser.parse_args()
     
     print("\n" + "=" * 85)
     print("🤖 PUBLICATION-GRADE END-TO-END RAG GENERATION & FAITHFULNESS BENCHMARK")
     print("=" * 85 + "\n")
     
-    dataset_dir = "benchmark/dataset"
+    dataset_dir = args.dataset
     documents, paper_lookup = load_dataset(dataset_dir)
     print(f"✓ Loaded {len(documents)} corpus documents")
     
@@ -124,16 +127,12 @@ def main():
     systems = init_systems(documents, {'embedder': args.embedder}, citation_links)
     print("✓ All 9 systems initialized")
     
-    test_dir = "benchmark/tests/scaled"
-    categories = [
-        "exact_lookup",
-        "keyword_search",
-        "semantic_search",
-        "relationship_search",
-        "multi_hop_reasoning",
-        "mixed_queries",
-        "prefix_lookup"
-    ]
+    test_dir = args.test_dir
+    if test_dir is None:
+        own_tests = os.path.join(dataset_dir, "tests")
+        test_dir = own_tests if os.path.isdir(own_tests) else "benchmark/tests/scaled"
+    categories = sorted(f[:-5] for f in os.listdir(test_dir) if f.endswith(".json"))
+    print(f"✓ Test suites from {test_dir}: {', '.join(categories)}")
     
     # Deterministic uniform random sampling with fixed seed
     rng = np.random.default_rng(42)
@@ -160,7 +159,8 @@ def main():
         qid = test.get('id', str(t_idx))
         query = test['query']
         category = test['category']
-        expected_doc_ids = test.get('expected_doc_ids', [])
+        # HotpotQA/SQuAD use 'expected_ids'; missing gold would make context recall 1.0 by default
+        expected_doc_ids = test.get('expected_doc_ids', test.get('expected_ids', []))
         
         for sys_name, system in systems.items():
             t0 = time.perf_counter_ns()
@@ -175,7 +175,8 @@ def main():
                 system_name=sys_name,
                 retrieved_docs=res.documents,
                 expected_doc_ids=expected_doc_ids,
-                retrieval_time_ms=ret_ms
+                retrieval_time_ms=ret_ms,
+                reference_answer=test.get('answer')
             )
             
         completed += 1
@@ -201,7 +202,7 @@ def main():
         
         t_f, p_f = stats.ttest_rel([s.faithfulness for s in s_results], [v.faithfulness for v in vec_results])
         t_r, p_r = stats.ttest_rel([s.context_recall for s in s_results], [v.context_recall for v in vec_results])
-        
+
         paired_significance[sys_name] = {
             'delta_faithfulness': round(float(np.mean(diff_faith)), 4),
             'p_value_faithfulness': round(float(p_f), 4) if not np.isnan(p_f) else 1.0,
@@ -209,6 +210,12 @@ def main():
             'p_value_context_recall': round(float(p_r), 4) if not np.isnan(p_r) else 1.0,
             'delta_answer_relevance': round(float(np.mean(diff_relev)), 4)
         }
+
+        if all(r.answer_f1 is not None for r in s_results + vec_results):
+            diff_f1 = [s.answer_f1 - v.answer_f1 for s, v in zip(s_results, vec_results)]
+            _, p_f1 = stats.ttest_rel([s.answer_f1 for s in s_results], [v.answer_f1 for v in vec_results])
+            paired_significance[sys_name]['delta_answer_f1'] = round(float(np.mean(diff_f1)), 4)
+            paired_significance[sys_name]['p_value_answer_f1'] = round(float(p_f1), 4) if not np.isnan(p_f1) else 1.0
         
     summary['paired_significance_vs_vector'] = paired_significance
     
@@ -221,9 +228,11 @@ def main():
     print("\n" + "=" * 95)
     print("🏆 RIGOROUS END-TO-END GENERATION & SEMANTIC FAITHFULNESS REPORT")
     print("=" * 95)
-    print(f"{'System':<24} {'Faithfulness (95% CI)':<26} {'Hallucination':<16} {'Context Recall':<16} {'Ans Relevance':<14}")
+    has_answers = any('answer_f1' in m for m in summary['systems'].values())
+    print(f"{'System':<24} {'Faithfulness (95% CI)':<26} {'Hallucination':<16} {'Context Recall':<16} {'Ans Relevance':<14}"
+          + (f" {'EM':<7} {'F1 (95% CI)':<20}" if has_answers else ""))
     print("-" * 95)
-    
+
     for sys_name in summary['rankings_by_faithfulness']:
         m = summary['systems'][sys_name]
         f_val = m['faithfulness']['mean'] * 100
@@ -231,12 +240,16 @@ def main():
         h_val = m['hallucination_rate']['mean'] * 100
         r_val = m['context_recall']['mean'] * 100
         a_val = m['answer_relevance']['mean'] * 100
-        
+        answer_cols = ""
+        if 'answer_f1' in m:
+            f1, f1_ci = m['answer_f1']['mean'] * 100, [c * 100 for c in m['answer_f1']['ci_95']]
+            answer_cols = f" {m['answer_em']['mean'] * 100:5.1f}%  {f1:5.1f}% [{f1_ci[0]:4.1f}, {f1_ci[1]:4.1f}]"
+
         print(f"{sys_name:<24} "
               f"{f_val:5.1f}% [{f_ci[0]:4.1f}%, {f_ci[1]:4.1f}%]     "
               f"{h_val:5.1f}%          "
               f"{r_val:5.1f}%          "
-              f"{a_val:5.1f}%")
+              f"{a_val:5.1f}%" + answer_cols)
               
     print("=" * 95)
     print(f"⚡ Empirical Latency Ratio: VectorRAG ({vec_lat:.1f}ms) vs InvertedIndexGraphRAG ({inv_lat:.1f}ms) = {empirical_speedup}× faster\n")
@@ -244,7 +257,12 @@ def main():
     # Save clean telemetry
     timestamp = time.strftime("%Y%m%d_%H%M%S")
     out_dir = Path(__file__).parent / "results"
-    out_json = out_dir / f"e2e_generation_results_rigorous_{timestamp}.json"
+    dataset_tag = Path(dataset_dir).name
+    suffix = "" if dataset_tag == "dataset" else f"_{dataset_tag}"
+    summary['dataset_dir'] = dataset_dir
+    summary['test_dir'] = test_dir
+    summary['vector_embedder'] = args.embedder
+    out_json = out_dir / f"e2e_generation_results_rigorous{suffix}_{timestamp}.json"
     with open(out_json, 'w', encoding='utf-8') as f:
         json.dump(summary, f, indent=2)
     print(f"💾 Full telemetry saved to: {out_json}")
@@ -267,7 +285,7 @@ def main():
     plt.title('RAG Architectures - End-to-End Generative Faithfulness (Flan-T5 + NLI Judge)')
     plt.grid(axis='x', linestyle='--', alpha=0.5)
     plt.tight_layout()
-    p1 = plots_dir / "e2e_faithfulness_comparison.png"
+    p1 = plots_dir / f"e2e_faithfulness_comparison{suffix}.png"
     plt.savefig(p1, dpi=150)
     plt.close()
     print(f"📊 Saved publication plot: {p1}")
@@ -285,7 +303,7 @@ def main():
     plt.title('RAG Generation - Context Recall vs Semantic Answer Relevance')
     plt.grid(linestyle='--', alpha=0.5)
     plt.tight_layout()
-    p2 = plots_dir / "e2e_recall_vs_relevance.png"
+    p2 = plots_dir / f"e2e_recall_vs_relevance{suffix}.png"
     plt.savefig(p2, dpi=150)
     plt.close()
     print(f"📊 Saved publication plot: {p2}")
