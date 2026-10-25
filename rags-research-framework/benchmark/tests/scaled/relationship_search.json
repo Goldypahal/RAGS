@@ -3,1140 +3,878 @@
     "id": "relation_001",
     "query": "Which papers were published at NeurIPS in 2017?",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
-      "paper_004",
-      "paper_005"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_002",
     "query": "Which papers were published at ACL in 2018?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
-      "paper_006",
-      "paper_010"
+      "paper_002"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_003",
     "query": "Which papers were published at OpenAI Blog in 2019?",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
-      "paper_004"
+      "paper_003"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_004",
     "query": "Which papers were published at NeurIPS in 2020?",
     "expected_doc_ids": [
       "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_005",
     "query": "Which papers were published at ICLR in 2020?",
     "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
+      "paper_005"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "relation_006",
     "query": "Which papers were published at NeurIPS in 2019?",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
-      "paper_007"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_007",
     "query": "Which papers were published at ACM Computing Surveys in 2022?",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_008",
     "query": "Which papers were published at NeurIPS in 2014?",
     "expected_doc_ids": [
-      "paper_008",
-      "paper_004"
+      "paper_008"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_009",
     "query": "Which papers were published at ACL in 2019?",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
-      "paper_007"
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_010",
-    "query": "Which papers were published at NeurIPS in 2020? [Query #9]",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_011",
     "query": "Find all works authored or co-authored by Vaswani, A..",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
-      "paper_004",
-      "paper_005"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_012",
     "query": "Find all works authored or co-authored by Devlin, J..",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
-      "paper_006",
-      "paper_010"
+      "paper_002"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_013",
     "query": "Find all works authored or co-authored by Radford, A..",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
-      "paper_004"
+      "paper_003"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_014",
     "query": "Find all works authored or co-authored by Brown, T. B..",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_015",
     "query": "Find all works authored or co-authored by Dosovitskiy, A..",
     "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
+      "paper_005"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "relation_016",
     "query": "Find all works authored or co-authored by Sanh, V..",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
-      "paper_007"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_017",
     "query": "Find all works authored or co-authored by Tay, Y..",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_018",
     "query": "Find all works authored or co-authored by Sutskever, I..",
     "expected_doc_ids": [
-      "paper_008",
-      "paper_004"
+      "paper_003",
+      "paper_008"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_019",
     "query": "Find all works authored or co-authored by Dai, Z..",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
-      "paper_007"
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_020",
     "query": "Find all works authored or co-authored by Lewis, P..",
     "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "relation_021",
     "query": "What papers cite or directly build upon Attention Is All You Need?",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_022",
     "query": "What papers cite or directly build upon BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
       "paper_006",
       "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_023",
     "query": "What papers cite or directly build upon Language Models are Unsupervised Multitask Learners?",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_024",
     "query": "What papers cite or directly build upon Language Models are Few-Shot Learners?",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_025",
-    "query": "What papers cite or directly build upon An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale?",
-    "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_026",
     "query": "What papers cite or directly build upon DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter?",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_027",
     "query": "What papers cite or directly build upon Efficient Transformers: A Survey?",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_028",
     "query": "What papers cite or directly build upon Sequence to Sequence Learning with Neural Networks?",
     "expected_doc_ids": [
-      "paper_008",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_029",
     "query": "What papers cite or directly build upon Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context?",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_030",
-    "query": "What papers cite or directly build upon Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks?",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_031",
-    "query": "Identify direct citation links originating from Attention Is All You Need.",
-    "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
-      "paper_004",
-      "paper_005"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_032",
     "query": "Identify direct citation links originating from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding.",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
-      "paper_006",
-      "paper_010"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_033",
     "query": "Identify direct citation links originating from Language Models are Unsupervised Multitask Learners.",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
-      "paper_004"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_034",
     "query": "Identify direct citation links originating from Language Models are Few-Shot Learners.",
     "expected_doc_ids": [
-      "paper_004",
       "paper_001",
       "paper_003",
-      "paper_010",
       "paper_008"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_035",
     "query": "Identify direct citation links originating from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale.",
     "expected_doc_ids": [
-      "paper_005",
       "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "relation_036",
     "query": "Identify direct citation links originating from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter.",
     "expected_doc_ids": [
-      "paper_006",
       "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_037",
     "query": "Identify direct citation links originating from Efficient Transformers: A Survey.",
     "expected_doc_ids": [
-      "paper_007",
       "paper_001",
       "paper_006",
       "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_038",
-    "query": "Identify direct citation links originating from Sequence to Sequence Learning with Neural Networks.",
-    "expected_doc_ids": [
-      "paper_008",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_039",
     "query": "Identify direct citation links originating from Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context.",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
-      "paper_007"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_040",
     "query": "Identify direct citation links originating from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks.",
     "expected_doc_ids": [
-      "paper_010",
       "paper_002",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "relation_041",
     "query": "Which models in the citation network reference Vaswani, A.?",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_042",
     "query": "Which models in the citation network reference Devlin, J.?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
       "paper_006",
       "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_043",
     "query": "Which models in the citation network reference Radford, A.?",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_044",
     "query": "Which models in the citation network reference Brown, T. B.?",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_045",
-    "query": "Which models in the citation network reference Dosovitskiy, A.?",
-    "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_046",
     "query": "Which models in the citation network reference Sanh, V.?",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_047",
     "query": "Which models in the citation network reference Tay, Y.?",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_048",
     "query": "Which models in the citation network reference Sutskever, I.?",
     "expected_doc_ids": [
-      "paper_008",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_049",
     "query": "Which models in the citation network reference Dai, Z.?",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_050",
-    "query": "Which models in the citation network reference Lewis, P.?",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_051",
     "query": "List research publications presented at NeurIPS.",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002",
-      "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_006",
+      "paper_008",
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_052",
     "query": "List research publications presented at ACL.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_001",
-      "paper_006",
-      "paper_010"
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_053",
     "query": "List research publications presented at OpenAI Blog.",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
-      "paper_004"
+      "paper_003"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_054",
-    "query": "List research publications presented at NeurIPS. [Query #53]",
-    "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_055",
     "query": "List research publications presented at ICLR.",
     "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
+      "paper_005"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_056",
-    "query": "List research publications presented at NeurIPS. [Query #55]",
-    "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
-      "paper_007"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "relation_057",
     "query": "List research publications presented at ACM Computing Surveys.",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_058",
-    "query": "List research publications presented at NeurIPS. [Query #57]",
-    "expected_doc_ids": [
-      "paper_008",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_059",
-    "query": "List research publications presented at ACL. [Query #58]",
-    "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_060",
-    "query": "List research publications presented at NeurIPS. [Query #59]",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_061",
     "query": "Trace the co-authorship network of Vaswani, A..",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
-      "paper_004",
-      "paper_005"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_062",
     "query": "Trace the co-authorship network of Devlin, J..",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
-      "paper_006",
-      "paper_010"
+      "paper_002"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_063",
     "query": "Trace the co-authorship network of Radford, A..",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
-      "paper_004"
+      "paper_003"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_064",
     "query": "Trace the co-authorship network of Brown, T. B..",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_065",
     "query": "Trace the co-authorship network of Dosovitskiy, A..",
     "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
+      "paper_005"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "relation_066",
     "query": "Trace the co-authorship network of Sanh, V..",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
-      "paper_007"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_067",
     "query": "Trace the co-authorship network of Tay, Y..",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_068",
     "query": "Trace the co-authorship network of Sutskever, I..",
     "expected_doc_ids": [
-      "paper_008",
-      "paper_004"
+      "paper_003",
+      "paper_008"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_069",
     "query": "Trace the co-authorship network of Dai, Z..",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
-      "paper_007"
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_070",
     "query": "Trace the co-authorship network of Lewis, P..",
     "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "relation_071",
     "query": "Which foundational models cite Attention Is All You Need as prior art?",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_072",
     "query": "Which foundational models cite BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding as prior art?",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
       "paper_006",
       "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_073",
     "query": "Which foundational models cite Language Models are Unsupervised Multitask Learners as prior art?",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_074",
     "query": "Which foundational models cite Language Models are Few-Shot Learners as prior art?",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_075",
-    "query": "Which foundational models cite An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale as prior art?",
-    "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_076",
     "query": "Which foundational models cite DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter as prior art?",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_077",
     "query": "Which foundational models cite Efficient Transformers: A Survey as prior art?",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_078",
     "query": "Which foundational models cite Sequence to Sequence Learning with Neural Networks as prior art?",
     "expected_doc_ids": [
-      "paper_008",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_079",
     "query": "Which foundational models cite Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context as prior art?",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_080",
-    "query": "Which foundational models cite Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks as prior art?",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_081",
     "query": "Find papers connected to attention at NeurIPS.",
     "expected_doc_ids": [
-      "paper_001",
-      "paper_002",
-      "paper_003",
-      "paper_004",
-      "paper_005"
+      "paper_001"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_082",
     "query": "Find papers connected to BERT at ACL.",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
-      "paper_006",
-      "paper_010"
+      "paper_002"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_083",
     "query": "Find papers connected to GPT-2 at OpenAI Blog.",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
-      "paper_004"
+      "paper_003"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_084",
     "query": "Find papers connected to GPT-3 at NeurIPS.",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_085",
     "query": "Find papers connected to Vision Transformer at ICLR.",
     "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
+      "paper_005"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "relation_086",
     "query": "Find papers connected to model compression at NeurIPS.",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
-      "paper_007"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_087",
     "query": "Find papers connected to efficiency at ACM Computing Surveys.",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_088",
     "query": "Find papers connected to sequence-to-sequence at NeurIPS.",
     "expected_doc_ids": [
-      "paper_008",
-      "paper_004"
+      "paper_008"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_089",
     "query": "Find papers connected to long sequences at ACL.",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
-      "paper_007"
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "relation_090",
     "query": "Find papers connected to RAG at NeurIPS.",
     "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "relation_091",
     "query": "List all citations connecting Attention Is All You Need to subsequent publications.",
     "expected_doc_ids": [
-      "paper_001",
       "paper_002",
       "paper_003",
       "paper_004",
-      "paper_005"
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "relation_092",
     "query": "List all citations connecting BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding to subsequent publications.",
     "expected_doc_ids": [
-      "paper_002",
-      "paper_001",
       "paper_006",
       "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "relation_093",
     "query": "List all citations connecting Language Models are Unsupervised Multitask Learners to subsequent publications.",
     "expected_doc_ids": [
-      "paper_003",
-      "paper_001",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "relation_094",
     "query": "List all citations connecting Language Models are Few-Shot Learners to subsequent publications.",
     "expected_doc_ids": [
-      "paper_004",
-      "paper_001",
-      "paper_003",
-      "paper_010",
-      "paper_008"
+      "paper_010"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_095",
-    "query": "List all citations connecting An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale to subsequent publications.",
-    "expected_doc_ids": [
-      "paper_005",
-      "paper_001"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "relation_096",
     "query": "List all citations connecting DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter to subsequent publications.",
     "expected_doc_ids": [
-      "paper_006",
-      "paper_002",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "relation_097",
     "query": "List all citations connecting Efficient Transformers: A Survey to subsequent publications.",
     "expected_doc_ids": [
-      "paper_007",
-      "paper_001",
-      "paper_006",
-      "paper_009"
+      "paper_006"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "relation_098",
     "query": "List all citations connecting Sequence to Sequence Learning with Neural Networks to subsequent publications.",
     "expected_doc_ids": [
-      "paper_008",
       "paper_004"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "relation_099",
     "query": "List all citations connecting Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context to subsequent publications.",
     "expected_doc_ids": [
-      "paper_009",
-      "paper_001",
       "paper_007"
     ],
     "type": "relationship_search",
-    "difficulty": "medium"
-  },
-  {
-    "id": "relation_100",
-    "query": "List all citations connecting Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks to subsequent publications.",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_002",
-      "paper_004"
-    ],
-    "type": "relationship_search",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   }
 ]

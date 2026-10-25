@@ -6,7 +6,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_002",
@@ -15,7 +16,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_003",
@@ -24,7 +26,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_004",
@@ -33,7 +36,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_005",
@@ -42,52 +46,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_006",
     "query": "In deep learning literature, How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_007",
     "query": "In deep learning literature, What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_008",
     "query": "In deep learning literature, Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_009",
     "query": "In deep learning literature, What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_010",
     "query": "In deep learning literature, Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_011",
@@ -96,7 +106,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_012",
@@ -105,7 +116,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_013",
@@ -114,7 +126,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_014",
@@ -123,7 +136,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_015",
@@ -132,52 +146,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_016",
     "query": "Provide a comprehensive technical overview: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_017",
     "query": "Provide a comprehensive technical overview: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_018",
     "query": "Provide a comprehensive technical overview: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_019",
     "query": "Provide a comprehensive technical overview: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_020",
     "query": "Provide a comprehensive technical overview: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_021",
@@ -186,7 +206,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_022",
@@ -195,7 +216,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_023",
@@ -204,7 +226,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_024",
@@ -213,7 +236,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_025",
@@ -222,52 +246,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_026",
     "query": "What theoretical evidence demonstrates that: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_027",
     "query": "What theoretical evidence demonstrates that: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_028",
     "query": "What theoretical evidence demonstrates that: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_029",
     "query": "What theoretical evidence demonstrates that: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_030",
     "query": "What theoretical evidence demonstrates that: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_031",
@@ -276,7 +306,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_032",
@@ -285,7 +316,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_033",
@@ -294,7 +326,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_034",
@@ -303,7 +336,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_035",
@@ -312,52 +346,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_036",
     "query": "Survey findings regarding: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_037",
     "query": "Survey findings regarding: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_038",
     "query": "Survey findings regarding: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_039",
     "query": "Survey findings regarding: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_040",
     "query": "Survey findings regarding: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_041",
@@ -366,7 +406,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_042",
@@ -375,7 +416,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_043",
@@ -384,7 +426,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_044",
@@ -393,7 +436,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_045",
@@ -402,52 +446,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_046",
     "query": "Empirical analysis: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_047",
     "query": "Empirical analysis: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_048",
     "query": "Empirical analysis: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_049",
     "query": "Empirical analysis: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_050",
     "query": "Empirical analysis: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_051",
@@ -456,7 +506,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_052",
@@ -465,7 +516,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_053",
@@ -474,7 +526,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_054",
@@ -483,7 +536,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_055",
@@ -492,52 +546,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_056",
     "query": "Explain clearly: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_057",
     "query": "Explain clearly: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_058",
     "query": "Explain clearly: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_059",
     "query": "Explain clearly: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_060",
     "query": "Explain clearly: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_061",
@@ -546,7 +606,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_062",
@@ -555,7 +616,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_063",
@@ -564,7 +626,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_064",
@@ -573,7 +636,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_065",
@@ -582,52 +646,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_066",
     "query": "From an architectural perspective: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_067",
     "query": "From an architectural perspective: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_068",
     "query": "From an architectural perspective: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_069",
     "query": "From an architectural perspective: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_070",
     "query": "From an architectural perspective: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_071",
@@ -636,7 +706,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_072",
@@ -645,7 +716,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_073",
@@ -654,7 +726,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_074",
@@ -663,7 +736,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_075",
@@ -672,52 +746,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_076",
     "query": "Review modern methodologies: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_077",
     "query": "Review modern methodologies: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_078",
     "query": "Review modern methodologies: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_079",
     "query": "Review modern methodologies: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_080",
     "query": "Review modern methodologies: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_081",
@@ -726,7 +806,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_082",
@@ -735,7 +816,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_083",
@@ -744,7 +826,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_084",
@@ -753,7 +836,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_085",
@@ -762,52 +846,58 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_086",
     "query": "Detailed investigation into: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_087",
     "query": "Detailed investigation into: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_088",
     "query": "Detailed investigation into: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_089",
     "query": "Detailed investigation into: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_090",
     "query": "Detailed investigation into: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   },
   {
     "id": "semantic_091",
@@ -816,7 +906,8 @@
       "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_0"
   },
   {
     "id": "semantic_092",
@@ -825,7 +916,8 @@
       "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_1"
   },
   {
     "id": "semantic_093",
@@ -834,7 +926,8 @@
       "paper_003"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_2"
   },
   {
     "id": "semantic_094",
@@ -843,7 +936,8 @@
       "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_3"
   },
   {
     "id": "semantic_095",
@@ -852,51 +946,57 @@
       "paper_005"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_4"
   },
   {
     "id": "semantic_096",
     "query": "Scientific inquiry: How does masked language modeling train deep bidirectional encoders?",
     "expected_doc_ids": [
-      "paper_006"
+      "paper_002"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_5"
   },
   {
     "id": "semantic_097",
     "query": "Scientific inquiry: What are the scaling laws governing parameter count in multi-layer transformer models?",
     "expected_doc_ids": [
-      "paper_007"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_6"
   },
   {
     "id": "semantic_098",
     "query": "Scientific inquiry: Explain how multi-head attention projects inputs into multiple representation subspaces.",
     "expected_doc_ids": [
-      "paper_008"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_7"
   },
   {
     "id": "semantic_099",
     "query": "Scientific inquiry: What advantages do feed-forward self-attention networks possess over traditional LSTMs?",
     "expected_doc_ids": [
-      "paper_009"
+      "paper_001"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_8"
   },
   {
     "id": "semantic_100",
     "query": "Scientific inquiry: Discuss task-agnostic few-shot performance in autoregressive language generators.",
     "expected_doc_ids": [
-      "paper_010"
+      "paper_004"
     ],
     "type": "semantic_search",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "prompt_9"
   }
 ]

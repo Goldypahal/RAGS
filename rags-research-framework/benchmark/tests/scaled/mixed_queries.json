@@ -6,7 +6,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_002",
@@ -15,7 +16,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_003",
@@ -24,7 +26,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_004",
@@ -33,7 +36,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_005",
@@ -42,7 +46,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_006",
@@ -51,7 +56,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_007",
@@ -60,7 +66,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_008",
@@ -69,7 +76,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_009",
@@ -78,7 +86,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_010",
@@ -87,7 +96,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_011",
@@ -96,7 +106,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_012",
@@ -105,7 +116,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_013",
@@ -114,7 +126,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_014",
@@ -123,7 +136,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_015",
@@ -132,7 +146,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_016",
@@ -141,7 +156,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_017",
@@ -150,7 +166,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_018",
@@ -159,7 +176,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_019",
@@ -168,7 +186,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_020",
@@ -177,7 +196,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_021",
@@ -186,7 +206,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_022",
@@ -195,7 +216,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_023",
@@ -204,7 +226,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_024",
@@ -213,7 +236,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_025",
@@ -222,7 +246,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_026",
@@ -231,7 +256,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_027",
@@ -240,7 +266,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_028",
@@ -249,7 +276,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_029",
@@ -258,7 +286,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_030",
@@ -267,7 +296,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_031",
@@ -276,7 +306,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_032",
@@ -285,7 +316,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_033",
@@ -294,7 +326,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_034",
@@ -303,7 +336,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_035",
@@ -312,7 +346,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_036",
@@ -321,7 +356,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_037",
@@ -330,7 +366,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_038",
@@ -339,7 +376,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_039",
@@ -348,7 +386,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_040",
@@ -357,7 +396,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_041",
@@ -366,7 +406,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_042",
@@ -375,7 +416,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_043",
@@ -384,7 +426,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_044",
@@ -393,7 +436,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_045",
@@ -402,7 +446,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_046",
@@ -411,7 +456,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_047",
@@ -420,7 +466,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_048",
@@ -429,7 +476,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_049",
@@ -438,7 +486,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_050",
@@ -447,7 +496,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_051",
@@ -456,7 +506,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_052",
@@ -465,7 +516,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_053",
@@ -474,7 +526,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_054",
@@ -483,7 +536,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_055",
@@ -492,7 +546,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_056",
@@ -501,7 +556,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_057",
@@ -510,7 +566,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_058",
@@ -519,7 +576,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_059",
@@ -528,7 +586,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_060",
@@ -537,7 +596,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_061",
@@ -546,7 +606,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_062",
@@ -555,7 +616,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_063",
@@ -564,7 +626,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_064",
@@ -573,7 +636,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_065",
@@ -582,7 +646,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_066",
@@ -591,7 +656,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_067",
@@ -600,7 +666,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_068",
@@ -609,7 +676,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_069",
@@ -618,7 +686,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_070",
@@ -627,7 +696,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_071",
@@ -636,7 +706,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_072",
@@ -645,7 +716,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_073",
@@ -654,7 +726,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_074",
@@ -663,7 +736,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_075",
@@ -672,7 +746,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_076",
@@ -681,7 +756,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_077",
@@ -690,7 +766,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_078",
@@ -699,7 +776,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_079",
@@ -708,7 +786,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_080",
@@ -717,7 +796,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_081",
@@ -726,7 +806,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_082",
@@ -735,7 +816,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_083",
@@ -744,7 +826,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_084",
@@ -753,7 +836,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_085",
@@ -762,7 +846,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_086",
@@ -771,7 +856,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_087",
@@ -780,7 +866,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_088",
@@ -789,7 +876,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_089",
@@ -798,7 +886,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_090",
@@ -807,7 +896,8 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   },
   {
     "id": "mixed_091",
@@ -816,7 +906,8 @@
       "paper_001"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_001"
   },
   {
     "id": "mixed_092",
@@ -825,7 +916,8 @@
       "paper_002"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_002"
   },
   {
     "id": "mixed_093",
@@ -834,7 +926,8 @@
       "paper_003"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_003"
   },
   {
     "id": "mixed_094",
@@ -843,7 +936,8 @@
       "paper_004"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_004"
   },
   {
     "id": "mixed_095",
@@ -852,7 +946,8 @@
       "paper_005"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_005"
   },
   {
     "id": "mixed_096",
@@ -861,7 +956,8 @@
       "paper_006"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_006"
   },
   {
     "id": "mixed_097",
@@ -870,7 +966,8 @@
       "paper_007"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_007"
   },
   {
     "id": "mixed_098",
@@ -879,7 +976,8 @@
       "paper_008"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_008"
   },
   {
     "id": "mixed_099",
@@ -888,7 +986,8 @@
       "paper_009"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_009"
   },
   {
     "id": "mixed_100",
@@ -897,6 +996,7 @@
       "paper_010"
     ],
     "type": "mixed_queries",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "group": "paper_010"
   }
 ]

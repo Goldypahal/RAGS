@@ -1,25 +1,40 @@
 """
-Scale Benchmark: Generates a high-power, multi-category benchmark suite (700 queries).
+Scale Benchmark: template-generated multi-category query suite over benchmark/dataset.
 
-Guarantees 700 DISTINCT, NON-DUPLICATED queries across 7 research categories:
-1. Exact Lookup (100 distinct queries)
-2. Prefix Lookup (100 distinct queries)
-3. Keyword Search (100 distinct queries)
-4. Semantic Search (100 distinct queries)
-5. Relationship Search (100 distinct queries)
-6. Multi-Hop Reasoning (100 distinct queries)
-7. Mixed Realistic Workload (100 distinct queries)
+Generates up to 100 distinct query strings per category:
+1. Exact Lookup        2. Prefix Lookup       3. Keyword Search
+4. Semantic Search     5. Relationship Search 6. Multi-Hop Reasoning
+7. Mixed Realistic Workload
 
-Total: 700 unique queries with verified ground-truth expected document IDs.
+Caveat: the corpus has 10 papers, so each category is ~10 anchor papers x ~10
+templates. Queries sharing an anchor are strongly correlated; treat the effective
+sample size as closer to the number of anchors than the number of queries, and
+split by the "group" field (anchor paper) when training anything on these queries.
+
+Ground truth is derived from the data, never from list position:
+- semantic: hand-mapped prompt -> paper (by abstract content)
+- relationship: venue/year/author metadata and citations.json, per template
+- multi-hop: anchor paper plus its 1-hop citation neighbors
+Queries whose ground truth would be empty are skipped.
 """
 
 import os
+import re
 import sys
 import io
 import json
 import random
 from pathlib import Path
 from typing import List, Dict, Any, Set
+
+_STOP = {
+    'the', 'a', 'an', 'and', 'or', 'of', 'for', 'in', 'on', 'at', 'to', 'with', 'by',
+    'is', 'are', 'from', 'as', 'terms', 'keyword', 'lookup', 'ref'
+}
+
+
+def _tokens(text: str) -> Set[str]:
+    return {t for t in re.findall(r"[a-z0-9]+", text.lower()) if t not in _STOP and not t.isdigit()}
 
 # Ensure UTF-8 output on Windows consoles
 if sys.platform == 'win32':
@@ -62,7 +77,21 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
         
     paper_map = {p['id']: p for p in papers}
     paper_ids = [p['id'] for p in papers]
-    
+
+    cites: Dict[str, List[str]] = {pid: [] for pid in paper_ids}     # pid -> papers it cites
+    cited_by: Dict[str, List[str]] = {pid: [] for pid in paper_ids}  # pid -> papers citing it
+    for cit in citations:
+        a, b = cit.get('citing_paper'), cit.get('cited_paper')
+        if a in paper_map and b in paper_map:
+            cites[a].append(b)
+            cited_by[b].append(a)
+
+    def neighbors(pid: str) -> List[str]:
+        return sorted(set(cites[pid]) | set(cited_by[pid]))
+
+    def by_author(author: str) -> List[str]:
+        return [p['id'] for p in papers if author in (p.get('authors') or [])]
+
     all_seen_queries: Set[str] = set()
     
     # -------------------------------------------------------------
@@ -93,7 +122,8 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
             "query": q_text,
             "expected_doc_ids": [paper['id']],
             "type": "exact_lookup",
-            "difficulty": "easy"
+            "difficulty": "easy",
+            "group": paper['id']
         })
     save_json(exact_queries, os.path.join(output_dir, "exact_lookup.json"))
     print(f"  ✓ Exact Lookup: {len(exact_queries)} unique queries")
@@ -114,19 +144,27 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
             n_words = min(len(words), step + 1)
             prefix_phrase = " ".join(words[:n_words])
         else:
-            first_auth = (paper.get('authors') or ['Vaswani'])[0].split(',')[0]
-            prefix_phrase = f"{first_auth} {words[0]} {step}"
-            
+            # Character prefixes of the title that may end mid-word: 6, 9, 12, 15, 18 chars
+            prefix_phrase = title[:6 + 3 * (step - 5)].rstrip()
+
         if prefix_phrase in all_seen_queries:
-            prefix_phrase = f"{words[0][:5]} {idx:02d}"
+            continue
         all_seen_queries.add(prefix_phrase)
-        
+
+        # Every title with this prefix is a correct completion (e.g. "Language Models" -> 003 and 004)
+        prefix_lower = prefix_phrase.lower()
+        gold = [paper['id']] + sorted(
+            p['id'] for p in papers
+            if p['id'] != paper['id'] and p['title'].lower().startswith(prefix_lower)
+        )
+
         prefix_queries.append({
             "id": f"prefix_{idx+1:03d}",
             "query": prefix_phrase,
-            "expected_doc_ids": [paper['id']],
+            "expected_doc_ids": gold,
             "type": "prefix_lookup",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "group": paper['id']
         })
     save_json(prefix_queries, os.path.join(output_dir, "prefix_lookup.json"))
     print(f"  ✓ Prefix Lookup: {len(prefix_queries)} unique queries")
@@ -162,21 +200,24 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
             q_text = f"{q_text} ref_{idx}"
         all_seen_queries.add(q_text)
         
-        # Match papers sharing tokens
-        tokens = set(q_text.lower().split())
-        matches = [
-            p['id'] for p in papers
-            if any(t in p['title'].lower() or any(t in kw.lower() for kw in p.get('keywords', [])) for t in tokens)
-        ]
-        if paper['id'] not in matches:
-            matches.insert(0, paper['id'])
-            
+        # Relevant = papers sharing whole content tokens with the query via title/keywords,
+        # ranked by overlap; the anchor paper is always included.
+        q_tokens = _tokens(" ".join(sample_kws))
+        overlaps = []
+        for p in papers:
+            p_tokens = _tokens(p['title'] + " " + " ".join(p.get('keywords', [])))
+            n = len(q_tokens & p_tokens)
+            if n and p['id'] != paper['id']:
+                overlaps.append((-n, p['id']))
+        matches = [paper['id']] + [pid for _, pid in sorted(overlaps)]
+
         keyword_queries.append({
             "id": f"keyword_{idx+1:03d}",
             "query": q_text,
             "expected_doc_ids": matches[:5],
             "type": "keyword_search",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "group": paper['id']
         })
     save_json(keyword_queries, os.path.join(output_dir, "keyword_search.json"))
     print(f"  ✓ Keyword Search: {len(keyword_queries)} unique queries")
@@ -210,23 +251,42 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
         "Scientific inquiry: {p}"
     ]
     
+    # Hand-mapped from each prompt's content to the paper whose abstract answers it.
+    # (Previously papers[idx % N], i.e. prompts 5-9 were labeled with unrelated papers 006-010.)
+    semantic_targets = [
+        "paper_001",  # self-attention replacing recurrence -> Attention Is All You Need
+        "paper_002",  # bidirectional context representations -> BERT
+        "paper_003",  # zero-shot generalization -> GPT-2
+        "paper_004",  # in-context few-shot without fine-tuning -> GPT-3
+        "paper_005",  # pure transformer on image patches -> ViT
+        "paper_002",  # masked language modeling, bidirectional encoders -> BERT
+        "paper_004",  # scaling up parameter count -> GPT-3
+        "paper_001",  # multi-head attention subspaces -> Attention Is All You Need
+        "paper_001",  # self-attention vs LSTMs -> Attention Is All You Need
+        "paper_004",  # task-agnostic few-shot autoregressive -> GPT-3
+    ]
+    assert len(semantic_targets) == len(semantic_prompts)
+
     for idx in range(100):
-        base_prompt = semantic_prompts[idx % len(semantic_prompts)]
+        prompt_idx = idx % len(semantic_prompts)
+        base_prompt = semantic_prompts[prompt_idx]
         var_tmpl = variations[(idx // len(semantic_prompts)) % len(variations)]
         q_text = var_tmpl.format(p=base_prompt)
-        
+
         if q_text in all_seen_queries:
-            q_text = f"{q_text} (Case study {idx})"
+            continue
         all_seen_queries.add(q_text)
-        
-        # Target paper map for semantic queries
-        target_id = papers[idx % len(papers)]['id']
+
+        target_id = semantic_targets[prompt_idx]
+        if target_id not in paper_map:
+            continue
         semantic_queries.append({
             "id": f"semantic_{idx+1:03d}",
             "query": q_text,
             "expected_doc_ids": [target_id],
             "type": "semantic_search",
-            "difficulty": "hard"
+            "difficulty": "hard",
+            "group": f"prompt_{prompt_idx}"
         })
     save_json(semantic_queries, os.path.join(output_dir, "semantic_search.json"))
     print(f"  ✓ Semantic Search: {len(semantic_queries)} unique queries")
@@ -249,32 +309,45 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
     ]
     for idx in range(100):
         paper = papers[idx % len(papers)]
+        pid = paper['id']
         venue = paper.get('venue', 'NeurIPS')
         year = paper.get('year', 2020)
         auth = (paper.get('authors') or ['Vaswani, A.'])[0]
         topic = (paper.get('topics') or ['transformers'])[0]
-        tmpl = rel_templates[(idx // len(papers)) % len(rel_templates)]
-        
+        t_idx = (idx // len(papers)) % len(rel_templates)
+        tmpl = rel_templates[t_idx]
+
         q_text = tmpl.format(venue=venue, year=year, author=auth, title=paper['title'], topic=topic)
         if q_text in all_seen_queries:
-            q_text = f"{q_text} [Query #{idx}]"
+            continue
+
+        # Ground truth follows what the template actually asks for
+        if t_idx == 0:    # published at {venue} in {year}
+            gold = [p['id'] for p in papers if p.get('venue') == venue and p.get('year') == year]
+        elif t_idx in (1, 6):  # works / co-authorship network of {author}
+            gold = by_author(auth)
+        elif t_idx in (2, 7, 9):  # papers citing {title}
+            gold = sorted(cited_by[pid])
+        elif t_idx == 3:  # citations originating from {title}
+            gold = sorted(cites[pid])
+        elif t_idx == 4:  # papers citing any work by {author}
+            gold = sorted({c for a in by_author(auth) for c in cited_by[a]})
+        elif t_idx == 5:  # presented at {venue}
+            gold = [p['id'] for p in papers if p.get('venue') == venue]
+        else:             # connected to {topic} at {venue}
+            gold = [p['id'] for p in papers
+                    if p.get('venue') == venue and topic in (p.get('topics') or [])]
+        if not gold:
+            continue
         all_seen_queries.add(q_text)
-        
-        # Determine expected documents (paper itself + connected papers)
-        connected = [paper['id']]
-        for cit in citations:
-            if cit.get('citing_paper') == paper['id']:
-                connected.append(cit.get('cited_paper'))
-            elif cit.get('cited_paper') == paper['id']:
-                connected.append(cit.get('citing_paper'))
-        valid_connected = list(dict.fromkeys([cid for cid in connected if cid in paper_map]))
-        
+
         relationship_queries.append({
             "id": f"relation_{idx+1:03d}",
             "query": q_text,
-            "expected_doc_ids": valid_connected[:5],
+            "expected_doc_ids": gold,
             "type": "relationship_search",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "group": pid
         })
     save_json(relationship_queries, os.path.join(output_dir, "relationship_search.json"))
     print(f"  ✓ Relationship Search: {len(relationship_queries)} unique queries")
@@ -304,17 +377,18 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
         
         q_text = tmpl.format(title=paper['title'], author=auth, venue=venue, year=year)
         if q_text in all_seen_queries:
-            q_text = f"{q_text} [Multi-hop step {idx}]"
+            continue
         all_seen_queries.add(q_text)
-        
-        # Expected papers: paper + next 1-2 papers in sequence
-        next_paper = papers[(idx + 1) % len(papers)]
+
+        # Expected papers: the anchor plus its real 1-hop citation neighbors
+        # (previously: the next paper in file order, which is not a hop)
         multi_hop_queries.append({
             "id": f"multihop_{idx+1:03d}",
             "query": q_text,
-            "expected_doc_ids": [paper['id'], next_paper['id']],
+            "expected_doc_ids": [paper['id']] + neighbors(paper['id']),
             "type": "multi_hop_reasoning",
-            "difficulty": "hard"
+            "difficulty": "hard",
+            "group": paper['id']
         })
     save_json(multi_hop_queries, os.path.join(output_dir, "multi_hop_reasoning.json"))
     print(f"  ✓ Multi-Hop Reasoning: {len(multi_hop_queries)} unique queries")
@@ -357,20 +431,23 @@ def generate_scaled_suite(dataset_dir: str = "benchmark/dataset", output_dir: st
             topic=topic
         )
         if q_text in all_seen_queries:
-            q_text = f"{q_text} (Workload item {idx})"
+            continue
         all_seen_queries.add(q_text)
-        
+
         mixed_queries.append({
             "id": f"mixed_{idx+1:03d}",
             "query": q_text,
             "expected_doc_ids": [paper['id']],
             "type": "mixed_queries",
-            "difficulty": "medium"
+            "difficulty": "medium",
+            "group": paper['id']
         })
     save_json(mixed_queries, os.path.join(output_dir, "mixed_queries.json"))
     print(f"  ✓ Mixed Workload: {len(mixed_queries)} unique queries")
     
-    print(f"\n🎉 Successfully generated {len(all_seen_queries)} completely unique queries across 7 suites!")
+    n_groups = len({p['id'] for p in papers})
+    print(f"\n🎉 Generated {len(all_seen_queries)} unique query strings across 7 suites "
+          f"(anchored on {n_groups} papers; see module docstring on effective sample size)")
 
 
 if __name__ == "__main__":

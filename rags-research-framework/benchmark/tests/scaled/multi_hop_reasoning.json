@@ -4,999 +4,1212 @@
     "query": "If BERT builds on Attention Is All You Need, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_002",
     "query": "If BERT builds on BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_003",
     "query": "If BERT builds on Language Models are Unsupervised Multitask Learners, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_004",
     "query": "If BERT builds on Language Models are Few-Shot Learners, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_005",
     "query": "If BERT builds on An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_006",
     "query": "If BERT builds on DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_007",
     "query": "If BERT builds on Efficient Transformers: A Survey, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_008",
     "query": "If BERT builds on Sequence to Sequence Learning with Neural Networks, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_009",
     "query": "If BERT builds on Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_010",
     "query": "If BERT builds on Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks, what subsequent model scaled this architecture to 175B parameters?",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_011",
     "query": "Trace the influence path from Vaswani, A. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_012",
     "query": "Trace the influence path from Devlin, J. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_013",
     "query": "Trace the influence path from Radford, A. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_014",
     "query": "Trace the influence path from Brown, T. B. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_015",
     "query": "Trace the influence path from Dosovitskiy, A. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_016",
     "query": "Trace the influence path from Sanh, V. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_017",
     "query": "Trace the influence path from Tay, Y. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_018",
     "query": "Trace the influence path from Sutskever, I. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_019",
     "query": "Trace the influence path from Dai, Z. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_020",
     "query": "Trace the influence path from Lewis, P. through GPT-2 to Vision Transformers.",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_021",
     "query": "What common architectural principle links Attention Is All You Need to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_022",
     "query": "What common architectural principle links BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_023",
     "query": "What common architectural principle links Language Models are Unsupervised Multitask Learners to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_024",
     "query": "What common architectural principle links Language Models are Few-Shot Learners to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_025",
     "query": "What common architectural principle links An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_026",
     "query": "What common architectural principle links DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_027",
     "query": "What common architectural principle links Efficient Transformers: A Survey to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_028",
     "query": "What common architectural principle links Sequence to Sequence Learning with Neural Networks to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_029",
     "query": "What common architectural principle links Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_030",
     "query": "What common architectural principle links Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks to subsequent autoregressive models?",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_031",
     "query": "Connect Vaswani, A.'s self-attention to NeurIPS publications in 2017.",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_032",
     "query": "Connect Devlin, J.'s self-attention to ACL publications in 2018.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_033",
     "query": "Connect Radford, A.'s self-attention to OpenAI Blog publications in 2019.",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_034",
     "query": "Connect Brown, T. B.'s self-attention to NeurIPS publications in 2020.",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_035",
     "query": "Connect Dosovitskiy, A.'s self-attention to ICLR publications in 2020.",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_036",
     "query": "Connect Sanh, V.'s self-attention to NeurIPS publications in 2019.",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_037",
     "query": "Connect Tay, Y.'s self-attention to ACM Computing Surveys publications in 2022.",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_038",
     "query": "Connect Sutskever, I.'s self-attention to NeurIPS publications in 2014.",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_039",
     "query": "Connect Dai, Z.'s self-attention to ACL publications in 2019.",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_040",
     "query": "Connect Lewis, P.'s self-attention to NeurIPS publications in 2020.",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_041",
     "query": "Follow the citation path from Attention Is All You Need through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_042",
     "query": "Follow the citation path from BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_043",
     "query": "Follow the citation path from Language Models are Unsupervised Multitask Learners through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_044",
     "query": "Follow the citation path from Language Models are Few-Shot Learners through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_045",
     "query": "Follow the citation path from An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_046",
     "query": "Follow the citation path from DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_047",
     "query": "Follow the citation path from Efficient Transformers: A Survey through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_048",
     "query": "Follow the citation path from Sequence to Sequence Learning with Neural Networks through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_049",
     "query": "Follow the citation path from Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_050",
     "query": "Follow the citation path from Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks through bidirectional modeling to modern LLMs.",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_051",
     "query": "How did innovations in Attention Is All You Need enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_052",
     "query": "How did innovations in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_053",
     "query": "How did innovations in Language Models are Unsupervised Multitask Learners enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_054",
     "query": "How did innovations in Language Models are Few-Shot Learners enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_055",
     "query": "How did innovations in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_056",
     "query": "How did innovations in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_057",
     "query": "How did innovations in Efficient Transformers: A Survey enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_058",
     "query": "How did innovations in Sequence to Sequence Learning with Neural Networks enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_059",
     "query": "How did innovations in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_060",
     "query": "How did innovations in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks enable zero-shot multitask learners?",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_061",
     "query": "Identify the lineage from recurrent replacement in 2017 to vision patch processing.",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_062",
     "query": "Identify the lineage from recurrent replacement in 2018 to vision patch processing.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_063",
     "query": "Identify the lineage from recurrent replacement in 2019 to vision patch processing.",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_064",
     "query": "Identify the lineage from recurrent replacement in 2020 to vision patch processing.",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
-  },
-  {
-    "id": "multihop_065",
-    "query": "Identify the lineage from recurrent replacement in 2020 to vision patch processing. [Multi-hop step 64]",
-    "expected_doc_ids": [
-      "paper_005",
-      "paper_006"
-    ],
-    "type": "multi_hop_reasoning",
-    "difficulty": "hard"
-  },
-  {
-    "id": "multihop_066",
-    "query": "Identify the lineage from recurrent replacement in 2019 to vision patch processing. [Multi-hop step 65]",
-    "expected_doc_ids": [
-      "paper_006",
-      "paper_007"
-    ],
-    "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_067",
     "query": "Identify the lineage from recurrent replacement in 2022 to vision patch processing.",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_068",
     "query": "Identify the lineage from recurrent replacement in 2014 to vision patch processing.",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
-  },
-  {
-    "id": "multihop_069",
-    "query": "Identify the lineage from recurrent replacement in 2019 to vision patch processing. [Multi-hop step 68]",
-    "expected_doc_ids": [
-      "paper_009",
-      "paper_010"
-    ],
-    "type": "multi_hop_reasoning",
-    "difficulty": "hard"
-  },
-  {
-    "id": "multihop_070",
-    "query": "Identify the lineage from recurrent replacement in 2020 to vision patch processing. [Multi-hop step 69]",
-    "expected_doc_ids": [
-      "paper_010",
-      "paper_001"
-    ],
-    "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_071",
     "query": "Which authors of Attention Is All You Need influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_072",
     "query": "Which authors of BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding influenced transformer scaling laws in ACL?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_073",
     "query": "Which authors of Language Models are Unsupervised Multitask Learners influenced transformer scaling laws in OpenAI Blog?",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_074",
     "query": "Which authors of Language Models are Few-Shot Learners influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_075",
     "query": "Which authors of An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale influenced transformer scaling laws in ICLR?",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_076",
     "query": "Which authors of DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_077",
     "query": "Which authors of Efficient Transformers: A Survey influenced transformer scaling laws in ACM Computing Surveys?",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_078",
     "query": "Which authors of Sequence to Sequence Learning with Neural Networks influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_079",
     "query": "Which authors of Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context influenced transformer scaling laws in ACL?",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_080",
     "query": "Which authors of Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks influenced transformer scaling laws in NeurIPS?",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_081",
     "query": "Connect multi-head attention in Attention Is All You Need to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_082",
     "query": "Connect multi-head attention in BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_083",
     "query": "Connect multi-head attention in Language Models are Unsupervised Multitask Learners to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_084",
     "query": "Connect multi-head attention in Language Models are Few-Shot Learners to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_085",
     "query": "Connect multi-head attention in An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_086",
     "query": "Connect multi-head attention in DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_087",
     "query": "Connect multi-head attention in Efficient Transformers: A Survey to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_088",
     "query": "Connect multi-head attention in Sequence to Sequence Learning with Neural Networks to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_089",
     "query": "Connect multi-head attention in Transformer-XL: Attentive Language Models Beyond a Fixed-Length Context to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_090",
     "query": "Connect multi-head attention in Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks to masked pre-training architectures.",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   },
   {
     "id": "multihop_091",
     "query": "What 2-hop sequence connects Vaswani, A. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_001",
-      "paper_002"
+      "paper_002",
+      "paper_003",
+      "paper_004",
+      "paper_005",
+      "paper_007",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_001"
   },
   {
     "id": "multihop_092",
     "query": "What 2-hop sequence connects Devlin, J. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_002",
-      "paper_003"
+      "paper_001",
+      "paper_006",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_002"
   },
   {
     "id": "multihop_093",
     "query": "What 2-hop sequence connects Radford, A. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_003",
+      "paper_001",
       "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_003"
   },
   {
     "id": "multihop_094",
     "query": "What 2-hop sequence connects Brown, T. B. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_004",
-      "paper_005"
+      "paper_001",
+      "paper_003",
+      "paper_008",
+      "paper_010"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_004"
   },
   {
     "id": "multihop_095",
     "query": "What 2-hop sequence connects Dosovitskiy, A. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_005",
-      "paper_006"
+      "paper_001"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_005"
   },
   {
     "id": "multihop_096",
     "query": "What 2-hop sequence connects Sanh, V. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_006",
+      "paper_002",
       "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_006"
   },
   {
     "id": "multihop_097",
     "query": "What 2-hop sequence connects Tay, Y. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_007",
-      "paper_008"
+      "paper_001",
+      "paper_006",
+      "paper_009"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_007"
   },
   {
     "id": "multihop_098",
     "query": "What 2-hop sequence connects Sutskever, I. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_008",
-      "paper_009"
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_008"
   },
   {
     "id": "multihop_099",
     "query": "What 2-hop sequence connects Dai, Z. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_009",
-      "paper_010"
+      "paper_001",
+      "paper_007"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_009"
   },
   {
     "id": "multihop_100",
     "query": "What 2-hop sequence connects Lewis, P. to vision recognition transformers?",
     "expected_doc_ids": [
       "paper_010",
-      "paper_001"
+      "paper_002",
+      "paper_004"
     ],
     "type": "multi_hop_reasoning",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "group": "paper_010"
   }
 ]
