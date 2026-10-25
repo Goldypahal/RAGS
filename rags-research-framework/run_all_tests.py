@@ -15,8 +15,8 @@ from pathlib import Path
 # Ensure UTF-8 output on Windows consoles
 if sys.platform == 'win32':
     try:
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     except Exception:
         pass
 
@@ -52,11 +52,12 @@ from adaptive_rag import AdaptiveRetrievalRAG
 import argparse
 import psutil
 
-def initialize_rag_systems(dataset_dir: str):
+def initialize_rag_systems(dataset_dir: str, config: dict = None):
     """
     Initialize all 9 RAG systems with benchmark data.
     Decouples and records index construction time and differential memory footprint.
     """
+    config = config or {}
     print(f"🚀 Initializing all 9 RAG systems with dataset {dataset_dir}...")
     
     # Load shared data
@@ -76,16 +77,23 @@ def initialize_rag_systems(dataset_dir: str):
     
     # Create systems
     systems = {
-        "VectorRAG": VectorRAG(),
-        "GraphRAG": GraphRAG(),
-        "HashMapRAG": HashMapRAG(),
-        "TrieRAG": TrieRAG(),
-        "HashMapTrieRAG": HashMapTrieRAG(),
-        "HashMapGraphRAG": HashMapGraphRAG(),
-        "TrieGraphRAG": TrieGraphRAG(),
-        "InvertedIndexGraphRAG": InvertedIndexGraphRAG(),
-        "AdaptiveRetrievalRAG": AdaptiveRetrievalRAG(),
+        "VectorRAG": VectorRAG(config),
+        "GraphRAG": GraphRAG(config),
+        "HashMapRAG": HashMapRAG(config),
+        "TrieRAG": TrieRAG(config),
+        "HashMapTrieRAG": HashMapTrieRAG(config),
+        "HashMapGraphRAG": HashMapGraphRAG(config),
+        "TrieGraphRAG": TrieGraphRAG(config),
+        "InvertedIndexGraphRAG": InvertedIndexGraphRAG(config),
+        "AdaptiveRetrievalRAG": AdaptiveRetrievalRAG(config),
     }
+
+    # Citation edges (only meaningful for datasets that ship citations.json)
+    citation_links = [
+        (c['citing_paper'], c['cited_paper'])
+        for c in citations
+        if c.get('citing_paper') and c.get('cited_paper')
+    ]
     
     # Create documents from papers
     documents = []
@@ -118,7 +126,9 @@ def initialize_rag_systems(dataset_dir: str):
         
         system.initialize()
         system.add_documents(documents)
-        
+        if citation_links:
+            system.add_citation_links(citation_links)
+
         t_end = time.perf_counter_ns()
         mem_after = process.memory_info().rss / (1024 * 1024)
         
@@ -127,7 +137,10 @@ def initialize_rag_systems(dataset_dir: str):
         build_stats[system_name] = (build_time_ms, index_memory_mb)
         
         print(f"  ✓ {system_name:<24} built in {build_time_ms:6.1f}ms | Index RAM: ~{index_memory_mb:4.1f}MB ({len(documents)} docs)")
-    
+
+    if citation_links:
+        print(f"  ✓ Registered {len(citation_links)} citation edges with graph-backed systems")
+
     return systems, papers, authors, topics, citations, build_stats
 
 
@@ -158,9 +171,10 @@ def load_all_test_suites(test_dir: str):
     return test_suites
 
 
-def run_benchmark_suite(systems, test_suites, build_stats=None):
+def run_benchmark_suite(systems, test_suites, build_stats=None, run_metadata=None):
     """Run comprehensive benchmark across all systems and tests with warm-ups, high-res timing, and routing regret analysis."""
     evaluator = BenchmarkEvaluator()
+    evaluator.run_metadata = dict(run_metadata or {})
     routing_analyzer = RoutingAnalyzer()
     
     method_to_system_name = {
@@ -322,8 +336,16 @@ def main():
     parser = argparse.ArgumentParser(description="Run RAG Benchmarks")
     parser.add_argument("--dataset", type=str, default="benchmark/dataset", help="Path to the dataset directory")
     parser.add_argument("--scale", action="store_true", help="Run on scaled 700-query benchmark suite")
+    parser.add_argument("--embedder", choices=["minilm", "tfidf", "hash"], default="minilm",
+                        help="VectorRAG embedder. 'tfidf' is a lexical stand-in, not a dense baseline.")
+    parser.add_argument("--learned-router-path", default=None,
+                        help="Route AdaptiveRetrievalRAG with this saved model (must not be trained on these queries)")
     args = parser.parse_args()
-    
+
+    config = {"embedder": args.embedder}
+    if args.learned_router_path:
+        config["learned_router_path"] = args.learned_router_path
+
     dataset_dir = args.dataset
     if args.scale:
         test_dir = "benchmark/tests/scaled"
@@ -336,14 +358,25 @@ def main():
         print("="*80 + "\n")
         
         # Initialize systems and record decoupled build stats
-        systems, papers, authors, topics, citations, build_stats = initialize_rag_systems(dataset_dir)
-        
+        systems, papers, authors, topics, citations, build_stats = initialize_rag_systems(dataset_dir, config)
+
         # Load tests
         test_suites = load_all_test_suites(test_dir)
-        
+
+        run_metadata = {
+            "dataset_dir": dataset_dir,
+            "test_dir": test_dir,
+            "n_documents": len(papers),
+            "n_citation_edges": len(citations),
+            "vector_embedder": args.embedder,
+            "learned_router_path": args.learned_router_path,
+        }
+
         # Run benchmark
-        print(f"\n📊 Testing {len(systems)} systems on {sum(len(tests) for tests in test_suites.values())} queries\n")
-        evaluator, routing_analyzer = run_benchmark_suite(systems, test_suites, build_stats=build_stats)
+        print(f"\n📊 Testing {len(systems)} systems on {sum(len(tests) for tests in test_suites.values())} queries "
+              f"over {len(papers)} documents (VectorRAG embedder: {args.embedder})\n")
+        evaluator, routing_analyzer = run_benchmark_suite(systems, test_suites, build_stats=build_stats,
+                                                          run_metadata=run_metadata)
         
         # Generate report
         report, routing_summary = generate_detailed_report(evaluator, routing_analyzer)

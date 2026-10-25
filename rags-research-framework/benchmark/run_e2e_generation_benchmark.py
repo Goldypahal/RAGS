@@ -77,27 +77,33 @@ def load_dataset(dataset_dir: str = "benchmark/dataset"):
     return documents, paper_lookup
 
 
-def init_systems(documents):
+def init_systems(documents, config=None, citation_links=None):
+    config = config or {}
     systems = {
-        'VectorRAG': VectorRAG(),
-        'InvertedIndexGraphRAG': InvertedIndexGraphRAG(),
-        'AdaptiveRetrievalRAG': AdaptiveRetrievalRAG(),
-        'TrieGraphRAG': TrieGraphRAG(),
-        'TrieRAG': TrieRAG(),
-        'HashMapTrieRAG': HashMapTrieRAG(),
-        'GraphRAG': GraphRAG(),
-        'HashMapGraphRAG': HashMapGraphRAG(),
-        'HashMapRAG': HashMapRAG(),
+        'VectorRAG': VectorRAG(config),
+        'InvertedIndexGraphRAG': InvertedIndexGraphRAG(config),
+        'AdaptiveRetrievalRAG': AdaptiveRetrievalRAG(config),
+        'TrieGraphRAG': TrieGraphRAG(config),
+        'TrieRAG': TrieRAG(config),
+        'HashMapTrieRAG': HashMapTrieRAG(config),
+        'GraphRAG': GraphRAG(config),
+        'HashMapGraphRAG': HashMapGraphRAG(config),
+        'HashMapRAG': HashMapRAG(config),
     }
     for name, s in systems.items():
         s.initialize()
         s.add_documents(documents)
+        if citation_links:
+            s.add_citation_links(citation_links)
     return systems
 
 
 def main():
     parser = argparse.ArgumentParser(description="Publication-Grade End-to-End Generation Benchmark")
     parser.add_argument("--samples-per-type", type=int, default=10, help="Queries sampled per category (default: 10, total 70 queries)")
+    parser.add_argument("--judge", choices=["cross-encoder", "flan-t5"], default="cross-encoder",
+                        help="NLI judge: independent cross-encoder (default) or legacy self-judging Flan-T5")
+    parser.add_argument("--embedder", choices=["minilm", "tfidf", "hash"], default="minilm")
     args = parser.parse_args()
     
     print("\n" + "=" * 85)
@@ -109,7 +115,13 @@ def main():
     print(f"✓ Loaded {len(documents)} corpus documents")
     
     print("⚡ Initializing 9 RAG retrieval architectures...")
-    systems = init_systems(documents)
+    try:
+        citations = BenchmarkLoader.load_citations(dataset_dir)
+    except FileNotFoundError:
+        citations = []
+    citation_links = [(c['citing_paper'], c['cited_paper']) for c in citations
+                      if c.get('citing_paper') and c.get('cited_paper')]
+    systems = init_systems(documents, {'embedder': args.embedder}, citation_links)
     print("✓ All 9 systems initialized")
     
     test_dir = "benchmark/tests/scaled"
@@ -140,7 +152,7 @@ def main():
     print(f"✓ Selected {len(selected_tests)} queries via seed=42 uniform sampling ({args.samples_per_type} per category)")
     print(f"📊 Total End-to-End evaluations to execute: {total_evals} (real LLM generation + NLI entailment)\n")
     
-    evaluator = E2EGenerationEvaluator()
+    evaluator = E2EGenerationEvaluator(judge=args.judge)
     completed = 0
     total = len(selected_tests)
     

@@ -15,15 +15,18 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor
+from common.base import Document, RetrievalResult, BaseRAG, TextPreprocessor, rank_scores
 
 
 class HashMapIndex:
     """HashMap-based index for exact matching."""
-    
+
     def __init__(self):
         # entity_name -> list of doc_ids
         self.entity_index: Dict[str, Set[str]] = {}
+        # normalized title ("attention is all you need") -> doc_ids
+        self.title_index: Dict[str, Set[str]] = {}
+        self.max_title_tokens = 0
         # doc_id -> document
         self.doc_map: Dict[str, Document] = {}
         # Store all unique entities
@@ -42,18 +45,27 @@ class HashMapIndex:
             self.entity_index[key].add(doc.doc_id)
             self.entities.add(key)
         
-        # Index title
+        # Index normalized title separately so whole-title queries can hit it
         if doc.title:
-            title_key = doc.title.lower()
-            if title_key not in self.entity_index:
-                self.entity_index[title_key] = set()
-            self.entity_index[title_key].add(doc.doc_id)
-            self.entities.add(title_key)
-    
+            title_tokens = TextPreprocessor.tokenize(doc.title)
+            if title_tokens:
+                title_key = " ".join(title_tokens)
+                self.title_index.setdefault(title_key, set()).add(doc.doc_id)
+                self.max_title_tokens = max(self.max_title_tokens, len(title_tokens))
+
     def lookup(self, query_term: str) -> Set[str]:
         """O(1) lookup by exact term."""
         key = query_term.lower()
         return self.entity_index.get(key, set())
+
+    def lookup_titles(self, query: str) -> Set[str]:
+        """Hash every contiguous query n-gram (up to the longest title) against the title index."""
+        tokens = TextPreprocessor.tokenize(query)
+        hits: Set[str] = set()
+        for n in range(1, min(len(tokens), self.max_title_tokens) + 1):
+            for i in range(len(tokens) - n + 1):
+                hits.update(self.title_index.get(" ".join(tokens[i:i + n]), ()))
+        return hits
     
     def lookup_multi(self, query_terms: List[str]) -> Set[str]:
         """Lookup multiple terms and return union."""
@@ -99,23 +111,23 @@ class HashMapRAG(BaseRAG):
     
     def retrieve(self, query: str, top_k: int = 5) -> RetrievalResult:
         """Retrieve documents using HashMap lookup."""
-        start_time = time.time()
-        
+        start_time = time.perf_counter()
+
         # Extract query terms
         query_terms = TextPreprocessor.extract_keywords(query, n_keywords=10)
-        
-        # HashMap lookup
-        doc_ids = self.index.lookup_multi(query_terms)
-        
+
         # Score documents by frequency of matching terms
         doc_scores: Dict[str, float] = {}
         for term in query_terms:
             matching_docs = self.index.lookup(term)
             for doc_id in matching_docs:
                 doc_scores[doc_id] = doc_scores.get(doc_id, 0) + 1.0
-        
-        # Sort by score
-        sorted_docs = sorted(doc_scores.items(), key=lambda x: x[1], reverse=True)
+
+        # A full-title hit outranks any number of keyword hits
+        for doc_id in self.index.lookup_titles(query):
+            doc_scores[doc_id] = doc_scores.get(doc_id, 0) + 1.0 + len(query_terms)
+
+        sorted_docs = rank_scores(doc_scores)
         
         # Build result
         retrieved_docs = []
@@ -127,7 +139,7 @@ class HashMapRAG(BaseRAG):
                 retrieved_docs.append(doc)
                 scores.append(float(score))
         
-        retrieval_time = time.time() - start_time
+        retrieval_time = time.perf_counter() - start_time
         self.update_metrics(retrieval_time)
         
         return RetrievalResult(

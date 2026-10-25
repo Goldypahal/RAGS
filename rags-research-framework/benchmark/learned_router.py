@@ -130,18 +130,30 @@ class LearnedRouter:
         """Train classifier and evaluate via 5-fold Stratified Cross-Validation."""
         X = self._create_features(queries, fit=True)
         y = np.array(target_systems)
-        
-        # Stratified K-Fold CV evaluation
-        skf = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
-        cv_preds = cross_val_predict(self.clf, X, y, cv=skf)
-        cv_accuracy = accuracy_score(y, cv_preds)
+
+        # Stratified K-Fold CV evaluation (skipped when some class is too rare to stratify)
+        _, class_counts = np.unique(y, return_counts=True)
+        n_splits = min(5, int(class_counts.min()))
+        cv_accuracy = None
+        if n_splits >= 2 and len(class_counts) >= 2:
+            skf = StratifiedKFold(n_splits=n_splits, shuffle=True, random_state=42)
+            cv_preds = cross_val_predict(self.clf, X, y, cv=skf)
+            cv_accuracy = float(accuracy_score(y, cv_preds))
+
+        if len(class_counts) < 2:
+            # Degenerate: a single label. Predict it unconditionally.
+            self.single_class = str(y[0])
+            self.is_trained = True
+            return {'cv_accuracy': cv_accuracy, 'n_samples': len(queries),
+                    'classes': [self.single_class], 'n_features': X.shape[1]}
+        self.single_class = None
         
         # Fit final model on full dataset
         self.clf.fit(X, y)
         self.is_trained = True
         
         return {
-            'cv_accuracy': float(cv_accuracy),
+            'cv_accuracy': cv_accuracy,
             'n_samples': len(queries),
             'classes': list(self.clf.classes_),
             'n_features': X.shape[1]
@@ -154,7 +166,9 @@ class LearnedRouter:
         """
         if not self.is_trained:
             return ("VectorRAG", 1.0)
-            
+        if getattr(self, 'single_class', None):
+            return (self.single_class, 1.0)
+
         X = self._create_features([query], fit=False)
         probs = self.clf.predict_proba(X)[0]
         best_idx = np.argmax(probs)
@@ -170,7 +184,8 @@ class LearnedRouter:
             'clf': self.clf,
             'dense_mean': self.dense_mean,
             'dense_std': self.dense_std,
-            'is_trained': self.is_trained
+            'is_trained': self.is_trained,
+            'single_class': getattr(self, 'single_class', None)
         }
         os.makedirs(os.path.dirname(filepath), exist_ok=True)
         joblib.dump(bundle, filepath)
@@ -186,4 +201,5 @@ class LearnedRouter:
         router.dense_mean = bundle['dense_mean']
         router.dense_std = bundle['dense_std']
         router.is_trained = bundle['is_trained']
+        router.single_class = bundle.get('single_class')
         return router

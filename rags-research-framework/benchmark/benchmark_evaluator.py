@@ -22,8 +22,9 @@ from datetime import datetime
 # Ensure UTF-8 output on Windows consoles
 if sys.platform == 'win32':
     try:
-        sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
-        sys.stderr = io.TextIOWrapper(sys.stderr.buffer, encoding='utf-8', errors='replace')
+        # reconfigure() in place; replacing sys.stdout breaks importers (e.g. pytest capture)
+        sys.stdout.reconfigure(encoding='utf-8', errors='replace')
+        sys.stderr.reconfigure(encoding='utf-8', errors='replace')
     except Exception:
         pass
 
@@ -33,7 +34,7 @@ class EvaluationMetrics:
     """Stores evaluation metrics for a single test."""
     system_name: str
     test_type: str
-    test_id: int
+    test_id: Any
     query: str
     
     # Retrieval metrics
@@ -256,6 +257,7 @@ class BenchmarkEvaluator:
         self.loader = BenchmarkLoader()
         self.calculator = MetricsCalculator()
         self.system_build_stats: Dict[str, Dict[str, float]] = {}
+        self.run_metadata: Dict[str, Any] = {}
         
         if not os.path.exists(results_dir):
             os.makedirs(results_dir)
@@ -297,7 +299,7 @@ class BenchmarkEvaluator:
         metrics = EvaluationMetrics(
             system_name=system_name,
             test_type=test_type,
-            test_id=test_id if isinstance(test_id, int) else hash(str(test_id)) % 100000,
+            test_id=test_id,
             query=query
         )
         
@@ -336,6 +338,7 @@ class BenchmarkEvaluator:
         
         report = {
             "timestamp": datetime.now().isoformat(),
+            "run_metadata": self.run_metadata,
             "total_tests": len(self.metrics),
             "systems": {}
         }
@@ -430,8 +433,62 @@ class BenchmarkEvaluator:
             for i, (name, data) in enumerate(ranked_by_utility)
         ]
         report["ranking"] = report["ranking_by_utility"]
-        
+        report["statistics"] = self._paired_statistics(by_system)
+
         return report
+
+    @staticmethod
+    def query_quality(m: EvaluationMetrics) -> float:
+        """Per-query composite: mean of P@1, P@5, R@5, MRR, NDCG@5."""
+        return (m.precision_at_1 + m.precision_at_5 + m.recall_at_5 + m.mrr + m.ndcg_at_5) / 5.0
+
+    def _paired_statistics(self, by_system: Dict[str, List[EvaluationMetrics]],
+                           n_boot: int = 1000, seed: int = 42) -> Dict[str, Any]:
+        """
+        Paired, per-query statistics: 95% bootstrap CI of each system's mean quality,
+        and the paired difference to the best system (bootstrap CI + Wilcoxon signed-rank).
+        """
+        import numpy as np
+
+        keyed = {
+            s: {(m.test_type, str(m.test_id), m.query): self.query_quality(m) for m in ms}
+            for s, ms in by_system.items()
+        }
+        common = sorted(set.intersection(*(set(k) for k in keyed.values())))
+        if not common:
+            return {}
+
+        vectors = {s: np.array([keyed[s][k] for k in common]) for s in keyed}
+        means = {s: float(v.mean()) for s, v in vectors.items()}
+        best = max(means, key=lambda s: (means[s], s))
+
+        rng = np.random.default_rng(seed)
+        idx = rng.integers(0, len(common), size=(n_boot, len(common)))
+
+        try:
+            from scipy.stats import wilcoxon
+        except ImportError:
+            wilcoxon = None
+
+        def ci(samples):
+            return [round(float(np.percentile(samples, 2.5)), 4), round(float(np.percentile(samples, 97.5)), 4)]
+
+        out = {
+            "n_paired_queries": len(common),
+            "bootstrap_resamples": n_boot,
+            "reference_system": best,
+            "systems": {}
+        }
+        for s, v in vectors.items():
+            entry = {"mean_quality": round(means[s], 4), "ci95": ci(v[idx].mean(axis=1))}
+            if s != best:
+                d = v - vectors[best]
+                entry["delta_vs_reference"] = round(float(d.mean()), 4)
+                entry["delta_ci95"] = ci(d[idx].mean(axis=1))
+                if wilcoxon is not None and np.any(d != 0):
+                    entry["wilcoxon_p"] = float(wilcoxon(d).pvalue)
+            out["systems"][s] = entry
+        return out
     
     def save_results(self, filename: str = None):
         """Save results to JSON file."""
@@ -444,8 +501,8 @@ class BenchmarkEvaluator:
         report = self.generate_report()
         report["metrics"] = [m.to_dict() for m in self.metrics]
         
-        with open(filepath, 'w') as f:
-            json.dump(report, f, indent=2)
+        with open(filepath, 'w', encoding='utf-8') as f:
+            json.dump(report, f, indent=2, default=str)
         
         print(f"Results saved to: {filepath}")
         return filepath
@@ -478,6 +535,24 @@ class BenchmarkEvaluator:
             idx = metrics["index_construction"]
             print(f"{name:<28} {lat['p50']:<10.2f} {lat['p95']:<10.2f} {lat['p99']:<10.2f} {lat['mean']:<10.2f} {lat['std_dev']:<10.2f} {idx['build_time_ms']:<12.1f} {idx['index_memory_mb']:<10.1f}")
             
+        stats = report.get("statistics") or {}
+        if stats:
+            ref = stats["reference_system"]
+            print(f"\n📐 PAIRED SIGNIFICANCE vs {ref} (N = {stats['n_paired_queries']} queries, "
+                  f"B = {stats['bootstrap_resamples']} bootstrap resamples):")
+            print("-" * 85)
+            print(f"{'System':<28} {'Quality [95% CI]':<24} {'Δ vs ref [95% CI]':<26} {'Wilcoxon p':<10}")
+            print("-" * 85)
+            ranked = sorted(stats["systems"].items(), key=lambda x: -x[1]["mean_quality"])
+            for name, s in ranked:
+                q = f"{s['mean_quality']:.4f} [{s['ci95'][0]:.3f}, {s['ci95'][1]:.3f}]"
+                if name == ref:
+                    print(f"{name:<28} {q:<24} {'(reference)':<26}")
+                    continue
+                d = f"{s['delta_vs_reference']:+.4f} [{s['delta_ci95'][0]:+.3f}, {s['delta_ci95'][1]:+.3f}]"
+                p = f"{s['wilcoxon_p']:.2g}" if 'wilcoxon_p' in s else "n/a"
+                print(f"{name:<28} {q:<24} {d:<26} {p:<10}")
+
         print("\n🎯 COMPOSITE EFFICIENCY UTILITY (Secondary Bounded Score):")
         print("-" * 85)
         for rank_info in report.get("ranking_by_utility", []):

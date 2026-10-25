@@ -86,7 +86,8 @@ class FlanT5GeneratorAndJudge:
         )
         inputs = self.tokenizer(prompt, return_tensors="pt", max_length=512, truncation=True)
         with torch.no_grad():
-            outputs = self.model.generate(**inputs, max_new_tokens=40, temperature=0.1)
+            # Greedy decoding (temperature has no effect without do_sample=True)
+            outputs = self.model.generate(**inputs, max_new_tokens=40, do_sample=False)
         answer = self.tokenizer.decode(outputs[0], skip_special_tokens=True).strip()
         return answer if answer else "Uncertain based on provided context."
 
@@ -107,6 +108,25 @@ class FlanT5GeneratorAndJudge:
             outputs = self.model.generate(**inputs, max_new_tokens=5)
         response = self.tokenizer.decode(outputs[0], skip_special_tokens=True).strip().lower()
         return response.startswith("yes")
+
+
+class CrossEncoderNLIJudge:
+    """
+    Independent NLI entailment judge (a model trained for NLI, separate from the generator).
+    Using the generator as its own judge conflates generation quality with judge bias.
+    """
+
+    def __init__(self, model_name: str = "cross-encoder/nli-deberta-v3-base"):
+        from sentence_transformers import CrossEncoder
+        self.model = CrossEncoder(model_name)
+        id2label = self.model.model.config.id2label
+        self.entail_idx = next(i for i, l in id2label.items() if l.lower().startswith("entail"))
+
+    def verify_claim_nli(self, claim: str, context: str) -> bool:
+        if not context.strip() or not claim.strip():
+            return False
+        logits = self.model.predict([(context, claim)], convert_to_numpy=True)[0]
+        return int(np.argmax(logits)) == self.entail_idx
 
 
 class SemanticRelevanceEvaluator:
@@ -142,9 +162,19 @@ class E2EGenerationEvaluator:
     Coordinates genuine LLM generation and publication-grade evaluation.
     """
     
-    def __init__(self):
-        print("🧠 Initializing Flan-T5 LLM Generation & NLI Entailment Judge...")
+    def __init__(self, judge: str = "cross-encoder"):
+        """judge: 'cross-encoder' (independent NLI model, default) or 'flan-t5' (legacy self-judging)."""
+        print("🧠 Initializing Flan-T5 LLM Generator...")
         self.llm = FlanT5GeneratorAndJudge()
+        if judge == "cross-encoder":
+            print("⚖️  Initializing independent NLI judge (cross-encoder/nli-deberta-v3-base)...")
+            self.judge = CrossEncoderNLIJudge()
+        elif judge == "flan-t5":
+            print("⚠️  Using the generator as its own NLI judge (legacy; biased)")
+            self.judge = self.llm
+        else:
+            raise ValueError(f"Unknown judge '{judge}'")
+        self.judge_name = judge
         print("🔍 Initializing Semantic Relevance Embedder (all-MiniLM-L6-v2)...")
         self.relevance_eval = SemanticRelevanceEvaluator()
         self.results: List[GenerationResult] = []
@@ -182,7 +212,7 @@ class E2EGenerationEvaluator:
         supported = []
         unsupported = []
         for c in claims:
-            if self.llm.verify_claim_nli(c, context_str):
+            if self.judge.verify_claim_nli(c, context_str):
                 supported.append(c)
             else:
                 unsupported.append(c)
@@ -272,6 +302,7 @@ class E2EGenerationEvaluator:
             
         return {
             'total_evaluations': len(self.results),
+            'nli_judge': self.judge_name,
             'systems': summary,
             'rankings_by_faithfulness': sorted(systems, key=lambda s: summary[s]['faithfulness']['mean'], reverse=True),
             'rankings_by_hallucination': sorted(systems, key=lambda s: summary[s]['hallucination_rate']['mean'])
