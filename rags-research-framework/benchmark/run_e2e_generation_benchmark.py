@@ -18,6 +18,8 @@ import time
 import json
 import argparse
 from pathlib import Path
+import matplotlib
+matplotlib.use("Agg")  # file output only; the Tk GUI backend is unnecessary (and blocked on some machines)
 import matplotlib.pyplot as plt
 import numpy as np
 from scipy import stats

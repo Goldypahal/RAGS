@@ -88,15 +88,17 @@ All 9 systems run under identical conditions; every report includes per-system 9
 
 > ⚠️ The scaled suite is a **smoke test**, not evidence: with 10 documents, `top_k=5` returns half the corpus, and its 658 queries are variations on 10 anchors. Use HotpotQA/SQuAD for claims.
 
-### Results (2026-10-25, `--embedder tfidf`)
+### Results (2026-10-25)
 
-Quality = mean of P@1, P@5, R@5, MRR, NDCG@5. Δ is the paired difference to the best system on that dataset. **VectorRAG here uses the TF-IDF stand-in**, because the dense MiniLM run needs sentence-transformers. These results compare lexical vs. lexical; they say nothing yet about dense retrieval.
+Quality = mean of P@1, P@5, R@5, MRR, NDCG@5. Δ is the paired per-query difference to BM25 (InvertedIndexGraphRAG), with a 95% bootstrap CI. Dense rows use `--embedder minilm` (all-MiniLM-L6-v2); TF-IDF rows use the lexical stand-in. The lexical systems give identical results under either flag. Latency is measured on CPU and includes query encoding.
 
-| Architecture | HotpotQA quality | Δ vs best [95% CI] | SQuAD quality | Δ vs best [95% CI] | HotpotQA p50 |
+| Architecture | HotpotQA quality | Δ vs BM25 [95% CI] | SQuAD quality | Δ vs BM25 [95% CI] | HotpotQA p50 |
 |---|:---:|:---:|:---:|:---:|---:|
-| **InvertedIndexGraphRAG** (BM25) | **0.678** | — | **0.698** | — | 3.5 ms |
+| VectorRAG (MiniLM, dense) | **0.689** | +0.011 [−0.014, +0.037] | 0.643 | −0.055 [−0.075, −0.034] | 21.6 ms |
+| **InvertedIndexGraphRAG** (BM25) | 0.678 | — | **0.698** | — | 3.5 ms |
+| AdaptiveRetrievalRAG (MiniLM) | 0.669 | −0.009 [−0.035, +0.016] | 0.621 | −0.077 [−0.097, −0.057] | 21.9 ms |
 | VectorRAG (TF-IDF) | 0.665 | −0.014 [−0.030, +0.003] | 0.678 | −0.021 [−0.031, −0.010] | 7.2 ms |
-| AdaptiveRetrievalRAG | 0.647 | −0.031 [−0.049, −0.013] | 0.645 | −0.053 [−0.067, −0.039] | 7.6 ms |
+| AdaptiveRetrievalRAG (TF-IDF) | 0.647 | −0.031 [−0.049, −0.013] | 0.645 | −0.053 [−0.067, −0.039] | 7.6 ms |
 | HashMapRAG | 0.611 | −0.068 | 0.295 | −0.403 | 0.7 ms |
 | HashMapTrieRAG | 0.516 | −0.163 | 0.306 | −0.393 | 1.5 ms |
 | TrieGraphRAG | 0.514 | −0.165 | 0.307 | −0.391 | 46.0 ms |
@@ -105,18 +107,25 @@ Quality = mean of P@1, P@5, R@5, MRR, NDCG@5. Δ is the paired difference to the
 | HashMapGraphRAG | 0.000 | −0.678 | 0.012 | −0.686 | 0.04 ms |
 
 What the data supports:
-- **BM25 (InvertedIndexGraphRAG) is the strongest lexical system.** It beats TF-IDF cosine on SQuAD (CI excludes 0). On HotpotQA the gap is within the CI.
-- **The adaptive router is worse than the best single system** on both real datasets (oracle ceiling: 0.769 HotpotQA, 0.745 SQuAD).
+- **BM25 matches dense retrieval on HotpotQA and beats it on SQuAD,** at about 1/6 of the latency. On HotpotQA, MiniLM's +0.011 is within the CI (Wilcoxon p = 0.69). On SQuAD, BM25 leads by 0.055 (p = 6.6e-08), likely because SQuAD questions reuse the passage's wording.
+- **The adaptive router never beats the best single system.** It is tied with or significantly worse than BM25 on every dataset and embedder.
+- **The speed advantage is real but modest:** about 6× (3.5 ms vs 21.6 ms), mostly the cost of encoding the query, not the earlier "330×".
 - **The co-occurrence graph adds nothing on real data.** Its entity extractor matches ~20 hard-coded ML words, so GraphRAG and HashMapGraphRAG score ≈ 0 outside the toy corpus. Citation edges (`citations.json`) help only where citations exist.
-- **Tries don't scale as implemented:** about 47 ms p50 at 4.9k docs, 6× slower than TF-IDF vector search.
+- **Tries don't scale as implemented:** about 47 ms p50 at 4.9k docs, slower than dense vector search (21.6 ms).
 
 ### Learned router (scaled suite, group-wise split)
 
 The split is by anchor paper/prompt (12 train / 4 val / 4 test groups), and `C` is chosen on validation. On 135 held-out queries the router reaches 0.734 (92.6% of oracle), vs 0.697 for the best single system chosen on train. With only 4 test groups, treat this as indicative. Cross-domain transfer (lexical → reasoning) reaches 30% of oracle. Reproduce with `python benchmark/train_and_eval_router.py --results <scaled results json>`.
 
-### Not yet re-run after the evaluation fixes
-- Dense VectorRAG (`--embedder minilm`) on HotpotQA/SQuAD.
-- The end-to-end generation benchmark. Its judge is now an independent NLI cross-encoder (`cross-encoder/nli-deberta-v3-base`) instead of Flan-T5-small grading its own answers, so earlier faithfulness numbers are superseded.
+### End-to-end generation: pending re-run
+Earlier faithfulness numbers are superseded. A first HotpotQA run with the fixed evaluator found two problems, both now fixed or flagged in code:
+- **Prompt bug:** the context was formatted as `[1] Title: …`, and Flan-T5-small answered with the bracket (`"[2]"`) in about 25% of queries, for every system.
+- **Faithfulness is not a valid metric for short answers:** the NLI judge entailed 0 of 12 answers that exactly matched the gold answer. Use answer **EM/F1** (now reported when the dataset has reference answers) as the primary E2E metric.
+
+Re-run with:
+```bash
+python benchmark/run_e2e_generation_benchmark.py --dataset ../Dataset/HotpotQA --samples-per-type 100
+```
 
 ---
 

@@ -133,6 +133,11 @@ class CrossEncoderNLIJudge:
     """
     Independent NLI entailment judge (a model trained for NLI, separate from the generator).
     Using the generator as its own judge conflates generation quality with judge bias.
+
+    Caveat: claim-level NLI is unreliable for short-form QA answers. On HotpotQA it
+    entailed 0 of 12 answers that exactly matched the gold answer: a bare entity or
+    "yes" is not a claim, and multi-hop answers need evidence from two passages. Prefer
+    answer EM/F1 when reference answers exist.
     """
 
     def __init__(self, model_name: str = "cross-encoder/nli-deberta-v3-base"):
@@ -212,10 +217,9 @@ class E2EGenerationEvaluator:
         t0 = time.perf_counter_ns()
         
         # 1. Format Context
-        context_parts = []
-        for i, d in enumerate(retrieved_docs[:3]):
-            context_parts.append(f"[{i+1}] {d.title}: {d.content}")
-        context_str = " ".join(context_parts)
+        # No "[1]"-style markers: Flan-T5-small copied them as its answer ("[2]")
+        # in ~25% of HotpotQA queries. Document content already starts with "Title: ...".
+        context_str = "\n\n".join(d.content for d in retrieved_docs[:3])
         retrieved_ids = [d.doc_id for d in retrieved_docs]
         
         # 2. Genuine LLM Generation
