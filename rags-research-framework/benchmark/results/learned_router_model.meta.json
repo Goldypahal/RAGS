@@ -1,0 +1,41 @@
+{
+  "source_results": "C:\\Users\\goldy\\projects\\RAGS\\rags-research-framework\\benchmark\\results\\benchmark_results_20261025_223049.json",
+  "test_dir": "benchmark/tests/scaled",
+  "split_seed": 42,
+  "train_val_groups": [
+    "paper_001",
+    "paper_003",
+    "paper_004",
+    "paper_005",
+    "paper_006",
+    "paper_007",
+    "paper_008",
+    "paper_010",
+    "prompt_0",
+    "prompt_1",
+    "prompt_2",
+    "prompt_4",
+    "prompt_5",
+    "prompt_6",
+    "prompt_8",
+    "prompt_9"
+  ],
+  "test_groups": [
+    "paper_002",
+    "paper_009",
+    "prompt_3",
+    "prompt_7"
+  ],
+  "C": 10.0,
+  "classes": [
+    "GraphRAG",
+    "HashMapGraphRAG",
+    "HashMapRAG",
+    "HashMapTrieRAG",
+    "InvertedIndexGraphRAG",
+    "TrieGraphRAG",
+    "TrieRAG",
+    "VectorRAG"
+  ],
+  "warning": "Do not benchmark AdaptiveRetrievalRAG with this router on queries from train_val_groups."
+}

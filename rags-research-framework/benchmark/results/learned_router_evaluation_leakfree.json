@@ -1,19 +1,40 @@
 {
-  "total_unique_queries": 700,
-  "train_samples": 420,
-  "val_samples": 140,
-  "test_samples": 140,
+  "total_unique_queries": 658,
+  "n_groups": 20,
+  "train_samples": 393,
+  "val_samples": 130,
+  "test_samples": 135,
+  "test_groups": [
+    "paper_002",
+    "paper_009",
+    "prompt_3",
+    "prompt_7"
+  ],
+  "split": "group-wise by anchor paper / prompt",
   "split_seed": 42,
+  "selected_C": 10.0,
+  "validation_quality_by_C": {
+    "0.1": 0.7135644670209482,
+    "0.3": 0.7327560767020674,
+    "1.0": 0.7433751591324704,
+    "3.0": 0.7742267275538567,
+    "10.0": 0.7830580695248349
+  },
   "test_metrics": {
-    "oracle_quality": 0.771825199385537,
-    "learned_router_quality": 0.6784312399090641,
-    "vector_baseline_quality": 0.6918309880018619,
-    "heuristic_adaptive_quality": 0.675382822744709,
-    "random_quality": 0.5064489414439439,
-    "learned_quality_regret": 0.09339395947647278,
-    "heuristic_quality_regret": 0.09644237664082796,
-    "strict_accuracy": 0.6071428571428571,
-    "epsilon_optimal_accuracy": 0.7857142857142857,
-    "avg_inference_latency_ms": 0.9655692857142857
+    "oracle_quality": 0.79297514803447,
+    "learned_router_quality": 0.7342077662718274,
+    "best_fixed_system_on_train": "VectorRAG",
+    "best_fixed_system_quality": 0.697403818893018,
+    "adaptive_as_benchmarked_quality": 0.5768700672493232,
+    "random_quality": 0.5295280715868326,
+    "oracle_tie_rate": 0.8148148148148148,
+    "epsilon_optimal_rate": 0.8296296296296296,
+    "avg_inference_latency_ms": 3.1641266666666663
+  },
+  "cross_domain": {
+    "train_samples": 278,
+    "test_samples": 280,
+    "learned_quality": 0.21445155847119546,
+    "oracle_quality": 0.7126097089145085
   }
 }
